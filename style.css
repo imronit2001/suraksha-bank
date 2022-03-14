@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    overflow-x: hidden;
+}
+
+/* HIDE SCROLLBAR  */
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+/* NAVBAR SECTION  */
+
+#navbarSection{
+    border: 1px solid red;
+    width: 100vw;
+    height: auto;
+    float: right;
+}
+
+/* CAROUSEL SECTION  */
+
+#carouselSection{
+    border: 1px solid green;
+    width: 100vw;
+    height: 100vh;
+    float: right;
+    margin: 25px 0;
+
+}
+
+/* POPUP SECTION  */
+
+/* #popupSection{
+    border: 1px solid red;
+    width: 80vw;
+    height: 100vh;
+    float: right;
+} */
+
+/* ABOUT US SECTION  */
+
+#aboutUs{
+    border: 1px solid brown;
+    width: 100vw;
+    height: 100vh;
+    float: right;
+    margin: 25px 0;
+
+}
+
+/* KEY FACILITIES SECTION  */
+
+#keyFacilities{
+    border: 1px solid grey;
+    width: 100vw;
+    height: 100vh;
+    float: right;
+    margin: 25px 0;
+
+}
+
+/* CONTACT US SECTION  */
+
+#contactUs{
+    border: 1px solid black;
+    width: 100vw;
+    height: 100vh;
+    float: right;
+    margin: 25px 0;
+
+}
+
+/* FOOTER SECTION  */
+
+#footerSection{
+    border: 1px solid blue;
+    width: 100vw;
+    height: auto;
+    float: right;
+    margin: 25px 0;
+
+}
