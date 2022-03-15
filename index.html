@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="links/bootstrap-css.php">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Online Banking System</title>
+
+    <style>
+        .card {
+            border-radius: 15px 30px red;
+            padding: 12px;
+            box-shadow: 1px;
+            color: blue;
+        }
+    </style>
 </head>
+
 <body>
     <!-- PRELOADER  -->
     <div id="preloaderSection">
@@ -16,12 +32,12 @@
         <!-- NAVBAR -->
         <nav id="navbarSection">
             <!-- DON'T DO ANYTHING HERE  -->
-            
+
         </nav>
         <!-- CAROUSEL SECTION  -->
         <div id="carouselSection">
             <!-- DON'T DO ANYTHING HERE  -->
-            
+
         </div>
         <!-- POPUP SECTION  -->
         <div id="popupSection">
@@ -30,23 +46,89 @@
         <!-- ABOUT US SECTION  -->
         <div id="aboutUs">
             <h1>About Us</h1>
-            
+
         </div>
         <!-- KEY FACILITIES SECTION  -->
         <div id="keyFacilities">
             <h1>Key Facilities</h1>
-            
+
         </div>
         <!-- CONTACT US  -->
         <div id="contactUs">
-            <h1>Contact Us</h1>
+            <div class="font-weight-bold text-center"> <h1>Contact Us</h1></div>
+           
+            <div class="container mt-3">
+                <div class="row  justify-content-between">
+                    <div class="card col-lg-6 col-md-12 col-12">
+                        <h6 class="text-center pb-3">Fill The Form For any Query.</h6>
+                        <form class="row g-3">
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Full Name">
+                            </div>
+                            <br>
+                            <br>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Mobile Number">
+                            </div> <br>
+                            <br>
+                            <div class="col-12">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div> <br>
+                            <br>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                            </div> <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label><input type="checkbox"> Remember me</label>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <div class="col-8">
+                                    <button type="submit" class="btn btn-block btn-primary">submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-6 bor">
+                        <div class="row d-flex justify-content-around">
+                            <div class="col-lg-6 col-md-12 col-12">
+                                <div class="row pt-3">
+                                    <div class="info">
+                                        <div class="address m-4">
+                                            <img src="images/location.png" alt="" height="42" width="42">
+                                            <h4>Location:</h4>
+                                            <h6>Kankinara North24parganas,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; West
+                                                Bengal,india</h6>
+                                        </div>
+                                        <div class="email m-4">
+                                            <img src="images/gmail.png" alt="" height="42" width="42">
+                                            <h4>Email:</h4>
+                                            <h6><a href="mailto:parweena224@gmail.com">parweena224@gmail.com</a></h6>
+                                        </div>
+                                        <div class="Number m-4">
+                                            <img src="images/call.png" alt="""height=" 42" width="42">
+                                            <h4>Mobile:</h4>
+                                            <h6><a href="tel:">1162908880</a></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- FOOTER  -->
         <footer>
             <div id="footerSection">
-                
+
             </div>
         </footer>
     </div>
 </body>
+
 </html>
