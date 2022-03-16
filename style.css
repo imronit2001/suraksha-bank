@@ -215,10 +215,36 @@ nav li:hover a{
 #aboutUs{
     border: 1px solid brown;
     width: 100vw;
-    height: 100vh;
-    float: right;
+    height: 100vh; 
     margin: 25px 0;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* float: right;
+   
+    /* background: url(images/s1.jpg) no-repeat; */
 
+
+}
+.AboutImg{
+    opacity: 0.9;
+    position: absolute;
+    width: 100%;
+    height: auto;
+
+}
+.AboutContent{
+    border-radius: 1px black;
+    position: relative;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    height: 350px;
+    width: 450px;
+
+  
+ 
 }
 
 /* KEY FACILITIES SECTION  */
@@ -248,7 +274,7 @@ nav li:hover a{
 #footerSection{
     border: 1px solid blue;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     float: right;
     margin: 25px 0;
 
