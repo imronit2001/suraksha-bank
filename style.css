@@ -36,10 +36,14 @@ h1{
 #carouselSection{
     border: 1px solid green;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     float: right;
-    margin: 25px 0;
+    margin-bottom: 25px;
 
+}
+#carouselSection .carousel-item img{
+    width: 100vw;
+    height: 85vh;
 }
 
 /* POPUP SECTION  */
