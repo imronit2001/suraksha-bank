@@ -215,12 +215,9 @@ nav li:hover a{
 #aboutUs{
     border: 1px solid brown;
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;
     margin: 25px 0;
-   display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    background-image: linear-gradient(to right, rgb(38, 22, 97),rgb(73, 160, 172));
     /* float: right;
    
     /* background: url(images/s1.jpg) no-repeat; */
@@ -228,20 +225,18 @@ nav li:hover a{
 
 }
 .AboutImg{
-    opacity: 0.9;
+    margin-top: 80px;
     position: absolute;
-    width: 100%;
-    height: auto;
-
 }
 .AboutContent{
-    border-radius: 1px black;
+    /* border-radius: 1px black;
     position: relative;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     height: 350px;
-    width: 450px;
+    width: 450px; */
+    
 
   
  
