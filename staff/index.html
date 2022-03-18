@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
-  <link rel="icon" type="image/x-icon" href="images/switchbank.png">
+  <title>Staff Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="../admin/images/switchbank.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/sidenavbar.css">
+  <link rel="stylesheet" href="../admin/css/dashboard.css">
+  <link rel="stylesheet" href="../admin/css/sidenavbar.css">
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -21,7 +21,7 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-      <i class='bx bxs-bank'></i>
+        <i class='bx bxs-bank'></i>
       <div class="logo_name">Switch Bank</div>
       <i class='bx bx-menu' id="btn"></i>
     </div>
@@ -35,38 +35,38 @@
       </li>
       <li>
         <a href="#">
-          <i class='bx bx-wallet'></i>
-          <span class="links_name">Bank Balance</span>
+            <i class='bx bx-user-plus'></i>
+            <span class="links_name">New a/c Application</span>
         </a>
-        <span class="tooltip">Bank Balance</span>
+        <span class="tooltip">New a/c Application</span>
       </li>
       <li>
         <a href="#">
-          <i class='bx bx-transfer'></i>
-          <span class="links_name">Transaction Record</span>
+            <i class='bx bx-credit-card'></i>
+          <span class="links_name">Credit Card Request</span>
         </a>
-        <span class="tooltip">Transaction Record</span>
+        <span class="tooltip">Credit Card Request</span>
       </li>
       <li>
         <a href="#">
-          <i class='bx bxs-user-plus'></i>
-          <span class="links_name">Add Staff</span>
+            <i class='bx bxl-mastercard'></i>
+          <span class="links_name">Debit Card Request</span>
         </a>
-        <span class="tooltip">Add Staff</span>
+        <span class="tooltip">Debit Card Request</span>
       </li>
       <li>
         <a href="#">
-          <i class='bx bxs-user-account'></i>
-          <span class="links_name">Manage Staffs</span>
+            <i class='bx bx-plus'></i>
+          <span class="links_name">Credit Money</span>
         </a>
-        <span class="tooltip">Manage Staffs</span>
+        <span class="tooltip">Credit Money</span>
       </li>
       <li>
         <a href="#">
-          <i class='bx bx-user-plus'></i>
-          <span class="links_name">Add Manager</span>
+            <i class='bx bx-minus'></i>
+          <span class="links_name">Debit Money</span>
         </a>
-        <span class="tooltip">Add Manager</span>
+        <span class="tooltip">Debit Money</span>
       </li>
       <li>
         <a href="#">
@@ -74,6 +74,27 @@
           <span class="links_name">Manage Customers</span>
         </a>
         <span class="tooltip">Manage Customers</span>
+      </li>
+      <li>
+        <a href="#">
+            <i class='bx bxs-edit'></i>
+          <span class="links_name">KYC Application</span>
+        </a>
+        <span class="tooltip">KYC Application</span>
+      </li>
+      <li>
+        <a href="#">
+            <i class='bx bxs-book-alt'></i>
+          <span class="links_name">Passbook Request</span>
+        </a>
+        <span class="tooltip">Passbook Request</span>
+      </li>
+      <li>
+        <a href="#">
+            <i class='bx bx-book'></i>
+          <span class="links_name">ChequeBook Request</span>
+        </a>
+        <span class="tooltip">ChequeBook Request</span>
       </li>
       <li>
         <a href="#">
@@ -105,13 +126,6 @@
       </li>
       <li>
         <a href="#">
-          <i class='bx bx-git-branch'></i>
-          <span class="links_name">Branch change</span>
-        </a>
-        <span class="tooltip">Branch change</span>
-      </li>
-      <li>
-        <a href="#">
           <i class='bx bx-credit-card'></i>
           <span class="links_name">Credit Card a/c</span>
         </a>
@@ -119,10 +133,24 @@
       </li>
       <li>
         <a href="#">
-          <i class='bx bxs-wallet-alt'></i>
+            <i class='bx bxs-wallet'></i>
           <span class="links_name">Fixed Deposits</span>
         </a>
         <span class="tooltip">Fixed Deposits</span>
+      </li>
+      <li>
+        <a href="#">
+            <i class='bx bxs-contact' ></i>
+          <span class="links_name">Contact Customers</span>
+        </a>
+        <span class="tooltip">Contact Customers</span>
+      </li>
+      <li>
+        <a href="#">
+            <i class='bx bx-block' ></i>
+          <span class="links_name">Blocked Accounts</span>
+        </a>
+        <span class="tooltip">Blocked Accounts</span>
       </li>
       <li>
         <a href="#">
@@ -150,7 +178,7 @@
       </div>
       <li class="profile">
         <div class="profile-details">
-          <img src="images/ronit.JPG" alt="profileImg">
+          <img src="../admin/images/ronit.JPG" alt="profileImg">
           <div class="name_job">
             <div class="name">Ronit Singh</div>
             <div class="job">Web designer</div>
@@ -168,85 +196,133 @@
             <h1>0000</h1>
           </div>
           <div class="content-right">
-            <img src="images/customer.png" alt="customer.png">
+            <img src="../admin/images/customer.png" alt="customer.png">
           </div>
         </div>
         <div class="content-bottom">
           <h1>Total Customers</h1>
         </div>
       </div>
+      
       <div class="content">
         <div class="content-box">
           <div class="content-left">
             <h1>0000</h1>
           </div>
           <div class="content-right">
-            <img src="images/staff.png" alt="staff.png">
-          </div>
-        </div>
-        <div class="content-bottom">
-          <h1>Total Staffs</h1>
-        </div>
-      </div>
-      <div class="content">
-        <div class="content-box">
-          <div class="content-left">
-            <h1>0000</h1>
-          </div>
-          <div class="content-right">
-            <img src="images/inactive-customer.png" alt="inactve-customer.png">
+            <img src="../admin/images/inactive-customer.png" alt="inactve-customer.png">
           </div>
         </div>
         <div class="content-bottom">
           <h1>Inactive Customers</h1>
         </div>
       </div>
+      
       <div class="content">
         <div class="content-box">
           <div class="content-left">
             <h1>0000</h1>
           </div>
           <div class="content-right">
-            <img src="images/today-transaction.png" alt="toay-transaction.png">
-          </div>
-        </div>
-        <div class="content-bottom">
-          <h1>Today's Transaction</h1>
-        </div>
-      </div>
-      <div class="content">
-        <div class="content-box">
-          <div class="content-left">
-            <h1>0000</h1>
-          </div>
-          <div class="content-right">
-            <img src="images/fixed-deposit.png" alt="fixed-deposit.png">
+            <img src="../admin/images/fixed-deposit.png" alt="fixed-deposit.png">
           </div>
         </div>
         <div class="content-bottom">
           <h1>Fixed Deposits</h1>
         </div>
       </div>
+
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>1000</h1>
+            <h1>0000</h1>
           </div>
           <div class="content-right">
-            <img src="images/branch-change.png" alt="branch-change.png">
+            <img src="../admin/images/new-account.png" alt="new-accountpng">
           </div>
         </div>
         <div class="content-bottom">
-          <h1>Branch Change Requests</h1>
+          <h1>New A/C Opening Request</h1>
         </div>
       </div>
+
+      <div class="content">
+        <div class="content-box">
+          <div class="content-left">
+            <h1>0000</h1>
+          </div>
+          <div class="content-right">
+            <img src="../admin/images/debit-card.png" alt="debit-card.png">
+          </div>
+        </div>
+        <div class="content-bottom">
+          <h1>Debit Card Requests</h1>
+        </div>
+      </div>
+
+      
+      <div class="content">
+        <div class="content-box">
+          <div class="content-left">
+            <h1>0000</h1>
+          </div>
+          <div class="content-right">
+              <img src="../admin/images/creditcard.png" alt="creditcard.png">
+            </div>
+        </div>
+        <div class="content-bottom">
+          <h1>Credit Card Application</h1>
+        </div>
+      </div>
+        <div class="content">
+            <div class="content-box">
+            <div class="content-left">
+                <h1>0000</h1>
+            </div>
+            <div class="content-right">
+                <img src="../admin/images/passbook.png" alt="passbookpng">
+            </div>
+            </div>
+            <div class="content-bottom">
+            <h1>New Passbook Request</h1>
+            </div>
+        </div>
+
+      <div class="content">
+        <div class="content-box">
+          <div class="content-left">
+            <h1>0000</h1>
+          </div>
+          <div class="content-right">
+            <img src="../admin/images/chequebook.png" alt="chequebook.png">
+          </div>
+        </div>
+        <div class="content-bottom">
+          <h1>Cheque Book Requests</h1>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="content-box">
+          <div class="content-left">
+            <h1>0000</h1>
+          </div>
+          <div class="content-right">
+            <img src="../admin/images/blocked-user.png" alt="blocked-user.png">
+          </div>
+        </div>
+        <div class="content-bottom">
+          <h1>Blocked Accounts</h1>
+        </div>
+      </div>
+      
       <div class="content">
         <div class="content-box">
           <div class="content-left">
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/saving-account.png" alt="saving-account.png">
+            <img src="../admin/images/saving-account.png" alt="saving-account.png">
           </div>
         </div>
         <div class="content-bottom">
@@ -259,7 +335,7 @@
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/current-account.png" alt="customer.png">
+            <img src="../admin/images/current-account.png" alt="customer.png">
           </div>
         </div>
         <div class="content-bottom">
@@ -272,20 +348,21 @@
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/credit-card.png" alt="credit-cardpng">
+            <img src="../admin/images/credit-card.png" alt="credit-cardpng">
           </div>
         </div>
         <div class="content-bottom">
           <h1>Total Credit Card a/c</h1>
         </div>
       </div>
+      
       <div class="content">
         <div class="content-box">
           <div class="content-left">
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/home-loan.png" alt="home-loan.png">
+            <img src="../admin/images/home-loan.png" alt="home-loan.png">
           </div>
         </div>
         <div class="content-bottom">
@@ -298,7 +375,7 @@
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/study-loan.png" alt="study-loan.png">
+            <img src="../admin/images/study-loan.png" alt="study-loan.png">
           </div>
         </div>
         <div class="content-bottom">
@@ -311,7 +388,7 @@
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/personal-loan.png" alt="personal-loanpng">
+            <img src="../admin/images/personal-loan.png" alt="personal-loanpng">
           </div>
         </div>
         <div class="content-bottom">
@@ -324,33 +401,21 @@
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/car-loan.png" alt="car-loanpng">
+            <img src="../admin/images/car-loan.png" alt="car-loanpng">
           </div>
         </div>
         <div class="content-bottom">
           <h1>Car Loans</h1>
         </div>
       </div>
+
       <div class="content">
         <div class="content-box">
           <div class="content-left">
             <h1>1000</h1>
           </div>
           <div class="content-right">
-            <img src="images/branch-change.png" alt="branch-change">
-          </div>
-        </div>
-        <div class="content-bottom">
-          <h1>Total Branches</h1>
-        </div>
-      </div>
-      <div class="content">
-        <div class="content-box">
-          <div class="content-left">
-            <h1>1000</h1>
-          </div>
-          <div class="content-right">
-            <img src="images/helpline.png" alt="helpline">
+            <img src="../admin/images/helpline.png" alt="helpline">
           </div>
         </div>
         <div class="content-bottom">
@@ -362,7 +427,7 @@
     </div>
 
   </section>
-  <script src="/admin/javascript/sidenavbar.js">  </script>
+  <script src="../admin/javascript/sidenavbar.js">  </script>
 </body>
 
 </html>
