@@ -41,10 +41,6 @@ h1{
     margin-bottom: 25px;
 
 }
-#carouselSection .carousel-item img{
-    width: 100vw;
-    height: 85vh;
-}
 
 /* POPUP SECTION  */
 
@@ -62,8 +58,6 @@ h1{
     width: 100vw;
     height: 100vh;
     margin: 25px 0;
-<<<<<<< HEAD
-    background-image: linear-gradient(to right, rgb(38, 22, 97),rgb(73, 160, 172));
     /* float: right;
 =======
    display: flex;
@@ -81,7 +75,6 @@ h1{
 <<<<<<< HEAD
     margin-top: 80px;
     position: absolute;
-=======
     position: absolute;
     width: 90vw;
     height: 80vh;
