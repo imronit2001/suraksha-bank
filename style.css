@@ -98,12 +98,28 @@ h1{
     height: 100vh;
     float: right;
     margin: 25px 0;
+    padding: 0px 5px ;
 
+}
+#keyFacilities h2{
+    font-family: "Times New Roman", Times, serif;
+  background: -webkit-linear-gradient(rgb(148, 32, 123), rgb(77, 24, 173));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .items .card{
     box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.26);
     margin-top: 12px;
+    cursor: pointer;
+    z-index: 0;
+    transition: 0.2s all;
 }
+.items .card:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(38, 8, 109, 0.5);
+    transform: scale(1.05);
+}
+
 #keyFacilities .btnMore{
    font-size: 16px;
     color: #fff;
@@ -115,8 +131,14 @@ h1{
     margin: 0 auto;
     
 }
-.btnMore span{
-    
+.items .card .content{
+    margin: 10px 0px;
+ 
+}
+
+.items .card .content a:hover{
+    background:linear-gradient(blue,purple);
+    color: #fff;
 }
 
 
