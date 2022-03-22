@@ -175,20 +175,21 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
     box-shadow: 5px 5px 18px rgb(51, 50, 50);
 
 }
-.AboutImg{
-    margin-top: 80px;
-    position: absolute;
-    position: absolute;
-    width: 90vw;
-    height: 80vh;
-    opacity: 1;
+#aboutUs h3{
+    margin-top: 8px;
+    font-family: "Times New Roman", Times, serif;
 
 }
-.AboutContent{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    height: 350px;
-    width: 450px; 
+.borderAnimate{
+    position: relative;
+    display: block;
+    width: 145px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgb(46, 23, 173);
+    overflow: hidden;
 }
+
 
 /* KEY FACILITIES SECTION  */
 
