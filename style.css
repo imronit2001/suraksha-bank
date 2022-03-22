@@ -20,6 +20,10 @@ body{
 }
 h1{
     text-align: center;
+    text-transform: uppercase;
+    border-bottom: 3px solid grey;
+    padding: 25px 0px 10px 0px;
+    color: #561423;
 }
 /* NAVBAR SECTION  */
 
@@ -46,12 +50,14 @@ h1{
     text-decoration: none;
     margin: 0px 40px;
 }
-#navbarSection h1{
+#navbarSection h2{
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 700;
     text-shadow: 2px 2px 2px rgba(128, 124, 124, 0.712);
     color: #fff;
+    text-decoration: none;
+    text-align: center;
 }
 .navbar{
     width: 85%;
@@ -119,6 +125,7 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
     height: 75vh;
     margin: 9% auto;
     margin-bottom: 25px;
+    box-shadow: 5px 5px 18px rgb(51, 50, 50);
 
 }
 #carouselSection .carousel-item {
@@ -160,11 +167,13 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
 /* ABOUT US SECTION  */
 
 #aboutUs{
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
     width: 95vw;
     height: auto;
-    margin: 25px auto;
-    padding: 25px;
+    margin: 50px auto;
+    padding: 35px;
+    box-shadow: 5px 5px 18px rgb(51, 50, 50);
+
 }
 .AboutImg{
     margin-top: 80px;
@@ -184,26 +193,33 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
 /* KEY FACILITIES SECTION  */
 
 #keyFacilities{
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     width: 95vw;
     height: auto;
-    margin: 25px auto;
-    padding: 25px;
-
-
+    margin: 50px auto;
+    box-shadow: 5px 5px 18px rgb(51, 50, 50);
 }
 #keyFacilities h2{
     font-family: "Times New Roman", Times, serif;
-  background: -webkit-linear-gradient(rgb(148, 32, 123), rgb(77, 24, 173));
+  /* background: -webkit-linear-gradient(rgb(148, 32, 123), rgb(77, 24, 173));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  color: rgb(58, 52, 52);
+  margin-top: -30px;
+}
+#keyFacilities .conatinerFluid{
+    /* border: 1px solid red; */
+    padding: 35px 25px;
 }
 .items .card{
-    box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.26);
+    /* box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.26); */
     margin-top: 12px;
     cursor: pointer;
     z-index: 0;
     transition: 0.2s all;
+    /* border: 1px solid red; */
+    box-shadow: 1px 1px 10px rgb(51, 50, 50);
+
 }
 .items .card:hover{
     z-index: 1;
@@ -236,13 +252,55 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
 /* CONTACT US SECTION  */
 
 #contactUs{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 95vw;
     height: auto;
     margin: 25px auto;
-    padding: 25px;
+    /* text-align: center; */
+    box-shadow: 5px 5px 18px rgb(51, 50, 50);
+
+}
+#contactUs .container{
+    /* border: 1px solid red; */
+    margin: 0 auto;
+}
+#contactUs .container .card{
+    /* border: 1px solid blue; */
+    width: 40%;
+    padding: 35px 50px;
+    margin: 55px auto;
+    border-right: 8px solid rgb(230, 230, 230);
+    border-bottom: 8px solid rgb(230, 230, 230);
+    border-top: 8px solid blue;
+    border-left: 8px solid blue;
+    border-radius: 5px;
+
+}
+#contactUs .container .card h6{
+    text-transform: uppercase;
+    color: rgb(150, 15, 15);
+}
+#contactUs .container .card button{
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #561423;
+    outline: none;
+
 }
 
+#contactUs .email{
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+ 
+}
+#contactUs .email h4{
+    font-size: 15px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
 /* FOOTER SECTION  */
 
 footer{
