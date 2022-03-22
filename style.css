@@ -12,8 +12,11 @@
     width: 0;
 }
 body{
-    /* background: red; */
     font-family: 'Poppins',sans-serif;
+    background: linear-gradient(30deg, #3f87a6, #ebf8e1, #f69c3ca1, #561423);
+    background-color: grey;
+    opacity: 12;
+    z-index: -1111;
 }
 h1{
     text-align: center;
@@ -21,7 +24,6 @@ h1{
 /* NAVBAR SECTION  */
 
 #navbarSection{
-    /* border: 1px solid red; */
     width: 100vw;
     height: 10px;
     height: auto;
@@ -31,8 +33,6 @@ h1{
     z-index: 1;
     background: linear-gradient(178deg, #0000e6b6 35%, transparent 65%);
     background-color: #c5c2c294;
-    /* -webkit-clip-path: polygon(100% 0%, 100% 10%, 100% 100%); */
-    /* border-bottom: 1px solid rgba(255, 249, 249, 0.747); */
     box-shadow: 2px 2px  rgba(128, 128, 128, 0.568);
 }
 #navbarSection .heading{
@@ -55,33 +55,22 @@ h1{
 }
 .navbar{
     width: 85%;
-    /* height: .8%; */
-    /* margin: 10px auto; */
-    /* margin-left: 19vw; */
-    /* border: 1px solid blue; */
 }
 .navbar ul{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid red; */
 }
 .navbar ul li{
     justify-content: space-between;
-    /* border: 1px solid grey; */
     padding: 3px 10px;
-    /* font-size: 20px; */
-    /* font-weight: 600; */
     border-radius: 5px;
 }
 
 
 #navbarSection .navbar ul .icon{
     display: flex;
-    /* border: 1px solid red; */
-    
-    
 }
 nav ul li a{
     text-decoration: none;
@@ -101,9 +90,6 @@ nav ul li a{
 .navbar ul li a:hover::after{
     width: 100%;
 }
-/* .navbar ul li:hover{
-    background: rgba(160, 150, 150, 0.342);
-} */
 #navbarSection .navbar ul .icon li{
     margin: 0px 20px;
     border: none;
@@ -111,12 +97,6 @@ nav ul li a{
 }
 #navbarSection .navbar ul .icon li a{
     font-size: 27px;
-    background: -webkit-radial-gradient(33% 100% circle, #dcdde0 4%, #dbdae0 30%, #2739df 62%, #fcfbfa 85%, #1d3dca);
-    background: radial-gradient(circle at 33% 100%, #3b5fff 4%, #1537cc 28%, #a9aebe 62%, #e6e4e3 85%, #fafaf9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-
 }
 nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
     border-bottom: 3px solid rgb(150, 15, 15);
@@ -130,7 +110,11 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
 /* CAROUSEL SECTION  */
 
 #carouselSection{
-    /* border: 1px solid green; */
+    border-top: 8px solid blue;
+    border-left: 8px solid blue;
+    border-right: 8px solid white;
+    border-bottom: 8px solid white;
+    border-radius: 5px;
     width: 95vw;
     height: 75vh;
     margin: 9% auto;
@@ -138,13 +122,11 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
 
 }
 #carouselSection .carousel-item {
-    border: 1px solid red;
     width: 100%;
     height: 50%;
 }
 #carouselSection .carousel-item img{
     width: 100%;
-    /* height: -10%; */
 }
 
 /* POPUP SECTION  */
@@ -161,16 +143,9 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
 #aboutUs{
     border: 1px solid brown;
     width: 95vw;
-    height: 100vh;
+    height: auto;
     margin: 25px auto;
-    /* float: right;
-   display: flex;
-    justify-content: center;
-    position: relative; 
-    float: right;
-   
-    /* background: url(images/s1.jpg) no-repeat; */
-
+    padding: 25px;
 }
 .AboutImg{
     margin-top: 80px;
@@ -178,14 +153,10 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
     position: absolute;
     width: 90vw;
     height: 80vh;
-    opacity: 0.3;
+    opacity: 1;
 
 }
 .AboutContent{
-    /* border-radius: 1px black;
-    position: relative;
-    text-align: center;
-    /* background-color: rgba(255, 255, 255, 0.1); */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     height: 350px;
     width: 450px; 
@@ -197,9 +168,9 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
     border: 1px solid grey;
     width: 95vw;
     height: auto;
-    /* float: right; */
     margin: 25px auto;
-    /* padding: 0px 5px ; */
+    padding: 25px;
+
 
 }
 #keyFacilities h2{
@@ -248,31 +219,109 @@ nav ul li a:hover, #navbarSection .navbar ul .icon li a:hover{
 #contactUs{
     border: 1px solid black;
     width: 95vw;
-    height: 100vh;
-    /* float: right; */
+    height: auto;
     margin: 25px auto;
-
+    padding: 25px;
 }
 
 /* FOOTER SECTION  */
 
-#footerSection{
-    border: 0.5px solid rgba(128, 128, 128, 0.568);
-    width: 100vw;
-    height: 100px;
-    float: right;
+footer{
+    /* border: 1.8px solid rgba(128, 128, 128, 0.568); */
+    border-top: 3px solid rgb(94, 90, 90);
+    border-bottom: 5px solid rgb(51, 50, 50);
+    width: 99.99vw;
+    height: auto;
+    margin: 0 auto;
     margin-top: 15px;
     bottom: 0;
     text-align: center;
-    background:rgba(255, 245, 245, 0.4);
+    /* background: linear-gradient(10deg, rgba(25, 0, 255, 0.479), rgba(233, 203, 205, 0.87)); */
+    /* background-color: rgba(0, 0, 0, 0.562); */
+    /* box-shadow: 2px 2px 10px 3px rgba(37, 36, 37, 0.938); */
+    /* background: linear-gradient(187deg, rgba(0, 0, 0, 0.671) 54%, rgba(32, 85, 60, 0.753) 55%); */
+    background-color: rgba(0, 0, 0, 0.99);
 }
-.footer p{
-    font-size: 17px;
+
+.col_white_amrc { 
+    color:rgb(8, 53, 150);
+}
+
+.pt2 { 
+    padding-top:10px ; 
+    margin-bottom:-12px ;
+}
+footer p { 
+    font-size:13px; 
+    color:#CCC; 
+    padding-bottom:0px; 
+}
+
+.footer_ul_amrc { 
+    margin:25px 0px 15px 0px; 
+    list-style-type:none ; 
+    font-size:14px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_ul_amrc li a{ 
+    color:rgb(114, 11, 11);
+    font-weight: 500;
+}
+.footer_ul_amrc li a:hover, .foote_bottom_ul_amrc li a:hover, .container p a:hover{ 
+    color:#fff; 
+    text-decoration:none;
+}
+.fleft { 
+    float:left;
+}
+
+.footer_ul2_amrc {
+    margin:0px; 
+    list-style-type:none; 
+    padding:0px;
+}
+.footer_ul2_amrc li p { 
+    display:table; 
+}
+.footer_ul2_amrc li a:hover { 
+    text-decoration:none;
+}
+
+.bottom_border { 
+    border-bottom:1px solid #20528596;
+}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+    width: 100%;
+	display:flex;
+    justify-content: space-between;
+    align-items: center;
+	margin-top:8px;
+	margin-bottom: 3px;
+}
+.foote_bottom_ul_amrc li { 
+    display:inline;
+}
+.foote_bottom_ul_amrc li a { 
+    color:rgb(112, 31, 31); 
+    margin:0 12px;
     font-weight: 600;
+
+}
+.container p{
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
     text-align: center;
     margin-top: 25px;
-    
+    color:rgb(112, 31, 31); 
+
 }
-.footer .copy{
-    margin-top: -20px;
+.container strong{
+    color:rgb(48, 48, 48);
+
 }
+
