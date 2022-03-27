@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.staff-body{
+    /* border: 2px solid black; */
+    /* background: rgb(172, 224, 27); */
+    height: 100%;
+    margin: 20px 20px;
+
+}
+.bankname{
+    /* border: 2px solid black; */
+    font-size: 30px;
+    width: auto;
+    margin: 0;
+}
+.branchname{
+    /* border: 2px solid black; */
+    font-size: 15px;
+    width: auto;
+    margin: 0;
+}
+.title{
+    /* border: 2px solid black; */
+    font-size: 25px;
+    width: auto;
+    margin: 0;
+    text-decoration: underline;
+}
+
+.searchbox{
+    width: auto;
+    margin-top: 5px;
+    padding: 0px;
+}
+
+.searchbox form{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+}
+.searchbox form input{
+    width: auto;
+    margin: 10px;
+}
+.searchbox form button{
+    width: auto;
+    margin: 10px;
+}
+
+.staff-table{
+    /* border: 2px solid black; */
+    margin: 20px 10px;
+    overflow-x: scroll;
+}
+
+
+.profile-body{
+    /* border: 2px solid black; */
+    width: auto;
+    /* height: 100vh; */
+    margin-bottom: 40px;
+}
+
+.staff-info{
+    /* border: 2px solid red; */
+}
+.staff-info-heading{
+    /* border: 2px solid black; */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(24 116 237 / 54%);
+}
+.staff-info-heading img{
+    height: 100%;
+    width: auto;
+    margin: 20px;
+}
+.staff-info-heading h1{
+    width: auto;
+    font-size: 30px;
+    margin: 30px 5px;
+}
+.staff-info-block2{
+    border-bottom: 1.5px solid rgba(128, 128, 128, 0.842);
+    margin: 0px 10px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.staff-info-block2-left{
+    /* border: 2px solid black; */
+    height: 90%;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.staff-info-block2-left img{
+    height: 100%;
+    width: auto;
+    margin: auto;
+
+}
+.staff-info-block2-mid{
+    /* border: 2px solid blue; */
+    width: 350px;
+    height: 90%;
+    margin-left: 20px;
+}
+.staff-info-block2-right{
+    /* border: 2px solid blue; */
+    width: 350px;
+    height: 90%;
+    margin-left: 20px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+}
+.staffname{
+    height: 50%;
+    padding-top: 30px;
+    font-size: 30px;
+}
+.stafftype{
+    font-size: 15px;
+    bottom: 0;
+    padding-top: 5%;
+    height: 25%;
+}
+.staffid{
+    font-size: 18px;
+    height: 25%;
+}
+
+.staff-address, .staff-more-detail, .staff-document{
+    margin-top: 20px;
+}
+.staff-address-block{
+    border-bottom: 1.5px solid rgba(128, 128, 128, 0.842);
+    margin: 0px 10px;
+    height: 200px;
+    padding: 30px;
+}
+.staff-more-detail-block{
+    border-bottom: 1.5px solid rgba(128, 128, 128, 0.842);
+    margin: 0px 10px;
+    /* height: 200px; */
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.staff-more-detail-block p{
+    width: 50%;
+}
+.staff-document-block{
+    /* border-bottom: 1.5px solid rgba(128, 128, 128, 0.842); */
+    /* margin: 0px 10px; */
+    /* height: 200px; */
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.staff-document-block .doc{
+    width: 40%;
+    margin: 20px;
+}
+.staff-document-block .doc img{
+    width: 100%;
+    height: 90%;
+}
+
+.bottom-button{
+    margin: 10px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-button button{
+    margin: 0 15px;
+}
