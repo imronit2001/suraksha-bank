@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Staff</title>
+    <link rel="icon" type="image/x-icon" href="images/switchbank.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/add-staff.css">
+    <link rel="stylesheet" href="css/sidenavbar.css">
+    <link rel="stylesheet" href="css/manage-staffs.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxs-bank icon'></i>
+            <div class="logo_name">Switch Bank</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-home'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-wallet'></i>
+                    <span class="links_name">Bank Balance</span>
+                </a>
+                <span class="tooltip">Bank Balance</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-transfer'></i>
+                    <span class="links_name">Transaction Record</span>
+                </a>
+                <span class="tooltip">Transaction Record</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user-plus'></i>
+                    <span class="links_name">Add Staff</span>
+                </a>
+                <span class="tooltip">Add Staff</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user-account'></i>
+                    <span class="links_name">Manage Staffs</span>
+                </a>
+                <span class="tooltip">Manage Staffs</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-plus'></i>
+                    <span class="links_name">Add Manager</span>
+                </a>
+                <span class="tooltip">Add Manager</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user-detail'></i>
+                    <span class="links_name">Manage Customers</span>
+                </a>
+                <span class="tooltip">Manage Customers</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-building-house'></i>
+                    <span class="links_name">Home Loans</span>
+                </a>
+                <span class="tooltip">Home Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-book-reader'></i>
+                    <span class="links_name">Study Loans</span>
+                </a>
+                <span class="tooltip">Study Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-car'></i>
+                    <span class="links_name">Car Loans</span>
+                </a>
+                <span class="tooltip">Car Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-circle'></i>
+                    <span class="links_name">Personal Loans</span>
+                </a>
+                <span class="tooltip">Personal Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-git-branch'></i>
+                    <span class="links_name">Branch change</span>
+                </a>
+                <span class="tooltip">Branch change</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-credit-card'></i>
+                    <span class="links_name">Credit Card a/c</span>
+                </a>
+                <span class="tooltip">Credit Card a/c</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-wallet-alt'></i>
+                    <span class="links_name">Fixed Deposits</span>
+                </a>
+                <span class="tooltip">Fixed Deposits</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-copy-alt'></i>
+                    <span class="links_name">Terms & Conditions</span>
+                </a>
+                <span class="tooltip">Terms & Conditions</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-help-circle'></i>
+                    <span class="links_name">Helpline</span>
+                </a>
+                <span class="tooltip">Helpline</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-lock'></i>
+                    <span class="links_name">Change Password</span>
+                </a>
+                <span class="tooltip">Change Password</span>
+            </li>
+            <div style="height: 150px; width: 100%;">
+
+            </div>
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="images/ronit.JPG" alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">Ronit Singh</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <main>
+            <div class="staff-heading">
+                <h1 class="bankname text-center font-weight-bold">Suraksha Bank</h1>
+                <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1>
+                <h1 class="title text-center">Add Staff Details</h1>
+            </div>
+            <div class="container">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option value="1">Mr</option>
+                            <option value="2">Mrs</option>
+                            <option value="3">Miss</option>
+                        </select>
+                        <label for="floatingSelect">Salutation</label>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md">
+                            <div class="form-floating" style="width: 100px;">
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="1">Mr</option>
+                                    <option value="2">Mrs</option>
+                                    <option value="3">Miss</option>
+                                </select>
+                                <label for="floatingSelect">Salutation</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Middle Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </section>
+    <script src="/admin/javascript/sidenavbar.js">  </script>
+</body>
+
+</html>
