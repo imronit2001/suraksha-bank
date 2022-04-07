@@ -1,0 +1,444 @@
+<<<<<<< HEAD
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(214, 214, 214, 0.904);
+    display: grid;
+    grid-template-columns: 65px repeat(7, auto);
+    grid-template-rows: repeat(8, auto);
+    /* grid-template-columns: 4.8vw 13.6vw 13.6vw 13.6vw 13.6vw 13.6vw 13.6vw 13.6vw;
+    grid-template-rows: 20vh 11.5vh 11.5vh 11.5vh 11.5vh 11.5vh 11.5vh 11.5vh; */
+}
+
+.nav {
+    background-color: rgb(255, 255, 255);
+    grid-row: 1/9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 100vh;
+    background-color: black;
+    color: aliceblue;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.nav:hover {
+    width: 220px;
+    overflow-y: scroll
+}
+
+.menu_item {
+    padding: 10px;
+    font-size: .9em;
+    text-transform: capitalize;
+}
+
+.menu_item:hover {
+    background-color: aqua;
+    color: black;
+    cursor: pointer;
+}
+
+.fa {
+    font-size: 25px;
+    width: 40px;
+    padding: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(241, 184, 184);
+    border-radius: 10px;
+}
+
+.acDetails {
+    background-color: rgb(0, 197, 247);
+    grid-column: 2/9;
+    /* grid-row: 1/2; */
+}
+
+.details {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.heading {
+    font-size: 1.7em;
+    color: rgba(133, 125, 125, 0.918);
+    text-transform: capitalize;
+    margin: 10px;
+}
+
+.headline {
+    font-size: 1.3em;
+    color: rgba(133, 125, 125, 0.918);
+    text-transform: capitalize;
+}
+
+.value {
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    text-transform: capitalize;
+}
+
+.value1 {
+    font-size: 13.5px;
+}
+
+.logo {
+    /* width: 60px;
+    height: 60px;
+    background-color: black; */
+    font-size: 12px;
+}
+
+.transactionsDetails {
+    background-color: rgb(255, 255, 255);
+    grid-column: 2/7;
+    grid-row: 2/6;
+    overflow: scroll;
+    margin: 30px 15px 15px 30px;
+}
+
+.contentTable {
+    border-collapse: collapse;
+    margin: 25px 35px;
+    font-size: .9em;
+    /* min-width: 500px; */
+    width: 92%;
+}
+
+.contentTable thead tr {
+    background-color: rgb(0, 197, 247);
+    color: rgb(50, 50, 50);
+}
+
+.contentTable th {
+    padding: 10px;
+}
+
+.contentTable td {
+    padding: 5px;
+}
+
+.contentTable tbody tr {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.527);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.contentTable tbody tr:nth-of-type(even) {
+    background-color: #dfdfdf;
+}
+
+.contentTable tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(0, 197, 247);
+}
+
+.contentTable tbody tr.active-row {
+    font-weight: bold;
+    color: rgb(0, 197, 247);
+}
+
+.cardDetails {
+    background-color: rgb(255, 255, 255);
+    grid-column: 7/9;
+    grid-row: 2/6;
+    margin: 30px 30px 15px 15px;
+    overflow: scroll;
+}
+
+.card {
+    font-size: .7em;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 40px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.btn {
+    display: flex;
+    gap: 30px;
+    margin: 0 30px;
+}
+
+.btnMore,
+.btnPay {
+    margin: 5px;
+    width: 90px;
+    border-radius: 10px;
+    padding: 1px;
+    color: rgb(0, 197, 247);
+    border-color: rgb(0, 197, 247);
+}
+
+.btnPay {
+    color: white;
+    background-color: rgb(0, 197, 247);
+}
+
+.loan {
+    background-color: rgb(255, 255, 255);
+    grid-column: 7/9;
+    grid-row: 6/9;
+    margin: 15px 30px 30px 15px;
+    overflow: scroll;
+}
+
+.loanDeatals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.system {
+    background-color: rgb(255, 255, 255);
+    grid-column: 2/7;
+    grid-row: 6/9;
+    margin: 15px 15px 30px 30px
+=======
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(214, 214, 214, 0.904);
+    display: grid;
+    grid-template-columns: 65px repeat(7, auto);
+    grid-template-rows: repeat(8, auto);
+    /* grid-template-columns: 4.8vw 13.6vw 13.6vw 13.6vw 13.6vw 13.6vw 13.6vw 13.6vw;
+    grid-template-rows: 20vh 11.5vh 11.5vh 11.5vh 11.5vh 11.5vh 11.5vh 11.5vh; */
+}
+
+.nav {
+    background-color: rgb(255, 255, 255);
+    grid-row: 1/9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 100vh;
+    background-color: black;
+    color: aliceblue;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.nav:hover {
+    width: 220px;
+    overflow-y: scroll
+}
+
+.menu_item {
+    padding: 10px;
+    font-size: .9em;
+    text-transform: capitalize;
+}
+
+.menu_item:hover {
+    background-color: aqua;
+    color: black;
+    cursor: pointer;
+}
+
+.fa {
+    font-size: 25px;
+    width: 40px;
+    padding: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(241, 184, 184);
+    border-radius: 10px;
+}
+
+.acDetails {
+    background-color: rgb(0, 197, 247);
+    grid-column: 2/9;
+    /* grid-row: 1/2; */
+}
+
+.details {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.heading {
+    font-size: 1.7em;
+    color: rgba(133, 125, 125, 0.918);
+    text-transform: capitalize;
+    margin: 10px;
+}
+
+.headline {
+    font-size: 1.3em;
+    color: rgba(133, 125, 125, 0.918);
+    text-transform: capitalize;
+}
+
+.value {
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    text-transform: capitalize;
+}
+
+.value1 {
+    font-size: 13.5px;
+}
+
+.logo {
+    /* width: 60px;
+    height: 60px;
+    background-color: black; */
+    font-size: 12px;
+}
+
+.transactionsDetails {
+    background-color: rgb(255, 255, 255);
+    grid-column: 2/7;
+    grid-row: 2/6;
+    overflow: scroll;
+    margin: 30px 15px 15px 30px;
+}
+
+.contentTable {
+    border-collapse: collapse;
+    margin: 25px 35px;
+    font-size: .9em;
+    /* min-width: 500px; */
+    width: 92%;
+}
+
+.contentTable thead tr {
+    background-color: rgb(0, 197, 247);
+    color: rgb(50, 50, 50);
+}
+
+.contentTable th {
+    padding: 10px;
+}
+
+.contentTable td {
+    padding: 5px;
+}
+
+.contentTable tbody tr {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.527);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.contentTable tbody tr:nth-of-type(even) {
+    background-color: #dfdfdf;
+}
+
+.contentTable tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(0, 197, 247);
+}
+
+.contentTable tbody tr.active-row {
+    font-weight: bold;
+    color: rgb(0, 197, 247);
+}
+
+.cardDetails {
+    background-color: rgb(255, 255, 255);
+    grid-column: 7/9;
+    grid-row: 2/6;
+    margin: 30px 30px 15px 15px;
+    overflow: scroll;
+}
+
+.card {
+    font-size: .7em;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 40px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.btn {
+    display: flex;
+    gap: 30px;
+    margin: 0 30px;
+}
+
+.btnMore,
+.btnPay {
+    margin: 5px;
+    width: 90px;
+    border-radius: 10px;
+    padding: 1px;
+    color: rgb(0, 197, 247);
+    border-color: rgb(0, 197, 247);
+}
+
+.btnPay {
+    color: white;
+    background-color: rgb(0, 197, 247);
+}
+
+.loan {
+    background-color: rgb(255, 255, 255);
+    grid-column: 7/9;
+    grid-row: 6/9;
+    margin: 15px 30px 30px 15px;
+    overflow: scroll;
+}
+
+.loanDeatals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.system {
+    background-color: rgb(255, 255, 255);
+    grid-column: 2/7;
+    grid-row: 6/9;
+    margin: 15px 15px 30px 30px
+>>>>>>> 0796ed4f59fde27ba166f916b9b84c46bc4204ee
+}

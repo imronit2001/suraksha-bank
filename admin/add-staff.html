@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Staffs</title>
+    <title>Add Staff</title>
     <link rel="icon" type="image/x-icon" href="images/switchbank.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="css/manage-staffs.css">
+    <link rel="stylesheet" href="css/add-staff.css">
     <link rel="stylesheet" href="css/sidenavbar.css">
+    <link rel="stylesheet" href="css/manage-staffs.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -161,90 +165,66 @@
         </ul>
     </div>
     <section class="home-section">
-        <div class="staff-body">
+        <main>
             <div class="staff-heading">
                 <h1 class="bankname text-center font-weight-bold">Suraksha Bank</h1>
                 <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1>
-                <h1 class="title text-center">Staff Details</h1>
-                <div class="searchbox">
-                    <form>
-                        <input type="text" class="form-control" placeholder="Enter Staff Name or Id">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </form>
-                </div>
+                <h1 class="title text-center">Add Staff Details</h1>
             </div>
-            <div class="staff-table">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col" class="smallwidth">Staff Name</th>
-                            <th scope="col" class="smallwidth">Staff Id</th>
-                            <th scope="col" class="smallwidth">Role</th>
-                            <th scope="col" class="smallwidth">Phone</th>
-                            <th scope="col" class="bigwidth">Email</th>
-                            <th scope="col" >Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="table-img"><img src="Images/ronit.JPG" alt=""></th>
-                            <td><p>Ronit Singh</p></td>
-                            <td><p>15201219026</p></td>
-                            <td><p>Cashier</p></td>
-                            <td><p>7003622801</p></td>
-                            <td><p>ronitsingh7003@gmail.com</p></td>
-                            <td><p><a href="staff-details.html" target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
-                        </tr>
-                        <tr>
-                            <th class="table-img"><img src="Images/ronit.JPG" alt=""></th>
-                            <td><p>Ronit Singh</p></td>
-                            <td><p>15201219026</p></td>
-                            <td><p>Cashier</p></td>
-                            <td><p>7003622801</p></td>
-                            <td><p>ronitsingh7003@gmail.com</p></td>
-                            <td><p><a href="staff-details.html" target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
-                        </tr>
-                        <tr>
-                            <th class="table-img"><img src="Images/ronit.JPG" alt=""></th>
-                            <td><p>Ronit Singh</p></td>
-                            <td><p>15201219026</p></td>
-                            <td><p>Cashier</p></td>
-                            <td><p>7003622801</p></td>
-                            <td><p>ronitsingh7003@gmail.com</p></td>
-                            <td><p><a href="staff-details.html" target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
-                        </tr>
-                        <tr>
-                            <th class="table-img"><img src="Images/ronit.JPG" alt=""></th>
-                            <td><p>Ronit Singh</p></td>
-                            <td><p>15201219026</p></td>
-                            <td><p>Cashier</p></td>
-                            <td><p>7003622801</p></td>
-                            <td><p>ronitsingh7003@gmail.com</p></td>
-                            <td><p><a href="staff-details.html" target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
-                        </tr>
-                        <tr>
-                            <th class="table-img"><img src="Images/ronit.JPG" alt=""></th>
-                            <td><p>Ronit Singh</p></td>
-                            <td><p>15201219026</p></td>
-                            <td><p>Cashier</p></td>
-                            <td><p>7003622801</p></td>
-                            <td><p>ronitsingh7003@gmail.com</p></td>
-                            <td><p><a href="staff-details.html" target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
-                        </tr>
-                        <tr>
-                            <th class="table-img"><img src="Images/ronit.JPG" alt=""></th>
-                            <td><p>Ronit Singh</p></td>
-                            <td><p>15201219026</p></td>
-                            <td><p>Cashier</p></td>
-                            <td><p>7003622801</p></td>
-                            <td><p>ronitsingh7003@gmail.com</p></td>
-                            <td><p><a href="staff-details.html" target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
-                        </tr> 
-                    </tbody>
-                </table>
+            <div class="container">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option value="1">Mr</option>
+                            <option value="2">Mrs</option>
+                            <option value="3">Miss</option>
+                        </select>
+                        <label for="floatingSelect">Salutation</label>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md">
+                            <div class="form-floating" style="width: 100px;">
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="1">Mr</option>
+                                    <option value="2">Mrs</option>
+                                    <option value="3">Miss</option>
+                                </select>
+                                <label for="floatingSelect">Salutation</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Middle Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </div>
+        </main>
     </section>
     <script src="/admin/javascript/sidenavbar.js">  </script>
 </body>
