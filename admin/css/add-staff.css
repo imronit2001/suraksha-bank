@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+main{
+    border: 2px solid red;
+    margin-left: 10px;
+    height: 100vh;
+}
+.container{
+    border: 2px solid black;
+    width: 80%;
+    height: 80vh;
+}
