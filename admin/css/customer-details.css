@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+main{
+    border: 2px solid black;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.searchbox{
+    width: auto;
+    margin-top: 5px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.searchbox form{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    
+}
+.searchbox form input{
+    width: auto;
+    margin: 10px;
+}
+.searchbox form button{
+    width: auto;
+    margin: 10px;
+}

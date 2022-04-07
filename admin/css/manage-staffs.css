@@ -57,7 +57,31 @@
     margin: 20px 10px;
     overflow-x: scroll;
 }
+.table thead tr th{
+    margin: auto;
+}
+.smallwidth{
+    min-width: 200px;
+}
+.bigwidth{
+    min-width: 250px;;
+}
+.table tbody tr td{
+    /* border: 2px solid black; */
+    /* height: 50px; */
+    vertical-align: center;
+}
+.table tbody tr td p{
+    /* border: 2px solid red; */
+    margin: auto;
+    margin-top: 5px;
+}
 
+.table-img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 
 .profile-body{
     /* border: 2px solid black; */
@@ -172,7 +196,7 @@
 }
 
 .staff-document-block .doc{
-    width: 40%;
+    width: 25%;
     margin: 20px;
 }
 .staff-document-block .doc img{

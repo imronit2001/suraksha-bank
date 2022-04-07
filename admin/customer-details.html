@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Details</title>
+  <link rel="icon" type="image/x-icon" href="images/switchbank.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="css/manage-staffs.css">
+  <link rel="stylesheet" href="css/customer-details.css">
+  <link rel="stylesheet" href="css/sidenavbar.css">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxs-bank icon'></i>
+      <div class="logo_name">Switch Bank</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+          <i class='bx bxs-home'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="bank-balance.html">
+          <i class='bx bx-wallet'></i>
+          <span class="links_name">Bank Balance</span>
+        </a>
+        <span class="tooltip">Bank Balance</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-transfer'></i>
+          <span class="links_name">Transaction Record</span>
+        </a>
+        <span class="tooltip">Transaction Record</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-user-plus'></i>
+          <span class="links_name">Add Staff</span>
+        </a>
+        <span class="tooltip">Add Staff</span>
+      </li>
+      <li>
+        <a href="manage-staffs.html">
+          <i class='bx bxs-user-account'></i>
+          <span class="links_name">Manage Staffs</span>
+        </a>
+        <span class="tooltip">Manage Staffs</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-user-plus'></i>
+          <span class="links_name">Add Manager</span>
+        </a>
+        <span class="tooltip">Add Manager</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-user-detail'></i>
+          <span class="links_name">Manage Customers</span>
+        </a>
+        <span class="tooltip">Manage Customers</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-building-house'></i>
+          <span class="links_name">Home Loans</span>
+        </a>
+        <span class="tooltip">Home Loans</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-book-reader'></i>
+          <span class="links_name">Study Loans</span>
+        </a>
+        <span class="tooltip">Study Loans</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-car'></i>
+          <span class="links_name">Car Loans</span>
+        </a>
+        <span class="tooltip">Car Loans</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-user-circle'></i>
+          <span class="links_name">Personal Loans</span>
+        </a>
+        <span class="tooltip">Personal Loans</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-git-branch'></i>
+          <span class="links_name">Branch change</span>
+        </a>
+        <span class="tooltip">Branch change</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-credit-card'></i>
+          <span class="links_name">Credit Card a/c</span>
+        </a>
+        <span class="tooltip">Credit Card a/c</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-wallet-alt'></i>
+          <span class="links_name">Fixed Deposits</span>
+        </a>
+        <span class="tooltip">Fixed Deposits</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-copy-alt'></i>
+          <span class="links_name">Terms & Conditions</span>
+        </a>
+        <span class="tooltip">Terms & Conditions</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-help-circle'></i>
+          <span class="links_name">Helpline</span>
+        </a>
+        <span class="tooltip">Helpline</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-lock'></i>
+          <span class="links_name">Change Password</span>
+        </a>
+        <span class="tooltip">Change Password</span>
+      </li>
+      <div style="height: 150px; width: 100%;">
+
+      </div>
+      <li class="profile">
+        <div class="profile-details">
+          <img src="images/ronit.JPG" alt="profileImg">
+          <div class="name_job">
+            <div class="name">Ronit Singh</div>
+            <div class="job">Web designer</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <main>
+        <div class="staff-heading">
+            <h1 class="bankname text-center font-weight-bold">Suraksha Bank</h1>
+            <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1>
+            <h1 class="title text-center">Customer Details</h1>
+            <div class="searchbox">
+                <form>
+                    <input type="text" class="form-control" placeholder="Customer a/c no">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+                <form>
+                    <input type="text" class="form-control" placeholder="Customer Id">
+                    <button type="submit" class="btn btn-success">Search</button>
+                </form>
+                <form>
+                    <input type="text" class="form-control" placeholder="Customer Aadhar No">
+                    <button type="submit" class="btn btn-info">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="profile-body">
+            <div class="staff-info">
+                <div class="staff-info-heading">
+                    <img src="Images/customer.png" alt="">
+                    <h1>Customer Info</h1>
+                </div>
+                <div class="staff-info-block2" style="height: 250px;">
+                    <div class="staff-info-block2-left">
+                        <img src="images/ronit.JPG" alt="">
+                    </div>
+                    <div class="staff-info-block2-mid">
+                        <h1 class="staffname">Mr Ronit Singh</h1>
+                        <h1 class="stafftype">Account No : 12345678901234</h1>
+                        <h1 class="staffid">Customer Id : 15201219026</h1>
+                    </div>
+                    <div class="staff-info-block2-right">
+                        <p>Contact : 7003622801</p>
+                        <p>Email Id : ronitsingh7003@gmail.com</p> 
+                        <p>Account Balane : 1,52,000.00 INR</p> 
+                        <p><a href="customer-transaction-record.html">View All Transaction</a></p>
+                        <p><button class="btn btn-primary">Credit Money</button> <button class="btn btn-danger">Debit Money</button></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="staff-address">
+                <div class="staff-info-heading">
+                    <img src="Images/customer.png" alt="">
+                    <h1>Addresses</h1>
+                </div>
+                <div class="staff-address-block">
+                    <p>House No : 182/1</p>
+                    <p>Sthirpara Road , Dakshinpally More</p>
+                    <p>Post Office : Mondalpara</p>
+                    <p>Jagadal , District : North 24 Paragana , Kolkata - 743127</p>
+                </div>
+            </div>
+            <div class="staff-more-detail">
+                <div class="staff-info-heading">
+                    <img src="Images/customer.png" alt="">
+                    <h1>More Details</h1>
+                </div>
+                <div class="staff-more-detail-block">
+                    <p>Date of Birth : 03rd August 2001</p>
+                    <p>Gender : Male</p>
+                    <p>Marital Status : Unmarried</p>
+                    <p>Guardian Name : Mr Abc Xyz</p>
+                    <p>Nationality : Indian</p>
+                    <p>Religion : Hinduism</p>
+                    <p>Category : General</p>
+                    <p>Disability : No</p>
+                    <p>Educational Qualification : Graduated</p>
+                    <p>Aadhar Number : 123456789012</p>
+                    <p>Pan Number : 1234Ron5</p>
+                    <p>Id Proof : Aadhar Card</p>
+                    <p>Id Number : 123456789012</p>
+                    <p>Status : Active</p>
+                </div>
+            </div>
+            <div class="staff-document">
+                <div class="staff-info-heading">
+                    <img src="Images/customer.png" alt="">
+                    <h1>Documents</h1>
+                </div>
+                <div class="staff-document-block">
+                    <div class="doc">
+                        <img src="Images/aadhar1.webp" alt="">
+                    </div>
+                    <div class="doc">
+                        <img src="Images/pancard.webp" alt="">
+                    </div>
+                    <div class="doc">
+                      <img src="Images/signature.webp" alt="">
+                  </div>
+                </div>
+            </div>
+            <div class="bottom-button">
+                <button class="btn btn-primary">Edit Profile</button>
+                <button class="btn btn-danger">Remove Staff</button>
+            </div>
+        </div>
+    </main>
+
+  </section>
+  <script src="/admin/javascript/sidenavbar.js">  </script>
+</body>
+
+</html>
