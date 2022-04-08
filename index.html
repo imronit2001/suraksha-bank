@@ -41,10 +41,28 @@
 
 </head>
 
+
 <body>
     <!-- PRELOADER  -->
-    <div id="preloaderSection">
-        <!-- DON'T DO ANYTHING HERE  -->
+    <div class="preLoader">
+        <div class="upper">
+            <div class="spinner-block">
+               <div class="boxes">
+                   <div></div>
+                   <div></div>
+                   <div></div>
+                   <div></div>
+                   <div></div>
+                   <div></div>
+                   <div></div>
+                   <div></div>
+               </div>
+            </div>
+        </div>
+        <div class="down"></div>
+    </div>
+    <!-- PRELOADER ENDS HERE  -->
+    <div class="content">
         <div id="popupSection">
 	        <div class="modal fade" id="advModal" tabindex="-1" role="dialog" aria-hidden="true">
 	        	<div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="overflow-y: hidden;">
@@ -549,8 +567,16 @@
         </footer>
         <!-- FOOTER ENDS HERE  -->
     </div>
-    <!-- PRELOADER ENDS HERE  -->
 </body>
+<!-- PRELOADER JAVASCRIPT  -->
+<script type="text/javascript">
+    var body = document.getElementById('page');
+
+    setTimeout(function(){
+        body.classList.add('loaded');
+    }, 5000 );
+</script>
+
 <!-- MODAL JAVASCRIPT  -->
 <script>
     $(document).ready(function(){
