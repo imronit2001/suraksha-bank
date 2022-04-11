@@ -1,0 +1,22 @@
+.Customer-heading .Customer-heading h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-size: 2px; */
+  
+}
+.customer-info img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.address-details{
+    border-radius: 5px;
+    background-color: #fff;
+    
+
+}
+.address-details span{
+    /* width: 20px; */
+    margin-left: 10px;
+
+}
