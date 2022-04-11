@@ -7,7 +7,13 @@
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    border: 0.1875em solid #0b193e;
 }
+@media screen and (max-width: 1200px) {
+/* .customer-type{
+    margin-left: 300px;
+ } */
+} 
 
 .address-details{
     border-radius: 5px;
