@@ -270,7 +270,7 @@
     position: relative;
     align-items: center;
     width: 450px;
-    height: 450px;
+    height: 410px;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
@@ -287,7 +287,7 @@
   text-align: center;
 }
 .tran-pass .btn{
-    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+    background-image: linear-gradient(to right, #b31085 0%, #1a6bf1 51%, #17afaf 100%); 
     flex: 1 1 auto;
     padding: 10px;
     text-align: center;
