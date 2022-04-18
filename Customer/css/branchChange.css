@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* transection password*/
+.Branch form{
+    position: relative;
+    align-items: center;
+    width: 500px;
+    height: 490px;
+    padding: 40px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    color: rgb(11, 3, 55);
+    background: #ecf0f3;
+    opacity: 0.1s;
+    box-shadow: 14px 14px 20px  #7894b1, -14px -14px 20px white;
+    overflow-y: scroll;
+    border-radius: 20px;
+  }
+  .Branch form::-webkit-scrollbar {
+    display: none; 
+  }
+.Branch form h2{
+
+  /* margin-top: 10px; */
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #0062cc;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.Branch .btn{
+    /* background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%); */
+    background-image: linear-gradient(to right, #b31085 0%, #1a6bf1 51%, #17afaf 100%); 
+    flex: 1 1 auto;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 40px;
+
+}
+.Branch .btn:hover {
+     background-position: right center; /* change the direction of the change here */
+     color: #fff;
+     text-decoration: none;
+   }
