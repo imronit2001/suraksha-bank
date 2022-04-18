@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <link rel="icon" type="image/x-icon" href="images/switchbank.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/manage-staffs.css">
+    <link rel="stylesheet" href="css/customer-details.css">
+    <link rel="stylesheet" href="css/sidenavbar.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxs-bank icon'></i>
+            <div class="logo_name">Switch Bank</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-home'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-wallet'></i>
+                    <span class="links_name">Bank Balance</span>
+                </a>
+                <span class="tooltip">Bank Balance</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-transfer'></i>
+                    <span class="links_name">Transaction Record</span>
+                </a>
+                <span class="tooltip">Transaction Record</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user-plus'></i>
+                    <span class="links_name">Add Staff</span>
+                </a>
+                <span class="tooltip">Add Staff</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user-account'></i>
+                    <span class="links_name">Manage Staffs</span>
+                </a>
+                <span class="tooltip">Manage Staffs</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-plus'></i>
+                    <span class="links_name">Add Manager</span>
+                </a>
+                <span class="tooltip">Add Manager</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user-detail'></i>
+                    <span class="links_name">Manage Customers</span>
+                </a>
+                <span class="tooltip">Manage Customers</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-building-house'></i>
+                    <span class="links_name">Home Loans</span>
+                </a>
+                <span class="tooltip">Home Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-book-reader'></i>
+                    <span class="links_name">Study Loans</span>
+                </a>
+                <span class="tooltip">Study Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-car'></i>
+                    <span class="links_name">Car Loans</span>
+                </a>
+                <span class="tooltip">Car Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-circle'></i>
+                    <span class="links_name">Personal Loans</span>
+                </a>
+                <span class="tooltip">Personal Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-git-branch'></i>
+                    <span class="links_name">Branch change</span>
+                </a>
+                <span class="tooltip">Branch change</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-credit-card'></i>
+                    <span class="links_name">Credit Card a/c</span>
+                </a>
+                <span class="tooltip">Credit Card a/c</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-wallet-alt'></i>
+                    <span class="links_name">Fixed Deposits</span>
+                </a>
+                <span class="tooltip">Fixed Deposits</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-copy-alt'></i>
+                    <span class="links_name">Terms & Conditions</span>
+                </a>
+                <span class="tooltip">Terms & Conditions</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-help-circle'></i>
+                    <span class="links_name">Helpline</span>
+                </a>
+                <span class="tooltip">Helpline</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-lock'></i>
+                    <span class="links_name">Change Password</span>
+                </a>
+                <span class="tooltip">Change Password</span>
+            </li>
+            <div style="height: 150px; width: 100%;">
+
+            </div>
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="images/ronit.JPG" alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">Ronit Singh</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div> -->
+    <section class="home-section">
+        <div class="staff-body">
+            <div class="staff-heading">
+                <h1 class="bankname text-center font-weight-bold">Suraksha Bank</h1>
+                <!-- <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1> -->
+                <h1 class="title text-center">Customer Details</h1>
+                <div class="searchbox">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Customer a/c no">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Customer Id">
+                        <button type="submit" class="btn btn-success">Search</button>
+                    </form>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Customer Aadhar No">
+                        <button type="submit" class="btn btn-info">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="customer-short-info">
+                <div class="customer-img">
+                    <img class="pic" src="images/ronit.JPG" alt="">
+                    <!-- <img class="sign" src="images/signature.webp" alt=""> -->
+                </div>
+            </div>
+            <h1 class="text-center customer-name">Ronit Singh</h1>
+            <h2 class="text-center customer-balance">Available Balance : 1,52,000 INR</h2>
+            <div class="customer-detail">
+                <div class="row">
+                    <p>Customer Id </p>
+                    <p>15201219026</p>
+                </div>
+                <div class="row">
+                    <p>Account No </p>
+                    <p>12345678901234</p>
+                </div>
+                <div class="row">
+                    <p>Date of Birth </p>
+                    <p>03rd August 2001</p>
+                </div>
+                <div class="row">
+                    <p>IFSC Code </p>
+                    <p>BKID0004247</p>
+                </div>
+                <div class="row">
+                    <p>Branch </p>
+                    <p>Kolkata</p>
+                </div>
+                <div class="row">
+                    <p>Contact </p>
+                    <p>7003622801</p>
+                </div>
+                <div class="row">
+                    <button class="btn btn-success">+ Credit Money</button>
+                    <button class="btn btn-info">- Debit Money</button>
+                </div>
+            </div>
+            <div class="customer-detail">
+                <div class="row">
+                    <a href="customer-transaction-record.html">Transaction Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="javascript/sidenavbar.js">  </script>
+</body>
+
+</html>
