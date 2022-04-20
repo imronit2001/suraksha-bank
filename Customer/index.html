@@ -5,47 +5,138 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CustomerPage</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/newCustomer.css">
+    <script src="https://kit.fontawesome.com/43a3da8a45.js" crossorigin="anonymous"></script>
+    <title>Customer</title>
 </head>
 
 <body>
     <div class="container">
-      
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="s4.jpg" alt="First slide">
+        <div class="nav">
+            <ul>
+                <li class="menu_item"><a href="index.html"><i class="fa fa-table-columns"></i>dashboard</a></li>
+                <li class="menu_item"><a href="AccountDetails.html"><i class="fa fa-file-invoice"></i>account details</a></li>
+                <li class="menu_item"><a href="transectionDetails.html"><i class="fa fa-circle-info"></i>transaction details</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-user-pen"></i>KYC form</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-credit-card"></i>credit card</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-credit-card"></i></i>debit card</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-land-mine-on"></i>loans</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-key"></i>change UPI pin</a></li>
+                <li class="menu_item"><a href="changeBranch.html"><i class="fa fa-code-branch"></i>change branch</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-book"></i>chequbook</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-circle-info"></i>terms & conditions</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-handshake-angle"></i>helpline</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-lock"></i>change login password</a></li>
+                <li class="menu_item"><a href=""><i class="fa fa-right-from-bracket"></i>log out</a></li>
+            </ul>
+        </div>
+        <div class="acDetails">
+            <h1 class="heading">account summary</h1>
+            <div class="details">
+                <div class="logo">
+                    <h1>logo</h1>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="s1.jpg" alt="Second slide">
-                    <div class="carousel-caption  d-md-block">
-                        <h5>...</h5>
-                        <p>Make your dream alive</p>
-                    </div>
+                <div class="holderACName">
+                    <h1 class="headline">account holder name</h1>
+                    <h1 class="value">Abinash kumar chourasia</h1>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="s5.jpg" alt="Third slide">
-
+                <div class="holderACNo">
+                    <h1 class="headline">account number</h1>
+                    <h1 class="value">0000000000000000</h1>
+                </div>
+                <div class="branch">
+                    <h1 class="headline">branch</h1>
+                    <h1 class="value">ichapur</h1>
+                </div>
+                <div class="holderACBalance">
+                    <h1 class="headline">account balance</h1>
+                    <h1 class="value">55000</h1>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+        </div>
+        <div class="transactionsDetails">
+            <h1 class="heading">latest transactions</h1>
+            <div>
+                <table class="contentTable">
+                    <thead>
+                        <tr>
+                            <th>Name List</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Closing Balance</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>abinash</td>
+                            <td>18 May 2022</td>
+                            <td>Net Banking</td>
+                            <td>28645</td>
+                        </tr>
+                        <tr>
+                            <td>abinash</td>
+                            <td>18 May 2022</td>
+                            <td>Net Banking</td>
+                            <td>28645</td>
+                        </tr>
+                        <tr class="active-row">
+                            <td>abinash</td>
+                            <td>18 May 2022</td>
+                            <td>Net Banking</td>
+                            <td>28645</td>
+                        </tr>
+                        <tr>
+                            <td>abinash</td>
+                            <td>18 May 2022</td>
+                            <td>Net Banking</td>
+                            <td>28645</td>
+                        </tr>
+                        <tr>
+                            <td>abinash</td>
+                            <td>18 May 2022</td>
+                            <td>Net Banking</td>
+                            <td>28645</td>
+                        </tr>
+                        <tr>
+                            <td>abinash</td>
+                            <td>18 May 2022</td>
+                            <td>Net Banking</td>
+                            <td>28645</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="cardDetails">
+            <h1 class="heading">Creadit card</h1>
+            <div class="card">
+                <h1 class="value value1">0000000000000000</h1>
+                <h1 class="headline">card type</h1>
+                <h1 class="value value1">premium platinum</h1>
+                <h1 class="headline">last statement due</h1>
+                <h1 class="value value1">18500</h1>
+            </div>
+            <div class="btn">
+                <button class="btnMore">More Details</button>
+                <button class="btnPay">Pay now</button>
+            </div>
+        </div>
+        <div class="system">system</div>
+        <div class="loan">
+            <h1 class="heading">Loan</h1>
+            <div class="loanDeatals">
+                <div class="loanType car">
+                    <h1 class="value"><i class="fa fa-car-on"></i>car loan</h1>
+                </div>
+                <div class="loanType home">
+                    <h1 class="value"><i class="fa fa-house-crack"></i>home loan</h1>
+                </div>
+                <div class="loanType edu">
+                    <h1 class="value"><i class="fa fa-graduation-cap"></i>education loan</h1>
+                </div>
+                <div class="loanType personal">
+                    <h1 class="value"><i class="fa fa-person-breastfeeding"></i>personal loan</h1>
+                </div>
+            </div>
         </div>
     </div>
 </body>
