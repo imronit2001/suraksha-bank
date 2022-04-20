@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <!-- CAROUSEL JAVASCRIPT LINKING  -->
+    <script src="./Javascript/Carousel.js"></script>
+    <!-- ANIMATION ON SCROLL JAVASCRIPT LINKING  -->
+    <script src="./Javascript/show-on-scroll.js"></script>
+    <!-- OWL CAROUSEL CDN LINKING  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS LINKING  -->
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="./css/mdb.min.css"> -->
-    <link rel="stylesheet" href="links/bootstrap-css.php">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- FONT AWESOME LINK  -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <!-- FOOTER CDN  -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen and (max-width:1070px)" href="./css/responsive.css">
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css">
-    <link href="./src/css/compiled-4.8.3.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Carousel Bootstrap  -->
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <title>Online Banking System</title>
+    <!-- FAVICON LINKING  -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <!-- FONT AWESOME ICONS LINK  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#icon').click(function(){
+                $('ul').toggleClass('show');
+            })
+        })
+    </script>
+    
+    <title>Home</title>
 
 </head>
+<<<<<<< HEAD
+<body id="page">
+   <!-- PRELOADER  -->
+    <!-- <div class="preLoader">
+=======
 
 
 <body>
     <!-- PRELOADER  -->
     <div class="preLoader">
+>>>>>>> 35f951fb2ec64cbd1b18c8a1ca10940fdadd0671
         <div class="upper">
             <div class="spinner-block">
                <div class="boxes">
@@ -60,560 +59,361 @@
             </div>
         </div>
         <div class="down"></div>
-    </div>
+    </div> -->
     <!-- PRELOADER ENDS HERE  -->
-    <div class="content">
-        <div id="popupSection">
-	        <div class="modal fade" id="advModal" tabindex="-1" role="dialog" aria-hidden="true">
-	        	<div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="overflow-y: hidden;">
-	        		<div class="modal-content rounded">
-	        			<div class="modal-body text-center">
-	        				<!-- <button id="btnModal" type="button" class="close" data-dismiss="modal" aria-label="Close">
-	        					<span aria-hidden="true">&times;</span> -->
-	        				</button>
-	        				<div class="row">
-	        					<div class="col-lg-7 col-sm-12">
-	        						<img src="./images/assets.png" alt="Advertisement" class="img-fluid">
-	        					</div>
-	        					<div class="col-lg-5 col-sm-12">
-	        						<div class="wrapper">
-	        							<br>
-	        							<div>
-	        								<span id="admOpen" style="font-size: 28px; font-weight: 800;">Join Now</span>
-	        							</div>
-	        							<!-- <h5 class="blink-image" style="font-weight: 700; color: red; padding-top: 15px;">Session
-	        								2021 - 2022</h5> -->
-	        							<p style="padding-top: 20%; ">
-	        								<a href="forms/account-opening-form.html" id="onlineAdmissionNow" style="border: 2px solid #535552c2;" class="btn btn-outline-blue" >
-	        									<b style="color: #fafafac2;">Create Account</b>
-	        								</a>
-                                            <a href="admin/index.html" id="enquireNow" class="btn btn-outline-blue">
-	        									<b style="color: #fafafac2;">Login</b>
-	        								</a>
-	        								<a href="./about-us.html" id="enquireNow" class="btn btn-outline-blue">
-	        									<b style="color: #fafafac2;">About Us</b>
-	        								</a>
-                                            <a href="./reach-us.html" id="enquireNow" class="btn btn-outline-blue">
-	        									<b style="color: #fafafac2;">Features</b>
-	        								</a>
-	        								<a href="./reach-us.html" id="enquireNow" class="btn btn-outline-blue">
-	        									<b style="color: #fafafac2;">Reach Us</b>
-	        								</a>
-                                            
-                                            
-	        							</p>
-	        							<!-- <a href="./src/pdf/KBS Prospectus 2021.pdf" id="prospectusLink"
-	        								style="padding-top: 25px; color: rgb(126, 25, 25);">
-	        								<b>Download Prospectus</b>
-	        							</a> -->
-	        						</div>
-	        					</div>
-	        				</div>
-	        			</div>
-	        		</div>
-	        	</div>
-	        </div>
-            <!-- <div class="popSection"  id="advmodal">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-                
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            
-                        </div>
+    <!-- MAIN CONTENT SECTION  -->
+    <div class="contentContainer">
+        <!-- NAVBAR SECTION  -->
+        <!-- <div id="navbar">
+        <input type="checkbox" id="nav-toggle">
+            <div class="navbarSection">
+                <div class="headings">
+                    <img src="images/favicon.png" alt="#logo">
+                    <div class="names">
+                        <h1>Suraksha Bank</h1>
+                        <p>Aapki Suraksha, Humari Zimmedari</p>
                     </div>
                 </div>
-            </div> -->
-        </div>
-        <!-- NAVBAR -->
-        <div id="navbarSection">     
-            <!-- DON'T DO ANYTHING HERE  -->
-            <div class="heading">
-                <img src="images/favicon.png" alt="">
-                <a href="./index.html">
-                    <h2>Online Banking System</h2>
-                </a>
+                <div class="navElements">
+                    <ul>
+                        <li><a href="#about">Offers</a></li>
+                        <li><a href="#facilities">Customer Care</a></li>
+                        <li><a href="#query">About Us</a></li>
+                        <li><a href="#">Cards</a></li>
+                        <li><a href="#">E-Services</a></li>
+                        <li><a href="#">Apply Now</a></li>
+                        <a href="#"><i class="fa-solid fa-user-large"></i></a>
+                    </ul>
+                </div>
             </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#navbarSection"> Home</a></li>
-                    <li><a href="#aboutUs"> About Us</a></li>
-                    <li><a href="#keyFacilities"> Facilities</a></li>
-                    <li><a href="#contactUs"> Contact Us</a></li>
-                    <div class="icon">
-                        <li><a href="#"> <i class="fa-solid fa-bell bell"></i></a></li>
-                        <li><a href="#" onclick="togglePopup()"> <i class="fa-solid fa-user user"></i></a></li>
-                    </div>
-                </ul>
-            </nav>
-        </div>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </div> -->
+        <nav>
+            <label class="logo">
+            <!-- <img src="images/favicon.png" alt="logo">
+                <h1>Suraksha Bank</h1> -->
+                <img src="images/favicon.png" alt="#logo">
+                <div class="names">
+                    <h1>Suraksha Bank</h1>
+                    <p>Aapki Suraksha, Humari Zimmedari</p>
+                </div>
+            </label>
+    
+            <ul>
+                <li><a href="#about" class="active">Offers</a></li>
+                <li><a href="#facilities">Customer Care</a></li>
+                <li><a href="#query">About Us</a></li>
+                <li><a href="#">Cards</a></li>
+                <li><a href="#">E-Services</a></li>
+                <li><a href="#">Apply Now</a></li>
+                <a href="#"><i class="fa-solid fa-user-large"></i></a>
+            </ul>
+            <label id="icon">
+                <i class="fas fa-bars" id="btn"></i>
+            </label>
+        </nav>
         <!-- NAVBAR SECTION ENDS HERE  -->
-
-        <!-- CAROUSEL SECTION STARTS HERE -->
-        <div id="carouselSection">
-            <!-- DON'T DO ANYTHING HERE  -->
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-                        aria-label="Slide 5"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/convenient.jpg" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>First slide label</h3>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
+        <!-- HOME SECTION  -->
+        <div id="home">
+            <!-- CAROUSEL STARTS HERE -->
+            <div class="imgcontainer">
+                <div class="slideshowcontainer">
+                    <!-- <div class="leftArrow" onclick="plusSlides(-1)"> <span class="arrow arrowLeft"></span> </div>
+                    <div class="rightArrow" onclick="plusSlides(1)"> <span class="arrow arrowRight"></span> </div> -->
+                    <div class="imageholder">
+                        <img src="images/services.jpg"alt="College Logo">
                     </div>
-                    <div class="carousel-item">
-                        <img src="images/bant.jpg" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Second slide label</h3>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
+                    <div class="imageholder">
+                        <img src="images/security.webp" alt="College">    
                     </div>
-                    <div class="carousel-item">
-                        <img src="images/banking.jpg" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Third slide label</h3>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
+                    <div class="imageholder">
+                        <img src="images/work-1627703_960_720.webp" alt="spark quest">
                     </div>
-                    <div class="carousel-item">
-                        <img src="images/payments.jpg" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Fourth slide label</h3>
-                            <p>Some representative placeholder content for the fourth slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/network.jpg" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Fifth slide label</h3>
-                            <p>Some representative placeholder content for the fifth slide.</p>
-                        </div>
+                    <div class="imageholder">
+                        <img src="images/strongNetwrok.jpg" alt="CybertronixLogo">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div id="dotsContainer"></div>
             </div>
+            <script src="./Javascript/Carousel.js"></script>
         </div>
         <!-- CAROUSEL ENDS HERE  -->
+        <!-- LOANS SECTION STARTS HERE  -->
+        <div id="loans">
+            <div class="loansElementContainer">
 
-        <!-- POPUP SECTION STRATS HERE  -->
-        <!-- POPUP SECTION ENDS HERE  -->
+                <div class="loanContainer">
+                    <div class="loanDetails">
 
-        <!-- ABOUT US SECTION STARTS HERE -->
-        <div id="aboutUs">
-            <h1>About Us</h1>
-            <div class="containerAbout">
-                <div class="row justify-content-between">
-                    <div class="col-md-12 col-lg-6">
-                        <div class="aboutUs">
-                            <h3 class="text-danger text-center">Who we Are?</h3>
-                            <span class="borderAnimate  mx-auto "></span>
-                            <p class="text-justify mt-5 py-1">
-                                "WE are New generation binding team ,We provide some valuable product to grow your
-                                business."
-                            </p>
-                            <p class="text-justify">A best all in one solution is here to solve your problems and give a
-                                new direction to life familiar with new Technology. </p>
+                        <div class="loanIcon">
+                            <img src="images/icons/home.png" alt="">
+                        </div>
+                        <div class="loanHeading">
+                            <h3>Home Loan</h3>
+                            <p><span>6.50</span>% p.a</p>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6">
-                        <div class="img border-0">
-                            <img src="images/Team.png" alt="" class="img-fluid">
+                    <button class="btn">offer</button>
+                </div>
+                <div class="loanContainer">
+                    <div class="loanDetails">
+
+                        <div class="loanIcon">
+                            <img src="images/icons/car.png" alt="">
                         </div>
+                        <div class="loanHeading">
+                            <h3>Car Loan</h3>
+                            <p><span>6.85</span>% p.a</p>
+                        </div>
+                    </div>
+                    <button class="btn">offer</button>
+                </div>
+                <div class="loanContainer loanContainer1">
+                    <div class="loanIcon">
+                        <img src="images/icons/education.png" alt="">
+                    </div>
+                    <div class="loanHeading">
+                        <h3>Education Loan</h3>
+                        <p><span>6.85</span>% p.a</p>
+                    </div>
+                </div>
+                <div class="loanContainer loanContainer1">
+                    <div class="loanIcon">
+                        <img src="images/icons/personal.png" alt="">
+                    </div>
+                    <div class="loanHeading">
+                        <h3>Personal Loan</h3>
+                        <p><span>10.35</span>% p.a</p>
+                    </div>
+                </div>
+                <div class="loanContainer loanContainer1">
+                    <div class="loanIcon">
+                        <img src="images/icons/deposit.png" alt="">
+                    </div>
+                    <div class="loanHeading">
+                        <h3>Check <br> Deposit <br> Rates</h3>
                     </div>
                 </div>
             </div>
-
-        </div>
-        <!-- ABOUT US SECTION ENDS HERE  -->
-
-        <!-- KEY FACILITIES SECTION STARTS HERE -->
-        <div id="keyFacilities">
-            <h1>Key Facilities</h1>
-            <div class="conatinerFluid text-center">
-                <h2>We are here to help you when you need financial support</h2>
-                <div class="col-sm-12">
-                    <div class="row d-flex">
-                        <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/dashboard.png" alt="" width="60px">
-                                </div>
-                                <div class="content">
-                                    <h4>Wide range of uses on a single Dashboard</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="#" class="btnMore  btn-block btn-primary"><span>Know More</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/customer-support.png" alt="" width="60px">
-                                    <h4>24 x 7 Customer Support</h4>
-                                </div>
-                                <div class="content">
-                                    <p>We are with you! Always available email, phone and chat based support to help you
-                                        in your every step..</p>
-                                    <a href="#" class="btnMore  btn-block btn-primary"><span>Know More</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/bank-1.png" alt="" width="60px">
-                                </div>
-                                <div class="content">
-                                    <h4>Choose your bank</h4>
-                                    <p>Bank Your dream come true with us.</p>
-                                    <a href="#" class="btnMore  btn-block btn-primary"><span>Know More</span></a>
-                                </div>
-
-                            </div>
-                        </div> -->
-                        <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/technology.png" alt="" width="60px">
-                                </div>
-                                <div class="content">
-                                    <h4>New Technology</h4>
-                                    <p>An Opportunity to create Better Technological Solutions to help you grow your
-                                        Business</p>
-                                    <a href="#" class="btnMore  btn-block btn-primary"><span>Know More</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/saving-time.png" alt="" width="60px">
-                                </div>
-                                <div class="content">
-                                    <h4>Reduce Time</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="#" class="btnMore  btn-block btn-primary"><span>Know More</span></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                        <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/secure-payment.png" alt="" width="60px">
-                                </div>
-                                <div class="content">
-                                    <h4>Secure payment</h4>
-                                    <p>An Opportunity for Greater Adoption of Digital payments.</p>
-                                    <a href="#" class="btnMore  btn-block btn-primary"><span>Know More</span></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/award.png" alt="" width="60px">
-                                </div>
-                                <div class="content">
-                                    <h4>Quality Business</h4>
-                                    <p>An Opportunity to improve your Quality of Business.</p>
-                                    <a href="#" class="btnMore btn-primary"><span>Know More</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="items col-lg-4 col-md-6 col-sm-6">
-                            <div class="card mb-1 p-3">
-                                <div class="image">
-                                    <img class="i m-auto" src="images/paperless.png" alt="" width="60px">
-                                </div>
-                                <div class="content">
-                                    <h4>PaperLess Onboarding</h4>
-                                    <p>A Digital solution to speedup the process.</p>
-                                    <a href="#" class="btnMore  btn-block btn-primary"><span>Know More</span></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- KEY FACILITIES SECTION ENDS HERE  -->
-
-        <!-- CONTACT US SECTION STARTS HERE -->
-        <div id="contactUs">
-            <div class="font-weight-bold text-center">
-                <h1>Contact Us</h1>
-            </div>
-            <div class="container mt-3">
-                <div class="row  justify-content-between">
-                    <div class="card col-lg-6 col-md-12 col-12">
-                        <h6 class="text-center pb-3">Fill The Form For any Query.</h6>
-                        <form class="row g-3">
-                            <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Full Name">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Mobile Number">
-                            </div> <br>
-                            <br>
-                            <div class="col-12">
-                                <input type="email" class="form-control" placeholder="Email Address">
-                            </div> <br>
-                            <br>
-                            <div class="col-12">
-                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                            </div> <br>
-                            <br>
-                            <br>
-                            <br>
-                            <!-- <div class="col-sm-offset-2 col-sm-10">
-                                <div class="checkbox">
-                                    <label><input type="checkbox"> Remember me</label>
-                                </div>
-                            </div> -->
-
-                            <div class="email m-4">
-                                <img src="images/gmail.png" alt="" height="22" width="22">
-                                <h4> <a href="mailto:parweena224@gmail.com">parweena224@gmail.com</a></h4>
-                            </div>
-                            <div class="col-12 d-flex justify-content-center">
-                                <div class="col-8">
-                                    <button type="submit" class="btn btn-block btn-primary">submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- <div class="col-6 bor">
-                        <div class="row d-flex justify-content-around">
-                            <div class="col-lg-6 col-md-12 col-12">
-                                <div class="row pt-3">
-                                    <div class="info">
-                                        <div class="address m-4">
-                                            <img src="images/location.png" alt="" height="42" width="42">
-                                            <h4>Location:</h4>
-                                            <h6>Kankinara North24parganas,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                West
-                                                Bengal,india</h6>
-                                        </div>
-                                        
-                                        <div class="Number m-4">
-                                            <img src="images/call.png" alt="" height="42" width="42">
-                                            <h4>Mobile:</h4>
-                                            <h6><a href="tel:">1162908880</a></h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
-                </div>
-            </div>
-        </div>
-        <!-- CONTACT US SECTION ENDS HERE  -->
-        <!-- LOGIN SECTION STARTS HERE  -->
-        <div id="login">
-
-            <div class="popup" id="popup-1">
-                <div class="overlay"></div>
-                <div class="content">
-                    <div class="close-btn" onclick="togglePopup()">&times;</div>   
-                    <form action="#">
-                        <div class="login-container">
-                            <h2>Login</h2>
-                            <div class="row100">
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <img src="./images/user.png" alt="">
-                                        <input type="text" required>
-                                        <span class="credential">Username</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <img src="./images/lock.png" alt="">
-                                        <input type="password" id="password" required>
-                                        <span class="credential">Password</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="password-toggle" onclick="showHide();"></div>
-                            <input type="Submit" name="" id="" value="Login">
-                            <div class="forget">
-                                <a href="#">Forget Password</a><br>
-                                <p>Don't have an account ?&nbsp;<a href="registration.html" target="_blank" rel="noopener noreferrer">Signup</a></p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- LOGIN SECTION ENDS HERE  -->
-
-        <!-- FOOTER SECTION STARTS HERE -->
-        <footer class="footer" id="footerSection">
-            <!-- <div class="footer">
-                <p>This website is designed and developed by <strong><i> Atul Kumar Giri, Gaurav Jha, Gulafshan Parween, Mohit Kumar Gupta, Ronit Singh</i></strong> Under <b>Major Project</b> of BCA 3rd Year(2022).</p>
-               <p class="copy">&copy; Copyright 2022 | All rights reserved | &copy;Techno India Hooghly</p>
-                </div> -->
-            <!-- <footer class="footer">-->
-            <div class="container bottom_border">
-                <div class="row">
-                    <!-- <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
-                    headin5_amrc
-                            <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                            <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
-                            <p><i class="fa fa-phone"></i>  +91-9999878398  </p>
-                            <p><i class="fa fa fa-envelope"></i><a href="mailto:info@example.com">info@example.com</a></p>
-                        </div> -->
-
-                    <div class=" col-sm-4 col-md  col-6 col">
-                        <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
-                        <!--headin5_amrc-->
-                        <ul class="footer_ul_amrc">
-                            <li><a href="#">Create Account</a></li>
-                            <li><a href="#">About the Website</a></li>
-                            <li><a href="#">Advantages of Portal</a></li>
-                            <!--<li><a href="#">Ebay & Amazon</a></li>
-                            <li><a href="#">Hair Masking/Clipping</a></li>
-                            <li><a href="#">Image Cropping</a></li> -->
-                        </ul>
-                        <!--footer_ul_amrc ends here-->
-                    </div>
-
-
-                    <!--<div class=" col-sm-4 col-md  col-6 col">
-                    <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
-                    headin5_amrc
-                    <ul class="footer_ul_amrc">
-                    <li><a href="http://webenlance.com">Remove Background</a></li>
-                    <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
-                    <li><a href="http://webenlance.com">Logo Design</a></li>
-                    <li><a href="http://webenlance.com">Vectorization</a></li>
-                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
-                    <li><a href="http://webenlance.com">Image Cropping</a></li>
-                    </ul>
-                    footer_ul_amrc ends here
-                    </div>
-                    
-                    
-                    <div class=" col-sm-4 col-md  col-12 col">
-                    <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
-                    headin5_amrc ends here
-                    
-                    <ul class="footer_ul2_amrc">
-                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
-                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
-                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
-                    </ul>
-                    footer_ul2_amrc ends here
-                    </div> -->
-                </div>
-            </div>
-            <div class="container">
-                <ul class="foote_bottom_ul_amrc">
-                    <li><a href="#carouselSection">Home</a></li>
-                    <li><a href="#aboutUs">About</a></li>
-                    <li><a href="#keyFacilities">Facilities</a></li>
-                    <li><a href="#contactUs">Contact</a></li>
+            <div class="btnKnowMore">
+                <ul>
+                    <li>
+                        <a href="#">
+                           <p>Know More</p>
+                            <img src="images/icons/play.png" alt="">
+                        </a>
+                    </li>
                 </ul>
-                <!--foote_bottom_ul_amrc ends here-->
-                <p class="text-center">Copyright &copy; 2022 | Designed & Developed by <strong><i> Atul Kumar Giri,
-                            Gaurav Jha, Gulafshan Parween, Mohit Kumar Gupta, Ronit Singh</i></strong> Under <b>Major
-                        Project</b> of BCA 3rd Year(2022).<br> <strong> All rights reserved | <a
-                            href="https://technoindiahooghly.org/index.php" target="_blank"> Techno India
-                            Hooghly</a></strong></p>
+            </div>
+        </div>
+        <!-- LOANS SECTION ENDS HERE  -->
+        <!-- MID HEADING SECTION STARTS HERE  -->
+        <div class="midHeading">
+            <h2>We're here to help you when you need financial support</h2>
+            <p>Suraksha Bank launches <a href="#">COVID Personal Loan</a> & COVID Pensioner Loan (conditions apply). Please contact your nearest branch. <span>NEW</span></p>
+        </div>
+        <!-- MID HEADING ENDS HERE  -->
+        <!-- OWL CAROUSEL SECTION STARTS HERE  -->
+        <div id="owlCarousel">
 
-                <!-- <ul class="social_footer_ul">
-                <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
-                </ul> -->
-                <!--social_footer_ul ends here-->
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="owlCarouselBox">
+                        <div class="owlCarouselIcon">
+                            <img src="images/icons/credit-card-icon.png" alt="#creditCard">
+                            <h2>Credit Cards</h2>
+                        </div>
+                        <div class="owlCarouselHeading">
+                            <p>Amazing Deals and Rewards</p>
+                        </div>
+                        <div class="btnKnowMore">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                       <p>Know More</p>
+                                        <img src="images/icons/next.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="owlCarouselBox">
+                        <div class="owlCarouselIcon">
+                            <img src="Images/icons/loans-icon.png" alt="#loans">
+                            <h2>Loans</h2>
+                        </div>
+                        <div class="owlCarouselHeading">
+                            <p>Wide range of financial products <br> at low interest rates</p>
+                        </div>
+                        <div class="btnKnowMore">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                       <p>Know More</p>
+                                        <img src="images/icons/next.png" alt="">
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="owlCarouselBox">
+                        <div class="owlCarouselIcon">
+                            <img src="images/icons/insurance-icon.png" alt="">
+                            <h2>Secure Fund Transfer</h2>
+                        </div>
+                        <div class="owlCarouselHeading">
+                            <p>Wide coverage & affordable <br>premium services</p>                            
+                        </div>
+                        <div class="btnKnowMore">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                       <p>Know More</p>
+                                        <img src="images/icons/next.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="owlCarouselBox">
+                        <div class="owlCarouselIcon">
+                            <img src="images/icons/nri-deposit-icon.png" alt="">
+                            <h2>Fixed Deposits</h2>
+                        </div>
+                        <div class="owlCarouselHeading">
+                            <p> Taking our Relationship beyond <br> Borders</p>                  
+                        </div>
+                        <div class="btnKnowMore">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                       <p>Know More</p>
+                                        <img src="images/icons/next.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item">
+                    <div class="owlCarouselBox">
+                        <div class="owlCarouselIcon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="owlCarouselHeading">
+
+                        </div>
+                        <div class="owlCarouselButton">
+
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <!-- OWL CAROUSEL SECTION ENDS HERE  -->
+        <!-- NOTIFICATION SECTION STARTS HERE  -->
+        <div id="notificationContainer">
+            <div class="leftNotificationContainer">
+
+            </div>
+            <div class="rightNotificationContainer">
+                <div class="rightLeftNotificationContainer">
+
+                </div>
+                <div class="rightRightNotificationContainer">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- NOTIFICATION SECTION ENDS HERE  -->
+        <!-- FOOTER SECTION  -->
+        <footer class="footer">
+            <div class="upperFooter">
+                <div class="leftContainerFooter">
+                    <div class="footerHeadings">
+                        <h1>Contact Us</h1>
+                        <p class="gen">General Enquiries</p>
+                        <p>Mail Us : <a href="mailto:atulgiri21dec@gmail.com">atulgiri21dec@gmail.com</a></p>
+                        <p class="location">Locate Us : <br>
+                            <a><i class="fa-solid fa-magnifying-glass"></i>Search Branch or ATM </a>
+                            <a><i class="fa-solid fa-magnifying-glass"></i>Search Aadhar Seva kendra</a><br>
+                            <p>
+                                <a><i class="fa-solid fa-location-dot"></i>Find an ATM or a Branch</a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+                <div class="rightConatainerFooterLinks">
+                    <p>Find us on 
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube-square"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="lowerFooter">
+                <div class="copy">
+                    <p>&copy; Suraksha Bank </p><p> All rights reserved | Techno India Hooghly Campus</p>
+                </div>
+                <!-- <div class="visitor">
+                    <p>Visitior : 157974370</p>
+                </div> -->
+                <div class="design&Develope">
+                    <p>Designed & Developed by Atul Kumar Giri, Gaurav Kumar Jha, Gulafshan Parwin, Mohit Gupta, Ronit Singh under <strong>Major Project of BCA (2019-2022) </strong> </p>
+                </div>
             </div>
         </footer>
-        <!-- FOOTER ENDS HERE  -->
+        <!-- FOOTER SECTION ENDS HERE -->
+
     </div>
-</body>
-<!-- PRELOADER JAVASCRIPT  -->
+    <!-- MAIN CONTENT ENDS HERE  -->
+
+
+
+<!-- JAVASCRIPT STARTS HERE  -->
+<!-- OWL CAROUSEL JAVASCRIPT LINKING  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
-    var body = document.getElementById('page');
-
-    setTimeout(function(){
-        body.classList.add('loaded');
-    }, 5000 );
-</script>
-
-<!-- MODAL JAVASCRIPT  -->
-<script>
-    $(document).ready(function(){
-        $('#advModal').modal('show');
-    });
-</script>
-<!-- POPUP JavaScript  -->
-<script type="text/javascript">
-    function togglePopup(){
-        document.getElementById("popup-1").classList.toggle("active");
-    }
-</script>
-
-<!-- PASSWORD SHOW/HIDE  -->
-<script type="text/javascript">
-    const password = document.getElementById('password');
-    const toggle = document.getElementById('password-toggle');
-
-    function showHide(){
-        if(password.type === 'password'){
-            password.setAttribute('type', 'text');
-            toggle.classList.add('hide');
-        }else{
-            password.setAttribute('type', 'password');
-            toggle.classList.remove('hide');
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    autoplay:true,
+    autoplayTimeout: 1500,
+    stagePadding: 50,
+    dots: false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
         }
     }
+})
 </script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-
+</body>
 </html>

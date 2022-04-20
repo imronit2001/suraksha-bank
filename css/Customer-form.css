@@ -1,0 +1,137 @@
+*P{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: white;
+    color: #34495e;
+}
+.customerDetailsFormContainer{
+    width: 80vw;
+    height: 80vh;
+    border-radius: 5px;
+    position: relative;
+    margin: 3% auto;
+    overflow: hidden;
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.customerDetailsFormContainer form{
+    position: absolute;
+    width: 95.5%;
+    height: 85%;
+    top: 50px;
+    left: 50px;
+    margin: 0 auto;
+    text-align: center;
+    transition: .8s;
+    padding: 0px 20px;
+
+}
+form .inputFields{
+    width: 100%;
+    text-align: center;
+    margin-top: -20px;
+    margin: 0 auto;
+}
+form .name{
+    display: flex;
+    justify-content: space-between;
+}
+form input{
+    width: 180px;
+    padding: 10px 5px;
+    margin: 5px 10px;
+    border: 0;
+    border-bottom: 1px solid grey;
+    outline: none;
+    background: transparent;
+
+}
+.btn-box{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+form button{
+    padding: 5px 25px;
+    font-weight: 600;
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #34495e;
+}
+#form2{
+    left: -100%;
+}
+#form3{
+    left: -100%;
+}
+#form4{
+    left: -100%;
+}
+#form5{
+    left: -100%;
+}
+.step-row{
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #34495e;
+    position: relative;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.step-col{
+    width: 90%;
+    height: 50%;
+    text-align: center;
+    position: relative;
+    /* border: 1px solid red; */
+}
+#progress{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: #34495e;
+    transition: .8s;
+}
+#progress::after{
+    content: '';
+    height: 0;
+    width: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid #34495e;
+}
+
+@media (max-width: 909px) {
+    .customerDetailsFormContainer{
+        width: 95vw;
+        height: 80vh;
+        border-radius: 5px;
+        position: relative;
+        margin: 3% auto;
+        overflow: hidden;
+    }
+    #progress{
+        /* position: absolute; */
+        width: 11px;
+        /* height: 100%; */
+        /* background: #34495e; */
+        /* transition: .8s; */
+    }
+}
