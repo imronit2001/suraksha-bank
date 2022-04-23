@@ -417,7 +417,8 @@ class File extends Base
         'image/x-3ds' => '3ds',
         'image/x-cmu-raster' => 'ras',
         'image/x-cmx' => 'cmx',
-        'image/x-freehand' => ['fh', 'fhc', 'fh4', 'fh5', 'fh7'],
+        'image/x-freehand' => ['fh', 'fhc', 'fh4', 'fh4
+', 'fh7'],
         'image/x-icon' => 'ico',
         'image/x-mrsid-image' => 'sid',
         'image/x-pcx' => 'pcx',

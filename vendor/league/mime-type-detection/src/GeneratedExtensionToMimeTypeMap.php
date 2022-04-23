@@ -287,7 +287,8 @@ class GeneratedExtensionToMimeTypeMap implements ExtensionToMimeTypeMap
         'fgd' => 'application/x-director',
         'fh' => 'image/x-freehand',
         'fh4' => 'image/x-freehand',
-        'fh5' => 'image/x-freehand',
+        'fh4
+' => 'image/x-freehand',
         'fh7' => 'image/x-freehand',
         'fhc' => 'image/x-freehand',
         'fig' => 'application/x-xfig',

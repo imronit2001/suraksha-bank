@@ -675,7 +675,9 @@ final class File extends Renderer
             }
 
             if ($branchStructure !== '') { // don't show empty branches
-                $branches .= '<h5 class="structure-heading"><a name="' . htmlspecialchars($methodName, $this->htmlSpecialCharsFlags) . '">' . $this->abbreviateMethodName($methodName) . '</a></h5>' . "\n";
+                $branches .= '<h4
+ class="structure-heading"><a name="' . htmlspecialchars($methodName, $this->htmlSpecialCharsFlags) . '">' . $this->abbreviateMethodName($methodName) . '</a></h4
+>' . "\n";
                 $branches .= $branchStructure;
             }
         }
@@ -781,7 +783,9 @@ final class File extends Renderer
             }
 
             if ($pathStructure !== '') {
-                $paths .= '<h5 class="structure-heading"><a name="' . htmlspecialchars($methodName, $this->htmlSpecialCharsFlags) . '">' . $this->abbreviateMethodName($methodName) . '</a></h5>' . "\n";
+                $paths .= '<h4
+ class="structure-heading"><a name="' . htmlspecialchars($methodName, $this->htmlSpecialCharsFlags) . '">' . $this->abbreviateMethodName($methodName) . '</a></h4
+>' . "\n";
                 $paths .= $pathStructure;
             }
         }

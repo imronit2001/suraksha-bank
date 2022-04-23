@@ -8,25 +8,173 @@
     <title>Customer Details Form</title>
 </head>
 <body>
+    <h3>Account Opening Form for Individual (Part-1) Customer Information Sheet (CIF Creation/ Amendment)</h3>
+    <p>In case of joint accounts, Part-1(CIF) to be taken for each Customer)</p>
     <div class="customerDetailsFormContainer">
         <div class="step-row">
             <div id="progress"></div>
-            <div class="step-col"><small>step1</small></div>
-            <div class="step-col"><small>step2</small></div>
-            <div class="step-col"><small>step3</small></div>
-            <div class="step-col"><small>step4</small></div>
-            <div class="step-col"><small>step5</small></div>
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col"><small>Step 3</small></div>
+            <div class="step-col"><small>Step 4</small></div>
+            <div class="step-col"><small>Step 5</small></div>
+            <div class="step-col"><small>Step 6</small></div>
+            <div class="step-col"><small>Step 7</small></div>
+            <div class="step-col"><small>Step 8</small></div>
         </div>
         <form action="" id="form1">
-            <h3>Personal Details</h3>
+            <!-- <div class="bankDetails">
+
+            </div> -->
+            <h4>1. Personal Details</h4>
             <div class="inputFields">
+                <label for="#">Prefix<span>*</span> : </label>
+                <input type="radio" name="prefix" id="" required>Mr.
+                <input type="radio" name="prefix" id="">Mrs.
+                <input type="radio" name="prefix" id="">Miss <br><br>
                 <div class="name">
-                    <input type="text" name="" id="" placeholder="First Name" required>
-                    <input type="text" name="" id="" placeholder="Middle Name">
-                    <input type="text" name="" id="" placeholder="Last Name" required>
-                </div>    
-                <input type="number" name="" id="" placeholder="Mobile Number" required>
-                <input type="email" name="" id="" placeholder="Email" required>
+                    <br><label for="#">First Name<span>*</span> : </label>
+                    <input type="text" name="" id="" autocomplete="off">
+                    <br><label for="#">Middle Name : </label>
+                    <input type="text" name="" id="" autocomplete="off">
+                    <br><label for="#">Last Name<span>*</span> : </label>
+                    <input type="text" name="" id="" autocomplete="off" required>
+                </div>  
+                <br><label for="#">Date of Birth<span>*</span> : </label> 
+                <input type="date" name="" id="" required>
+                <label for="#">Gender<span>*</span> : </label>
+                <input type="radio" name="Gender" id="" required>Male
+                <input type="radio" name="Gender" id="">Female 
+                <input type="radio" name="Gender" id="">Third Gender
+                <br><label for="#">Marital Status<span>*</span> : </label>
+                <input type="radio" name="maritalStatus" id="" required>Married
+                <input type="radio" name="maritalStatus" id="">Unmarried
+                <input type="radio" name="maritalStatus" id="">Single
+                <input type="radio" name="maritalStatus" id="">Divorced
+                <input type="radio" name="maritalStatus" id="">Living Apart
+                <input type="radio" name="maritalStatus" id="">Defacto <br>
+                <br><label for="#">Name of Father<span>*</span> : </label>
+                <input type="text" name="" id="" required>
+                <label for="#">Name of Mother<span>*</span> : </label>
+                <input type="text" name="" id="" required><br>
+                <br><label for="#">Name of Spouse <small>(If Married)</small> <span>*</span> : </label>
+                <input type="text" name="" id="">
+                <label for="#">No. of Dependents : </label>
+                <input type="number">
+                <br><label for="#">Illiterate : </label>
+                <input type="radio" name="Illiterate" id="">Yes
+                <input type="radio" name="Illiterate" id="">No 
+                &nbsp;&nbsp;&nbsp;&nbsp;<label for="#">If yes : Identification Marks</label>
+                <input type="text"> <br>
+                <div class="guardian">
+                    <br><label for="#">Name of Guardian <span>(In case of Minor)</span> : </label>
+                    <input type="text" name="" id=""><br>
+                    <br><label for=""> <small>Realtionship with Guardian : </small></label>
+                    <input type="text">
+                    <label for="#"><small>Cust ID of Guardian/Assignee/Authorised Representative : </small></label>
+                    <input type="text">
+                </div>
+                <br><label for="#">Nationality<span>*</span> : </label>
+                <input type="radio">Indian
+                <input type="radio">Others 
+                <label for="#"><small>Country Name (If Others) : </small></label>
+                <input type="text"><br>
+                <br><label for="#">Residential Status : </label>
+                <input type="radio" name="Residential" id="">Resident Individual
+                <input type="radio" name="Residential" id="">Non Resident Indian
+                <input type="radio" name="Residential" id="">Foreign Indian
+                <input type="radio" name="Residential" id="">Person of Indian Origin <br>
+                <br><label for="#">Occupation Type<span>*</span> : </label><br>
+                <input type="radio" name="occupation" id="" required>Service
+                <input type="radio" name="occupation" id="">Private Sector
+                <input type="radio" name="occupation" id="">Public Sector
+                <input type="radio" name="occupation" id="">Governament Sector
+                <input type="radio" name="occupation" id="">Student
+                <input type="radio" name="occupation" id="">Professional
+                <input type="radio" name="occupation" id="">Self Employed
+                <input type="radio" name="occupation" id="">Retired
+                <input type="radio" name="occupation" id="">Housewife
+                <input type="radio" name="occupation" id="">Others <br>
+                <br><label for="#">Goveranament Sector : </label><br>
+                <input type="radio" name="govtSector" id="">State
+                <input type="radio" name="govtSector" id="">Central
+                <input type="radio" name="govtSector" id="">Defence
+                <input type="radio" name="govtSector" id="">Railway
+                <input type="radio" name="govtSector" id="">Others <br>
+                <br><label for="#">Business : </label><br>
+                <input type="radio" name="business" id="">Trader
+                <input type="radio" name="business" id="">Jeweller
+                <input type="radio" name="business" id="">Service Provider
+                <input type="radio" name="business" id="">Agriculture
+                <input type="radio" name="business" id="">Stoke Broker
+                <input type="radio" name="business" id="">Real Estate
+                <input type="radio" name="business" id="">Arms Dealer
+                <input type="radio" name="business" id="">Manufacturing
+                <input type="radio" name="business" id="">Others, Please Specify <br>
+                <br><label for="#">Oraganisation's Name : </label>
+                <input type="text" name="" id="">
+                <label for="#">Designation/Profession</label>
+                <input type="text" name="" id=""> <br>
+                <br><label for="#">Nature of Business : </label>
+                <input type="text" name="" id="">
+                <label for="#">Annual Income(Rs.)<span>*</span> : </label>
+                <input type="number" name="" id="" required>
+                <br><label for="#">Annual Turnover(Rs.)<span>*</span> : </label>
+                <input type="number" name="" id="" required>
+                <label for="#">Net Worth <small>(approx value)</small>(Rs.) : </label>
+                <input type="number" name="" id="">
+                <br><label for="#">Religion<span>*</span> : </label>
+                <input type="radio" name="religion" id="" required>Hindu
+                <input type="radio" name="religion" id="">Muslim
+                <input type="radio" name="religion" id="">Sikh
+                <input type="radio" name="religion" id="">Christian
+                <input type="radio" name="religion" id="">Others
+                <input type="text" name="religion" id=""><br>
+                <br><label for="#">Category<span>*</span> : </label>
+                <input type="radio" name="category" id="" required>General
+                <input type="radio" name="category" id="">OBC
+                <input type="radio" name="category" id="">SC
+                <input type="radio" name="category" id="">ST
+                <input type="radio" name="category" id="">Minority <br>
+                <br><label for="#">Customer Type/Status<span>*</span> : </label><br>
+                <input type="radio" name="customerType" id="">Sr. Citizen
+                <input type="radio" name="customerType" id="">Staff PF No. <input type="text" name="customerType" id="">
+                <input type="radio" name="customerType" id="">Pardanashin
+                <input type="radio" name="customerType" id="">Minor
+                <input type="radio" name="customerType" id="">NRI
+                <input type="radio" name="customerType" id="">Pensioner
+                <input type="radio" name="customerType" id="">General
+                <input type="radio" name="customerType" id="">Illitrate
+                <input type="radio" name="customerType" id="">Ex Staff PF No. <input type="text" name="customerType" id=""> <br>
+                <br><label for="#">Person with Disability<span>*</span> : </label>
+                <input type="radio" name="disability" id="">Yes
+                <input type="radio" name="disability" id="">No
+                <label for="#"><Small>If Yes</Small></label>
+                <input type="checkbox" name="disabilityClassification" id="">Visually Impaired
+                <input type="checkbox" name="disabilityClassification" id="">Differently Abled <br>
+                <br><label for="#">Educational Qualification<span>*</span> : </label>
+                <input type="radio" name="qualification" id="" required>Below SSC
+                <input type="radio" name="qualification" id="">SSC
+                <input type="radio" name="qualification" id="">HSC
+                <input type="radio" name="qualification" id="">Graduate
+                <input type="radio" name="qualification" id="">Post Graduate
+                <input type="radio" name="qualification" id="">Professional
+                <input type="radio" name="qualification" id="">Others <br>
+                <br><label for="#">Please tick the appropriate box<span>*</span> : </label>
+                <input type="radio" name="political" id="" required> Politically exposed Person 
+                <input type="radio" name="political" id=""> Related to politically exposed person
+                <input type="radio" name="political" id=""> None
+                <br>
+                <p><small>(Politically Exposed persons are individuals who are or have been entrusted with prominent public functions in a foreign country e.g. Heads of State/ Governaments, Senior Politicians / Senior Governaments / Judicials / Military Officers, Senior Executives of State-Owned Corporations, important Political Party Officials, etc.)</small></p>
+                <p><small> ISO 3166 Country Code of Jurisdiction of Residence <span>*</span> <input type="text" name="" id="">(Code for india is IN) <input type="text" name="" id=""> Citizenship <input type="text" name="" id=""></small></p>
+                <br>
+                <label for="#">Country of Tax Residence in India only and not in any other country or territory outside India <span>*</span> : </label>
+                <input type="radio" name="tax" id="">Yes
+                <input type="radio" name="tax" id="">No <small>(if No, please fill the FATCA details form-Annexure II)</small>
+                <br>
+                <label for="#"><strong>PAN/Tax Identification Number or equivalent <small> (if issued by Jurisdiction)</small> </strong> : </strong></label>
+                <input type="text" name="" id=""> <small>(If PAN not submitted, submit form 60-Annexue II)</small>
+
             </div>
             <div class="btn-box">
                 <button type="button" id="next1">Next</button>
@@ -35,7 +183,7 @@
 
 
         <form action="" id="form2">
-            <h3>Education</h3>
+            <h4>Contact Details</h4>
             <input type="text" name="" id="" placeholder="First Name" required>
             <input type="text" name="" id="" placeholder="Middle Name">
             <input type="text" name="" id="" placeholder="Last Name" required>
@@ -47,7 +195,7 @@
         </form>
 
         <form action="" id="form3">
-            <h3>Address</h3>
+            <h4>Address</h4>
             <input type="text" name="" id="" placeholder="Email" required>
             <input type="text" name="" id="" placeholder="Password">
             <input type="text" name="" id="" placeholder="Confirm Password" required>
@@ -59,7 +207,7 @@
         </form>
 
         <form action="" id="form4">
-            <h3>Nominee Details</h3>
+            <h4>Proof of Identity/Address</h4>
             <input type="text" name="" id="" placeholder="Email" required>
             <input type="text" name="" id="" placeholder="Password">
             <input type="text" name="" id="" placeholder="Confirm Password" required>
@@ -69,14 +217,46 @@
 
             </div>
         </form>
-
         <form action="" id="form5">
-            <h3>Create an Account</h3>
+            <h4>Address Details <span>*</span>(as per Proof Submitted at Step 3.)</h4>
             <input type="text" name="" id="" placeholder="Email" required>
             <input type="text" name="" id="" placeholder="Password">
             <input type="text" name="" id="" placeholder="Confirm Password" required>
             <div class="btn-box">
                 <button type="button"id="back4">Back</button>
+                <button type="button" id="next5">Next</button>
+
+            </div>
+        </form>
+        <form action="" id="form6">
+            <h4>Address Details</h4>
+            <input type="text" name="" id="" placeholder="Email" required>
+            <input type="text" name="" id="" placeholder="Password">
+            <input type="text" name="" id="" placeholder="Confirm Password" required>
+            <div class="btn-box">
+                <button type="button"id="back5">Back</button>
+                <button type="button" id="next6">Next</button>
+
+            </div>
+        </form>
+        <form action="" id="form7">
+            <h4>If the Proof of Address/OVD provided does not contain current address, please provide any of the documents below as OVD (Officially Valid Document)</h4>
+            <input type="text" name="" id="" placeholder="Email" required>
+            <input type="text" name="" id="" placeholder="Password">
+            <input type="text" name="" id="" placeholder="Confirm Password" required>
+            <div class="btn-box">
+                <button type="button"id="back6">Back</button>
+                <button type="button" id="next7">Next</button>
+
+            </div>
+        </form>
+        <form action="" id="form8">
+            <h4>declaration Cum undertaking Cum Self-Certification</h4>
+            <input type="text" name="" id="" placeholder="Email" required>
+            <input type="text" name="" id="" placeholder="Password">
+            <input type="text" name="" id="" placeholder="Confirm Password" required>
+            <div class="btn-box">
+                <button type="button"id="back7">Back</button>
                 <button type="submit">Submit</button>
             </div>
         </form>
@@ -91,16 +271,25 @@
         var form3 = document.getElementById('form3');
         var form4 = document.getElementById('form4');
         var form5 = document.getElementById('form5');
+        var form6 = document.getElementById('form6');
+        var form7 = document.getElementById('form7');
+        var form8 = document.getElementById('form8');
   
         var next1 = document.getElementById('next1');
         var next2 = document.getElementById('next2');
         var next3 = document.getElementById('next3');
         var next4 = document.getElementById('next4');
+        var next5 = document.getElementById('next5');
+        var next6 = document.getElementById('next6');
+        var next7 = document.getElementById('next7');
 
         var back1 = document.getElementById('back1');
         var back2 = document.getElementById('back2');
         var back3 = document.getElementById('back3');
         var back4 = document.getElementById('back4');
+        var back5 = document.getElementById('back5');
+        var back6 = document.getElementById('back6');
+        var back7 = document.getElementById('back7');
 
         var progress = document.getElementById('progress');
 
@@ -108,42 +297,72 @@
         next1.onclick = function(){
             form1.style.left = "-100%";
             form2.style.left = "0%";
-            progress.style.width = "40%";
+            progress.style.width = "25%";
         }
         next2.onclick = function(){
             form2.style.left = "-100%";
             form3.style.left = "0%";
-            progress.style.width = "60%";
+            progress.style.width = "37.5%";
         }
         next3.onclick = function(){
             form3.style.left = "-100%";
             form4.style.left = "0%";
-            progress.style.width = "80%";
+            progress.style.width = "50%";
         }
         next4.onclick = function(){
             form4.style.left = "-100%";
             form5.style.left = "0%";
+            progress.style.width = "62.5%";
+        }
+        next5.onclick = function(){
+            form5.style.left = "-100%";
+            form6.style.left = "0%";
+            progress.style.width = "75%";
+        }
+        next6.onclick = function(){
+            form6.style.left = "-100%";
+            form7.style.left = "0%";
+            progress.style.width = "87.5%";
+        }
+        next7.onclick = function(){
+            form7.style.left = "-100%";
+            form8.style.left = "0%";
             progress.style.width = "100%";
         }
         back1.onclick = function(){
             form1.style.left = "0%";
             form2.style.left = "-100%";
-            progress.style.width = "20%";
+            progress.style.width = "12.5%";
         }
         back2.onclick = function(){
             form2.style.left = "0%";
             form3.style.left = "-100%";
-            progress.style.width = "40%";
+            progress.style.width = "25%";
         }
         back3.onclick = function(){
             form3.style.left = "0%";
             form4.style.left = "-100%";
-            progress.style.width = "60%";
+            progress.style.width = "37.5%";
         }
         back4.onclick = function(){
             form4.style.left = "0%";
             form5.style.left = "-100%";
-            progress.style.width = "80%";
+            progress.style.width = "50%";
+        }
+        back5.onclick = function(){
+            form5.style.left = "0%";
+            form6.style.left = "-100%";
+            progress.style.width = "62.5%";
+        }
+        back6.onclick = function(){
+            form6.style.left = "0%";
+            form7.style.left = "-100%";
+            progress.style.width = "75%";
+        }
+        back7.onclick = function(){
+            form7.style.left = "0%";
+            form8.style.left = "-100%";
+            progress.style.width = "87.5%";
         }
     </script>
 </body>

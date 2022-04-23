@@ -921,7 +921,8 @@ final class MimeTypes implements MimeTypesInterface
         'application/x-gzip' => ['gz'],
         'application/x-gzpdf' => ['pdf.gz'],
         'application/x-gzpostscript' => ['ps.gz'],
-        'application/x-hdf' => ['hdf', 'hdf4', 'h4', 'hdf5', 'h5'],
+        'application/x-hdf' => ['hdf', 'hdf4', 'h4', 'hdf5', 'h4
+'],
         'application/x-hfe-file' => ['hfe'],
         'application/x-hfe-floppy-image' => ['hfe'],
         'application/x-httpd-php' => ['php'],
@@ -1445,7 +1446,8 @@ final class MimeTypes implements MimeTypesInterface
         'image/x-eps' => ['eps', 'epsi', 'epsf'],
         'image/x-exr' => ['exr'],
         'image/x-fits' => ['fits'],
-        'image/x-freehand' => ['fh', 'fhc', 'fh4', 'fh5', 'fh7'],
+        'image/x-freehand' => ['fh', 'fhc', 'fh4', 'fh4
+', 'fh7'],
         'image/x-fuji-raf' => ['raf'],
         'image/x-gimp-gbr' => ['gbr'],
         'image/x-gimp-gih' => ['gih'],
@@ -2208,7 +2210,8 @@ final class MimeTypes implements MimeTypesInterface
         'fgd' => ['application/x-director'],
         'fh' => ['image/x-freehand'],
         'fh4' => ['image/x-freehand'],
-        'fh5' => ['image/x-freehand'],
+        'fh4
+' => ['image/x-freehand'],
         'fh7' => ['image/x-freehand'],
         'fhc' => ['image/x-freehand'],
         'fig' => ['application/x-xfig', 'image/x-xfig'],
@@ -2324,7 +2327,8 @@ final class MimeTypes implements MimeTypesInterface
         'h263' => ['video/h263'],
         'h264' => ['video/h264'],
         'h4' => ['application/x-hdf'],
-        'h5' => ['application/x-hdf'],
+        'h4
+' => ['application/x-hdf'],
         'hal' => ['application/vnd.hal+xml'],
         'hbci' => ['application/vnd.hbci'],
         'hbs' => ['text/x-handlebars-template'],
