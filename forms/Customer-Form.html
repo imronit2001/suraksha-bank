@@ -18,8 +18,8 @@
             <div class="step-col"><small>Step 3</small></div>
             <div class="step-col"><small>Step 4</small></div>
             <div class="step-col"><small>Step 5</small></div>
-            <div class="step-col"><small>Step 6</small></div>
-            <div class="step-col"><small>Step 7</small></div>
+            <!-- <div class="step-col"><small>Step 6</small></div>
+            <div class="step-col"><small>Step 7</small></div> -->
             <!-- <div class="step-col"><small>Step 8</small></div> -->
         </div>
         <form action="" id="form1">
@@ -248,14 +248,54 @@
             <input type="number" name="" id="">
             <label for="#">Country : </label>
             <input type="text" name="" id=""><br>
-            <br><p>Is the address provided  above Current Address ? <span>*</span> <input type="radio" name="currAddress" id="">Yes<input type="radio" name="currAddress" id="">No<small>If selected 'No', then please provide Current Address at Step 5 along with Documentary Evidence as per Step 6). </small></p>
+            <br><p>Is the address provided  above Current Address ? <span>*</span> <input type="radio" name="currAddress" id="">Yes<input type="radio" name="currAddress" id="">No <small> If selected 'No', then please provide Current Address at Step 5 along with Documentary Evidence as per Step 6). </small></p>
+
+            <h4>5. Address Details <small>
+                <input type="radio" name="address" id="">Current
+                <input type="radio" name="address" id="">Correspondance
+                <input type="radio" name="address" id="">Permanent
+                <input type="radio" name="address" id="">Same as Step 4.</small>
+            </h4>
+            <label for="#">Address Type <span>*</span> : </label>
+            <input type="radio" name="addressType" id=""required>Residential/Business
+            <input type="radio" name="addressType" id="">Residential
+            <input type="radio" name="addressType" id="">Business
+            <input type="radio" name="addressType" id="">Registered Office
+            <input type="radio" name="addressType" id="">Unspecified <br>
+
+            <br><label for="#">Address <span>*</span> : </label>
+            <input type="text" class="add" name="" id=""><br>
+            <br><label for="">City/Village : </label>
+            <input type="text" name="" id="">
+            <label for="#">District <span>*</span> : </label>
+            <input type="text" name="" id=""><br>
+            <br><label for="#">State <span>*</span> : </label>
+            <input type="text" name="" id="">
+            <label for="#">Pin <span>*</span> : </label>
+            <input type="number" name="" id="">
+            <label for="#">Country : </label>
+            <input type="text" name="" id="">
+
+            <h4>6. <small>If the Proof of Address/OVD provided does not contain current address, please provide any of the documents below as OVD (Officially Valid Document)</small></h4>
+            
+            <input type="radio" name="POA" id="">Utility Bill
+            <input type="radio" name="POA" id="">PPO/FPPO
+            <input type="radio" name="POA" id="">Property or Municipal Tax Receipt <br>
+            <br><input type="radio" name="POA" id=""><small>Letter of allotment of accomodation issued by employer/ isuued by State or Central Governament departments, statuory or regulatory bodies, Public Sector undertaking, schedeled commercial banks, financial instituitions and listed companies. Similarly, leave and licence aggrements with such employers alloting official accomodation.</small> <br>
+            <br><input type="radio" name="POA" id=""><small>Self-Declaration ( applicable only when customer has carried out e-KYC (AADHAR authentication) and adress in AADHAR is not same as Current Address)</small><br>
+            <br><label for="#">Document No. : </label>
+            <input type="text" name="" id="">
+            <label for="#">Date : </label>
+            <input type="date" name="" id=""><br>
+            <p><small>I/We shall submit OVD with updated Current Address within a period of three months, falling which bank may restrict the operations in the account.</small></p>
+
             <div class="btn-box">
                 <button type="button"id="back3">Back</button>
                 <button type="button" id="next4">Next</button>
 
             </div>
         </form>
-        <form action="" id="form5">
+    <!--    <form action="" id="form5">
             <h4>5. Address Details <small>
                 <input type="radio" name="address" id="">Current
                 <input type="radio" name="address" id="">Correspondance
@@ -289,7 +329,7 @@
             </div>
         </form>
         <form action="" id="form6">
-            <h4>6. <small>If the Proof of Address/OVD provided does not contain current address, please provide any of the documents below as OVD (Officially Valid Document)</small></h4>
+             <h4>6. <small>If the Proof of Address/OVD provided does not contain current address, please provide any of the documents below as OVD (Officially Valid Document)</small></h4>
             
             <input type="radio" name="POA" id="">Utility Bill
             <input type="radio" name="POA" id="">PPO/FPPO
@@ -300,14 +340,14 @@
             <input type="text" name="" id="">
             <label for="#">Date : </label>
             <input type="date" name="" id=""><br>
-            <p><small>I/We shall submit OVD with updated Current Address within a period of three months, falling which bank may restrict the operations in the account.</small></p>
+            <p><small>I/We shall submit OVD with updated Current Address within a period of three months, falling which bank may restrict the operations in the account.</small></p> 
             <div class="btn-box">
                 <button type="button"id="back5">Back</button>
                 <button type="button" id="next6">Next</button>
 
             </div>
-        </form>
-        <form action="" id="form7">
+        </form>-->
+        <form action="" id="form5">
             <h4>7. Declaration Cum undertaking Cum Self-Certification</h4>
             <p><small>I have read the copy of <b><a href="#">Terms & Conditions</a></b> of the Account opening given to me. The <b>Terms & Conditions</b> have been explained ti me/us and having understood. I accept the same. <br>I hereby declare that I have submitted the Aadhar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA 2002. <br>I hereby consent that the bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric authentication to the bank.</small></p>
             
@@ -325,7 +365,7 @@
             <input type="date" name="" id=""><br>
 
             <div class="btn-box">
-                <button type="button"id="back6">Back</button>
+                <button type="button"id="back4">Back</button>
                 <button type="submit">Submit</button>
 
             </div>
@@ -351,24 +391,24 @@
         var form3 = document.getElementById('form3');
         var form4 = document.getElementById('form4');
         var form5 = document.getElementById('form5');
-        var form6 = document.getElementById('form6');
-        var form7 = document.getElementById('form7');
+        // var form6 = document.getElementById('form6');
+        // var form7 = document.getElementById('form7');
         // var form8 = document.getElementById('form8');
   
         var next1 = document.getElementById('next1');
         var next2 = document.getElementById('next2');
         var next3 = document.getElementById('next3');
         var next4 = document.getElementById('next4');
-        var next5 = document.getElementById('next5');
-        var next6 = document.getElementById('next6');
+        // var next5 = document.getElementById('next5');
+        // var next6 = document.getElementById('next6');
         // var next7 = document.getElementById('next7');
 
         var back1 = document.getElementById('back1');
         var back2 = document.getElementById('back2');
         var back3 = document.getElementById('back3');
         var back4 = document.getElementById('back4');
-        var back5 = document.getElementById('back5');
-        var back6 = document.getElementById('back6');
+        // var back5 = document.getElementById('back5');
+        // var back6 = document.getElementById('back6');
         // var back7 = document.getElementById('back7');
 
         var progress = document.getElementById('progress');
@@ -377,33 +417,33 @@
         next1.onclick = function(){
             form1.style.left = "-100%";
             form2.style.left = "0%";
-            progress.style.width = "28.57%";
+            progress.style.width = "40%";
         }
         next2.onclick = function(){
             form2.style.left = "-100%";
             form3.style.left = "0%";
-            progress.style.width = "42.85%";
+            progress.style.width = "60%";
         }
         next3.onclick = function(){
             form3.style.left = "-100%";
             form4.style.left = "0%";
-            progress.style.width = "57.14%";
+            progress.style.width = "80%";
         }
         next4.onclick = function(){
             form4.style.left = "-100%";
             form5.style.left = "0%";
-            progress.style.width = "71.43%";
-        }
-        next5.onclick = function(){
-            form5.style.left = "-100%";
-            form6.style.left = "0%";
-            progress.style.width = "85.714%";
-        }
-        next6.onclick = function(){
-            form6.style.left = "-100%";
-            form7.style.left = "0%";
             progress.style.width = "100%";
         }
+        // next5.onclick = function(){
+        //     form5.style.left = "-100%";
+        //     form6.style.left = "0%";
+        //     progress.style.width = "85.714%";
+        // }
+        // next6.onclick = function(){
+        //     form6.style.left = "-100%";
+        //     form7.style.left = "0%";
+        //     progress.style.width = "100%";
+        // }
         // next7.onclick = function(){
         //     form7.style.left = "-100%";
         //     form8.style.left = "0%";
@@ -412,33 +452,33 @@
         back1.onclick = function(){
             form1.style.left = "0%";
             form2.style.left = "-100%";
-            progress.style.width = "14.285%";
+            progress.style.width = "20%";
         }
         back2.onclick = function(){
             form2.style.left = "0%";
             form3.style.left = "-100%";
-            progress.style.width = "28.57%";
+            progress.style.width = "40%";
         }
         back3.onclick = function(){
             form3.style.left = "0%";
             form4.style.left = "-100%";
-            progress.style.width = "42.85%";
+            progress.style.width = "60%";
         }
         back4.onclick = function(){
             form4.style.left = "0%";
             form5.style.left = "-100%";
-            progress.style.width = "57.14%";
+            progress.style.width = "80%";
         }
-        back5.onclick = function(){
-            form5.style.left = "0%";
-            form6.style.left = "-100%";
-            progress.style.width = "71.43%";
-        }
-        back6.onclick = function(){
-            form6.style.left = "0%";
-            form7.style.left = "-100%";
-            progress.style.width = "85.714%";
-        }
+        // back5.onclick = function(){
+        //     form5.style.left = "0%";
+        //     form6.style.left = "-100%";
+        //     progress.style.width = "71.43%";
+        // }
+        // back6.onclick = function(){
+        //     form6.style.left = "0%";
+        //     form7.style.left = "-100%";
+        //     progress.style.width = "85.714%";
+        //}
         // back7.onclick = function(){
         //     form7.style.left = "0%";
         //     form8.style.left = "-100%";

@@ -89,11 +89,11 @@ form p{
     text-align: left;
     font-size: 11px;
 }
-#form4 p, #form6 p, #form7 p{
+#form4 p, #form5 p{
     font-size: 13px;
     text-align: center;
 }
-#form5 .add{
+#form4 .add{
     width: 70%;
 }
 form small{
@@ -156,7 +156,7 @@ form button{
 }
 #progress{
     position: absolute;
-    width: 14.285%;
+    width: 20%;
     height: 100%;
     background: #34495e;
     transition: .8s;
