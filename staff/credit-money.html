@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Money</title>
+    <link rel="icon" type="image/x-icon" href="../admin/images/switchbank.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="../admin/css/dashboard.css">
+    <link rel="stylesheet" href="../admin/css/sidenavbar.css">
+    <link rel="stylesheet" href="css/credit-money.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxs-bank icon'></i>
+            <div class="logo_name">Switch Bank</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="index.html">
+                    <i class='bx bxs-home'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-plus'></i>
+                    <span class="links_name">New a/c Application</span>
+                </a>
+                <span class="tooltip">New a/c Application</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-credit-card'></i>
+                    <span class="links_name">Credit Card Request</span>
+                </a>
+                <span class="tooltip">Credit Card Request</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxl-mastercard'></i>
+                    <span class="links_name">Debit Card Request</span>
+                </a>
+                <span class="tooltip">Debit Card Request</span>
+            </li>
+            <li>
+                <a href="credit-money.html">
+                    <i class='bx bx-plus'></i>
+                    <span class="links_name">Credit Money</span>
+                </a>
+                <span class="tooltip">Credit Money</span>
+            </li>
+            <li>
+                <a href="debit-money.html">
+                    <i class='bx bx-minus'></i>
+                    <span class="links_name">Debit Money</span>
+                </a>
+                <span class="tooltip">Debit Money</span>
+            </li>
+            <li>
+                <a href="../admin/manage-customers.html">
+                    <i class='bx bxs-user-detail'></i>
+                    <span class="links_name">Manage Customers</span>
+                </a>
+                <span class="tooltip">Manage Customers</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-edit'></i>
+                    <span class="links_name">KYC Application</span>
+                </a>
+                <span class="tooltip">KYC Application</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-book-alt'></i>
+                    <span class="links_name">Passbook Request</span>
+                </a>
+                <span class="tooltip">Passbook Request</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-book'></i>
+                    <span class="links_name">ChequeBook Request</span>
+                </a>
+                <span class="tooltip">ChequeBook Request</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-building-house'></i>
+                    <span class="links_name">Home Loans</span>
+                </a>
+                <span class="tooltip">Home Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-book-reader'></i>
+                    <span class="links_name">Study Loans</span>
+                </a>
+                <span class="tooltip">Study Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-car'></i>
+                    <span class="links_name">Car Loans</span>
+                </a>
+                <span class="tooltip">Car Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-circle'></i>
+                    <span class="links_name">Personal Loans</span>
+                </a>
+                <span class="tooltip">Personal Loans</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-credit-card'></i>
+                    <span class="links_name">Credit Card a/c</span>
+                </a>
+                <span class="tooltip">Credit Card a/c</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-wallet'></i>
+                    <span class="links_name">Fixed Deposits</span>
+                </a>
+                <span class="tooltip">Fixed Deposits</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-contact'></i>
+                    <span class="links_name">Contact Customers</span>
+                </a>
+                <span class="tooltip">Contact Customers</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-block'></i>
+                    <span class="links_name">Blocked Accounts</span>
+                </a>
+                <span class="tooltip">Blocked Accounts</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-copy-alt'></i>
+                    <span class="links_name">Terms & Conditions</span>
+                </a>
+                <span class="tooltip">Terms & Conditions</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-help-circle'></i>
+                    <span class="links_name">Helpline</span>
+                </a>
+                <span class="tooltip">Helpline</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-lock'></i>
+                    <span class="links_name">Change Password</span>
+                </a>
+                <span class="tooltip">Change Password</span>
+            </li>
+            <div style="height: 150px; width: 100%;">
+
+            </div>
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="../admin/images/ronit.JPG" alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">Ronit Singh</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="main">
+            <div class="bank-heading">
+                <h1 class="bank-name">Suraksha Bank</h1>
+                <h1 class="branch-name">Branch : Kolkata</h1>
+            </div>
+            <div class="form-container">
+                <form action="">
+                    <div class="search-box">
+                        <input type="text" class="form-control" placeholder="Account Number">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+                <div id="customer-data">
+                    <div class="verification">
+                        <div class="img">
+                            <img src="../admin/images/ronit.JPG" alt="">
+                            <img class="sign" src="../admin/images/signature.webp" alt="">
+                        </div>
+                        <div class="text">
+                            <h1 class="name">Name : Ronit Singh</h1>
+                            <h1 class="balance">Available Balance : 152000</h1>
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="search-box">
+                            <input type="text" class="form-control" placeholder="Enter Amount">
+                            <!-- <button type="submit" class="btn btn-primary">Enter</button> -->
+                        </div>
+                    
+                        <div class="note-detail">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Detail of Note</th>
+                                        <th scope="col">No of Note</th>
+                                        <th scope="col">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">2000 *</th>
+                                        <td><input type="text"></td>
+                                        <td>2000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2000 *</th>
+                                        <td><input type="text"></td>
+                                        <td>2000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2000 *</th>
+                                        <td><input type="text"></td>
+                                        <td>2000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2000 *</th>
+                                        <td><input type="text"></td>
+                                        <td>2000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pin-check">
+                            <input type="text" class="form-control" placeholder="Enter PIN">
+                            <button class="btn btn-success">Credit</button>
+                            <button class="btn btn-info">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="../admin/javascript/sidenavbar.js">  </script>
+</body>
+
+</html>

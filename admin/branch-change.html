@@ -12,9 +12,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="css/bank-balance.css">
+    <!-- <link rel="stylesheet" href="css/bank-balance.css"> -->
     <link rel="stylesheet" href="css/sidenavbar.css">
     <link rel="stylesheet" href="css/manage-staffs.css">
+    <link rel="stylesheet" href="css/branch-change.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -162,68 +163,93 @@
         </ul>
     </div>
     <section class="home-section">
-        <div class="main-div">
-            <div class="main-heading">
-                <div class="main-heading-top">
-                    <div class="main-heading-top-left">
-                        <h1>Branch Name : Kolkata</h1>
-                    </div>
-                    <div class="main-heading-top-right">
-                        <h1>25/03/2022 , 12:40</h1>
-                    </div>
-                </div>
-                <div class="main-heading-bottom">
-                    <h1>Available Fund : 5,67,45,000.00</h1>
+        <div class="staff-body">
+            <div class="staff-heading">
+                <h1 class="bankname text-center font-weight-bold">Suraksha Bank</h1>
+                <!-- <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1> -->
+                <h1 class="title text-center">Branch Change Applications</h1>
+                <div class="searchbox">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Enter Customer Id">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
                 </div>
             </div>
-            
-            <div class="main-passbook ">
-                <table class="table table-striped ">
+            <div class="staff-table">
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">Total Transaction</th>
-                            <th scope="col">Total Credit</th>
-                            <th scope="col">Total Debit</th>
-                            <th scope="col">Balance</th>
+                            <th scope="col" class="smallwidth">Customer Id</th>
+                            <th scope="col" class="smallwidth">Customer Name</th>
+                            <th scope="col" class="smallwidth">Account No</th>
+                            <th scope="col" class="smallwidth">Current Branch</th>
+                            <th scope="col" class="bigwidth">Changed Branch</th>
+                            <th scope="col" class="bigwidth">Application</th>
+                            <th scope="col" >Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>10/04/2022</td>
-                            <td>50000</td>
-                            <td>20000</td>
-                            <td>30000</td>
-                            <td>100000</td>
+                            <td><p>15201219026</p></td>
+                            <td><p>Ronit Singh</p></td>
+                            <td><p>12345678901234</p></td>
+                            <td><p>Kolkata</p></td>
+                            <td><p>Hooghly</p></td>
+                            <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
+                            <td><p>Pending</p></td>
                         </tr>
                         <tr>
-                            <td>10/04/2022</td>
-                            <td>50000</td>
-                            <td>20000</td>
-                            <td>30000</td>
-                            <td>100000</td>
+                            <td><p>15201219026</p></td>
+                            <td><p>Ronit Singh</p></td>
+                            <td><p>12345678901234</p></td>
+                            <td><p>Kolkata</p></td>
+                            <td><p>Hooghly</p></td>
+                            <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
+                            <td><p>Pending</p></td>
                         </tr>
                         <tr>
-                            <td>10/04/2022</td>
-                            <td>50000</td>
-                            <td>20000</td>
-                            <td>30000</td>
-                            <td>100000</td>
+                            <td><p>15201219026</p></td>
+                            <td><p>Ronit Singh</p></td>
+                            <td><p>12345678901234</p></td>
+                            <td><p>Kolkata</p></td>
+                            <td><p>Hooghly</p></td>
+                            <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
+                            <td><p>Pending</p></td>
                         </tr>
                         <tr>
-                            <td>10/04/2022</td>
-                            <td>50000</td>
-                            <td>20000</td>
-                            <td>30000</td>
-                            <td>100000</td>
+                            <td><p>15201219026</p></td>
+                            <td><p>Ronit Singh</p></td>
+                            <td><p>12345678901234</p></td>
+                            <td><p>Kolkata</p></td>
+                            <td><p>Hooghly</p></td>
+                            <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
+                            <td><p>Pending</p></td>
                         </tr>
+                        <tr>
+                            <td><p>15201219026</p></td>
+                            <td><p>Ronit Singh</p></td>
+                            <td><p>12345678901234</p></td>
+                            <td><p>Kolkata</p></td>
+                            <td><p>Hooghly</p></td>
+                            <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
+                            <td><p>Pending</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>15201219026</p></td>
+                            <td><p>Ronit Singh</p></td>
+                            <td><p>12345678901234</p></td>
+                            <td><p>Kolkata</p></td>
+                            <td><p>Hooghly</p></td>
+                            <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
+                            <td><p>Pending</p></td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
         </div>
-
     </section>
-    <script src="/admin/javascript/sidenavbar.js">  </script>
+    <script src="javascript/sidenavbar.js">  </script>
 </body>
 
 </html>

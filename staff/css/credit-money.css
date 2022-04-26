@@ -1,0 +1,116 @@
+.bank-heading{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bank-name {
+    /* border: 2px solid black; */
+    font-size: 30px;
+    width: auto;
+    text-align: center;
+    margin: 0;
+}
+
+.branch-name {
+    /* border: 2px solid black; */
+    font-size: 15px;
+    width: auto;
+    text-align: center;
+    margin: 0;
+}
+.form-container{
+    /* border: 1px solid black; */
+    /* height: 500px; */
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+.search-box{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+}
+.search-box input{
+    /* border: 2px solid rebeccapurple; */
+    /* margin: auto 10px auto auto; */
+    min-width: 200px;
+    width: 300px;
+    /* margin: auto; */
+}
+#customer-data{
+    /* border: 2px solid black; */
+}
+.verification{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px; */
+}
+.img{
+    /* border: 2px solid black; */
+    /* width: 50%; */
+    display: flex;
+    justify-content: center;
+    /* margin: auto; */
+}
+.img img{
+    /* width: 100%; */
+    height: 150px;
+}
+.sign{
+    width: 150px;
+    height: 80px;
+}
+.text{
+    /* width: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+    /* padding: auto; */
+    /* border: 2px solid red; */
+}
+.name{
+    font-size: 20px;
+    text-align: center;
+}
+.balance{
+    font-size: 16px;
+    text-align: center;
+}
+.note-detail{
+    width: 60%;
+    /* max-width: 400px; */
+    /* min-width: 200px; */
+    margin: auto;
+    overflow-x: scroll;
+    /* border: 1px solid rebeccapurple; */
+    margin-bottom: 10px;
+}
+tr td input{
+    background: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+.pin-check{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.pin-check input{
+    width: 100px;
+}
