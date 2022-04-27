@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+ 
+  <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/sidenavbar.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxs-bank icon'></i>
+          <div class="logo_name">Switch Bank</div>
+          <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="index.html">
+              <i class='bx bxs-home'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+            <a href="bank-balance.html">
+              <i class='bx bx-wallet'></i>
+              <span class="links_name">Bank Balance</span>
+            </a>
+            <span class="tooltip">Bank Balance</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-transfer'></i>
+              <span class="links_name">Transaction Record</span>
+            </a>
+            <span class="tooltip">Transaction Record</span>
+          </li>
+          <li>
+            <a href="add-staff.html">
+              <i class='bx bxs-user-plus'></i>
+              <span class="links_name">Add Staff</span>
+            </a>
+            <span class="tooltip">Add Staff</span>
+          </li>
+          <li>
+            <a href="manage-staffs.html">
+              <i class='bx bxs-user-account'></i>
+              <span class="links_name">Manage Staffs</span>
+            </a>
+            <span class="tooltip">Manage Staffs</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-user-plus'></i>
+              <span class="links_name">Add Manager</span>
+            </a>
+            <span class="tooltip">Add Manager</span>
+          </li>
+          <li>
+            <a href="manage-customers.html">
+              <i class='bx bxs-user-detail'></i>
+              <span class="links_name">Manage Customers</span>
+            </a>
+            <span class="tooltip">Manage Customers</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-building-house'></i>
+              <span class="links_name">Home Loans</span>
+            </a>
+            <span class="tooltip">Home Loans</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bxs-book-reader'></i>
+              <span class="links_name">Study Loans</span>
+            </a>
+            <span class="tooltip">Study Loans</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-car'></i>
+              <span class="links_name">Car Loans</span>
+            </a>
+            <span class="tooltip">Car Loans</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-user-circle'></i>
+              <span class="links_name">Personal Loans</span>
+            </a>
+            <span class="tooltip">Personal Loans</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-git-branch'></i>
+              <span class="links_name">Branch change</span>
+            </a>
+            <span class="tooltip">Branch change</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-credit-card'></i>
+              <span class="links_name">Credit Card a/c</span>
+            </a>
+            <span class="tooltip">Credit Card a/c</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bxs-wallet-alt'></i>
+              <span class="links_name">Fixed Deposits</span>
+            </a>
+            <span class="tooltip">Fixed Deposits</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bxs-copy-alt'></i>
+              <span class="links_name">Terms & Conditions</span>
+            </a>
+            <span class="tooltip">Terms & Conditions</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-help-circle'></i>
+              <span class="links_name">Helpline</span>
+            </a>
+            <span class="tooltip">Helpline</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bxs-lock'></i>
+              <span class="links_name">Change Password</span>
+            </a>
+            <span class="tooltip">Change Password</span>
+          </li>
+          <li class="profile">
+            <a href="#">
+                <!-- <i class='bx bx-log-out' id="log_out"></i> -->
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="links_name">log out </span>
+            </a>
+            <span class="tooltip">logOut </span>
+        </li>
+        </ul>
+    </div>
+    <section class="admin-fixed-deposit">
+        <div class="fixed-deposited">
+            <h1>Fixed Deposit</h1>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Account No</th>
+                  <th>Account Type</th>
+                  <th>Branch</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>123456xxx</td>
+                  <td>Saving Account/Current Account</td>
+                  <td>Hooghly</td>
+                </tr>
+              </tbody>
+            </table>
+          
+        </div>
+    </section>
+
+      <script src="javascript/sidenavbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+.chequeBook{
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 58px;
+    transition: all 0.5s ease;
+    z-index: 2;
+
+}
+.wrapper {
+    background-color: #dce9f54f;
+    min-height: 100px;
+    max-width: 1000px;
+    /* margin:0px auto; */
+    padding: 10px 30px
+  }
