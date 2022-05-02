@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/KYC-Form.css">
+    <title>KYC Form</title>
+</head>
+<body>
+    <h3>Know Your Customer (KYC) Application Form - For Individual</h3>
+    <p> 
+        <input type="radio" name="formType" id="">NEW
+        <input type="radio" name="formType" id="">CHANGE REQUEST <small>(Please tick Choose the appropriate) </small>
+    </p>
+    <div class="customerDetailsFormContainer">
+        <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col"><small>Step 3</small></div>
+            <div class="step-col"><small>Step 4</small></div>
+            <!-- <div class="step-col"><small>Step 5</small></div> -->
+            <!-- <div class="step-col"><small>Step 6</small></div>
+            <div class="step-col"><small>Step 7</small></div> -->
+            <!-- <div class="step-col"><small>Step 8</small></div> -->
+        </div>
+        <form action="" id="form1">
+            <!-- <div class="bankDetails">
+
+            </div> -->
+            <h4>1. Identity Details</h4>
+            <div class="inputFields">
+                
+                <label for="#">Prefix<span>*</span> : </label>
+                <input type="radio" name="prefix" id="" required>Mr.
+                <input type="radio" name="prefix" id="">Mrs.
+                <input type="radio" name="prefix" id="">Miss <br>
+                
+                <br><label for="#">Name of the Applicant : </label>
+                <div class="name">
+                    <br><label for="#">First Name<span>*</span> : </label>
+                    <input type="text" name="" id="" autocomplete="off">
+                    <br><label for="#">Middle Name : </label>
+                    <input type="text" name="" id="" autocomplete="off">
+                    <br><label for="#">Last Name<span>*</span> : </label>
+                    <input type="text" name="" id="" autocomplete="off" required>
+                </div>  
+                
+                <br><label for="#">Name of Father/Spouse<span>*</span> : </label>
+                <input type="text" name="" id="" required>
+            
+                
+                <br><br><label for="#">Gender<span>*</span> : </label>
+                <input type="radio" name="Gender" id="" required>Male
+                <input type="radio" name="Gender" id="">Female 
+                <input type="radio" name="Gender" id="">Third Gender
+                
+                &nbsp; &nbsp;<br><br><label for="#">Date of Birth<span>*</span> : </label> 
+                <input type="date" name="" id="" required>
+
+                <br><br><label for="#">Marital Status<span>*</span> : </label>
+                <input type="radio" name="maritalStatus" id="" required>Married
+                <input type="radio" name="maritalStatus" id="">Unmarried
+                <input type="radio" name="maritalStatus" id="">Single
+                <input type="radio" name="maritalStatus" id="">Divorced
+                <input type="radio" name="maritalStatus" id="">Living Apart
+                <input type="radio" name="maritalStatus" id="">Defacto
+                
+                
+                <br><br><label for="#">Nationality<span>*</span> : </label>
+                <input type="radio">Indian
+                <input type="radio">Others 
+                
+                <label for="#"><small>Country Name (If Others) : </small></label>
+                <input type="text">
+                
+                <br><br><label for="#">Residential Status <span>*</span> : </label>
+                <input type="radio" name="Residential" id="" required>Resident Individual
+                <input type="radio" name="Residential" id="">Non Resident Indian
+                <input type="radio" name="Residential" id="">Foreign Indian
+                <input type="radio" name="Residential" id="">Person of Indian Origin
+
+                <br><br><label for="#">PAN <span>*</span> : </label>
+                <input type="text" name="" id="" required>
+
+                <br><br><label for="#">Unique Identification Number (UID)/ Aadhar, if any : </label>
+                <input type="text" name="" id=""> 
+
+                <br><br><label for="#">Specify Proof of Identity Submitted <span>*</span> : </label>
+                <input type="radio" required>Pan
+                <input type="radio">Others 
+                <label for="#"><small>&nbsp;&nbsp;Please Specify (If Others) : </small></label>
+                <input type="text">
+
+            </div>
+            <div class="btn-box">
+                <button type="button" id="next1">Next</button>
+            </div>
+        </form>
+
+
+        <form action="" id="form2">
+            <h4>2. Address Details</h4>
+            <label for="#">Mobile No.<span>*</span> : </label>
+            <input type="number" name="" id="" required>
+            <br><label for="#">Alternative Mobile No. : </label>
+            <input type="number" name="" id=""><br>
+            <br><label for="#">Email ID <span>*</span> : </label>
+            <input type="email" name="" id="" required>
+            <br><label for="#">Alternative Email ID : </label>
+            <input type="email" name="" id=""><br>
+            <br><label for="">Tel(Off.) : </label>
+            <input type="number" name="" id="">
+            <br><label for="">Tel(Res.) : </label>
+            <input type="number" name="" id="">
+            <div class="btn-box">
+                <button type="button" id="back1">Back</button>
+                <button type="button" id="next2">Next</button>
+            </div>
+        </form>
+
+        <form action="" id="form3">
+            <h4>3. Other Details <small>(Please choose the appropriate Box (any one ID type) and give details) </small><span>*</span></h4>
+            <input type="radio" name="identityProof" id="" required>A-Passport <small>(Mandatory in case of NRI/PIO)</small>
+            <input type="radio" name="identityProof" id="">B-Voter's Identity Card
+            <input type="radio" name="identityProof" id="">C-Driving Licence
+            <input type="radio" name="identityProof" id="">D-NREGA Job Card <br>
+            <br><input type="radio" name="identityProof" id="">E-<small>Letter issued by National Population Register containing details of Name & Address</small>
+            <input type="radio" name="identityProof" id="">F-Proof of Possession of Aadhar No.
+            <input type="radio" name="identityProof" id="">E-KYC
+            <input type="radio" name="identityProof" id="">Offline Verification <br>
+            <br><label for="">Document/Identification Number <span>*</span></label>
+            <input type="text" name="" id=""required> <br>
+            <br><label for="">Issued By <span>*</span></label>
+            <input type="text" name="" id=""required> <br>
+            <br><label for="">Issue Date <span>*</span></label>
+            <input type="date" name="" id="" required> <br>
+            <br><label for="">Expiry Date <small>(If Applicable)</small></label>
+            <input type="date" name="" id="">
+            <div class="btn-box">
+                <button type="button"id="back2">Back</button>
+                <button type="button" id="next3">Next</button>
+
+            </div>
+        </form>
+
+        <form action="" id="form4">
+            <h4>4. Declaration <span>*</span> <small> (as per Proof of Address submitted at step 3.)</small></h4>
+            <label for="#">Address Type <span>*</span> : </label>
+            <input type="radio" name="addressType" id=""required>Residential/Business
+            <input type="radio" name="addressType" id="">Residential
+            <input type="radio" name="addressType" id="">Business
+            <input type="radio" name="addressType" id="">Registered Office
+            <input type="radio" name="addressType" id="">Overseas <small>mandatory for NRI/PIO)</small> <br>
+
+            <br><label for="#">Address <span>*</span> : </label>
+            <input type="text" class="add" name="" id=""><br>
+            <br><label for="">City/Village : </label>
+            <input type="text" name="" id="">
+            <label for="#">District <span>*</span> : </label>
+            <input type="text" name="" id=""><br>
+            <br><label for="#">State <span>*</span> : </label>
+            <input type="text" name="" id="">
+            <label for="#">Pin <span>*</span> : </label>
+            <input type="number" name="" id="">
+            <label for="#">Country : </label>
+            <input type="text" name="" id=""><br>
+            <br><p>Is the address provided  above Current Address ? <span>*</span> <input type="radio" name="currAddress" id="">Yes<input type="radio" name="currAddress" id="">No <small> If selected 'No', then please provide Current Address at Step 5 along with Documentary Evidence as per Step 6). </small></p>
+
+            <div class="btn-box">
+                <button type="button"id="back3">Back</button>
+                <button type="submit">Submit</button>
+
+            </div>
+        </form>
+    </div>
+    <script>
+        var form1 = document.getElementById('form1');
+        var form2 = document.getElementById('form2');
+        var form3 = document.getElementById('form3');
+        var form4 = document.getElementById('form4');
+  
+        var next1 = document.getElementById('next1');
+        var next2 = document.getElementById('next2');
+        var next3 = document.getElementById('next3');
+
+        var back1 = document.getElementById('back1');
+        var back2 = document.getElementById('back2');
+        var back3 = document.getElementById('back3');
+
+        var progress = document.getElementById('progress');
+
+
+        next1.onclick = function(){
+            form1.style.left = "-100%";
+            form2.style.left = "0%";
+            progress.style.width = "50%";
+        }
+        next2.onclick = function(){
+            form2.style.left = "-100%";
+            form3.style.left = "0%";
+            progress.style.width = "75%";
+        }
+        next3.onclick = function(){
+            form3.style.left = "-100%";
+            form4.style.left = "0%";
+            progress.style.width = "100%";
+        }
+
+
+        back1.onclick = function(){
+            form1.style.left = "0%";
+            form2.style.left = "-100%";
+            progress.style.width = "25%";
+        }
+        back2.onclick = function(){
+            form2.style.left = "0%";
+            form3.style.left = "-100%";
+            progress.style.width = "50%";
+        }
+        back3.onclick = function(){
+            form3.style.left = "0%";
+            form4.style.left = "-100%";
+            progress.style.width = "75%";
+        }
+
+    </script>
+</body>
+</html>

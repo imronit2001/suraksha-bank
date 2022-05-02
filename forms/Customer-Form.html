@@ -18,14 +18,8 @@
             <div class="step-col"><small>Step 3</small></div>
             <div class="step-col"><small>Step 4</small></div>
             <div class="step-col"><small>Step 5</small></div>
-            <!-- <div class="step-col"><small>Step 6</small></div>
-            <div class="step-col"><small>Step 7</small></div> -->
-            <!-- <div class="step-col"><small>Step 8</small></div> -->
         </div>
         <form action="" id="form1">
-            <!-- <div class="bankDetails">
-
-            </div> -->
             <h4>1. Personal Details</h4>
             <div class="inputFields">
                 <label for="#">Prefix<span>*</span> : </label>
@@ -45,7 +39,7 @@
                 <label for="#">Gender<span>*</span> : </label>
                 <input type="radio" name="Gender" id="" required>Male
                 <input type="radio" name="Gender" id="">Female 
-                <input type="radio" name="Gender" id="">Third Gender
+                <input type="radio" name="Gender" id="">Third Gender<br>
                 <br><label for="#">Marital Status<span>*</span> : </label>
                 <input type="radio" name="maritalStatus" id="" required>Married
                 <input type="radio" name="maritalStatus" id="">Unmarried
@@ -60,7 +54,7 @@
                 <br><label for="#">Name of Spouse <small>(If Married)</small> <span>*</span> : </label>
                 <input type="text" name="" id="">
                 <label for="#">No. of Dependents : </label>
-                <input type="number">
+                <input type="number"><br>
                 <br><label for="#">Illiterate : </label>
                 <input type="radio" name="Illiterate" id="">Yes
                 <input type="radio" name="Illiterate" id="">No 
@@ -119,10 +113,10 @@
                 <input type="text" name="" id="">
                 <label for="#">Annual Income(Rs.)<span>*</span> : </label>
                 <input type="number" name="" id="" required>
-                <br><label for="#">Annual Turnover(Rs.)<span>*</span> : </label>
-                <input type="number" name="" id="" required>
-                <label for="#">Net Worth <small>(approx value)</small>(Rs.) : </label>
-                <input type="number" name="" id="">
+                <label for="#">Annual Turnover(Rs.)<span>*</span> : </label>
+                <input type="number" name="" id="" required><br>
+                <br><label for="#">Net Worth <small>(approx value)</small>(Rs.) : </label>
+                <input type="number" name="" id=""><br>
                 <br><label for="#">Religion<span>*</span> : </label>
                 <input type="radio" name="religion" id="" required>Hindu
                 <input type="radio" name="religion" id="">Muslim
@@ -165,14 +159,14 @@
                 <input type="radio" name="political" id=""> Related to politically exposed person
                 <input type="radio" name="political" id=""> None
                 <br>
-                <p><small>(Politically Exposed persons are individuals who are or have been entrusted with prominent public functions in a foreign country e.g. Heads of State/ Governaments, Senior Politicians / Senior Governaments / Judicials / Military Officers, Senior Executives of State-Owned Corporations, important Political Party Officials, etc.)</small></p>
-                <p><small> ISO 3166 Country Code of Jurisdiction of Residence <span>*</span> <input type="text" name="" id="">(Code for india is IN) <input type="text" name="" id=""> Citizenship <input type="text" name="" id=""></small></p>
+                <p><small><br>(Politically Exposed persons are individuals who are or have been entrusted with prominent public functions in a foreign country e.g. Heads of State/ Governaments, Senior Politicians / Senior Governaments / Judicials / Military Officers, Senior Executives of State-Owned Corporations, important Political Party Officials, etc.)</small></p>
+                <p><small><br> ISO 3166 Country Code of Jurisdiction of Residence <span>*</span> <input type="text" name="" id="">(Code for india is IN) <input type="text" name="" id=""> Citizenship <input type="text" name="" id=""></small></p>
                 <br>
                 <label for="#">Country of Tax Residence in India only and not in any other country or territory outside India <span>*</span> : </label>
                 <input type="radio" name="tax" id="">Yes
                 <input type="radio" name="tax" id="">No <small>(if No, please fill the FATCA details form-Annexure II)</small>
                 <br>
-                <label for="#"><strong>PAN/Tax Identification Number or equivalent <small> (if issued by Jurisdiction)</small> </strong> : </strong></label>
+                <label for="#"><strong><br>PAN/Tax Identification Number or equivalent <small> (if issued by Jurisdiction)</small> </strong> : </strong></label>
                 <input type="text" name="" id=""> <small>(If PAN not submitted, submit form 60-Annexue II)</small>
 
             </div>
@@ -295,58 +289,6 @@
 
             </div>
         </form>
-    <!--    <form action="" id="form5">
-            <h4>5. Address Details <small>
-                <input type="radio" name="address" id="">Current
-                <input type="radio" name="address" id="">Correspondance
-                <input type="radio" name="address" id="">Permanent
-                <input type="radio" name="address" id="">Same as Step 4.</small>
-            </h4>
-            <label for="#">Address Type <span>*</span> : </label>
-            <input type="radio" name="addressType" id=""required>Residential/Business
-            <input type="radio" name="addressType" id="">Residential
-            <input type="radio" name="addressType" id="">Business
-            <input type="radio" name="addressType" id="">Registered Office
-            <input type="radio" name="addressType" id="">Unspecified <br>
-
-            <br><label for="#">Address <span>*</span> : </label>
-            <input type="text" class="add" name="" id=""><br>
-            <br><label for="">City/Village : </label>
-            <input type="text" name="" id="">
-            <label for="#">District <span>*</span> : </label>
-            <input type="text" name="" id=""><br>
-            <br><label for="#">State <span>*</span> : </label>
-            <input type="text" name="" id="">
-            <label for="#">Pin <span>*</span> : </label>
-            <input type="number" name="" id="">
-            <label for="#">Country : </label>
-            <input type="text" name="" id="">
-
-            <div class="btn-box">
-                <button type="button"id="back4">Back</button>
-                <button type="button" id="next5">Next</button>
-
-            </div>
-        </form>
-        <form action="" id="form6">
-             <h4>6. <small>If the Proof of Address/OVD provided does not contain current address, please provide any of the documents below as OVD (Officially Valid Document)</small></h4>
-            
-            <input type="radio" name="POA" id="">Utility Bill
-            <input type="radio" name="POA" id="">PPO/FPPO
-            <input type="radio" name="POA" id="">Property or Municipal Tax Receipt <br>
-            <br><input type="radio" name="POA" id=""><small>Letter of allotment of accomodation issued by employer/ isuued by State or Central Governament departments, statuory or regulatory bodies, Public Sector undertaking, schedeled commercial banks, financial instituitions and listed companies. Similarly, leave and licence aggrements with such employers alloting official accomodation.</small> <br>
-            <br><input type="radio" name="POA" id=""><small>Self-Declaration ( applicable only when customer has carried out e-KYC (AADHAR authentication) and adress in AADHAR is not same as Current Address)</small><br>
-            <br><label for="#">Document No. : </label>
-            <input type="text" name="" id="">
-            <label for="#">Date : </label>
-            <input type="date" name="" id=""><br>
-            <p><small>I/We shall submit OVD with updated Current Address within a period of three months, falling which bank may restrict the operations in the account.</small></p> 
-            <div class="btn-box">
-                <button type="button"id="back5">Back</button>
-                <button type="button" id="next6">Next</button>
-
-            </div>
-        </form>-->
         <form action="" id="form5">
             <h4>7. Declaration Cum undertaking Cum Self-Certification</h4>
             <p><small>I have read the copy of <b><a href="#">Terms & Conditions</a></b> of the Account opening given to me. The <b>Terms & Conditions</b> have been explained ti me/us and having understood. I accept the same. <br>I hereby declare that I have submitted the Aadhar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA 2002. <br>I hereby consent that the bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric authentication to the bank.</small></p>
@@ -370,20 +312,6 @@
 
             </div>
         </form>
-        <!-- <form action="" id="form8">
-            <h4></h4>
-            <input type="text" name="" id="" placeholder="Email" required>
-            <input type="text" name="" id="" placeholder="Password">
-            <input type="text" name="" id="" placeholder="Confirm Password" required>
-            <div class="btn-box">
-                <button type="button"id="back7">Back</button>
-                <button type="submit">Submit</button>
-            </div>
-        </form> -->
-        
-        
-
-        
     </div>
     <script>
         var form1 = document.getElementById('form1');
@@ -391,25 +319,16 @@
         var form3 = document.getElementById('form3');
         var form4 = document.getElementById('form4');
         var form5 = document.getElementById('form5');
-        // var form6 = document.getElementById('form6');
-        // var form7 = document.getElementById('form7');
-        // var form8 = document.getElementById('form8');
   
         var next1 = document.getElementById('next1');
         var next2 = document.getElementById('next2');
         var next3 = document.getElementById('next3');
         var next4 = document.getElementById('next4');
-        // var next5 = document.getElementById('next5');
-        // var next6 = document.getElementById('next6');
-        // var next7 = document.getElementById('next7');
 
         var back1 = document.getElementById('back1');
         var back2 = document.getElementById('back2');
         var back3 = document.getElementById('back3');
         var back4 = document.getElementById('back4');
-        // var back5 = document.getElementById('back5');
-        // var back6 = document.getElementById('back6');
-        // var back7 = document.getElementById('back7');
 
         var progress = document.getElementById('progress');
 
@@ -434,21 +353,7 @@
             form5.style.left = "0%";
             progress.style.width = "100%";
         }
-        // next5.onclick = function(){
-        //     form5.style.left = "-100%";
-        //     form6.style.left = "0%";
-        //     progress.style.width = "85.714%";
-        // }
-        // next6.onclick = function(){
-        //     form6.style.left = "-100%";
-        //     form7.style.left = "0%";
-        //     progress.style.width = "100%";
-        // }
-        // next7.onclick = function(){
-        //     form7.style.left = "-100%";
-        //     form8.style.left = "0%";
-        //     progress.style.width = "100%";
-        // }
+
         back1.onclick = function(){
             form1.style.left = "0%";
             form2.style.left = "-100%";
@@ -469,21 +374,6 @@
             form5.style.left = "-100%";
             progress.style.width = "80%";
         }
-        // back5.onclick = function(){
-        //     form5.style.left = "0%";
-        //     form6.style.left = "-100%";
-        //     progress.style.width = "71.43%";
-        // }
-        // back6.onclick = function(){
-        //     form6.style.left = "0%";
-        //     form7.style.left = "-100%";
-        //     progress.style.width = "85.714%";
-        //}
-        // back7.onclick = function(){
-        //     form7.style.left = "0%";
-        //     form8.style.left = "-100%";
-        //     progress.style.width = "87.5%";
-        // }
     </script>
 </body>
 </html>
