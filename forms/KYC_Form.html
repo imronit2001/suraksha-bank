@@ -102,18 +102,59 @@
 
         <form action="" id="form2">
             <h4>2. Address Details</h4>
-            <label for="#">Mobile No.<span>*</span> : </label>
-            <input type="number" name="" id="" required>
-            <br><label for="#">Alternative Mobile No. : </label>
+            
+            <label for="#"><strong>a. Address for Correspondence</strong><span>*</span> : </label>
+            <input type="text" name="" id="" required>
+            
+            <label for="#">City/Town/Village <span>*</span> : </label>
+            <input type="text" name="" id=""><br>
+
+            <br><label for="#">Pin Code <span>*</span> : </label>
+            <input type="number" name="" id="">
+            
+            <label for="#">State <span>*</span> : </label>
+            <input type="text" name="" id="">
+
+            <label for="#">Country <span>*</span> : </label>
+            <input type="text" name="" id=""><br><br><br>
+
+            <label for="#"><strong>b. Specify the Proof of Address submitted for Correspondence Address</strong> : </label>
+            <input type="text" name="" id=""><br><br>
+            
+            <br><label for="#"><strong> c. Contact Details <span>*</span> : </strong></label>
+
+            <label for="#">Tel.(Off.) : </label>
+            <input type="number" name="" id="">
+
+            <label for="#">Tel.(Res.) : </label>
+            <input type="number" name="" id="">
+
+            <label for="#">Mobile No. : </label>
             <input type="number" name="" id=""><br>
-            <br><label for="#">Email ID <span>*</span> : </label>
-            <input type="email" name="" id="" required>
-            <br><label for="#">Alternative Email ID : </label>
-            <input type="email" name="" id=""><br>
-            <br><label for="">Tel(Off.) : </label>
-            <input type="number" name="" id="">
-            <br><label for="">Tel(Res.) : </label>
-            <input type="number" name="" id="">
+
+            <br><label for="#">Fax : </label>
+            <input type="text" name="" id="">
+
+            <label for="#">Email Id :</label>
+            <input type="text" name="" id=""><br><br>
+
+            <br><label for="#"><strong>d. Permanent Address </strong><small>(if different from above or overseas address, mandatory for Non-Resident Applicant) </small> :</label>
+            <input type="text" name="" id="" required> <br>
+            
+            <br><label for="#">City/Town/Village <span>*</span> : </label>
+            <input type="text" name="" id="">
+
+            <label for="#">Pin Code <span>*</span> : </label>
+            <input type="number" name="" id=""><br>
+            
+            <br><label for="#">State <span>*</span> : </label>
+            <input type="text" name="" id="">
+
+            <label for="#">Country <span>*</span> : </label>
+            <input type="text" name="" id=""><br><br><br>
+
+            <label for="#"><strong>e. Specify the Proof of Address submitted for Permanent Address</strong> : </label>
+            <input type="text" name="" id="">
             <div class="btn-box">
                 <button type="button" id="back1">Back</button>
                 <button type="button" id="next2">Next</button>
@@ -121,23 +162,8 @@
         </form>
 
         <form action="" id="form3">
-            <h4>3. Other Details <small>(Please choose the appropriate Box (any one ID type) and give details) </small><span>*</span></h4>
-            <input type="radio" name="identityProof" id="" required>A-Passport <small>(Mandatory in case of NRI/PIO)</small>
-            <input type="radio" name="identityProof" id="">B-Voter's Identity Card
-            <input type="radio" name="identityProof" id="">C-Driving Licence
-            <input type="radio" name="identityProof" id="">D-NREGA Job Card <br>
-            <br><input type="radio" name="identityProof" id="">E-<small>Letter issued by National Population Register containing details of Name & Address</small>
-            <input type="radio" name="identityProof" id="">F-Proof of Possession of Aadhar No.
-            <input type="radio" name="identityProof" id="">E-KYC
-            <input type="radio" name="identityProof" id="">Offline Verification <br>
-            <br><label for="">Document/Identification Number <span>*</span></label>
-            <input type="text" name="" id=""required> <br>
-            <br><label for="">Issued By <span>*</span></label>
-            <input type="text" name="" id=""required> <br>
-            <br><label for="">Issue Date <span>*</span></label>
-            <input type="date" name="" id="" required> <br>
-            <br><label for="">Expiry Date <small>(If Applicable)</small></label>
-            <input type="date" name="" id="">
+            <h4>3. Other Details<span>*</span></h4>
+            
             <div class="btn-box">
                 <button type="button"id="back2">Back</button>
                 <button type="button" id="next3">Next</button>
@@ -146,27 +172,7 @@
         </form>
 
         <form action="" id="form4">
-            <h4>4. Declaration <span>*</span> <small> (as per Proof of Address submitted at step 3.)</small></h4>
-            <label for="#">Address Type <span>*</span> : </label>
-            <input type="radio" name="addressType" id=""required>Residential/Business
-            <input type="radio" name="addressType" id="">Residential
-            <input type="radio" name="addressType" id="">Business
-            <input type="radio" name="addressType" id="">Registered Office
-            <input type="radio" name="addressType" id="">Overseas <small>mandatory for NRI/PIO)</small> <br>
-
-            <br><label for="#">Address <span>*</span> : </label>
-            <input type="text" class="add" name="" id=""><br>
-            <br><label for="">City/Village : </label>
-            <input type="text" name="" id="">
-            <label for="#">District <span>*</span> : </label>
-            <input type="text" name="" id=""><br>
-            <br><label for="#">State <span>*</span> : </label>
-            <input type="text" name="" id="">
-            <label for="#">Pin <span>*</span> : </label>
-            <input type="number" name="" id="">
-            <label for="#">Country : </label>
-            <input type="text" name="" id=""><br>
-            <br><p>Is the address provided  above Current Address ? <span>*</span> <input type="radio" name="currAddress" id="">Yes<input type="radio" name="currAddress" id="">No <small> If selected 'No', then please provide Current Address at Step 5 along with Documentary Evidence as per Step 6). </small></p>
+            <h4>4. Declaration<span>*</span></h4>
 
             <div class="btn-box">
                 <button type="button"id="back3">Back</button>

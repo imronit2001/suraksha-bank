@@ -6,7 +6,6 @@
 body{
     background: white;
     color: #34495e;
-    /* border: 1px solid blue; */
 }
 .customerDetailsFormContainer{
     width: 90vw;
@@ -14,7 +13,6 @@ body{
     border-radius: 5px;
     position: relative;
     margin: 3% auto;
-    /* border: 1px solid red; */
     padding: 0px;
     overflow: hidden;
     text-align: center;
@@ -23,16 +21,12 @@ body{
 .customerDetailsFormContainer form{
     position: absolute;
     width: 75%;
-    /* height: 85%; */
-    /* top: 50px; */
-    /* left: 0px; */
     margin: 0 auto;
     text-align: center;
     transition: .8s;
     padding: 20px 85px;
     font-size: 20px;
     margin-left: 15%;
-    /* border: 1px solid red; */
 }
 h3{
     width: 75%;
@@ -40,7 +34,6 @@ h3{
     text-align: center;
     font-size: 28px;
     text-transform: uppercase;
-    /* margin-bottom: 40px; */
 }
 p{
     font-size: 20px;
@@ -66,7 +59,6 @@ form .inputFields{
     text-align: left;
     margin-top: -20px;
     margin: 0 auto;
-    /* border: 1px solid black; */
 }
 form .name{
     display: flex;
@@ -85,6 +77,17 @@ form input[type="text"]{
     padding: 0px 5px;
     margin: 0px 10px;
     border-bottom: 3px dotted grey;
+}
+#form2{
+    text-align: left;
+}
+#form2 h4{
+    text-align: center;
+}
+#form2 input[type="text"]{
+    width: 275px;
+    text-align: left;
+    font-size: 20px;
 }
 form input[type="file"]{
     width: 180px;
