@@ -177,13 +177,13 @@ label.logo{
     color: white;
 }
 label.logo h1{
-    font-size: 22px;
+    font-size: 32px;
     font-weight: bold;
     color: white;
     margin-top: 18px;
 }
 label.logo p{
-    font-size: 11px;
+    font-size: 16px;
     margin-top: -8px;
 }
 label.logo img{
@@ -206,7 +206,7 @@ nav li {
 }
 nav ul li a{
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     text-transform: uppercase;
     border: 1px solid transparent;
     padding: 1px 10px;
@@ -503,17 +503,17 @@ nav #icon{
     height: 100%;
 }
 #loans .loanContainer h3{
-    font-size: 12px;
+    font-size: 18px;
     width: 100%;
     margin-top: 10%;
     color: #505050;
     text-transform: uppercase;
-    font-weight: 200;
+    font-weight: 600;
 }
 #loans .loanContainer p{
     text-align: left;
     color: #505050;
-    font-size: 12px;
+    font-size: 18px;
 
 }
 #loans .loanContainer p span{
@@ -551,7 +551,7 @@ nav #icon{
     color: white;
     border-radius: 50px;
     padding: 5px 0px;
-    font-size: 12px;
+    font-size: 21px;
 }
 .btnKnowMore img{
     width: 15%;
@@ -571,11 +571,11 @@ nav #icon{
 .midHeading h2{
     /* border: 1px solid blue; */
     padding: 25px 0px;
-    font-size: 30px;
+    font-size: 46px;
 }
 .midHeading p{
     font-weight: 600;
-    font-size: 14px;
+    font-size: 23px;
     color: #404043;
 }
 .midHeading p span{
@@ -611,13 +611,13 @@ nav #icon{
 }
 #owlCarousel .item .owlCarouselIcon h2{
     padding-top: 25px;
-    font-size: 15px;
+    font-size: 27px;
 }
 #owlCarousel .item .owlCarouselHeading p{
     width: 100%;
     height: 50px;
     padding: 0px 0px;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 #owlCarousel .item .owlCarouselBox .btnKnowMore img{
@@ -687,7 +687,7 @@ nav #icon{
     text-transform: capitalize;
     color: #fff;
     font-weight: 100;
-    font-size: 26px;
+    font-size: 32px;
     padding: 10px 30px;
 }
 .leftContainerFooter p{
@@ -695,13 +695,13 @@ nav #icon{
     text-transform: none;
     color: #fff;
     font-weight: 100;
-    font-size: 11px;
+    font-size: 18px;
     padding: 0px 30px;
     font-weight: 700;
 }
 .leftContainerFooter .gen{
     padding: 0px 00px 8px 30px;
-    font-size: 12px;
+    font-size: 17px;
     font-weight: none;
 }
 .leftContainerFooter .location{
@@ -712,7 +712,7 @@ nav #icon{
 .leftContainerFooter p a i{
     /* border: 1px solid red; */
     margin-right: 10px;
-    font-size: 12px;
+    font-size: 19px;
 }
 .leftContainerFooter a{
     color: #fff;
@@ -722,13 +722,13 @@ nav #icon{
     padding: 10px 30px;
     color: #ffffffb3;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 900;
 }
 
 .rightConatainerFooterLinks a{
     color: #fff;
-    font-size: 18px;
+    font-size: 35px;
     padding: 0px 8px;
 }
 .lowerFooter{
@@ -738,7 +738,7 @@ nav #icon{
     text-align: center;
     padding-bottom: 10px;
     padding: 15px 0px;
-    font-size: 11px;
+    font-size: 19px;
     font-weight: 600;
     background: #34495e;
 }
