@@ -56,40 +56,6 @@
 
     <!-- MAIN CONTENT SECTION  -->
     <div class="contentContainer">
-        <!-- NAVBAR SECTION  -->
-        <!-- <div id="navbar">
-        <input type="checkbox" id="nav-toggle">
-            <div class="navbarSection">
-                <div class="headings">
-                    <img src="images/favicon.png" alt="#logo">
-                    <div class="names">
-                        <h1>Suraksha Bank</h1>
-                        <p>Aapki Suraksha, Humari Zimmedari</p>
-                    </div>
-                </div>
-                <div class="navElements">
-                    <ul>
-                        <li><a href="#about">Offers</a></li>
-                        <li><a href="#facilities">Customer Care</a></li>
-                        <li><a href="#query">About Us</a></li>
-                        <li><a href="#">Cards</a></li>
-                        <li><a href="#">E-Services</a></li>
-                        <li><a href="#">Apply Now</a></li>
-                        <a href="#"><i class="fa-solid fa-user-large"></i></a>
-                    </ul>
-                </div>
-            </div>
-            <input type="checkbox" id="check">
-            <label for="check">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
-            </label>
-            <label for="nav-toggle" class="icon-burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </label>
-        </div> -->
         <nav>
             <label class="logo">
             <!-- <img src="images/favicon.png" alt="logo">
@@ -108,15 +74,59 @@
                 <li><a href="#">Cards</a></li>
                 <li><a href="#">E-Services</a></li>
                 <li><a href="#">Apply Now</a></li>
-                <a href="#"><i class="fa-solid fa-user-large"></i></a>
+                <!-- <button onclick="togglePopup()">Login/Signup</button> -->
+                
+                <a href="#" onclick="togglePopup()"><i class="fa-solid fa-user-large"></i></a>
             </ul>
             <label id="icon">
                 <i class="fas fa-bars" id="btn"></i>
             </label>
         </nav>
+
         <!-- NAVBAR SECTION ENDS HERE  -->
+        <div id="login">
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">&times;</div>   
+                    <form action="#">
+                        <div class="login-container">
+                            <h2>Login</h2>
+                            <div class="row100">
+                                <div class="col">
+                                    <div class="inputBox">
+                                        <img src="images/icons/user.png" alt="">
+                                        <input type="text" required>
+                                        <span class="credential">Username</span>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="inputBox">
+                                        <img src="images/icons/lock.png" alt="">
+                                        <input type="password" id="password" required>
+                                        <span class="credential">Password</span>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="password-toggle" onclick="showHide();"></div>
+                            <input type="Submit" name="" id="" value="Login">
+                            <div class="forget">
+                                <a href="#">Forget Password</a><br>
+                                <!-- <p>Don't have an account ?&nbsp;<a href="registration.html" target="_blank" rel="noopener noreferrer">Signup</a></p> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- LOGIN SECTION ENDS HERE  -->
+
+
         <!-- HOME SECTION  -->
         <div id="home">
+
             <!-- CAROUSEL STARTS HERE -->
             <div class="imgcontainer">
                 <div class="slideshowcontainer">
@@ -140,6 +150,7 @@
             <script src="./Javascript/Carousel.js"></script>
         </div>
         <!-- CAROUSEL ENDS HERE  -->
+
         <!-- LOANS SECTION STARTS HERE  -->
         <div id="loans">
             <div class="loansElementContainer">
@@ -209,12 +220,14 @@
             </div>
         </div>
         <!-- LOANS SECTION ENDS HERE  -->
+
         <!-- MID HEADING SECTION STARTS HERE  -->
         <div class="midHeading">
             <h2>We're here to help you when you need financial support</h2>
             <p>Suraksha Bank launches <a href="#">COVID Personal Loan</a> & COVID Pensioner Loan (conditions apply). Please contact your nearest branch. <span>NEW</span></p>
         </div>
         <!-- MID HEADING ENDS HERE  -->
+
         <!-- OWL CAROUSEL SECTION STARTS HERE  -->
         <div id="owlCarousel">
 
@@ -304,22 +317,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="item">
-                    <div class="owlCarouselBox">
-                        <div class="owlCarouselIcon">
-                            <img src="" alt="">
-                        </div>
-                        <div class="owlCarouselHeading">
-
-                        </div>
-                        <div class="owlCarouselButton">
-
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
         <!-- OWL CAROUSEL SECTION ENDS HERE  -->
+
         <!-- NOTIFICATION SECTION STARTS HERE  -->
         <div id="notificationContainer">
             <div class="leftNotificationContainer">
@@ -335,6 +336,7 @@
             </div>
         </div>
         <!-- NOTIFICATION SECTION ENDS HERE  -->
+
         <!-- FOOTER SECTION  -->
         <footer class="footer">
             <div class="upperFooter">
@@ -366,22 +368,42 @@
                 <div class="copy">
                     <p>&copy; Suraksha Bank </p><p> All rights reserved | Techno India Hooghly Campus</p>
                 </div>
-                <!-- <div class="visitor">
-                    <p>Visitior : 157974370</p>
-                </div> -->
                 <div class="design&Develope">
                     <p>Designed & Developed by Atul Kumar Giri, Gaurav Kumar Jha, Gulafshan Parwin, Mohit Gupta, Ronit Singh under <strong>Major Project of BCA (2019-2022) </strong> </p>
                 </div>
             </div>
         </footer>
         <!-- FOOTER SECTION ENDS HERE -->
-
     </div>
     <!-- MAIN CONTENT ENDS HERE  -->
 
 
 
 <!-- JAVASCRIPT STARTS HERE  -->
+
+<!-- POPUP JavaScript  -->
+<script type="text/javascript">
+    function togglePopup(){
+        document.getElementById("popup-1").classList.toggle("active");
+    }
+</script>
+
+<!-- PASSWORD SHOW/HIDE  -->
+<script type="text/javascript">
+    const password = document.getElementById('password');
+    const toggle = document.getElementById('password-toggle');
+
+    function showHide(){
+        if(password.type === 'password'){
+            password.setAttribute('type', 'text');
+            toggle.classList.add('hide');
+        }else{
+            password.setAttribute('type', 'password');
+            toggle.classList.remove('hide');
+        }
+    }
+</script>
+
 <!-- OWL CAROUSEL JAVASCRIPT LINKING  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
