@@ -84,6 +84,9 @@ form input[type="text"]{
 #form2 h4{
     text-align: center;
 }
+#form4 p{
+    font-size: 20px;
+}
 #form2 input[type="text"]{
     width: 275px;
     text-align: left;
