@@ -1,7 +1,1 @@
-<h1>Welcome</h1>
-<ul>
-    <a href="{{route('home')}}">Home</a>
-    <a href="{{route('service')}}">Service</a>
-    <a href="{{route('contact')}}">Contact Us</a>
-    <a href="{{route('about')}}">About Us</a>
-</ul>
+<h1>Landing Page</h1>
