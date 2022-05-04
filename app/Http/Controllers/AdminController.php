@@ -22,6 +22,10 @@ class AdminController extends Controller
     {
         return view('admin.manage-staff');
     }
+    public function staffDetails()
+    {
+        return view('admin.staff-details');
+    }
     public function addManager()
     {
         return view('admin.add-manager');
@@ -29,6 +33,10 @@ class AdminController extends Controller
     public function manageCustomer()
     {
         return view('admin.manage-customer');
+    }
+    public function customerTransactionDetail()
+    {
+        return view('admin.customer-transaction-detail');
     }
     public function branchChange()
     {

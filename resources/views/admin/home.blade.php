@@ -31,49 +31,43 @@
         </div>
         <ul class="nav-list">
           <li>
-            <a href="index.html">
+            <a href="{{route('admin-dashboard')}}">
               <i class='bx bxs-home'></i>
               <span class="links_name">Dashboard</span>
             </a>
             <span class="tooltip">Dashboard</span>
           </li>
           <li>
-            <a href="bank-balance.html">
+            <a href="{{route('admin-bank-balance')}}">
               <i class='bx bx-wallet'></i>
               <span class="links_name">Bank Balance</span>
             </a>
             <span class="tooltip">Bank Balance</span>
           </li>
+          
           <li>
-            <a href="#">
-              <i class='bx bx-transfer'></i>
-              <span class="links_name">Transaction Record</span>
-            </a>
-            <span class="tooltip">Transaction Record</span>
-          </li>
-          <li>
-            <a href="add-staff.html">
+            <a href="{{route('admin-add-staff')}}">
               <i class='bx bxs-user-plus'></i>
               <span class="links_name">Add Staff</span>
             </a>
             <span class="tooltip">Add Staff</span>
           </li>
           <li>
-            <a href="manage-staffs.html">
+            <a href="{{route('admin-manage-staff')}}">
               <i class='bx bxs-user-account'></i>
               <span class="links_name">Manage Staffs</span>
             </a>
             <span class="tooltip">Manage Staffs</span>
           </li>
           <li>
-            <a href="Add_Manager_form.html">
+            <a href="{{route('admin-add-manager')}}">
               <i class='bx bx-user-plus'></i>
               <span class="links_name">Add Manager</span>
             </a>
             <span class="tooltip">Add Manager</span>
           </li>
           <li>
-            <a href="manage-customers.html">
+            <a href="{{route('admin-manage-customer')}}">
               <i class='bx bxs-user-detail'></i>
               <span class="links_name">Manage Customers</span>
             </a>
@@ -108,7 +102,7 @@
             <span class="tooltip">Personal Loans</span>
           </li>
           <li>
-            <a href="branch-change.html">
+            <a href="{{route('admin-branch-change')}}">
               <i class='bx bx-git-branch'></i>
               <span class="links_name">Branch change</span>
             </a>
