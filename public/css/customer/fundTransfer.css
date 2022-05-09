@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-box{
+    /* border: 2px solid black; */
+    width: 60% ;
+    min-width: 300px;
+    /* height: 400px; */
+    padding: 20px;
+    margin: auto;
+}
+.main-box h1{
+    font-size: 20px;
+}
+.main-box input{
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+input.transparent-input{
+    background-color:transparent !important;
+    /* border:none !important; */
+ }
+ input.transparent-input:focus{
+    outline: none;
+ }
+ .min-width-25{
+     min-width: 100px;
+ }
+ 
+ .min-width-50{
+    min-width: 150px;
+}
+.min-width-75{
+    min-width: 230px;
+}
