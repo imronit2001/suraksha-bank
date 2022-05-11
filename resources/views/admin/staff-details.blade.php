@@ -7,7 +7,7 @@
         <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1>
         <div class="searchbox">
             <form>
-                <input type="text" class="form-control" placeholder="Enter Staff Name or Id" value="Ronit Singh">
+                <input type="text" class="form-control" placeholder="Enter Staff Name or Id" value="{{$staff->userid}}">
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
         </div>
@@ -20,16 +20,16 @@
             </div>
             <div class="staff-info-block2">
                 <div class="staff-info-block2-left">
-                    <img src={{asset('images/ronit.JPG')}} alt="">
+                    <img src={{asset($staff->photo)}} alt="">
                 </div>
                 <div class="staff-info-block2-mid">
-                    <h1 class="staffname">Mr Ronit Singh</h1>
-                    <h1 class="stafftype">Type : Full Time</h1>
-                    <h1 class="staffid">Staff Id : 15201219026</h1>
+                    <h1 class="staffname">{{$staff->designation." ".$staff->firstName." ".$staff->middleName." ".$staff->lastName}}</h1>
+                    <h1 class="stafftype">Type : {{$staff->empType}}</h1>
+                    <h1 class="staffid">User Id : {{$staff->userid}}</h1>
                 </div>
                 <div class="staff-info-block2-right">
-                    <p>Contact : 7003622801</p>
-                    <p>Email Id : ronitsingh7003@gmail.com</p>  
+                    <p>Contact : {{$staff->contact}}</p>
+                    <p>Email Id : {{$staff->email}}</p>  
                 </div>
             </div>
         </div>
@@ -39,10 +39,10 @@
                 <h1>Addresses</h1>
             </div>
             <div class="staff-address-block">
-                <p>House No : 182/1</p>
-                <p>Sthirpara Road , Dakshinpally More</p>
-                <p>Post Office : Mondalpara</p>
-                <p>Jagadal , District : North 24 Paragana , Kolkata - 743127</p>
+                <p>{{$staff->address}}</p>
+                <p>{{$staff->city}}</p>
+                <p>District : {{$staff->district}} , Pin Code : {{$staff->pinode}}</p>
+                <p>{{$staff->state}}</p>
             </div>
         </div>
         <div class="staff-more-detail">
@@ -51,20 +51,17 @@
                 <h1>More Details</h1>
             </div>
             <div class="staff-more-detail-block">
-                <p>Date of Birth : 03rd August 2001</p>
-                <p>Gender : Male</p>
-                <p>Marital Status : Unmarried</p>
-                <p>Guardian Name : Mr Abc Xyz</p>
+                <p>Date of Birth : {{$staff->dob}}</p>
+                <p>Gender : {{$staff->gender}}</p>
+                <p>Marital Status : {{$staff->maritalStatus}}</p>
+                <p>Guardian Name : {{$staff->guardianName}}</p>
                 <p>Nationality : Indian</p>
-                <p>Religion : Hinduism</p>
-                <p>Category : General</p>
-                <p>Disability : No</p>
-                <p>Educational Qualification : Graduated</p>
-                <p>Aadhar Number : 123456789012</p>
-                <p>Pan Number : 1234Ron5</p>
-                <p>Id Proof : Aadhar Card</p>
-                <p>Id Number : 123456789012</p>
-                <p>Status : Active</p>
+                <p>Category : {{$staff->category}}</p>
+                <p>Disability : {{$staff->disability}}</p>
+                <p>Educational Qualification : {{$staff->qualification}}</p>
+                <p>Aadhar Number : {{$staff->aadharNo}}</p>
+                <p>Pan Number : {{$staff->panNo}}</p>
+                {{-- <p>Status : Active</p> --}}
             </div>
         </div>
         <div class="staff-document">
@@ -74,16 +71,16 @@
             </div>
             <div class="staff-document-block">
                 <div class="doc">
-                    <img src={{asset('images/aadhar1.webp')}} alt="">
+                    <img src={{asset($staff->aadharFile)}} alt="">
                 </div>
                 <div class="doc">
-                    <img src={{asset('images/pancard.webp')}} alt="">
+                    <img src={{asset($staff->panFile)}} alt="">
                 </div>
             </div>
         </div>
         <div class="bottom-button">
-            <button class="btn btn-primary">Edit Profile</button>
-            <button class="btn btn-danger">Remove Staff</button>
+            <a href={{ url('/admin/edit-staff', $staff->id) }}><button class="btn btn-primary">Edit Profile</button></a>
+            <button class="btn btn-danger disabled">Remove Staff</button>
         </div>
     </div>
 </div>

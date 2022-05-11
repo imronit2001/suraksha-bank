@@ -30,7 +30,7 @@
           <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav-list">
-          <li >
+          <li>
             <a href="{{route('admin-dashboard')}}">
               <i class='bx bxs-home'></i>
               <span class="links_name">Dashboard</span>
@@ -164,8 +164,6 @@
     </section>
 
     <script src={{asset('js/admin/sidenavbar.js')}}></script>
-    <script src={{asset('js/admin/form.js')}}></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     

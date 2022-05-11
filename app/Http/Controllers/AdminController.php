@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AddStaffForm;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -20,11 +21,13 @@ class AdminController extends Controller
     }
     public function manageStaff()
     {
-        return view('admin.manage-staff');
+        $staff = AddStaffForm::all();
+        return view('admin.manage-staff', ['staff' => $staff]);
     }
-    public function staffDetails()
+    public function staffDetails($id)
     {
-        return view('admin.staff-details');
+        $staff = AddStaffForm::find($id);
+        return view('admin.staff-details', ['staff' => $staff]);
     }
     public function addManager()
     {
