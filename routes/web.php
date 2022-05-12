@@ -21,6 +21,10 @@ Route::prefix('/admin')->group(function(){
     Route::get('/remove-staff/{id}',[AddStaffFormController::class,'destroy'])->name('admin-remove-staff');
     Route::get('/add-manager',[AddManagerFormController::class,'index'])->name('admin-add-manager');
     Route::post('/add-manager',[AddManagerFormController::class,'create'])->name('admin-add-manager');
+    Route::get('/managers',[AdminController::class,'managers'])->name('admin-managers');
+    Route::get('/edit-manager/{id}',[AddManagerFormController::class,'edit'])->name('admin-edit-manager');
+    Route::post('/edit-manager/{id}',[AddManagerFormController::class,'update'])->name('admin-edit-manager');
+    Route::get('/manager-details/{id}',[AdminController::class,'managerDetails'])->name('admin-manager-details');
     Route::get('/manage-customer',[AdminController::class,'manageCustomer'])->name('admin-manage-customer');
     Route::get('/customer-transaction-detail',[AdminController::class,'customerTransactionDetail'])->name('admin-customer-transaction-detail');
     Route::get('/branch-change',[AdminController::class,'branchChange'])->name('admin-branch-change');

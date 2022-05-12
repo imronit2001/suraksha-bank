@@ -67,6 +67,13 @@
             <span class="tooltip">Add Manager</span>
           </li>
           <li>
+            <a href="{{route('admin-managers')}}">
+              <i class='bx bx-user-plus'></i>
+              <span class="links_name">Managers</span>
+            </a>
+            <span class="tooltip">Managers</span>
+          </li>
+          <li>
             <a href="{{route('admin-manage-customer')}}">
               <i class='bx bxs-user-detail'></i>
               <span class="links_name">Manage Customers</span>

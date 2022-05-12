@@ -52,19 +52,25 @@ class AddManagerFormController extends Controller
             $file = $request->file('photo');
             $name = $file->hashName();
             $filename = "Photo-".time()."-".$name;
-            // $file->move('images/admin/photo/', $filename);
-            echo "<br>Photo Name : ".$filename;
-            $manager->photo=$request->photo;
+            $file->move('images/admin/photo/', $filename);
+            // echo "<br>Photo Name : ".$filename;
+            $manager->photo=$filename;
         }
 
         if ($request->hasFile('signature')) {
             $file = $request->file('signature');
             $name = $file->hashName();
             $filename = "Signature-".time()."-".$name;
-            // $file->move('images/admin/signature/', $filename);
-            echo "<br>Signature Name : ".$filename;
-            $manager->signature=$request->signature;
+            $file->move('images/admin/signature/', $filename);
+            // echo "<br>Signature Name : ".$filename;
+            $manager->signature=$filename;
         }
+
+        $manager->save();
+
+        echo '<script type="text/javascript">'
+			   , 'history.go(-2);'
+			   , '</script>';
     }
 
     /**
@@ -98,7 +104,7 @@ class AddManagerFormController extends Controller
     public function edit($id)
     {
         $manager = AddManagerForm::find($id);
-        return view('editManagerForm', ['manager' => $manager]);
+        return view('admin.edit-manager', ['manager' => $manager]);
     }
 
     /**
@@ -137,20 +143,26 @@ class AddManagerFormController extends Controller
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $name = $file->hashName();
-            $filename = "Photo-".time()."-".$name;
-            // $file->move('images/admin/photo/', $filename);
-            echo "<br>Photo Name : ".$filename;
-            $manager->photo=$request->photo;
+            $filename = "images/admin/photo/Photo-".time()."-".$name;
+            $file->move('images/admin/photo/', $filename);
+            // echo "<br>Photo Name : ".$filename;
+            $manager->photo=$filename;
         }
 
         if ($request->hasFile('signature')) {
             $file = $request->file('signature');
             $name = $file->hashName();
-            $filename = "Signature-".time()."-".$name;
-            // $file->move('images/admin/signature/', $filename);
-            echo "<br>Signature Name : ".$filename;
-            $manager->signature=$request->signature;
+            $filename = "images/admin/signature/Signature-".time()."-".$name;
+            $file->move('images/admin/signature/', $filename);
+            // echo "<br>Signature Name : ".$filename;
+            $manager->signature=$filename;
         }
+
+        $manager->save();
+
+        echo '<script type="text/javascript">'
+			   , 'history.go(-2);'
+			   , '</script>';
     }
 
     /**
