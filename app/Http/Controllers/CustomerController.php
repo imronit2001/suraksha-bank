@@ -25,4 +25,7 @@ class CustomerController extends Controller
     public function FundTransfer(){
         return view('customer.fund-transfer');
     }
+    public function ChequeBook(){
+        return view('customer.cheque-book');
+    }
 }

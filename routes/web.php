@@ -24,7 +24,7 @@ Route::get('/customer/transaction-details',[CustomerController::class,'Transacti
 Route::get('/customer/fund-transfer',[CustomerController::class,'FundTransfer'])->name('customer-fund-transfer');
 Route::get('/customer/branch-change',[CustomerController::class,'BranchChange'])->name('customer-branch-change');
 Route::get('/customer/fixed-deposite',[CustomerController::class,'FixedDeposite'])->name('customer-fixed-deposite');
-
+Route::get('/customer/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
 
 
 
