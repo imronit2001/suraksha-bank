@@ -1,11 +1,11 @@
 @extends('admin.home')
-@section('title','Manage Staff')
+@section('title','Managers')
 @section('page-name')
 <div class="staff-body">
     <div class="staff-heading">
         <h1 class="bankname text-center font-weight-bold">Suraksha Bank</h1>
         <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1>
-        <h1 class="title text-center">Staff Details</h1>
+        <h1 class="title text-center">Managers</h1>
         <div class="searchbox">
             <form>
                 <input type="text" class="form-control" placeholder="Enter Staff Name or Id">
@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col" class="smallwidth">Staff Name</th>
+                    <th scope="col" class="smallwidth">Manager Name</th>
                     <th scope="col" class="smallwidth">User Id</th>
                     <th scope="col" class="smallwidth">Branch</th>
                     <th scope="col" class="smallwidth">Phone</th>
@@ -27,7 +27,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($staff as $st)
+                @foreach ($manager as $st)
                 <tr>
                     <th class="table-img"><img src={{asset($st->photo)}} alt="photo"></th>
                     <td><p>{{$st->designation." ".$st->firstName." ".$st->middleName." ".$st->lastName}}</p></td>
@@ -35,7 +35,7 @@
                     <td><p>{{$st->branchName}}</p></td>
                     <td><p>{{$st->contact}}</p></td>
                     <td><p>{{$st->email}}</p></td>
-                    <td><p><a href={{ url('/admin/staff-details', $st->id) }} target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
+                    <td><p><a href={{ url('/admin/manager-details', $st->id) }} target="_blank"><button class="btn btn-primary">Profile</button></a></p></td>
                 </tr>
                 @endforeach
                 {{-- <tr>
