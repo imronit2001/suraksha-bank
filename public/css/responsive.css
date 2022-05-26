@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    text-decoration: none;
+}
+
+/* HOME SECTION STARTS HERE  */
+#home{
+    width: 100vw;
+    height: auto;
+    margin: 80px 0px;
+}
+
+
+/* CAROUSEL SECTION STARTS HERE */
+.imgcontainer{
+    width: 90vw;
+    height: 45vh;
+    user-select: none;
+    background-color: #007cc5;
+    padding: 1.8px 3px;
+    box-sizing: 10px;
+    margin: 15px auto;
+    border-radius: 0px;
+
+}
+.imgcontainer .slideshowcontainer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #007cc5;
+    position: relative;
+}
+.imgcontainer .slideshowcontainer .imageholder{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+.imgcontainer .slideshowcontainer .imageholder img{
+    width: 100%;
+    height:100%;
+}
+
+.imgcontainer #dotsContainer{
+    width: 100%;
+    height: 0%;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+.imgcontainer #dotsContainer .dots{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: #404043;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.imgcontainer .moveLeftCurrentSlide{
+    animation-name:moveLeftCurrent;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.imgcontainer .moveLeftNextSlide{
+    animation-name:moveLeftNext;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes moveLeftCurrent{
+    from{
+        margin-left:0;
+        opacity: 1;
+    }
+    to{
+        margin-left: -100%;
+        opacity: 1;
+    }
+}
+@keyframes moveLeftNext{
+    from{
+        margin-left:100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+.imgcontainer .moveRightCurrentSlide{
+    animation-name:moveRightCurrent;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes moveRightCurrent{
+    from{
+        margin-left:0;
+        opacity: 1;
+    }
+    to{
+        margin-left: 100%;
+        opacity: 1;
+    }
+}
+.imgcontainer .moveRightNextSlide{
+    animation-name:moveRightNext;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes moveRightNext{
+    from{
+        margin-left:-100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+/* HOME & CAROUSEL SECTION ENDS HERE  */
+
+/* LOANS SECTION STARTS HERE  */
+#loans{
+    width: 85vw;
+    margin: 0 auto;
+    padding: 2px;
+}
+#loans .loansElementContainer{
+    display: flex;
+}
+#loans .loanContainer{
+    width: 25%;
+    text-align: left;
+    margin: 0px 25px;
+}
+#loans .loanContainer1{
+    display: flex;
+}
+.loanDetails{
+    display: flex;
+    justify-content: space-evenly;
+}
+#loans .loanIcon{
+    width: 30%;
+}
+#loans .loanHeading{
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+#loans .loanContainer  img{
+    width: 100%; 
+    height: 100%;
+}
+#loans .loanContainer h3{
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10%;
+    color: #505050;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+#loans .loanContainer p{
+    text-align: left;
+    color: #505050;
+
+}
+#loans .loanContainer p span{
+    color: rgba(255, 0, 0, 0.697);
+    font-weight: 600;
+}
+#loans .loanContainer .btn{
+    padding: 5px 20px;
+    margin: 10px 0px;
+    margin-left: 30%;
+    background-color: #007cc5;
+    border: none;
+    cursor: pointer;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.btnKnowMore{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnKnowMore a{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    background-color: #007cc5;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 0px;
+}
+.btnKnowMore img{
+    width: 15%;
+    padding: 5px;
+    border-radius: 50%;
+}
+/* LOANS SECTION ENDS HERE  */
+/* MID HEADING SECTION STARTS HERE  */
+.midHeading{
+    /* border: 1px solid red; */
+    width: 80vw;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0px;
+    color:#505050 ;
+}
+.midHeading h2{
+    /* border: 1px solid blue; */
+    padding: 25px 0px;
+    font-size: 40px;
+}
+.midHeading p{
+    font-weight: 600;
+    font-size: 18px;
+    color: #404043;
+}
+.midHeading p span{
+    color: #007cc5;
+}
+/* MID SECTION ENDS HERE  */
+/* OWL CAROUSEL STARTS HERE  */
+#owlCarousel{
+    width: 82vw;
+    margin: 50px auto;
+    height: 350px;
+}
+#owlCarousel .item{
+    width: 17vw;
+    height: 100%;
+    text-align: center;
+    color: #505050;
+    margin: 0px 10px;
+    
+}
+#owlCarousel .item .owlCarouselIcon{
+    width: 100%;
+    border-right: 3px solid rgba(0, 149, 255, 0.301);
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+#owlCarousel .item .owlCarouselIcon img{
+    width: 25%;
+    height: 80px;
+    padding: 5px;
+    margin: 0 auto;
+}
+#owlCarousel .item .owlCarouselIcon h2{
+    padding-top: 25px;
+}
+#owlCarousel .item .owlCarouselHeading p{
+    width: 100%;
+    height: 120px;
+    padding: 25px 0px;
+    font-size: 17px;
+}
+
+#owlCarousel .item .owlCarouselBox .btnKnowMore img{
+    width: 15%;
+    filter:invert();
+}
+
+@media (max-width: 909px) {
+    
+    /* CAROUSEL SECTION STARTS HERE */
+    .imgcontainer{
+        width: 90vw;
+        height: 45vh;
+    }
+    /* CAROUSEL SECTION ENDS HERE  */
+    /* LOAN SECTION STARTS HERE  */
+    #loans{
+        width: 90vw;
+    }
+    #loans .loansElementContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #loans .loanContainer{
+        width: 40%;
+        margin: 10px 15px;
+    }
+    #loans .loanContainer h3{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    #loans .loanContainer p{
+        font-size: 12px;
+    
+    }
+    #loans .loanContainer .btn{
+        padding: 3px 15px;
+        font-size: 12px;
+    }
+
+    /* LOAN SECTION ENDS HERE  */
+    /* MID HEADINGS  */
+    .midHeading h2{
+        font-size: 20px;
+    }
+    .midHeading p{
+        font-size: 12px;
+    }
+    /* MID HEADINGS ENDS HERE  */
+    /* OWL CAROUSEL STARTS HERE  */
+    #owlCarousel{
+        width: 75vw;
+        margin: 50px auto;
+        height: 200px;
+    }
+    #owlCarousel .item{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #505050;
+        margin: 0px 0px;
+        
+    }
+    #owlCarousel .item .owlCarouselIcon{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    #owlCarousel .item .owlCarouselIcon img{
+        width: 15%;
+        height: 50px;
+    }
+    #owlCarousel .item .owlCarouselIcon h2{
+        padding-top: 5px;
+        font-size: 15px;
+    }
+    #owlCarousel .item .owlCarouselHeading p{
+        height: 40px;
+        padding: 5px 0px;
+        font-size: 12px;
+    }
+    .btnKnowMore{
+        width: 90%;
+        text-align: center;
+    }
+    .btnKnowMore a{
+        font-size: 13px;
+        font-weight: 600;
+        padding: 2px 5px;
+    }
+    
+    #owlCarousel .item .owlCarouselBox .btnKnowMore img{
+        width: 22%;
+        filter:invert();
+    }
+    
+
+    /* OWL CAROUSEL ENDS HERE  */
+    /* NOTIFICATION STARTS HERE  */
+    #notificationContainer{
+        display: block;
+        width: 90%;
+        height: 100%;
+        /* margin-bottom: 80px;
+        background: #d2d2d444; */
+        padding: 35px;
+    }
+    #notificationContainer .leftNotificationContainer{
+        width: 90%;
+        height: 150px;
+        box-shadow: 2px 3px 5px 5px #505051;
+        padding: 0;
+        margin-left: 16px;
+    }
+    #notificationContainer .rightNotificationContainer{
+        width: 100%;
+        height: 365px;
+        padding: 20px 15px;
+    }
+    #notificationContainer .rightNotificationContainer .rightLeftNotificationContainer{
+        width: 100%;
+        height: 150px;
+    }
+    #notificationContainer .rightNotificationContainer .rightRightNotificationContainer{
+        width: 100%;
+        height: 150px;
+    }
+    /* NOTIFICATION ENDS HERE  */
+    /* FOOTER SECTION STARTS HERE  */
+    
+    .upperFooter{
+        width: 100%;
+        display: block;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .leftContainerFooter{
+        width: 100%;
+    }
+    .leftContainerFooter h1, .leftContainerFooter p{
+        font-weight: 100;
+        font-size: 20px;
+        padding: 10px 30px;
+    }
+    .leftContainerFooter p{
+        text-transform: none;
+        font-size: 12px;
+        padding: 0px 30px;
+        font-weight: 500;
+    }
+    .leftContainerFooter a{
+        margin-right: 20px;
+    }
+    .rightConatainerFooterLinks p{
+        padding: 10px 30px;
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .rightConatainerFooterLinks a{
+        font-size: 20px;
+    }
+    .lowerFooter{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .designDevelope{
+        width: 96%;
+    }
+}
+    
+
+
+
+
+
