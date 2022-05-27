@@ -1,13 +1,33 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AccountOpeningFormController;
+use App\Http\Controllers\CardController;
+use App\Http\Controllers\CustomerCareController;
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\KYCFormController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OffersController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AddManagerFormController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AddStaffFormController;
 use App\Http\Controllers\StaffController;
 // use App\Models\AddStaffForm;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
+
+// Landing Routes 
+Route::get('/AboutUs',[AboutController::class, 'index']);
+Route::get('/AccountOpeningForm',[AccountOpeningFormController::class, 'index']);
+Route::get('/Cards',[CardController::class, 'index']);
+Route::get('/CustomerCare',[CustomerCareController::class, 'index']);
+Route::get('/',[indexController::class, 'index']);
+Route::get('/KYC',[KYCFormController::class, 'index']);
+Route::get('/Offers',[OffersController::class, 'index']);
+Route::get('/OurServices',[ServiceController::class, 'index']);
+
+
 
 // Admin Routes
 Route::prefix('/admin')->group(function(){
@@ -59,7 +79,13 @@ Route::post('/customer/branch-change',[ChangeBranchController::class,'create'])-
 
 
 
+<<<<<<< HEAD
 Route::get('/',function(){
     return view('/customer/password-change');
 });
+=======
+// Route::get('/',function(){
+//     return view('welcome');
+// });
+>>>>>>> 30de3242fccbaa0d079d2b84def84a0a258152a8
 
