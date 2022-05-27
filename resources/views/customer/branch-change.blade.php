@@ -17,11 +17,11 @@
                 <div class="row">
                     <div class="form-group col">
                         <label for="formGroupExampleInput2">Account Number:</label>
-                        <input type="password" required name="aNo" class="form-control" id="" placeholder="Account Number">
+                        <input type="tel" required name="aNo" class="form-control" id="" placeholder="Account Number">
                     </div>
                     <div class="form-group col">
                         <label for="formGroupExampleInput2">Customer Id:</label>
-                        <input type="password" required name="cId" class="form-control" id="" placeholder="Customer Id">
+                        <input type="tel" required name="cId" class="form-control" id="" placeholder="Customer Id">
                     </div>
 
                 </div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group col">
                         <label for="formGroupExampleInput2">Current Branch Code:</label>
-                        <input type="password" required name="branchCode" class="form-control" id="" placeholder="Branch Code">
+                        <input type="text" required name="branchCode" class="form-control" id="" placeholder="Branch Code">
                     </div>
 
                 </div>
@@ -50,7 +50,7 @@
                         </select>                    </div>
                     <div class="form-group col text-truncate">
                         <label for="formGroupExampleInput2">New Branch Code:</label>
-                        <input type="text" required name="newBranchCode" class="form-control" id="" placeholder="New Branch">
+                        <input type="text" required name="newBranchCode" class="form-control" id="" placeholder="New Branch Code">
                     </div>
 
                 </div>
@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="form-group col">
                         <label for="">Reason</label>
-                        <textarea name="reason" required id="" cols="" rows="" class="form-control"></textarea>
+                        <textarea name="reason" required id="" cols="" rows="4" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="form-group justify-content-center mt-3">

@@ -49,6 +49,7 @@ Route::prefix('/admin')->group(function(){
     Route::get('/manage-customer',[AdminController::class,'manageCustomer'])->name('admin-manage-customer');
     Route::get('/customer-transaction-detail',[AdminController::class,'customerTransactionDetail'])->name('admin-customer-transaction-detail');
     Route::get('/branch-change',[AdminController::class,'branchChange'])->name('admin-branch-change');
+    Route::get('/branch-change/{id}',[AdminController::class,'branchChangeView'])->name('admin-branch-change-view');
     Route::get('/fixed-deposit',[AdminController::class,'fixedDeposit'])->name('admin-fixed-deposit');
     Route::get('/terms-condition',[AdminController::class,'termsCondition'])->name('admin-terms-condition');
 });

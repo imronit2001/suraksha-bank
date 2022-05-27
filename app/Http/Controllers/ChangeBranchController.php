@@ -27,6 +27,7 @@ class ChangeBranchController extends Controller
         $branch = new change_branch();
         $branch->aType  = $request->aType;
         $branch->aNo = $request->aNo;
+        $branch->cId = $request->cId;
         $branch->branchName = $request->branchName;
         $branch->branchCode = $request->branchCode;
         $branch->newBranchName = $request->newBranchName;

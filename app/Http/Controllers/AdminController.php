@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AddManagerForm;
 use App\Models\AddStaffForm;
+use App\Models\change_branch;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -50,7 +51,13 @@ class AdminController extends Controller
     }
     public function branchChange()
     {
-        return view('admin.branch-change');
+        $applications = change_branch::all();
+        return view('admin.branch-change',['applications'=>$applications]);
+    }
+    public function branchChangeView($id)
+    {
+        $applications = change_branch::find($id);
+        return view('admin.branch-change-view',['applications'=>$applications]);
     }
     public function fixedDeposit()
     {

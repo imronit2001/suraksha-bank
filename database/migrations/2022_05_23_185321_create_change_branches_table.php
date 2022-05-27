@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('aType');
             $table->string('aNo');
+            $table->string('cId');
             $table->string('branchName');
             $table->string('branchCode');
             $table->string('newBranchName');
             $table->string('newBranchCode');
             $table->longText('reason');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
