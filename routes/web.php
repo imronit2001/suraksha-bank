@@ -17,7 +17,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 
-// Landing Routes 
+// Landing Routes
 Route::get('/AboutUs',[AboutController::class, 'index']);
 Route::get('/AccountOpeningForm',[AccountOpeningFormController::class, 'index']);
 Route::get('/Cards',[CardController::class, 'index']);
@@ -49,6 +49,7 @@ Route::prefix('/admin')->group(function(){
     Route::get('/manage-customer',[AdminController::class,'manageCustomer'])->name('admin-manage-customer');
     Route::get('/customer-transaction-detail',[AdminController::class,'customerTransactionDetail'])->name('admin-customer-transaction-detail');
     Route::get('/branch-change',[AdminController::class,'branchChange'])->name('admin-branch-change');
+    Route::get('/branch-change/{id}',[AdminController::class,'branchChangeView'])->name('admin-branch-change-view');
     Route::get('/fixed-deposit',[AdminController::class,'fixedDeposit'])->name('admin-fixed-deposit');
     Route::get('/terms-condition',[AdminController::class,'termsCondition'])->name('admin-terms-condition');
 });
@@ -75,7 +76,6 @@ Route::get('/customer/fixed-deposite',[CustomerController::class,'FixedDeposite'
 Route::get('/customer/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
 Route::get('/customer/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
 Route::post('/customer/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
-
 
 
 

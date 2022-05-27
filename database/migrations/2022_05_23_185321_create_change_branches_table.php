@@ -15,13 +15,15 @@ return new class extends Migration
     {
         Schema::create('change_branches', function (Blueprint $table) {
             $table->id();
-            $table->string('AccountType');
-            $table->string('AccountNumber');
-            $table->string('BranchCode');
-            $table->string('CurrentBranch');
-            $table->string('NewBranch');
-            $table->string('City');
-            $table->string('State');
+            $table->string('aType');
+            $table->string('aNo');
+            $table->string('cId');
+            $table->string('branchName');
+            $table->string('branchCode');
+            $table->string('newBranchName');
+            $table->string('newBranchCode');
+            $table->longText('reason');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

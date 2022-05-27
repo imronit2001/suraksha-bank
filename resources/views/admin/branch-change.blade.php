@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="smallwidth">Customer Id</th>
-                    <th scope="col" class="smallwidth">Customer Name</th>
+                    {{-- <th scope="col" class="smallwidth">Customer Name</th> --}}
                     <th scope="col" class="smallwidth">Account No</th>
                     <th scope="col" class="smallwidth">Current Branch</th>
                     <th scope="col" class="bigwidth">Changed Branch</th>
@@ -27,58 +27,16 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($applications as $i)
+
+                @endforeach
                 <tr>
-                    <td><p>15201219026</p></td>
-                    <td><p>Ronit Singh</p></td>
-                    <td><p>12345678901234</p></td>
-                    <td><p>Kolkata</p></td>
-                    <td><p>Hooghly</p></td>
-                    <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
-                    <td><p>Pending</p></td>
-                </tr>
-                <tr>
-                    <td><p>15201219026</p></td>
-                    <td><p>Ronit Singh</p></td>
-                    <td><p>12345678901234</p></td>
-                    <td><p>Kolkata</p></td>
-                    <td><p>Hooghly</p></td>
-                    <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
-                    <td><p>Pending</p></td>
-                </tr>
-                <tr>
-                    <td><p>15201219026</p></td>
-                    <td><p>Ronit Singh</p></td>
-                    <td><p>12345678901234</p></td>
-                    <td><p>Kolkata</p></td>
-                    <td><p>Hooghly</p></td>
-                    <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
-                    <td><p>Pending</p></td>
-                </tr>
-                <tr>
-                    <td><p>15201219026</p></td>
-                    <td><p>Ronit Singh</p></td>
-                    <td><p>12345678901234</p></td>
-                    <td><p>Kolkata</p></td>
-                    <td><p>Hooghly</p></td>
-                    <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
-                    <td><p>Pending</p></td>
-                </tr>
-                <tr>
-                    <td><p>15201219026</p></td>
-                    <td><p>Ronit Singh</p></td>
-                    <td><p>12345678901234</p></td>
-                    <td><p>Kolkata</p></td>
-                    <td><p>Hooghly</p></td>
-                    <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
-                    <td><p>Pending</p></td>
-                </tr>
-                <tr>
-                    <td><p>15201219026</p></td>
-                    <td><p>Ronit Singh</p></td>
-                    <td><p>12345678901234</p></td>
-                    <td><p>Kolkata</p></td>
-                    <td><p>Hooghly</p></td>
-                    <td><p><a href=""><button class="btn btn-primary">View</button></a></p></td>
+                    <td><p>{{ $i->cId }}</p></td>
+                    {{-- <td><p>Ronit Singh</p></td> --}}
+                    <td><p>{{ $i->aNo }}</p></td>
+                    <td><p>{{ $i->branchName }}</p></td>
+                    <td><p>{{ $i->newBranchName }}</p></td>
+                    <td><p><a href={{ url('/admin/branch-change', $i->id) }}><button class="btn btn-primary">View</button></a></p></td>
                     <td><p>Pending</p></td>
                 </tr>
 

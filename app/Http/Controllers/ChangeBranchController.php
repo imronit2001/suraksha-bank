@@ -25,15 +25,15 @@ class ChangeBranchController extends Controller
     public function create(Request $request)
     {
         $branch = new change_branch();
-        $branch->AccountType  = $request->AccountType;
-        $branch->AccountNumber = $request->AccountNumber;
-        $branch->BranchCode = $request->BranchCode;
-        $branch->CurrentBranch = $request->CurrentBranch;
-        $branch->NewBranch = $request->NewBranch;
-        $branch->City =$request->City;
-        $branch->State = $request->State;
+        $branch->aType  = $request->aType;
+        $branch->aNo = $request->aNo;
+        $branch->cId = $request->cId;
+        $branch->branchName = $request->branchName;
+        $branch->branchCode = $request->branchCode;
+        $branch->newBranchName = $request->newBranchName;
+        $branch->newBranchCode = $request->newBranchCode;
+        $branch->reason = $request->reason;
         $branch->save();
-
         return redirect((route('customer-branch-change')));
     }
 
