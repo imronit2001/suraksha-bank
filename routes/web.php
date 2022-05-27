@@ -79,13 +79,7 @@ Route::post('/customer/branch-change',[ChangeBranchController::class,'create'])-
 
 
 
-<<<<<<< HEAD
 Route::get('/',function(){
     return view('/customer/password-change');
 });
-=======
-// Route::get('/',function(){
-//     return view('welcome');
-// });
->>>>>>> 30de3242fccbaa0d079d2b84def84a0a258152a8
 
