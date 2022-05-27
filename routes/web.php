@@ -17,7 +17,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 
-// Landing Routes 
+// Landing Routes
 Route::get('/AboutUs',[AboutController::class, 'index']);
 Route::get('/AccountOpeningForm',[AccountOpeningFormController::class, 'index']);
 Route::get('/Cards',[CardController::class, 'index']);
@@ -75,17 +75,3 @@ Route::get('/customer/fixed-deposite',[CustomerController::class,'FixedDeposite'
 Route::get('/customer/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
 Route::get('/customer/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
 Route::post('/customer/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
-
-
-
-
-<<<<<<< HEAD
-Route::get('/',function(){
-    return view('/customer/password-change');
-});
-=======
-// Route::get('/',function(){
-//     return view('welcome');
-// });
->>>>>>> 30de3242fccbaa0d079d2b84def84a0a258152a8
-
