@@ -7,6 +7,7 @@ use App\Http\Controllers\StaffController;
 // use App\Models\AddStaffForm;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ChangeBranchController;
 
 // Admin Routes
 Route::prefix('/admin')->group(function(){
@@ -52,12 +53,13 @@ Route::get('/customer/fund-transfer',[CustomerController::class,'FundTransfer'])
 Route::get('/customer/branch-change',[CustomerController::class,'BranchChange'])->name('customer-branch-change');
 Route::get('/customer/fixed-deposite',[CustomerController::class,'FixedDeposite'])->name('customer-fixed-deposite');
 Route::get('/customer/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
-
+Route::get('/customer/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
+Route::post('/customer/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
 
 
 
 
 Route::get('/',function(){
-    return view('welcome');
+    return view('/customer/password-change');
 });
 

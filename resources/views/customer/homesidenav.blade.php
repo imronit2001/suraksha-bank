@@ -46,14 +46,14 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="AccountDetails.html">
+                <a href="{{route('customer-account-details')}}">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                     <span class="links_name">Account Details</span>
                 </a>
                 <span class="tooltip">Account Details</span>
             </li>
             <li>
-                <a href="transectionDetails.html">
+                <a href="{{route('customer-transaction-details')}}">
                     <i class='bx bx-transfer'></i>
                     <span class="links_name">Transaction Details</span>
                 </a>
@@ -117,21 +117,21 @@
               </div>      
             </li>
             <li>
-                <a href="TranPassword.html">
+                <a href="{{route('customer-transaction-password')}}">
                     <i class='bx bx-credit-card'></i>
                     <span class="links_name">Transaction Password</span>
                 </a>
                 <span class="tooltip">Transaction Password</span>
             </li>
             <li>
-                <a href="changeBranch.html">
+                <a href="{{route('customer-branch-change')}}">
                     <i class='bx bx-git-branch'></i>
                     <span class="links_name">Branch change</span>
                 </a>
                 <span class="tooltip">Branch change</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('customer-cheque-book')}}">
                     <i class='bx bxs-wallet-alt'></i>
                     <span class="links_name">Cheque Book</span>
                 </a>
