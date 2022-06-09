@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class AccountOpeningFormController extends Controller
 {
-    public function index(){
-        return view('AccountOpeningForm');
-    } 
 
     public function create(Request $request){
         $AccountOpeningForm = new AccountOpeningTable;
@@ -80,7 +77,7 @@ class AccountOpeningFormController extends Controller
 
             // dd($request);
             $AccountOpeningForm->save();
-        return redirect('/Customer/')->with('Success','Data Added');
+        return redirect('/')->with('Success','Data Added');
 
     }
 }
