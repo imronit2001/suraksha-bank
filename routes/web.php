@@ -11,9 +11,9 @@ use App\Http\Controllers\indexController;
 use App\Http\Controllers\KYCFormController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\Admin\AddManagerFormController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AddStaffFormController;
+use App\Http\Controllers\AddManagerFormController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AddStaffFormController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
@@ -54,27 +54,35 @@ Route::prefix('/admin')->group(function () {
     // bank balance
     Route::get('/bank-balance', [AdminController::class, 'bankBalance'])->name('admin-bank-balance');
     // add staff
-    Route::get('/add-staff', [AddStaffFormController::class, 'index'])->name('admin-add-staff');
-    Route::post('/add-staff', [AddStaffFormController::class, 'create'])->name('admin-add-staff');
+    Route::get('/add-staff', [AdminController::class, 'addStaffIndex'])->name('admin-add-staff');
+    Route::post('/add-staff', [AdminController::class, 'addStaffCreate'])->name('admin-add-staff');
+    // Route::get('/add-staff', [AddStaffFormController::class, 'index'])->name('admin-add-staff');
+    // Route::post('/add-staff', [AddStaffFormController::class, 'create'])->name('admin-add-staff');
     // edit staff
-    Route::get('/edit-staff/{id}', [AddStaffFormController::class, 'edit'])->name('admin-edit-staff');
-    Route::post('/edit-staff/{id}', [AddStaffFormController::class, 'update'])->name('admin-edit-staff');
+    // Route::get('/edit-staff/{id}', [AddStaffFormController::class, 'edit'])->name('admin-edit-staff');
+    // Route::post('/edit-staff/{id}', [AddStaffFormController::class, 'update'])->name('admin-edit-staff');
     // manager staff
     Route::get('/manage-staff', [AdminController::class, 'manageStaff'])->name('admin-manage-staff');
     // view staff details
-    Route::get('/staff-details/{id}', [AdminController::class, 'staffDetails'])->name('admin-staff-details');
+    // Route::get('/staff-details/{id}', [AdminController::class, 'staffDetails'])->name('admin-staff-details');
     // remove staff
-    Route::get('/remove-staff/{id}', [AddStaffFormController::class, 'destroy'])->name('admin-remove-staff');
+    Route::get('/remove-staff/{id}/{status}', [AdminController::class, 'removeStaff'])->name('admin-remove-staff');
     // add manager
-    Route::get('/add-manager', [AddManagerFormController::class, 'index'])->name('admin-add-manager');
-    Route::post('/add-manager', [AddManagerFormController::class, 'create'])->name('admin-add-manager');
+    Route::get('/add-manager', [AdminController::class, 'addManagerIndex'])->name('admin-add-manager');
+    Route::post('/add-manager', [AdminController::class, 'addManagerCreate'])->name('admin-add-manager');
+    // Route::get('/add-manager', [AddManagerFormController::class, 'index'])->name('admin-add-manager');
+    // Route::post('/add-manager', [AddManagerFormController::class, 'create'])->name('admin-add-manager');
     // view managers
     Route::get('/managers', [AdminController::class, 'managers'])->name('admin-managers');
     // edit managers
-    Route::get('/edit-manager/{id}', [AddManagerFormController::class, 'edit'])->name('admin-edit-manager');
-    Route::post('/edit-manager/{id}', [AddManagerFormController::class, 'update'])->name('admin-edit-manager');
+    // Route::get('/edit-manager/{id}', [AddManagerFormController::class, 'edit'])->name('admin-edit-manager');
+    // Route::post('/edit-manager/{id}', [AddManagerFormController::class, 'update'])->name('admin-edit-manager');
     // manager details
-    Route::get('/manager-details/{id}', [AdminController::class, 'managerDetails'])->name('admin-manager-details');
+    // Route::get('/manager-details/{id}', [AdminController::class, 'managerDetails'])->name('admin-manager-details');
+
+    Route::get('/remove-manager/{id}/{status}', [AdminController::class, 'removeManager'])->name('admin-remove-manager');
+
+
     // manager customers
     Route::get('/manage-customer', [AdminController::class, 'manageCustomer'])->name('admin-manage-customer');
     // customer transaction details
