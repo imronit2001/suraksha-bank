@@ -21,15 +21,6 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 // use App\Http\Livewire\FormHandle;
 
-
-/*================================
-    UNKNOWN ROUTES
-================================*/
-
-Route::get('/issue', [StaffController::class, 'issue'])->name('issue');
-Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
-
-
 /*================================
     LANDING PAGE ROUTES STARTS
 ================================*/
@@ -132,3 +123,9 @@ Route::prefix('/customer')->group(function () {
     Route::post('/AccountOpeningForm', [AccountOpeningFormController::class, 'create']);
     Route::resource('customer', 'AccountOpeningFormController');
 });
+
+/*================================
+    UNKNOWN ROUTES
+================================*/
+Route::get('/issue', [StaffController::class, 'issue'])->name('issue');
+Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
