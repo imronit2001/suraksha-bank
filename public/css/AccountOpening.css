@@ -10,11 +10,13 @@ body{
     background: white;
     color: #34495e;
 }
-.customerDetailsFormContainer{
+form{
     width: 75vw;
     border-radius: 5px;
     position: relative;
     margin: 25px auto;
+    border: 1px solid red;
+    padding: 10px;
 }
 .registration{
     text-align: center;

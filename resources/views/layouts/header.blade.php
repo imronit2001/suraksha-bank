@@ -38,15 +38,12 @@
     
             <ul>
                 <li><a href="{{url('/')}}" class="active">Home</a></li>
-                <li><a href="{{url('/AboutUs')}}">About Us</a></li>
-                <li><a href="{{url('/Offers')}}" >Offers</a></li>
-                <!-- <li><a href="{{url('/Cards')}}">Cards</a></li> -->
-                <li><a href="{{url('/OurServices')}}">E-Services</a></li>
+                <li><a href="{{url('/about')}}">About Us</a></li>
+                <li><a href="{{url('/offer')}}" >Offers</a></li>
+                <li><a href="{{url('/services')}}">E-Services</a></li>
                 <li><a href="{{url('/CustomerCare')}}">Customer Care</a></li>
-                <li><a href="{{url('/AccountOpeningForm')}}">Apply Now</a></li>
-                <!-- <button onclick="togglePopup()">Login/Signup</button> -->
-                
-                <a href="{{url('auth/login')}}" onclick="togglePopup()"><i class="fa-solid fa-user-large"></i></a>
+                <li><a href="{{url('/apply')}}">Apply Now</a></li>                
+                <a href="{{url('')}}"><i class="fa-solid fa-user-large"></i></a>
             </ul>
             <label id="icon">
                 <i class="fas fa-bars" id="btn"></i>

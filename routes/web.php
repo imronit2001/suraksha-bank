@@ -1,16 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\termsController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AccountOpeningFormController;
-use App\Http\Controllers\CardController;
-use App\Http\Controllers\CustomerCareController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\KYCFormController;
-use App\Http\Controllers\OffersController;
-use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AddManagerFormController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AddStaffFormController;
@@ -20,33 +13,18 @@ use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
-// use App\Http\Livewire\FormHandle;
 
 
 // LANDING PAGE ROUTES STARTS
 Route::get('/',[indexController::class, 'index']);
-Route::get('/AboutUs',[AboutController::class, 'index']);
-Route::get('/AboutUs',[AboutController::class, 'index']);
-Route::get('/Cards',[CardController::class, 'index']);
-Route::get('/CustomerCare', [CustomerCareController::class, 'index'])->name('index');
-Route::post('/CustomerCare', [CustomerCareController::class, 'create'])->name('create');
-Route::get('/Offers',[OffersController::class, 'index']);
-Route::get('/OurServices',[ServiceController::class, 'index']);
-Route::get('/redirects',[LoginController::class,'index']);
-Route::get('/termsCondition',[termsController::class, 'index']);
-Route::get('/auth/login',[LoginController::class, 'login']);
-Route::get('/addStaff',[LoginController::class, 'add_staff']);
-Route::get('/logout', ['LoginController@logout']);
-Route::get('/AccountOpeningForm',[AccountOpeningFormController::class, 'index']);
-Route::post('/AccountOpeningForm',[AccountOpeningFormController::class, 'create']);
-// Route::post()
+Route::get('/about',[indexController::class, 'about']);
+Route::get('/offer',[indexController::class, 'offer']);
+Route::get('/services',[indexController::class, 'services']);
+Route::get('/CustomerCare',[indexController::class, 'customerCare']);
+Route::get('/apply',[indexController::class, 'accountOpening']);
+Route::post('/CustomerCare', [CustomerCareController::class, 'createIssues'])->name('createIssues');
 Route::get('/termsCondition',[termsController::class, 'index']);
 
-
-
-
-// Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // ADMIN ROUTES STARTS HERE
 Route::prefix('/admin')->group(function(){// dashboard
@@ -102,24 +80,9 @@ Route::prefix('/customer')->group(function(){
     Route::post('/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
     Route::get('/KYCForm',[KYCFormController::class, 'index']);
     Route::post('/KYCForm',[KYCFormController::class, 'create']);
-    Route::get('/AccountOpeningForm',[AccountOpeningFormController::class, 'index']);
-    Route::post('/AccountOpeningForm',[AccountOpeningFormController::class, 'create']);
-    // Route::view('/form-handle',FormHandle::class);
 
-    // Route::get('/dashboard',function(){return view('/customer/dashboard');});
-    Route::resource('customer', 'AccountOpeningFormController');
 });
-Route::get('/addStaff',[LoginController::class, 'add_staff']);
-Route::get('/logout', ['LoginController@logout']);
-Route::get('/termsCondition',[termsController::class, 'index']);
 
-    // Route::get('/welcome',function(){
-    //     return view('welcome');
-    // });
-    // Route::get('',function(){
-    //     return view('/customer/password-change');
-    // });
-// Route::post()
 
 
 
