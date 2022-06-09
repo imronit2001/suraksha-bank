@@ -9,19 +9,36 @@
 body{
     background: white;
     color: #34495e;
-    /* border: 1px solid blue; */
 }
 .customerDetailsFormContainer{
-    width: 90vw;
-    height: 100vw;
+    width: 75vw;
     border-radius: 5px;
     position: relative;
-    margin: 3% auto;
-    /* border: 1px solid red; */
-    padding: 0px;
-    overflow: hidden;
+    margin: 25px auto;
 }
-
+.registration{
+    text-align: center;
+}
+.card-header{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 25px auto;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+}
+.row label{
+    font-size: 18px;
+}
+.row input{
+    width: 250px;
+    height: 25px;
+    font-size: 15px;
+    border-bottom: 3px dotted gray;
+}
 h1{
     text-decoration: none;
     text-align: center;
@@ -52,29 +69,26 @@ p{
 .customerDetailsFormContainer form{
     position: absolute;
     width: 99%;
-    /* height: 85%; */
-    /* top: 50px; */
+    height: auto;
     left: 0px;
-    margin: 0 auto;
-    text-align: center;
+    margin: 20px auto;
+    text-align: left;
     transition: .8s;
-    /* padding: 0px 20px; */
-    font-size: 16px;
-    /* border: 1px solid red; */
+    font-size: 18px;
+    padding: 30px;
 }
 form span{
     color: red;
 }
 form h4{
-    font-size: 25px;
-    padding: 30px 0px 20px 0px;
+    font-size: 20px;
+    padding: 30px 0px 30px 0px;
+    text-align: center;
 }
-form .inputFields{
-    width: 100%;
-    text-align: left;
-    margin-top: -20px;
-    margin: 0 auto;
-    /* border: 1px solid black; */
+
+form label{
+    font-weight: 600;
+    font-size: 16px;
 }
 form .name{
     display: flex;
@@ -84,36 +98,40 @@ form input{
     padding: 0px 5px;
     margin: 5px 10px;
     border: 0;
-    border-bottom: 1px solid grey;
     outline: none;
     background: transparent;
 }
 form input[type="text"]{
-    width: 180px;
+    width: 280px;
     padding: 0px 5px;
     margin: 0px 10px;
     border-bottom: 3px dotted grey;
+    font-size: 14px;
 }
 form input[type="file"]{
     width: 180px;
     padding: 0px 5px;
     margin: 0px 10px;
     border-bottom: none;
+    font-size: 15px;
 }
 form p{
     width:95%;
     margin-top: 0;
     text-align: left;
-    font-size: 11px;
+    font-size: 18px;
 }
-#form4 p, #form5 p{
-    font-size: 14px;
+#form3 p, #form4 p{
+    font-size: 18px;
     text-align: center;
 }
 #form4 .add{
     width: 70%;
 }
 form small{
+    font-size: 18px;
+}
+form h4 small{
     font-size: 18px;
 }
 .btn-box{
@@ -130,9 +148,9 @@ form button{
     cursor: pointer;
     border-radius: 5px;
     background: #34495e;
-    font-size: 16px;
+    font-size: 18px;
 }
-#form2{
+/* #form2{
     left: -100%;
 }
 #form3{
@@ -140,8 +158,8 @@ form button{
 }
 #form4{
     left: -100%;
-}
-#form5{
+} */
+/* #form5{
     left: -100%;
 }
 #form6{
@@ -149,7 +167,7 @@ form button{
 }
 #form7{
     left: -100%;
-}
+} */
 /* #form8{
     left: -100%;
 } */

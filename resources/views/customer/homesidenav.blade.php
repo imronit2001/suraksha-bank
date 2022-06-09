@@ -28,7 +28,8 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  
+
+    @livewireStyles
 </head>
 <body>
     <div class="sidebar">
@@ -46,6 +47,13 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
+                <a href="{{url('/Customer/AccountOpeningForm')}}">
+                    <i class="fa fa-id-card" aria-hidden="true"></i>
+                    <span class="links_name">Account Opening Form</span>
+                </a>
+                <span class="tooltip">Account Opening Form</span>
+            </li>
+            <li>
                 <a href="{{route('customer-account-details')}}">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                     <span class="links_name">Account Details</span>
@@ -60,7 +68,7 @@
                 <span class="tooltip">Transaction Details</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('/Customer/KYCForm')}}">
                     <i class="fab fa-wpforms"></i>
                     <span class="links_name">KYC Form</span>
                 </a>
@@ -80,7 +88,7 @@
                 </a>
                 <span class="tooltip">Debit Card</span>
             </li>
-            <li> 
+            {{-- <li>
               <div class="dropdown">
                   <i class='fas fa-hand-holding-usd'></i>
                     <button class="btn text-white dropdown-toggle" type="button" data-toggle="dropdown">Loans</button>
@@ -114,8 +122,8 @@
                             <span class="tooltip">Personal Loans</span>
                         </li>
                       </ul>
-              </div>      
-            </li>
+              </div>
+            </li> --}}
             <li>
                 <a href="{{route('customer-transaction-password')}}">
                     <i class='bx bx-credit-card'></i>
@@ -159,21 +167,25 @@
                 <span class="tooltip">Change Password</span>
             </li>
             <li class="profile">
-                  <a href="#">
+                  <!-- <a href="#">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="links_name">logOut </span>
                 </a>
-                <span class="tooltip">logOut </span> 
+                <span class="tooltip">logOut </span>  -->
+                <form class="" action="{{url('../logout')}}" method="post">
+                    {{ csrf_field() }}
+                    <button type="submit" name="logout">Logout</button>
+                </form>
             </li>
         </ul>
     </div>
     <section class="home-section">
         @yield('page-name')
     </section>
-
+    @livewireScripts
     <script src={{asset('js/admin/sidenavbar.js')}}></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>

@@ -13,7 +13,8 @@
                     <div class="tab-content" id="">
                         <div class="" id="" role="">
                             <h3 class="register-heading">Add Employee Form</h3>
-                            <form action="" method="post" enctype="multipart/form-data">
+                            {{-- <form action="{{url('/addStaff')}}" method="post" enctype="multipart/form-data"> --}}
+                            <form action="{{url('/addStaff')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row register-form">
                                     <div class="col-md-6">
@@ -56,7 +57,7 @@
                                             <input type="email" class="form-control" placeholder="Email Id *" required name="email" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" 
+                                            <input type="text" minlength="10" maxlength="10"
                                                 class="form-control" placeholder="Contact No *" required name="contact" />
                                         </div>
                                         <div class="form-group">
@@ -141,15 +142,15 @@
                                             <input type="text" class="form-control" placeholder="State *" required name="state" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="06" maxlength="06" 
+                                            <input type="text" minlength="06" maxlength="06"
                                                 class="form-control" placeholder="Pin Code *" required name="pincode" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="12" maxlength="12" 
+                                            <input type="text" minlength="12" maxlength="12"
                                                 class="form-control" placeholder="Aadhar Number *" required name="aadharNo" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="12" maxlength="12" 
+                                            <input type="text" minlength="12" maxlength="12"
                                                 class="form-control" placeholder="Pan Number *" required name="panNo" />
                                         </div>
                                         <div class="File"> <label>

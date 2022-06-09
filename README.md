@@ -22,6 +22,7 @@
 <p>php artisan migrate:rollback  (To roll back the latest migration operation, you may use the rollback Artisan command.)</p><br>
 <p>php artisan make:migration --reset (The migrate:reset command will roll back all of your application's migrations:)</p><br>
 <p>php artisan storage:link (To create the symbolic link, you may use the storage:link Artisan command)</p><br>
+<p>php artisan db:seed --class=CustomerDataSeeder (To create fake data for customer-data table)</p><br>
 
 
 ## Controller Details

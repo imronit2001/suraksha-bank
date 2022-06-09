@@ -18,7 +18,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>0000</h1>
+            <h1>staff </h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/staff.png')}} alt="staff.png">
@@ -70,7 +70,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>1000</h1>
+            <h1>{{ $changeBranchList }}</h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/branch-change.png')}} alt="branch-change.png">
@@ -119,7 +119,7 @@
           <h1>Total Credit Card a/c</h1>
         </div>
       </div>
-      <div class="content">
+      {{-- <div class="content">
         <div class="content-box">
           <div class="content-left">
             <h1>1000</h1>
@@ -170,7 +170,7 @@
         <div class="content-bottom">
           <h1>Car Loans</h1>
         </div>
-      </div>
+      </div> --}}
       <div class="content">
         <div class="content-box">
           <div class="content-left">

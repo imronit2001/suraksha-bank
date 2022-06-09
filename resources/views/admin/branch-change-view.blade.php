@@ -35,8 +35,8 @@
             <td>{{ $applications->reason }}</td>
         </tr>
         <tr>
-            <th><a href=""><button class="btn btn-primary">Approve</button></a></th>
-            <th><a href=""><button class="btn btn-primary">Decline</button></a></th>
+            <th><a href="{{ url('/admin/branch-change-approve', $applications->id) }}"><button class="btn btn-primary">Approve</button></a></th>
+            <th><a href="{{ url('/admin/branch-change-decline', $applications->id) }}"><button class="btn btn-primary">Decline</button></a></th>
         </tr>
     </table>
 </div>

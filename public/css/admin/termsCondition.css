@@ -1,0 +1,56 @@
+body{
+    background: rgb(241, 246, 246);
+}
+.container{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+}
+details > summary::webkit-details-marker{
+    display: none;
+}
+details, summary{
+    outline: none;
+    color: plum;
+}
+
+summary{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: #34495e;
+    color:white;
+    padding: 10px 20px 8px;
+    position: relative;
+    cursor: pointer;
+}
+/*
+summary::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid teal;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}*/
+details{
+    margin-bottom: 3px;
+}
+
+details .text-section{
+    padding: 26px 30px;
+    text-align: justify;
+    color: #34495e;
+    font-style: sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+}
+.text-section  span{
+    font-weight: bolder;
+}

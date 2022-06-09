@@ -5,13 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\AddManagerForm;
 use App\Models\AddStaffForm;
 use App\Models\change_branch;
+use App\Models\CustomerData;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $staffs = AddStaffForm::all();
+        $staff = $staffs->count();
+        $managers = AddManagerForm::all();
+        $manager = $managers->count();
+        $changeBranch = change_branch::all();
+        $changeBranchList = $changeBranch->count();
+
+
+        $data = ['staff'=> $staff , 'manager'=> $manager , 'changeBranchList'=>$changeBranchList] ;
+        return view('admin.dashboard',$data);
     }
     public function bankBalance()
     {
@@ -51,7 +61,7 @@ class AdminController extends Controller
     }
     public function branchChange()
     {
-        $applications = change_branch::all();
+        $applications = change_branch::where("status", 0)->get();
         return view('admin.branch-change',['applications'=>$applications]);
     }
     public function branchChangeView($id)
@@ -59,12 +69,36 @@ class AdminController extends Controller
         $applications = change_branch::find($id);
         return view('admin.branch-change-view',['applications'=>$applications]);
     }
+    public function branchChangeApprove($id)
+    {
+        $applications = change_branch::find($id);
+        $users = DB::table('customer_data')
+                ->where('customerId', '=', $applications->cId)
+                ->first();
+        $customer = CustomerData::find($users->id);
+        $customer->branchName = $applications->newBranchName;
+        $customer->save();
+        $applications->status = "1";
+        $applications->save();
+        $applications = change_branch::where("status", 0)->get();
+        // return view('admin.branch-change',['applications'=>$applications]);
+        return redirect((route('admin-branch-change',['applications'=>$applications])));
+    }
+    public function branchChangeDecline($id)
+    {
+        $applications = change_branch::find($id);
+        $applications->status = "2" ;
+        $applications->save();
+        $applications = change_branch::where("status", 0)->get();
+        // return view('admin.branch-change',['applications'=>$applications]);
+        return redirect((route('admin-branch-change',['applications'=>$applications])));
+    }
     public function fixedDeposit()
     {
         return view('admin.fixed-deposit');
     }
     public function termsCondition()
     {
-        return view('admin.terms-condition');
+        return view('admin.termsCondition');
     }
 }

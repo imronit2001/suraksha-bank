@@ -20,13 +20,13 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  
+
 </head>
 <body>
     <div class="sidebar">
         <div class="logo-details">
           <i class='bx bxs-bank icon'></i>
-          <div class="logo_name">Switch Bank</div>
+          <div class="logo_name">Suraksha Bank</div>
           <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav-list">
@@ -44,7 +44,7 @@
             </a>
             <span class="tooltip">Bank Balance</span>
           </li>
-          
+
           <li>
             <a href="{{route('admin-add-staff')}}">
               <i class='bx bxs-user-plus'></i>
@@ -79,7 +79,7 @@
               <span class="links_name">Manage Customers</span>
             </a>
             <span class="tooltip">Manage Customers</span>
-          </li>
+          {{-- </li>
           <li>
             <a href="#">
               <i class='bx bx-building-house'></i>
@@ -108,7 +108,7 @@
             </a>
             <span class="tooltip">Personal Loans</span>
           </li>
-          <li>
+          <li> --}}
             <a href="{{route('admin-branch-change')}}">
               <i class='bx bx-git-branch'></i>
               <span class="links_name">Branch change</span>
@@ -130,14 +130,14 @@
             <span class="tooltip">Fixed Deposits</span>
           </li>
           <li>
-            <a href="terms_and_condition.html">
+            <a href="{{route('admin-termsCondition')}}" target="_blank">
               <i class='bx bxs-copy-alt'></i>
               <span class="links_name">Terms & Conditions</span>
             </a>
             <span class="tooltip">Terms & Conditions</span>
           </li>
           <li>
-            <a href="#">
+            <a href="{{route('issue')}}">
               <i class='bx bx-help-circle'></i>
               <span class="links_name">Helpline</span>
             </a>
@@ -151,7 +151,7 @@
             <span class="tooltip">Change Password</span>
           </li>
           <div style="height: 150px; width: 100%;">
-    
+
           </div>
           <li class="profile">
             <div class="profile-details">
@@ -161,7 +161,12 @@
                 <div class="job">Web designer</div>
               </div>
             </div>
-            <i class='bx bx-log-out' id="log_out"></i>
+            <!-- <i class='bx bx-log-out' id="log_out"></i> -->
+            <!-- Authentication -->
+            <form class="" action="{{url('../logout')}}" method="post">
+                {{ csrf_field() }}
+                <button type="submit" name="logout">Logout</button>
+            </form>
           </li>
         </ul>
     </div>
@@ -172,9 +177,9 @@
 
     <script src={{asset('js/admin/sidenavbar.js')}}></script>
     <script src={{asset('js/admin/form.js')}}></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>

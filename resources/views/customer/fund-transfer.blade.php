@@ -4,7 +4,8 @@
 <section class="home-section">
         <div class="main-box">
             <h1>Send Money to Another Account</h1>
-            <form action="">
+            <form action="" method="post">
+                @csrf
                 <div class="form-floating w-75 min-width-75 mb-3">
                     <input type="text" class="form-control transparent-input" id="floatingInput"
                         placeholder="Account Holder's Name">

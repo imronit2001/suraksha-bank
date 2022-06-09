@@ -29,7 +29,6 @@
             <tbody>
                 @foreach ($applications as $i)
 
-                @endforeach
                 <tr>
                     <td><p>{{ $i->cId }}</p></td>
                     {{-- <td><p>Ronit Singh</p></td> --}}
@@ -39,6 +38,7 @@
                     <td><p><a href={{ url('/admin/branch-change', $i->id) }}><button class="btn btn-primary">View</button></a></p></td>
                     <td><p>Pending</p></td>
                 </tr>
+                @endforeach
 
             </tbody>
         </table>

@@ -19,45 +19,16 @@
     <link rel="stylesheet" href="{{url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css')}}" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="{{url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css')}}" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="{{url('https://code.jquery.com/jquery-3.4.1.js')}}"></script>
-    <script>
-        $(document).ready(function(){
-            $('#icon').click(function(){
-                $('ul').toggleClass('show');
-            })
-        })
-    </script>
+    
     
     <title>@yield('title')</title>
 
 </head>
-<body id="page">
-   <!-- PRELOADER  -->
-    <!-- <div class="preLoader">
-        <div class="upper">
-            <div class="spinner-block">
-               <div class="boxes">
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-               </div>
-            </div>
-        </div>
-        <div class="down"></div>
-    </div> -->
-    <!-- PRELOADER ENDS HERE  -->
-
+<body >
     <!-- MAIN CONTENT SECTION  -->
     <div class="contentContainer">
         <nav>
             <label class="logo">
-            <!-- <img src="images/favicon.png" alt="logo">
-                <h1>Suraksha Bank</h1> -->
                 <img src="images/favicon.png" alt="#logo">
                 <div class="names">
                     <h1>Suraksha Bank</h1>
@@ -69,55 +40,17 @@
                 <li><a href="{{url('/')}}" class="active">Home</a></li>
                 <li><a href="{{url('/AboutUs')}}">About Us</a></li>
                 <li><a href="{{url('/Offers')}}" >Offers</a></li>
-                <li><a href="{{url('/Cards')}}">Cards</a></li>
+                <!-- <li><a href="{{url('/Cards')}}">Cards</a></li> -->
                 <li><a href="{{url('/OurServices')}}">E-Services</a></li>
                 <li><a href="{{url('/CustomerCare')}}">Customer Care</a></li>
                 <li><a href="{{url('/AccountOpeningForm')}}">Apply Now</a></li>
                 <!-- <button onclick="togglePopup()">Login/Signup</button> -->
                 
-                <a href="#" onclick="togglePopup()"><i class="fa-solid fa-user-large"></i></a>
+                <a href="{{url('auth/login')}}" onclick="togglePopup()"><i class="fa-solid fa-user-large"></i></a>
             </ul>
             <label id="icon">
                 <i class="fas fa-bars" id="btn"></i>
             </label>
         </nav>
 
-        <!-- NAVBAR SECTION ENDS HERE  -->
-        <div id="login">
-            <div class="popup" id="popup-1">
-                <div class="overlay"></div>
-                <div class="content">
-                    <div class="close-btn" onclick="togglePopup()">&times;</div>   
-                    <form action="#">
-                        <div class="login-container">
-                            <h2>Login</h2>
-                            <div class="row100">
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <img src="images/icons/user.png" alt="">
-                                        <input type="text" required>
-                                        <span class="credential">Username</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="inputBox">
-                                        <img src="images/icons/lock.png" alt="">
-                                        <input type="password" id="password" required>
-                                        <span class="credential">Password</span>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="password-toggle" onclick="showHide();"></div>
-                            <input type="Submit" name="" id="" value="Login">
-                            <div class="forget">
-                                <a href="#">Forget Password</a><br>
-                                <!-- <p>Don't have an account ?&nbsp;<a href="registration.html" target="_blank" rel="noopener noreferrer">Signup</a></p> -->
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- LOGIN SECTION ENDS HERE  -->
+        
