@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('customer_data', function (Blueprint $table) {
             $table->id();
+            $table->string('branchCode')->nullable();
             $table->string('branchName')->nullable();
             $table->string('customerName')->nullable();
             $table->string('customerId')->nullable();

@@ -109,6 +109,7 @@ Route::prefix('/customer')->group(function () {
     Route::get('/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
     Route::get('/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
     Route::post('/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
+    Route::get('/branch-change-reset/{id}',[ChangeBranchController::class,'reset'])->name('customer-branch-change-reset');
     Route::get('/KYCForm',[KYCFormController::class, 'index']);
     Route::post('/KYCForm',[KYCFormController::class, 'create']);
 

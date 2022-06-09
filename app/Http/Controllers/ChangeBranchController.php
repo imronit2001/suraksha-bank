@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use App\Models\change_branch;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,17 @@ class ChangeBranchController extends Controller
      */
     public function index()
     {
-        return view('customer.branch-change');
+        $branch = Branch::all();
+        $cId = "2517383537107734";
+        $status_id = 0 ;
+        $status = change_branch::where('cId', $cId)->latest()->first();
+        if($status != ""){
+            $status_id = $status->id;
+            $status = $status->status;
+        }else
+        $status = -1 ;
+        // echo $status;
+        return view('customer.branch-change',['branch'=>$branch, 'status'=>$status, 'status_id'=>$status_id]);
     }
 
     /**
@@ -25,15 +36,29 @@ class ChangeBranchController extends Controller
     public function create(Request $request)
     {
         $branch = new change_branch();
-        $branch->aType  = $request->aType;
-        $branch->aNo = $request->aNo;
-        $branch->cId = $request->cId;
-        $branch->branchName = $request->branchName;
-        $branch->branchCode = $request->branchCode;
+        $aNo = "2221131878502311";
+        $cId = "2517383537107734";
+        $aType = "Saving Account";
+        $branchName = "Chuchura";
+        $branchCode = "SKB1";
+        $branch->aType  = $aType;
+        $branch->aNo = $aNo;
+        $branch->cId = $cId;
+        $branch->branchName = $branchName;
+        $branch->branchCode = $branchCode;
         $branch->newBranchName = $request->newBranchName;
         $branch->newBranchCode = $request->newBranchCode;
         $branch->reason = $request->reason;
         $branch->save();
+        return redirect((route('customer-branch-change')));
+    }
+
+    public function reset($id)
+    {
+        $change_branch = change_branch::find($id);
+        $change_branch->status = -1 ;
+        $change_branch->save();
+        // echo $change_branch;
         return redirect((route('customer-branch-change')));
     }
 
