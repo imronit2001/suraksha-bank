@@ -8,22 +8,26 @@ use App\Http\Controllers\AddManagerFormController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AddStaffFormController;
 use App\Http\Controllers\StaffController;
-use App\Models\AddStaffForm;
 use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 
+/*================================
+    LANDING PAGE ROUTES STARTS
+================================*/
 
-// LANDING PAGE ROUTES STARTS
-Route::get('/',[indexController::class, 'index']);
-Route::get('/about',[indexController::class, 'about']);
-Route::get('/offer',[indexController::class, 'offer']);
-Route::get('/services',[indexController::class, 'services']);
-Route::get('/CustomerCare',[indexController::class, 'customerCare']);
-Route::get('/apply',[indexController::class, 'accountOpening']);
-Route::post('/CustomerCare', [CustomerCareController::class, 'createIssues'])->name('createIssues');
-Route::get('/termsCondition',[termsController::class, 'index']);
+Route::prefix('/')->group(function () {
+    Route::get('',[indexController::class, 'index']);
+    Route::get('about',[indexController::class, 'about']);
+    Route::get('offer',[indexController::class, 'offer']);
+    Route::get('services',[indexController::class, 'services']);
+    Route::get('CustomerCare',[indexController::class, 'customerCare']);
+    Route::get('apply',[indexController::class, 'accountOpening']);
+    Route::post('CustomerCare', [CustomerCareController::class, 'createIssues'])->name('createIssues');
+    Route::get('termsCondition',[termsController::class, 'index']);
+});
+
 
 
 // ADMIN ROUTES STARTS HERE
@@ -54,26 +58,28 @@ Route::prefix('/admin')->group(function(){// dashboard
     Route::post('/add_staff',[LoginController::class,'add_staff']);
 });
 
-// STAFF ROUTES STARTS HERE
-Route::prefix('/staff')->group(function(){
-    Route::get('/',[StaffController::class,'dashboard'])->name('staff-dashboard');
-    Route::get('/credit-money',[StaffController::class,'creditMoneyIndex'])->name('staff-credit-money');
-    Route::post('/credit-money',[StaffController::class,'creditMoneyCreate'])->name('staff-credit-money');
-    Route::get('/debit-money',[StaffController::class,'debitMoneyIndex'])->name('staff-debit-money');
-    Route::post('/debit-money',[StaffController::class,'debitMoneyCreate'])->name('staff-debit-money');
+/*================================
+    STAFF ROUTES STARTS HERE
+================================*/
+Route::prefix('/staff')->group(function () {
+    Route::get('/', [StaffController::class, 'dashboard'])->name('staff-dashboard');
+    Route::get('/credit-money', [StaffController::class, 'creditMoneyIndex'])->name('staff-credit-money');
+    Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('staff-credit-money');
+    Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('staff-debit-money');
+    Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('staff-debit-money');
 });
-Route::get('/issue', [StaffController::class, 'issue'])->name('issue');
-Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
 
-// CUSTOMER ROUTES STARTS HERE
-Route::prefix('/customer')->group(function(){
-    Route::get('/',[CustomerController::class,'dashboard'])->name('customer-dashboard');
-    Route::get('/transaction-password',[CustomerController::class,'TransactionPassword'])->name('customer-transaction-password');
-    Route::get('/account-details',[CustomerController::class,'AccountDetails'])->name('customer-account-details');
-    Route::get('/transaction-details',[CustomerController::class,'TransactionDetails'])->name('customer-transaction-details');
-    Route::get('/fund-transfer',[CustomerController::class,'FundTransfer'])->name('customer-fund-transfer');
-    Route::get('/branch-change',[CustomerController::class,'BranchChange'])->name('customer-branch-change');
-    Route::get('/fixed-deposite',[CustomerController::class,'FixedDeposite'])->name('customer-fixed-deposite');
+/*================================
+    CUSTOMER ROUTES STARTS HERE
+================================*/
+Route::prefix('/customer')->group(function () {
+    Route::get('/', [CustomerController::class, 'dashboard'])->name('customer-dashboard');
+    Route::get('/transaction-password', [CustomerController::class, 'TransactionPassword'])->name('customer-transaction-password');
+    Route::get('/account-details', [CustomerController::class, 'AccountDetails'])->name('customer-account-details');
+    Route::get('/transaction-details', [CustomerController::class, 'TransactionDetails'])->name('customer-transaction-details');
+    Route::get('/fund-transfer', [CustomerController::class, 'FundTransfer'])->name('customer-fund-transfer');
+    Route::get('/branch-change', [CustomerController::class, 'BranchChange'])->name('customer-branch-change');
+    Route::get('/fixed-deposite', [CustomerController::class, 'FixedDeposite'])->name('customer-fixed-deposite');
     Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
     Route::get('/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
     Route::get('/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
@@ -90,3 +96,8 @@ Route::prefix('/customer')->group(function(){
 
 
 
+/*================================
+    UNKNOWN ROUTES
+================================*/
+Route::get('/issue', [StaffController::class, 'issue'])->name('issue');
+Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
