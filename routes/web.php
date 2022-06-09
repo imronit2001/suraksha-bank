@@ -66,20 +66,26 @@ Route::get('/staff',[StaffController::class,'dashboard'])->name('staff-dashboard
 // Route::get('/admin/branch-change',[AdminController::class,'branchChange'])->name('admin-branch-change');
 // Route::get('/admin/fixed-deposit',[AdminController::class,'fixedDeposit'])->name('admin-fixed-deposit');
 // Route::get('/admin/terms-condition',[AdminController::class,'termsCondition'])->name('admin-terms-condition');
+Route::prefix('/Customer')->group(function(){
 
-Route::get('/customer/transaction-password',[CustomerController::class,'TransactionPassword'])->name('customer-transaction-password');
-Route::get('customer/account-details',[CustomerController::class,'AccountDetails'])->name('customer-account-details');
-Route::get('/customer/transaction-details',[CustomerController::class,'TransactionDetails'])->name('customer-transaction-details');
-Route::get('/customer/fund-transfer',[CustomerController::class,'FundTransfer'])->name('customer-fund-transfer');
-Route::get('/customer/branch-change',[CustomerController::class,'BranchChange'])->name('customer-branch-change');
-Route::get('/customer/fixed-deposite',[CustomerController::class,'FixedDeposite'])->name('customer-fixed-deposite');
-Route::get('/customer/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
-Route::get('/customer/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
-Route::post('/customer/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
-
-
-
-Route::get('/',function(){
-    return view('/customer/password-change');
+    Route::get('/transaction-password',[CustomerController::class,'TransactionPassword'])->name('customer-transaction-password');
+    Route::get('/account-details',[CustomerController::class,'AccountDetails'])->name('customer-account-details');
+    Route::get('/transaction-details',[CustomerController::class,'TransactionDetails'])->name('customer-transaction-details');
+    Route::get('/fund-transfer',[CustomerController::class,'FundTransfer'])->name('customer-fund-transfer');
+    Route::get('/branch-change',[CustomerController::class,'BranchChange'])->name('customer-branch-change');
+    Route::get('/fixed-deposite',[CustomerController::class,'FixedDeposite'])->name('customer-fixed-deposite');
+    Route::get('/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
+    Route::get('/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
+    Route::post('/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
 });
 
+
+
+// Route::get('/',function(){
+//     return view('/customer/password-change');
+// });
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
