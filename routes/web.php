@@ -73,6 +73,7 @@ Route::prefix('/staff')->group(function () {
     Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('staff-credit-money');
     Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('staff-debit-money');
     Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('staff-debit-money');
+    Route::get('/transaction', [StaffController::class, 'transaction'])->name('staff-transaction');
 
 });
 Route::get('/ChequeBook',function(){

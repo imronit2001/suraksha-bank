@@ -1,7 +1,7 @@
 @extends('staff.home')
 @section('title', 'Credit Money')
 @section('page-name')
-    <div class="main">
+    <div class="main" id="main">
         <div class="bank-heading">
             <h1 class="bank-name">Suraksha Bank</h1>
             <h1 class="branch-name">Branch : Kolkata</h1>
@@ -37,6 +37,7 @@
                     'aNo': aNo,
                 },
                 success: function(data) {
+                    if(val==1)
                     $("#customer-data").html(data);
                 }
             });
