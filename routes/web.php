@@ -90,6 +90,15 @@ Route::prefix('/admin')->group(function () {
     Route::get('/fixed-deposit', [AdminController::class, 'fixedDeposit'])->name('admin-fixed-deposit');
     // term and condition
     Route::get('/termsCondition', [AdminController::class, 'termsCondition'])->name('admin-termsCondition');
+    // branches
+    Route::get('/branch-table', [BranchController::class, 'store'])->name('admin-branch-table');
+    Route::get('/add-branch', [BranchController::class, 'index'])->name('admin-add-branch');
+    Route::post('/add-branch', [BranchController::class, 'create'])->name('admin-add-branch');
+    Route::get('/remove-branch/{id}', [BranchController::class, 'destroy'])->name('admin-remove-branch');
+    //helpine
+    Route::get('/helpline', [AdminHelplinecontroller::class, 'issue'])->name('admin-helpline');
+    Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issues'])->name('admin-helpline-view');
+
 });
 
 /*================================
@@ -115,6 +124,7 @@ Route::prefix('/customer')->group(function () {
     Route::get('/branch-change', [CustomerController::class, 'BranchChange'])->name('customer-branch-change');
     Route::get('/fixed-deposite', [CustomerController::class, 'FixedDeposite'])->name('customer-fixed-deposite');
     Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
+    Route::get('/issue/{{$id}}', [AdminHelplinecontroller::class, 'issue'])->name('issue');
     Route::get('/cheque-book', [CustomerController::class, 'ChequeBook'])->name('customer-cheque-book');
     Route::get('/branch-change', [ChangeBranchController::class, 'index'])->name('customer-branch-change');
     Route::post('/branch-change', [ChangeBranchController::class, 'create'])->name('customer-branch-change');
@@ -125,8 +135,7 @@ Route::prefix('/customer')->group(function () {
     Route::resource('customer', 'AccountOpeningFormController');
 });
 
+
 /*================================
     UNKNOWN ROUTES
 ================================*/
-Route::get('/issue', [StaffController::class, 'issue'])->name('issue');
-Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
