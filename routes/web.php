@@ -92,8 +92,11 @@ Route::prefix('/staff')->group(function () {
     Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('staff-credit-money');
     Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('staff-debit-money');
     Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('staff-debit-money');
-});
 
+});
+Route::get('/ChequeBook',function(){
+    return view('staff.ChequeBookRequest');
+});
 /*================================
     CUSTOMER ROUTES STARTS HERE
 ================================*/
