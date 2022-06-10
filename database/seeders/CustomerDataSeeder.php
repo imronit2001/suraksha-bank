@@ -21,7 +21,7 @@ class CustomerDataSeeder extends Seeder
         $faker = Faker::create();
         foreach(range(1,10) as $value){
             DB::table('customer_data')->insert([
-             'branchName'=> "Kolkata"  ,
+            //  'branchName'=> "Kolkata"  ,
              'customerName'=> $faker->name()  ,
              'customerId'=> $faker->creditCardNumber()  ,
              'accountNo'=> $faker->creditCardNumber()  ,
