@@ -1,5 +1,5 @@
 @if (count($customers) > 0)
-    <div class="verification">
+    <div class="verification" id="verification">
         <div class="img">
             <img src={{ asset('images/ronit.JPG') }} alt="">
             <img class="sign" src={{ asset('images/signature.webp') }} alt="">
@@ -9,7 +9,7 @@
             <h1 class="balance">Available Balance : {{ $customers[0]->balance }}</h1>
         </div>
     </div>
-    {{-- <form> --}}
+
     <div class="search-box">
         <input type="text" name="amount" id="amount" class="form-control" oninput="checkcredit();"
             placeholder="Enter Amount">
@@ -64,10 +64,17 @@
         </table>
     </div>
     <div class="pin-check">
-        <input type="text" name="pin" id="pin" class="form-control" placeholder="Enter PIN" oninput="checkcredit();" >
-        <button class="btn btn-success" id="credit">Credit</button>
+        <input type="text" name="pin" id="pin" class="form-control" placeholder="Enter PIN" oninput="checkcredit();">
+        <button class="btn btn-success" id="credit" onclick="creditmoney();">Credit</button>
         <button type="reset" class="btn btn-info">Cancel</button>
     </div>
+    <div id="message" class="w-50 m-auto d-flex justify-contents-center">
+
+
+
+    </div>
+
+
     {{-- </form> --}}
 @else
     <p class="text-center text-secondary">No Account Found</p>
@@ -81,29 +88,36 @@
     function checkcredit() {
         var amount = document.getElementById("amount").value;
         var pin = document.getElementById("pin").value;
-        if (amount.length > 0 && pin.length ==4) {
+        if (amount.length > 0 && pin.length == 4) {
             credit.disabled = false;
-            // alert("YES");
-            var aNo = $('#aNo').val();
-            var val = 2;
-            $.ajax({
-                url: "{{ route('staff-credit-money') }}",
-                type: "GET",
-                data: {
-                    'val' : val,
-                    'aNo': aNo,
-                    'amount' : amount,
-                    'pin' : pin,
-                },
-                success: function(data) {
-                    // $("#customer-data").html(data);
-                }
-            });
-
         } else {
             credit.disabled = true;
-            // alert("NO");
 
         }
+    }
+
+    function creditmoney() {
+        var amount = document.getElementById("amount").value;
+        var pin = document.getElementById("pin").value;
+        var aNo = $('#aNo').val();
+        var val = 2;
+        // alert(amount + pin + aNo + val);
+        $.ajax({
+            url: "{{ route('staff-credit-money') }}",
+            type: "GET",
+            data: {
+                'val': val,
+                'aNo': aNo,
+                'amount': amount,
+                'pin': pin,
+            },
+            success: function(data) {
+                if (val == 2) {
+                    $("#main").html(data);
+                    // document.getElementById("show-none").innerHTML = "";
+                }
+            }
+        });
+
     }
 </script>

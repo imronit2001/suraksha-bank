@@ -4,14 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\KYCFormController;
-use App\Http\Controllers\AddManagerFormController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AddStaffFormController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
+use App\Http\Controllers\BranchController;
 
 /*================================
     LANDING PAGE ROUTES STARTS
@@ -39,40 +38,23 @@ Route::prefix('/admin')->group(function () {
     // add staff
     Route::get('/add-staff', [AdminController::class, 'addStaffIndex'])->name('admin-add-staff');
     Route::post('/add-staff', [AdminController::class, 'addStaffCreate'])->name('admin-add-staff');
-    // Route::get('/add-staff', [AddStaffFormController::class, 'index'])->name('admin-add-staff');
-    // Route::post('/add-staff', [AddStaffFormController::class, 'create'])->name('admin-add-staff');
-    // edit staff
-    // Route::get('/edit-staff/{id}', [AddStaffFormController::class, 'edit'])->name('admin-edit-staff');
-    // Route::post('/edit-staff/{id}', [AddStaffFormController::class, 'update'])->name('admin-edit-staff');
     // manager staff
     Route::get('/manage-staff', [AdminController::class, 'manageStaff'])->name('admin-manage-staff');
-    // view staff details
-    // Route::get('/staff-details/{id}', [AdminController::class, 'staffDetails'])->name('admin-staff-details');
     // remove staff
     Route::get('/remove-staff/{id}/{status}', [AdminController::class, 'removeStaff'])->name('admin-remove-staff');
     // add manager
     Route::get('/add-manager', [AdminController::class, 'addManagerIndex'])->name('admin-add-manager');
     Route::post('/add-manager', [AdminController::class, 'addManagerCreate'])->name('admin-add-manager');
-    // Route::get('/add-manager', [AddManagerFormController::class, 'index'])->name('admin-add-manager');
-    // Route::post('/add-manager', [AddManagerFormController::class, 'create'])->name('admin-add-manager');
     // view managers
     Route::get('/managers', [AdminController::class, 'managers'])->name('admin-managers');
-    // edit managers
-    // Route::get('/edit-manager/{id}', [AddManagerFormController::class, 'edit'])->name('admin-edit-manager');
-    // Route::post('/edit-manager/{id}', [AddManagerFormController::class, 'update'])->name('admin-edit-manager');
-    // manager details
-    // Route::get('/manager-details/{id}', [AdminController::class, 'managerDetails'])->name('admin-manager-details');
 
     Route::get('/remove-manager/{id}/{status}', [AdminController::class, 'removeManager'])->name('admin-remove-manager');
-
 
     // manager customers
     Route::get('/manage-customer', [AdminController::class, 'manageCustomer'])->name('admin-manage-customer');
     // customer transaction details
     Route::get('/customer-transaction-detail', [AdminController::class, 'customerTransactionDetail'])->name('admin-customer-transaction-detail');  // branch change applications
     Route::get('/branch-change', [AdminController::class, 'branchChange'])->name('admin-branch-change');
-    // branch change view application
-    // Route::get('/branch-change/{id}', [AdminController::class, 'branchChangeView'])->name('admin-branch-change-view');
     // approve branch change
     Route::get('/branch-change-approve/{id}', [AdminController::class, 'branchChangeApprove'])->name('admin-branch-change-approve');
     // decline branch change
@@ -81,6 +63,15 @@ Route::prefix('/admin')->group(function () {
     Route::get('/fixed-deposit', [AdminController::class, 'fixedDeposit'])->name('admin-fixed-deposit');
     // term and condition
     Route::get('/termsCondition', [AdminController::class, 'termsCondition'])->name('admin-termsCondition');
+    // branches
+    Route::get('/branch-table', [BranchController::class, 'store'])->name('admin-branch-table');
+    Route::get('/add-branch', [BranchController::class, 'index'])->name('admin-add-branch');
+    Route::post('/add-branch', [BranchController::class, 'create'])->name('admin-add-branch');
+    Route::get('/remove-branch/{id}', [BranchController::class, 'destroy'])->name('admin-remove-branch');
+    //helpine
+    Route::get('/helpline', [AdminHelplinecontroller::class, 'issue'])->name('admin-helpline');
+    Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issues'])->name('admin-helpline-view');
+
 });
 
 /*================================
@@ -92,6 +83,7 @@ Route::prefix('/staff')->group(function () {
     Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('staff-credit-money');
     Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('staff-debit-money');
     Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('staff-debit-money');
+    Route::get('/transaction', [StaffController::class, 'transaction'])->name('staff-transaction');
 
 });
 Route::get('/ChequeBook',function(){
@@ -108,7 +100,7 @@ Route::prefix('/customer')->group(function () {
     Route::get('/fund-transfer', [CustomerController::class, 'FundTransfer'])->name('customer-fund-transfer');
     Route::get('/branch-change', [CustomerController::class, 'BranchChange'])->name('customer-branch-change');
     Route::get('/fixed-deposite', [CustomerController::class, 'FixedDeposite'])->name('customer-fixed-deposite');
-    Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
+    // Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');
     Route::get('/cheque-book',[CustomerController::class,'ChequeBook'])->name('customer-cheque-book');
     Route::get('/branch-change',[ChangeBranchController::class,'index'])->name('customer-branch-change');
     Route::post('/branch-change',[ChangeBranchController::class,'create'])->name('customer-branch-change');
@@ -128,5 +120,3 @@ Route::prefix('/customer')->group(function () {
 /*================================
     UNKNOWN ROUTES
 ================================*/
-Route::get('/issue', [StaffController::class, 'issue'])->name('issue');
-Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');

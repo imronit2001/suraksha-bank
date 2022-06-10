@@ -19,7 +19,7 @@ class AdminController extends Controller
         $staff = $staffs->count();
         $managers = AddManagerForm::all();
         $manager = $managers->count();
-        $changeBranch = change_branch::all();
+        $changeBranch = change_branch::where("status", 0)->get();
         $changeBranchList = $changeBranch->count();
 
 

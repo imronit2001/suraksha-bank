@@ -14,7 +14,6 @@ class AdminHelplinecontroller extends Controller
      */
     public function issue(Request $request)
     {
-        // $Helpline = Helpline::all(Request $request);
         $search = $request['search'] ?? "";
         if ($search != ""){
             $Helpline = Helpline::where('name','LIKE',"%$search%")->orwhere('email','LIKE',"%$search%")->get();
@@ -22,16 +21,13 @@ class AdminHelplinecontroller extends Controller
         else {
             $Helpline = Helpline::all();
         }
-        return view('customer.customer-issue', ['Helpline'=>$Helpline]);
+        return view('admin.customer-helpline', ['Helpline'=>$Helpline]);
     }
 
     public function issues($id)
     {
-        // $Helpline = Helpline::all(Request $request);
-        // $Helpline = Helpline::all();
-        // return view('customer.customer-issues', ['Helpline'=>$Helpline]);
         $Helpline = Helpline::find($id);
-        return view('customer.customer-issues',['Helpline'=>$Helpline]);
+        return view('admin.customer-issue',['Helpline'=>$Helpline]);
     }
 
     /**
