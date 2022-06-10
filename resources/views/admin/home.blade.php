@@ -79,8 +79,8 @@
               <span class="links_name">Manage Customers</span>
             </a>
             <span class="tooltip">Manage Customers</span>
-          {{-- </li>
-          <li>
+         </li>
+        {{--  <li>
             <a href="#">
               <i class='bx bx-building-house'></i>
               <span class="links_name">Home Loans</span>
@@ -100,15 +100,15 @@
               <span class="links_name">Car Loans</span>
             </a>
             <span class="tooltip">Car Loans</span>
+          </li>--}}
+          <li>
+            <a href="{{route('admin-branch-table')}}">
+              <i class='bx bx-user-circle'></i>
+              <span class="links_name">Branch table </span>
+            </a>
+            <span class="tooltip">Branch table </span>
           </li>
           <li>
-            <a href="#">
-              <i class='bx bx-user-circle'></i>
-              <span class="links_name">Personal Loans</span>
-            </a>
-            <span class="tooltip">Personal Loans</span>
-          </li>
-          <li> --}}
             <a href="{{route('admin-branch-change')}}">
               <i class='bx bx-git-branch'></i>
               <span class="links_name">Branch change</span>
@@ -137,7 +137,7 @@
             <span class="tooltip">Terms & Conditions</span>
           </li>
           <li>
-            <a href="{{route('issue')}}">
+            <a href="{{route('admin-helpline')}}">
               <i class='bx bx-help-circle'></i>
               <span class="links_name">Helpline</span>
             </a>
