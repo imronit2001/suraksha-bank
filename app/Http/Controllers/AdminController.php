@@ -146,26 +146,18 @@ class AdminController extends Controller
     }
     public function branchChangeApprove($id)
     {
-        $applications = change_branch::find($id);
-        $users = DB::table('customer_data')
-                ->where('customerId', '=', $applications->cId)
-                ->first();
-        $customer = CustomerData::find($users->id);
-        $customer->branchName = $applications->newBranchName;
-        $customer->save();
-        $applications->status = "1";
-        $applications->save();
+        $application = change_branch::find($id);
+        $application->status = "1";
+        $application->save();
         $applications = change_branch::where("status", 0)->get();
-        // return view('admin.branch-change',['applications'=>$applications]);
         return redirect((route('admin-branch-change',['applications'=>$applications])));
     }
     public function branchChangeDecline($id)
     {
-        $applications = change_branch::find($id);
-        $applications->status = "2" ;
-        $applications->save();
+        $application = change_branch::find($id);
+        $application->status = "2";
+        $application->save();
         $applications = change_branch::where("status", 0)->get();
-        // return view('admin.branch-change',['applications'=>$applications]);
         return redirect((route('admin-branch-change',['applications'=>$applications])));
     }
     public function fixedDeposit()

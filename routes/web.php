@@ -72,7 +72,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/customer-transaction-detail', [AdminController::class, 'customerTransactionDetail'])->name('admin-customer-transaction-detail');  // branch change applications
     Route::get('/branch-change', [AdminController::class, 'branchChange'])->name('admin-branch-change');
     // branch change view application
-    Route::get('/branch-change/{id}', [AdminController::class, 'branchChangeView'])->name('admin-branch-change-view');
+    // Route::get('/branch-change/{id}', [AdminController::class, 'branchChangeView'])->name('admin-branch-change-view');
     // approve branch change
     Route::get('/branch-change-approve/{id}', [AdminController::class, 'branchChangeApprove'])->name('admin-branch-change-approve');
     // decline branch change

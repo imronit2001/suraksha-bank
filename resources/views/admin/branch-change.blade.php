@@ -22,8 +22,10 @@
                     <th scope="col" class="smallwidth">Account No</th>
                     <th scope="col" class="smallwidth">Current Branch</th>
                     <th scope="col" class="bigwidth">Changed Branch</th>
-                    <th scope="col" class="bigwidth">Application</th>
-                    <th scope="col" >Status</th>
+                    {{-- <th scope="col" class="bigwidth">Application</th>
+                    <th scope="col" >Status</th> --}}
+                    <th scope="col" >Approve</th>
+                    <th scope="col" >Decline</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,10 +35,11 @@
                     <td><p>{{ $i->cId }}</p></td>
                     {{-- <td><p>Ronit Singh</p></td> --}}
                     <td><p>{{ $i->aNo }}</p></td>
-                    <td><p>{{ $i->branchName }}</p></td>
-                    <td><p>{{ $i->newBranchName }}</p></td>
-                    <td><p><a href={{ url('/admin/branch-change', $i->id) }}><button class="btn btn-primary">View</button></a></p></td>
-                    <td><p>Pending</p></td>
+                    <td><p>{{ $i->branchCode." ".$i->branchName }}</p></td>
+                    <td><p>{{ $i->newBranchCode." ".$i->newBranchName }}</p></td>
+                    <td><p><a href={{ url('/admin/branch-change-approve', $i->id) }}><button class="btn btn-primary">Approve</button></a></p></td>
+                    <td><p><a href={{ url('/admin/branch-change-decline', $i->id) }}><button class="btn btn-danger">Decline</button></a></p></td>
+
                 </tr>
                 @endforeach
 
