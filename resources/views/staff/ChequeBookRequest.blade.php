@@ -38,18 +38,18 @@
                         <td>
                             <p>
                                 @if ($cb->status == 'Active')
-                                    <button class="btn btn-success disabled">Activated</button>
+                                    <button class="btn btn-success disabled">Pending</button>
                                 @else
-                                    <button class="btn btn-danger disabled">Deactivated</button>
+                                    <button class="btn btn-danger disabled">Declined</button>
                                 @endif
                             </p>
                         </td>
                         <td>
                             @if ($cb->status == 'Active')
-                                <p><a href={{ url('/admin/remove-staff/' . $cb->id . '/Deactivate') }}><button
+                                <p><a href={{ url('/staf/cheque-book/' . $cb->id . '/Declined') }}><button
                                             class="btn btn-danger">Declined</button></a></p>
                             @else
-                                <p><a href={{ url('/admin/remove-staff/' . $cb->id . '/Active') }}><button
+                                <p><a href={{ url('/staf/cheque-book/' . $cb->id . '/Accepted') }}><button
                                             class="btn btn-success">Accepted</button>
                             @endif
                             </a></p>

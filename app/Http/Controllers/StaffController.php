@@ -53,7 +53,7 @@ class StaffController extends Controller
         return redirect()->route('staff-debit-money');
     }
     public function ShowChequeBookList(){
-        $data=ChequeBookList::all();
+        $data=modal::all();
         return view('staff.ChequeBookRequest');
     }
 }
