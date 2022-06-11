@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\AccountOpeningFormController;
 use App\Http\Controllers\KYCFormController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
@@ -11,6 +12,53 @@ use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 use App\Http\Controllers\BranchController;
+use Illuminate\Support\Facades\Auth;
+
+/* ==================================
+     LOGIN PAGE ROUTES STARTS
+ ==================================*/
+
+ Auth::routes();
+
+//  Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+ Route::prefix('admin')->name('admin.')->group(function (){
+    Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
+        Route::view('/login','admin.login')->name('login');
+        Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+    });
+    Route::middleware(['auth:admin', 'PreventBackHistory'])->group(function(){
+        Route::view('/home', 'admin.home')->name('home');
+        Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+    });
+ });
+
+ Route::prefix('staff')->name('staff.')->group(function (){
+    Route::middleware(['guest:staff','PreventBackHistory'])->group(function(){
+        Route::view('/login','staff.login')->name('login');
+        Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
+    });
+    Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function(){
+        Route::view('/home', 'staff.home')->name('home');
+        Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
+    });
+ });
+
+
+ Route::prefix('customer')->name('customer.')->group(function () {
+    Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
+        Route::view('/login', 'login')->name('login');
+        Route::view('/apply', 'AccountOpeningForm')->name('apply');
+        // Route::post('/create', [AccountOpeningFormController::class, 'create'])->name('create');
+        // Route::post('/check', [CustomerController::class, 'check'])->name('check');
+    });
+    Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
+        Route::view('/home', 'customer.dashboard')->name('home');
+        Route::post('/logout', [CustomerController::class, 'logout'])->name('logout');
+        // Route::get('/add-new', [CustomerController::class, 'add'])->name('add');
+    });
+});
 
 /*================================
     LANDING PAGE ROUTES STARTS
@@ -22,9 +70,11 @@ Route::prefix('/')->group(function () {
     Route::get('offer',[indexController::class, 'offer']);
     Route::get('services',[indexController::class, 'services']);
     Route::get('CustomerCare',[indexController::class, 'customerCare']);
-    Route::get('apply',[indexController::class, 'accountOpening']);
+    Route::get('apply',[indexController::class, 'accountOpening'])->name('apply');
+    Route::post('apply',[AccountOpeningFormController::class, 'create']);
     Route::post('CustomerCare', [CustomerCareController::class, 'createIssues'])->name('createIssues');
     Route::get('termsCondition',[termsController::class, 'index']);
+    // Route::get('login', [indexController::class, 'login']);
 });
 
 /*================================
@@ -120,3 +170,4 @@ Route::prefix('/customer')->group(function () {
 /*================================
     UNKNOWN ROUTES
 ================================*/
+

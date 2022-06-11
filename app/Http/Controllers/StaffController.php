@@ -2,13 +2,43 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Http\Controllers\Controller;
+use App\Models\Satff;
 use App\Models\CustomerData;
 use Illuminate\Http\Request;
 use App\Models\CustomerIssue;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class StaffController extends Controller
 {
+
+    function check(Request $request){
+        //Validate Inputs
+        $request->validate([
+           'email'=>'required|email|exists:authors,email',
+           'password'=>'required|min:5|max:30'
+        ],[
+            'email.exists'=>'This email is not exists in authors table'
+        ]);
+  
+        $creds = $request->only('email','password');
+  
+        if( Auth::guard('staff')->attempt($creds) ){
+            return redirect()->route('staff.home');
+        }else{
+            return redirect()->route('staff.login')->with('fail','Incorrect Credentials');
+        }
+    }
+
+    function logout(){
+        Auth::guard('author')->logout();
+        return redirect('/');
+    }
+
+
+
     public function issue()
     {
         $CustomerIssue = CustomerIssue::all();

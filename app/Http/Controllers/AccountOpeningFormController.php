@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AccountOpeningTable;
+use App\Models\AccountOpening;
 use Illuminate\Http\Request;
 
-class AccountOpeningFormController extends Controller
+class AccountOpeningController extends Controller
 {
 
     public function create(Request $request){
         $AccountOpeningForm = new AccountOpeningTable;
-            $AccountOpeningForm->email=$request->email;
-            $AccountOpeningForm->password=$request->password;
             $AccountOpeningForm->prefix=$request->prefix;
-            $AccountOpeningForm->FirstName=$request->FirstName;
-            $AccountOpeningForm->MidName=$request->MidName;
-            $AccountOpeningForm->LastName=$request->LastName;
+            $AccountOpeningForm->FullName=$request->FullName;
             $AccountOpeningForm->DOB=$request->DOB;
             $AccountOpeningForm->gender=$request->gender;
             $AccountOpeningForm->MaritalStatus=$request->MaritalStatus;
             $AccountOpeningForm->FatherName=$request->FatherName;
             $AccountOpeningForm->MotherName=$request->MotherName;
-            $AccountOpeningForm->illiterate=$request->illiterate;
             $AccountOpeningForm->GaurdianName=$request->GaurdianName;
             $AccountOpeningForm->RelationWithGuardian=$request->RelationWithGuardian;
             $AccountOpeningForm->Nationality=$request->Nationality;
@@ -46,37 +41,35 @@ class AccountOpeningFormController extends Controller
             $AccountOpeningForm->State=$request->State;
             $AccountOpeningForm->Pin=$request->Pin;
             $AccountOpeningForm->Country=$request->Country;
-            $AccountOpeningForm->IsCurrentAddress=$request->IsCurrentAddress;
-            $AccountOpeningForm->AddressDetails=$request->AddressDetails;
-            $AccountOpeningForm->CurrentAddressType=$request->CurrentAddressType;
-            $AccountOpeningForm->CurrentAddress=$request->CurrentAddress;
-            $AccountOpeningForm->CurrentCity=$request->CurrentCity;
-            $AccountOpeningForm->CurrentDistrict=$request->CurrentDistrict;
-            $AccountOpeningForm->CurrentState=$request->CurrentState;
-            $AccountOpeningForm->CurrentPin=$request->CurrentPin;
-            $AccountOpeningForm->CurrentCountry=$request->CurrentCountry;
             $AccountOpeningForm->Place=$request->Place;
+            $AccountOpeningForm->signDate=$request->signDate;
             
             if ($request->hasFile('ApplicantPhoto')) {
                 $file = $request->file('ApplicantPhoto');
                 $name = $file->hashName();
                 $filename = "ApplicantPhoto-".time()."-".$name;
-                $file->move('images/staff/ApplicantPhoto/',$filename);
-                // echo "<br>Aadhar Name : ".$filename;
+                $file->move('images/customer/ApplicantPhoto/',$filename);
                 $AccountOpeningForm->ApplicantPhoto=$filename;
+            }
+
+            if ($request->hasFile('ApplicantAadhar')) {
+                $file = $request->file('ApplicantAadhar');
+                $name = $file->hashName();
+                $filename = "ApplicantAadhar-".time()."-".$name;
+                $file->move('images/customer/ApplicantAadhar/',$filename);
+                $AccountOpeningForm->ApplicantAadhar=$filename;
             }
     
             if ($request->hasFile('ApplicantSignature')) {
                 $file = $request->file('ApplicantSignature');
                 $name = $file->hashName();
                 $filename = "ApplicantSignature-".time()."-".$name;
-                $file->move('images/staff/ApplicantSignature/', $filename);
-                // echo "<br>Signature Name : ".$filename;
+                $file->move('images/customer/ApplicantSignature/', $filename);
                 $AccountOpeningForm->ApplicantSignature=$filename;
             }
 
-            // dd($request);
-            $AccountOpeningForm->save();
+            dd($request);
+            // $AccountOpeningForm->save();
         return redirect('/')->with('Success','Data Added');
 
     }

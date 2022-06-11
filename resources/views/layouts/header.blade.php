@@ -43,7 +43,7 @@
                 <li><a href="{{url('/services')}}">E-Services</a></li>
                 <li><a href="{{url('/CustomerCare')}}">Customer Care</a></li>
                 <li><a href="{{url('/apply')}}">Apply Now</a></li>                
-                <a href="{{url('')}}"><i class="fa-solid fa-user-large"></i></a>
+                <a href="{{url('/login')}}"><i class="fa-solid fa-user-large"></i></a>
             </ul>
             <label id="icon">
                 <i class="fas fa-bars" id="btn"></i>
