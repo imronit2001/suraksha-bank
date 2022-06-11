@@ -21,8 +21,8 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($data as $cb)
-                    <tr class="align-center">
+                {{-- @foreach ($data as $cb) --}}
+                    {{-- <tr class="align-center">
                         <td>
                             <p>{{ $cb->c_id }}</p>
                         </td>
@@ -54,7 +54,7 @@
                             @endif
                             </a></p>
                         </td>
-                    </tr>
+                    </tr> --}}
                 {{-- @endforeach --}}
             </tbody>
         </table>

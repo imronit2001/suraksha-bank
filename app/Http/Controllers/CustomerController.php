@@ -55,4 +55,29 @@ class CustomerController extends Controller
     //         return redirect('/index/changePassword');
     //     }
     // }
+    public function change_tranpassword_save(Request $request)
+    {
+
+        $this->validate($request,[
+            'old_tpassword' => 'required',
+            'new_tpassword' => 'required',
+            'c_new_tpassword' => 'required',
+        ],[
+            'old_tpassword.required' => 'Enter Current Transaction Password',
+            'new_tpassword.required' => 'Enter New Transaction Password',
+            'c_new_tpassword.required' => 'Enter Confirm Password ',
+        ]);
+
+        if ($request->old_tpassword != Auth::user()->account_pin)
+        {
+            return back()->with('alert','Currend Pin Not Match.');
+        }elseif ($request->new_tpassword != $request->c_new_tpassword ){
+            return back()->with('alert','New Account Pin And Confirm New Account Pin Not Match.');
+        }else{
+            $user = User::where('id',Auth::user()->id)->first();
+            $user->account_pin = $request->new_tpassword;
+            $user->save();
+            return back()->with('success','Account Pin Change Successfull.');
+        }
+    }
 }

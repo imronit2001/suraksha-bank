@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\FundTransferController;
 
 /*================================
     LANDING PAGE ROUTES STARTS
@@ -84,11 +85,9 @@ Route::prefix('/staff')->group(function () {
     Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('staff-debit-money');
     Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('staff-debit-money');
     Route::get('/transaction', [StaffController::class, 'transaction'])->name('staff-transaction');
+    Route::get('/cheque-book-request',[StaffController::class,'ShowChequeBookList'])->name('staff-cheque-book-request');
+});
 
-});
-Route::get('/ChequeBook',function(){
-    return view('staff.ChequeBookRequest');
-});
 /*================================
     CUSTOMER ROUTES STARTS HERE
 ================================*/
@@ -97,7 +96,8 @@ Route::prefix('/customer')->group(function () {
     Route::get('/transaction-password', [CustomerController::class, 'TransactionPassword'])->name('customer-transaction-password');
     Route::get('/account-details', [CustomerController::class, 'AccountDetails'])->name('customer-account-details');
     Route::get('/transaction-details', [CustomerController::class, 'TransactionDetails'])->name('customer-transaction-details');
-    Route::get('/fund-transfer', [CustomerController::class, 'FundTransfer'])->name('customer-fund-transfer');
+    Route::get('/fund-transfer', [FundTransferController::class, 'index'])->name('customer-fund-transfer');
+    Route::post('/fund-transfer', [FundTransferController::class, 'create'])->name('customer-fund-transfer');
     Route::get('/branch-change', [CustomerController::class, 'BranchChange'])->name('customer-branch-change');
     Route::get('/fixed-deposite', [CustomerController::class, 'FixedDeposite'])->name('customer-fixed-deposite');
     // Route::get('/issue', [AdminHelplinecontroller::class, 'issue'])->name('issue');

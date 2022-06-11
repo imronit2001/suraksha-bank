@@ -130,6 +130,6 @@ class StaffController extends Controller
     public function ShowChequeBookList()
     {
         // $data=modal::all();
-        return view('staff.ChequeBookRequest');
+        return view('staff.cheque-book-request');
     }
 }
