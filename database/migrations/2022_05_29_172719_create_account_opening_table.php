@@ -13,20 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('account_opening_table', function (Blueprint $table) {
+        Schema::create('account_opening', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->string('password');
             $table->string('prefix');
-            $table->string('FirstName');
-            $table->string('MidName');
-            $table->string('LastName');
+            $table->string('FullName');
             $table->date('DOB');
             $table->string('gender');
             $table->string('MaritalStatus');
             $table->string('FatherName');
             $table->string('MotherName');
-            $table->string('illiterate');
             $table->string('GaurdianName');
             $table->string('RelationWithGuardian');
             $table->string('Nationality');
@@ -51,18 +46,11 @@ return new class extends Migration
             $table->string('State');
             $table->string('Pin');
             $table->string('Country');
-            $table->string('IsCurrentAddress');
-            $table->string('AddressDetails');
-            $table->string('CurrentAddressType');
-            $table->string('CurrentAddress');
-            $table->string('CurrentCity');
-            $table->string('CurrentDistrict');
-            $table->string('CurrentState');
-            $table->string('CurrentPin');
-            $table->string('CurrentCountry');
             $table->string('ApplicantPhoto');
+            $table->string('ApplicantAadhar');
             $table->string('ApplicantSignature');
             $table->string('Place');
+            $table->string('signDate');
 
             $table->timestamps();
         });
@@ -75,6 +63,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('account_opening_table');
+        Schema::dropIfExists('account_opening');
     }
 };

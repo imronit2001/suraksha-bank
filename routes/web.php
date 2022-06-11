@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\termsController;
-use App\Http\Controllers\indexController;
-use App\Http\Controllers\KYCFormController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\termsController;
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\AccountOpeningFormController;
+use App\Http\Controllers\KYCFormController;
 use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\FundTransferController;
@@ -23,9 +24,11 @@ Route::prefix('/')->group(function () {
     Route::get('offer',[indexController::class, 'offer']);
     Route::get('services',[indexController::class, 'services']);
     Route::get('CustomerCare',[indexController::class, 'customerCare']);
-    Route::get('apply',[indexController::class, 'accountOpening']);
+    Route::get('apply',[indexController::class, 'accountOpening'])->name('apply');
+    Route::post('apply',[AccountOpeningFormController::class, 'create']);
     Route::post('CustomerCare', [CustomerCareController::class, 'createIssues'])->name('createIssues');
     Route::get('termsCondition',[termsController::class, 'index']);
+    // Route::get('login', [indexController::class, 'login']);
 });
 
 /*================================
@@ -120,3 +123,4 @@ Route::prefix('/customer')->group(function () {
 /*================================
     UNKNOWN ROUTES
 ================================*/
+

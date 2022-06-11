@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KYCForm;
+use App\Models\KnowYourCustomer;
 use Illuminate\Http\Request;
 
 class KYCFormController extends Controller
@@ -12,43 +12,33 @@ class KYCFormController extends Controller
     } 
 
     public function create(Request $request){
-        $KYCForm = new KYCForm;
+        $KYCForm = new KnowYourCustomer;
+            $KYCForm->formType=$request->formType;
             $KYCForm->prefix=$request->prefix;
-            $KYCForm->FirstName=$request->FirstName;
-            $KYCForm->MidName=$request->MidName;
-            $KYCForm->LastName=$request->LastName;
+            $KYCForm->FullName=$request->FullName;
+            $KYCForm->FatherName=$request->FatherName;
             $KYCForm->gender=$request->gender;
-            $KYCForm->DOB=$request->DOB;
+            $KYCForm->DOB=$request->dob;
             $KYCForm->MaritalStatus=$request->MaritalStatus;
             $KYCForm->Nationality=$request->Nationality;
             $KYCForm->ResidentialStatus=$request->ResidentialStatus;
             $KYCForm->PanNumber=$request->PanNumber;
             $KYCForm->AadharNumber=$request->AadharNumber;
-            $KYCForm->ProofOfIdentity=$request->ProofOfIdentity;
-            $KYCForm->CorrespondenceAddress=$request->CorrespondenceAddress;
+            $KYCForm->Address=$request->Address;
             $KYCForm->City=$request->City;
             $KYCForm->Pin=$request->Pin;
             $KYCForm->State=$request->State;
             $KYCForm->Country=$request->Country;
             $KYCForm->Mobile=$request->Mobile;
             $KYCForm->Telephone=$request->Telephone;
-            $KYCForm->CurrentAddress=$request->CurrentAddress;
-            $KYCForm->CurrentCity=$request->CurrentCity;
-            $KYCForm->CurrentState=$request->CurrentState;
-            $KYCForm->CurrentPin=$request->CurrentPin;
-            $KYCForm->CurrentCountry=$request->CurrentCountry;
             $KYCForm->AddressProofNumber=$request->AddressProofNumber;
-            $KYCForm->AnnualIncome=$request->AnnualIncome;
-            $KYCForm->NetWorth=$request->NetWorth;
             $KYCForm->Date=$request->Date;
-            $KYCForm->OccupationType=$request->OccupationType;
             
             if ($request->hasFile('ApplicantPhoto')) {
                 $file = $request->file('ApplicantPhoto');
                 $name = $file->hashName();
                 $filename = "ApplicantPhoto-".time()."-".$name;
-                $file->move('images/staff/ApplicantPhoto/',$filename);
-                // echo "<br>Aadhar Name : ".$filename;
+                $file->move('images/customer/ApplicantPhoto/',$filename);
                 $KYCForm->ApplicantPhoto=$filename;
             }
     
@@ -56,11 +46,26 @@ class KYCFormController extends Controller
                 $file = $request->file('ApplicantSignature');
                 $name = $file->hashName();
                 $filename = "ApplicantSignature-".time()."-".$name;
-                $file->move('images/staff/ApplicantSignature/', $filename);
-                // echo "<br>Signature Name : ".$filename;
+                $file->move('images/customer/ApplicantSignature/', $filename);
+                $KYCForm->signature=$filename;
+            }
+             
+            if ($request->hasFile('ApplicantAadhar')) {
+                $file = $request->file('ApplicantAadhar');
+                $name = $file->hashName();
+                $filename = "ApplicantAadhar-".time()."-".$name;
+                $file->move('images/customer/ApplicantAadhar/', $filename);
                 $KYCForm->signature=$filename;
             }
 
+            if ($request->hasFile('ApplicantPan')) {
+                $file = $request->file('ApplicantPan');
+                $name = $file->hashName();
+                $filename = "ApplicantPan-".time()."-".$name;
+                $file->move('images/customer/ApplicantPan/', $filename);
+                $KYCForm->signature=$filename;
+            }
+            // dd($request);
         $KYCForm->save();
 
         return redirect('/Customer/')->with('Success', 'Data Added');

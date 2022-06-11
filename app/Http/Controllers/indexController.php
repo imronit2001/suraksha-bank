@@ -10,7 +10,7 @@ class indexController extends Controller
         return view('index');
     }
     public function accountOpening(){
-        return view('AccountOpeningForm');
+        return view('customer.AccountOpeningForm');
     } 
     public function offer(){
         return view('Offers');
@@ -23,6 +23,9 @@ class indexController extends Controller
     }
     public function about(){
         return view ('AboutUs');
+    }
+    public function login(){
+        return view('customer.login');
     }
 
 

@@ -13,40 +13,31 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kyc_form_table', function (Blueprint $table) {
+        Schema::create('know_your_customer_table', function (Blueprint $table) {
+            $table->string('formType');
             $table->string('prefix');
-            $table->string('FirstName');
-            $table->string('MidName');
-            $table->string('LastName');
+            $table->string('FullName');
+            $table->string('FatherName');
             $table->string('gender');
-            $table->date('DOB');
+            $table->date('dob');
             $table->string('MaritalStatus');
             $table->string('Nationality');
             $table->string('ResidentialStatus');
             $table->string('PanNumber');
             $table->string('AadharNumber');
-            $table->string('ProofOfIdentity');
-            $table->string('CorrespondenceAddress');
+            $table->string('Address');
             $table->string('City');
             $table->string('Pin');
             $table->string('State');
             $table->string('Country');
             $table->bigInteger('Mobile');
             $table->bigInteger('Telephone');
-            $table->string('PermanentAddressDetails');
-            $table->string('PermanentAddressType');
-            $table->string('PermanentAddress');
-            $table->string('PermanentCity');
-            $table->string('PermanentState');
-            $table->string('PermanentPin');
-            $table->string('PermanentCountry');
             $table->string('AddressProofNumber');
-            $table->string('AnnualIncome');
-            $table->string('NetWorth');
             $table->date('Date');
-            $table->string('OccupationType');
             $table->string('ApplicantPhoto');
             $table->string('ApplicantSignature');
+            $table->string('ApplicantAadhar');
+            $table->string('ApplicantPan');
 
             $table->timestamps();
         });
