@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reader Login</title>
+    <title>Customer Login</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 </head>
 <body>
@@ -12,8 +12,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4" style="margin-top: 45px;">
-                  <h4>Reader Login</h4><hr>
-                  <form action="{{ route('reader.check') }}" method="post" >
+                  <h4>Customer Login</h4><hr>
+                  <form action="{{ route('customer.check') }}" method="post" >
                     @if (Session::get('fail'))
                         <div class="alert alert-danger">
                             {{ Session::get('fail') }}
@@ -34,7 +34,6 @@
                           <button type="submit" class="btn btn-primary">Login</button>
                       </div>
                       <br>
-                      <a href="{{ route('reader.register') }}">Create new Account</a>
                   </form>
             </div>
         </div>

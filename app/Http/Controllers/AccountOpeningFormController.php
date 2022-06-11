@@ -9,7 +9,7 @@ class AccountOpeningController extends Controller
 {
 
     public function create(Request $request){
-        $AccountOpeningForm = new AccountOpeningTable;
+        $AccountOpeningForm = new AccountOpening;
             $AccountOpeningForm->prefix=$request->prefix;
             $AccountOpeningForm->FullName=$request->FullName;
             $AccountOpeningForm->DOB=$request->DOB;

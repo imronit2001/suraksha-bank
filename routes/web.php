@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\termsController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\AccountOpeningFormController;
 use App\Http\Controllers\KYCFormController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ChangeBranchController;
 use App\Http\Controllers\BranchController;
 use Illuminate\Support\Facades\Auth;
@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Auth;
     Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
         Route::view('/login','admin.login')->name('login');
         Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+        Route::post('/check', [AdminController::class, 'check'])->name('check');
     });
     Route::middleware(['auth:admin', 'PreventBackHistory'])->group(function(){
         Route::view('/home', 'admin.home')->name('home');
@@ -38,6 +39,7 @@ use Illuminate\Support\Facades\Auth;
     Route::middleware(['guest:staff','PreventBackHistory'])->group(function(){
         Route::view('/login','staff.login')->name('login');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
+        Route::post('/check', [StaffController::class, 'check'])->name('check');
     });
     Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function(){
         Route::view('/home', 'staff.home')->name('home');
@@ -48,10 +50,10 @@ use Illuminate\Support\Facades\Auth;
 
  Route::prefix('customer')->name('customer.')->group(function () {
     Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
-        Route::view('/login', 'login')->name('login');
+        Route::view('/login', 'customer.login')->name('login');
         Route::view('/apply', 'AccountOpeningForm')->name('apply');
         // Route::post('/create', [AccountOpeningFormController::class, 'create'])->name('create');
-        // Route::post('/check', [CustomerController::class, 'check'])->name('check');
+        Route::post('/check', [CustomerController::class, 'check'])->name('check');
     });
     Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
         Route::view('/home', 'customer.dashboard')->name('home');

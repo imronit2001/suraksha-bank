@@ -17,6 +17,19 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    'admin'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Admin::class,
+     ],
+     'staff'=>[
+         'driver'=>'eloquent',
+         'model'=>App\Models\staff::class,
+      ],
+     'customer'=>[
+         'driver'=>'eloquent',
+         'model'=>App\Models\customer::class,
+      ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -40,6 +53,19 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin'=>[
+            'driver'=>'session',
+            'provider'=>'admins',
+         ],
+         'staff'=>[
+             'driver'=>'session',
+             'provider'=>'staff',
+          ],
+         'customer'=>[
+             'driver'=>'session',
+             'provider'=>'customer',
+          ],
     ],
 
     /*
@@ -64,7 +90,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'admins'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Admin::class,
+         ],
+         'staff'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\staff::class,
+          ],
+         'customer'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\customer::class,
+          ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -93,6 +130,18 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'admins'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Admin::class,
+         ],
+         'staff'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\staff::class,
+          ],
+         'customer'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\customer::class,
+          ],
     ],
 
     /*

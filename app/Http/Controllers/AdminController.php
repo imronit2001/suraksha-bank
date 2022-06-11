@@ -14,11 +14,13 @@ use App\Models\change_branch;
 use App\Models\CustomerData;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
     function check(Request $request){
         //Validate Inputs
+        // dd($request);
         $request->validate([
            'email'=>'required|email|exists:admins,email',
            'password'=>'required|min:5|max:30'
