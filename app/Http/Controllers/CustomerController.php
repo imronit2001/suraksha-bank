@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\customer;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
@@ -45,6 +48,11 @@ class CustomerController extends Controller
     {
         return view('customer.transaction-password');
     }
+
+    public function CreditCard(){
+        return view('customer.creditCard');
+    }
+
     public function AccountDetails(){
         return view('customer.account-details');
     }

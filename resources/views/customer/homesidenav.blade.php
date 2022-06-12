@@ -47,7 +47,7 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{url('/Customer/AccountOpeningForm')}}">
+                <a href="{{url('/customer/AccountOpeningForm')}}">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                     <span class="links_name">Account Opening Form</span>
                 </a>
@@ -68,14 +68,14 @@
                 <span class="tooltip">Transaction Details</span>
             </li>
             <li>
-                <a href="{{url('/Customer/KYCForm')}}">
+                <a href="{{url('/customer/KYCForm')}}">
                     <i class="fab fa-wpforms"></i>
                     <span class="links_name">KYC Form</span>
                 </a>
                 <span class="tooltip">KYC Form</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('/customer/CreditCard')}}">
                     <i class='fas fa-credit-card'></i>
                     <span class="links_name">Credit Card</span>
                 </a>
