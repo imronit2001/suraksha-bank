@@ -13,6 +13,25 @@ use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\ChangeBranchController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\FundTransferController;
+use Illuminate\Support\Facades\Auth;
+
+Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
+    Route::view('/login','admin.login')->name('login');
+    Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+    Route::post('/check', [AdminController::class, 'check'])->name('check');
+});
+Route::middleware(['auth:admin', 'PreventBackHistory'])->group(function(){
+    Route::view('/home', 'admin.home')->name('home');
+});
+
+Route::middleware(['guest:staff','PreventBackHistory'])->group(function(){
+    Route::view('/login','staff.login')->name('login');
+    Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
+    Route::post('/check', [StaffController::class, 'check'])->name('check');
+});
+Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function(){
+    Route::view('/home', 'staff.home')->name('home');
+});
 
 /*================================
     LANDING PAGE ROUTES STARTS
@@ -112,6 +131,19 @@ Route::prefix('/customer')->group(function () {
     Route::post('/KYCForm',[KYCFormController::class, 'create']);
 
 });
+
+Route::prefix('customer')->name('customer.')->group(function () {
+    Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
+        Route::view('/login', 'login')->name('login');
+        Route::view('/login', 'customer.login')->name('login');
+        Route::view('/apply', 'AccountOpeningForm')->name('apply');
+        // Route::post('/create', [AccountOpeningFormController::class, 'create'])->name('create');
+        // Route::post('/check', [CustomerController::class, 'check'])->name('check');
+        Route::post('/check', [CustomerController::class, 'check'])->name('check');
+    });
+    Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
+        Route::view('/home', 'customer.dashboard')->name('home');
+    });
 
 
 
