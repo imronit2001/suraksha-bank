@@ -20,7 +20,7 @@ class FundTransferController extends Controller
     {
         if ($request->acition == 1)
         {
-            $userfund = user_transfer::where('id',$request->trans_id)->first();
+            $userfund = FundTransfer::where('id',$request->trans_id)->first();
             $user = User::where('id',$userfund->user_id)->first();
             $user->balance = $user->balance + $request->amount;
             $user->save();
@@ -31,7 +31,7 @@ class FundTransferController extends Controller
             return back()->with('success','Fund Transfer Approved');
 
         }else{
-            $userfund = user_transfer::where('id',$request->trans_id)->first();
+            $userfund = FundTransfer::where('id',$request->trans_id)->first();
             $user = User::where('id',$userfund->user_id)->first();
             $user->balance = $user->balance - $request->amount;
             $user->save();

@@ -33,6 +33,21 @@ Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function(){
     Route::view('/home', 'staff.home')->name('home');
 });
 
+
+Route::prefix('customer')->name('customer.')->group(function () {
+    Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
+        Route::view('/login', 'login')->name('login');
+        Route::view('/login', 'customer.login')->name('login');
+        Route::view('/apply', 'AccountOpeningForm')->name('apply');
+        // Route::post('/create', [AccountOpeningFormController::class, 'create'])->name('create');
+        // Route::post('/check', [CustomerController::class, 'check'])->name('check');
+        Route::post('/check', [CustomerController::class, 'check'])->name('check');
+    });
+    Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
+        Route::view('/home', 'customer.dashboard')->name('home');
+    });
+});
+
 /*================================
     LANDING PAGE ROUTES STARTS
 ================================*/
@@ -131,21 +146,6 @@ Route::prefix('/customer')->group(function () {
     Route::post('/KYCForm',[KYCFormController::class, 'create']);
 
 });
-
-Route::prefix('customer')->name('customer.')->group(function () {
-    Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
-        Route::view('/login', 'login')->name('login');
-        Route::view('/login', 'customer.login')->name('login');
-        Route::view('/apply', 'AccountOpeningForm')->name('apply');
-        // Route::post('/create', [AccountOpeningFormController::class, 'create'])->name('create');
-        // Route::post('/check', [CustomerController::class, 'check'])->name('check');
-        Route::post('/check', [CustomerController::class, 'check'])->name('check');
-    });
-    Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
-        Route::view('/home', 'customer.dashboard')->name('home');
-    });
-
-
 
 
 
