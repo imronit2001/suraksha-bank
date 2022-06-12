@@ -4,49 +4,104 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Satff;
-use App\Models\CustomerData;
 use Illuminate\Http\Request;
-use App\Models\CustomerIssue;
+
+
+use App\Models\AccountOpening;
+use App\Models\Admin;
+use App\Models\Branch;
+use App\Models\Staff;
+use App\Models\AddManagerForm;
+use App\Models\AddStaffForm;
+use App\Models\change_branch;
+use App\Models\CustomerData;
+use App\Models\FixedDeposit;
+use App\Models\Helpline;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class StaffController extends Controller
 {
 
-    function check(Request $request){
+    function check(Request $request)
+    {
         //Validate Inputs
         $request->validate([
-           'email'=>'required|email|exists:authors,email',
-           'password'=>'required|min:5|max:30'
-        ],[
-            'email.exists'=>'This email is not exists in authors table'
+            'email' => 'required|email|exists:staff,email',
+            'password' => 'required|min:5|max:30'
+        ], [
+            'email.exists' => 'This email is not exists in authors table'
         ]);
-  
-        $creds = $request->only('email','password');
-  
-        if( Auth::guard('staff')->attempt($creds) ){
-            return redirect()->route('staff.home');
-        }else{
-            return redirect()->route('staff.login')->with('fail','Incorrect Credentials');
+
+        $creds = $request->only('email', 'password');
+
+        if (Auth::guard('staff')->attempt($creds)) {
+
+            // $new_account = AccountOpening::all();
+            // $new_ac = $new_account->count();
+            $customers = CustomerData::all();
+            $customer = $customers->count();
+            $staffs = Staff::all();
+            $staff = $staffs->count();
+            $managers = Admin::all();
+            $manager = $managers->count();
+            $branches = Admin::all();
+            $branch = $branches->count();
+            $helplines = Helpline::all();
+            $helpline = $helplines->count();
+            $fds = FixedDeposit::all();
+            $fd = $fds->count();
+            $changeBranch = change_branch::where("status", 0)->get();
+            $changeBranchList = $changeBranch->count();
+
+
+            $data = ['customer' => $customer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
+
+
+            return redirect()->route('staff-dashboard', $data);
+        } else {
+            return redirect()->route('staff-login')->with('fail', 'Incorrect Credentials');
         }
     }
 
-    function logout(){
+    function logout()
+    {
         Auth::guard('author')->logout();
         return redirect('/');
     }
 
 
 
-    public function issue()
-    {
-        $CustomerIssue = CustomerIssue::all();
-        return view('customer_issue', ['customerIssue' => $CustomerIssue]);
-    }
+    // public function issue()
+    // {
+    //     $CustomerIssue = CustomerIssue::all();
+    //     return view('customer_issue', ['customerIssue' => $CustomerIssue]);
+    // }
     public function dashboard()
     {
-        return view('staff.dashboard');
+
+        // $new_account = AccountOpening::all();
+        // $new_ac = $new_account->count();
+        $customers = CustomerData::all();
+        $customer = $customers->count();
+        $staffs = Staff::all();
+        $staff = $staffs->count();
+        $managers = Admin::all();
+        $manager = $managers->count();
+        $branches = Admin::all();
+        $branch = $branches->count();
+        $helplines = Helpline::all();
+        $helpline = $helplines->count();
+        $fds = FixedDeposit::all();
+        $fd = $fds->count();
+        $changeBranch = change_branch::where("status", 0)->get();
+        $changeBranchList = $changeBranch->count();
+
+
+        $data = ['customer' => $customer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
+
+        return view('staff.dashboard', $data);
     }
     public function creditMoneyIndex(Request $request)
     {

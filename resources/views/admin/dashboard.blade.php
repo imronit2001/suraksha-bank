@@ -18,7 +18,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>staff </h1>
+            <h1>{{ $staff }}</h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/staff.png')}} alt="staff.png">
@@ -57,7 +57,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>0000</h1>
+            <h1>{{ $fd }}</h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/fixed-deposit.png')}} alt="fixed-deposit.png">
@@ -174,7 +174,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>1000</h1>
+            <h1>{{ $branch }}</h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/branch-change.png')}} alt="branch-change">
@@ -187,7 +187,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>1000</h1>
+            <h1>{{ $helpline }}</h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/helpline.png')}} alt="helpline">

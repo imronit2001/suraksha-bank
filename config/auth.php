@@ -23,7 +23,7 @@ return [
      ],
      'staff'=>[
          'driver'=>'eloquent',
-         'model'=>App\Models\staff::class,
+         'model'=>App\Models\Staff::class,
       ],
      'customer'=>[
          'driver'=>'eloquent',
@@ -96,7 +96,7 @@ return [
          ],
          'staff'=>[
              'driver'=>'eloquent',
-             'model'=>App\Models\staff::class,
+             'model'=>App\Models\Staff::class,
           ],
          'customer'=>[
              'driver'=>'eloquent',
@@ -136,7 +136,7 @@ return [
          ],
          'staff'=>[
              'driver'=>'eloquent',
-             'model'=>App\Models\staff::class,
+             'model'=>App\Models\Staff::class,
           ],
          'customer'=>[
              'driver'=>'eloquent',

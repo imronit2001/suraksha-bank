@@ -25,13 +25,13 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
 
                 if($guard === 'admin'){
-                    return redirect()->route('admin.home');
+                    return redirect()->route('admin-dashboard');
                 }
                 if($guard === 'staff'){
-                    return redirect()->route('staff.home');
+                    return redirect()->route('staff-dashboard');
                 }
                 if($guard === 'customer'){
-                    return redirect()->route('customer.home');
+                    return redirect()->route('customer-dashboard');
                 }
                 return redirect()->route('user.home');
                 // return redirect(RouteServiceProvider::HOME);
