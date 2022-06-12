@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;
+use App\Mail\DebitCreditMail;
 use Illuminate\Http\Request;
 
 
@@ -20,6 +21,7 @@ use App\Models\Helpline;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class StaffController extends Controller
 {
@@ -140,6 +142,8 @@ class StaffController extends Controller
 
                     $data = ['name' => $name, 'customerId' => $cId, 'accountNo' => $aNo, 'transactionId' => $transactionId, 'amount' => $amount, 'balance' => $balance, 'mode' => $mode, 'date' => $date, 'time' => $time];
 
+                    Mail::to($customer->email)->send(new DebitCreditMail($data));
+
                     return response()->view('staff.transaction-reciept', $data);
                 }
             }
@@ -185,6 +189,9 @@ class StaffController extends Controller
                     $time = date("h:i:s A");
 
                     $data = ['name' => $name, 'customerId' => $cId, 'accountNo' => $aNo, 'transactionId' => $transactionId, 'amount' => $amount, 'balance' => $balance, 'mode' => $mode, 'date' => $date, 'time' => $time];
+
+                    Mail::to($customer->email)->send(new DebitCreditMail($data));
+
 
                     return response()->view('staff.transaction-reciept', $data);
                 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Mail\AccountRegistration;
+use App\Mail\BranchChangeMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -235,6 +236,15 @@ class AdminController extends Controller
         $application = change_branch::find($id);
         $application->status = "1";
         $application->save();
+        $customer = CustomerData::where("accountNo", $application->aNo)->first();
+        $data = [
+            'name' => $customer->customerName,
+            'accountNo' => $customer->accountNo,
+            'prevBranch' => $application->branchName . " " . $application->branchCode,
+            'curBranch' => $application->newBranchName . " " . $application->newBranchCode,
+            'status' => 1,
+        ];
+        Mail::to($customer->email)->send(new BranchChangeMail($data));
         $applications = change_branch::where("status", 0)->get();
         return redirect((route('admin-branch-change', ['applications' => $applications])));
     }
@@ -243,6 +253,15 @@ class AdminController extends Controller
         $application = change_branch::find($id);
         $application->status = "2";
         $application->save();
+        $customer = CustomerData::where("accountNo", $application->aNo)->first();
+        $data = [
+            'name' => $customer->customerName,
+            'accountNo' => $customer->accountNo,
+            'prevBranch' => $application->branchName . " " . $application->branchCode,
+            'curBranch' => $application->newBranchName . " " . $application->newBranchCode,
+            'status' => 2,
+        ];
+        Mail::to($customer->email)->send(new BranchChangeMail($data));
         $applications = change_branch::where("status", 0)->get();
         return redirect((route('admin-branch-change', ['applications' => $applications])));
     }
