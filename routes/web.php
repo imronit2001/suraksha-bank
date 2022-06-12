@@ -12,6 +12,9 @@ use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\ChangeBranchController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\FixedDepositeController;
+use App\Http\Controllers\ChequeBookController;
+use App\Http\Controllers\FundTransferController;
 use Illuminate\Support\Facades\Auth;
 
 /*================================
@@ -108,6 +111,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('debit-money');
         Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
+        Route::get('/cheque-book-request',[StaffController::class,'ShowChequeBookList'])->name('staff-cheque-book-request');
     });
 });
 

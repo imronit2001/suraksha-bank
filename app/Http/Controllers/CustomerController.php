@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\change_branch;
 use App\Models\customer;
+use App\Models\CustomerData;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -54,7 +55,13 @@ class CustomerController extends Controller
     }
 
     public function AccountDetails(){
-        return view('customer.account-details');
+        // return view('customer.account-details');
+        $cId='1234567890';
+        $customer = CustomerData::where('customerId', $cId)->latest()->first();
+        return view('customer.account-details',['customer'=>$customer]);
+        // print_r($customer);
+        echo $customer->customerName;
+        // dd($customer);
     }
     public function TransactionDetails(){
         return view('customer.transaction-details');

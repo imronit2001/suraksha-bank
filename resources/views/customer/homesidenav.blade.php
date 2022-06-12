@@ -132,6 +132,13 @@
                 <span class="tooltip">Transaction Password</span>
             </li>
             <li>
+                <a href="{{route('customer-fixed-deposite')}}">
+                    <i class='bx bx-credit-card'></i>
+                    <span class="links_name"> Fixed Deposite</span>
+                </a>
+                <span class="tooltip">Fixed Deposite</span>
+            </li>
+            <li>
                 <a href="{{route('customer-branch-change')}}">
                     <i class='bx bx-git-branch'></i>
                     <span class="links_name">Branch change</span>
