@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class customGuestMiddleware
+class PreventBackHistory
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class customGuestMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // if(auth()->check()){
-        //     return redirect()->route('');
-        // }
         return $next($request);
+        return $response->header('Cache-Control','nocache, no-store,max-age=0;must-revalidate')
+                        ->header('Pragma','no-cache')
+                        ->header('Expires','Thu, 11 jun 2022 00:00:00 GMT');
     }
 }
