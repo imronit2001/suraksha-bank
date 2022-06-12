@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BranchChangeMail;
+use App\Models\CustomerData;
 use App\Models\Branch;
 use App\Models\change_branch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class ChangeBranchController extends Controller
 {
@@ -36,8 +40,8 @@ class ChangeBranchController extends Controller
     public function create(Request $request)
     {
         $branch = new change_branch();
-        $aNo = "2221131878502311";
-        $cId = "2517383537107734";
+        $aNo = "123456789012";
+        $cId = "1234567890";
         $aType = "Saving Account";
         $branchName = "Chuchura";
         $branchCode = "SKB1";
@@ -50,6 +54,18 @@ class ChangeBranchController extends Controller
         $branch->newBranchCode = $request->newBranchCode;
         $branch->reason = $request->reason;
         $branch->save();
+
+        $application = change_branch::where('aNo',$aNo)->latest()->get();
+        $customer = CustomerData::where("accountNo", $aNo)->latest()->get();
+        $data = [
+            'name' => $customer->customerName,
+            'accountNo' => $customer->accountNo,
+            'prevBranch' => $application->branchName . " " . $application->branchCode,
+            'curBranch' => $application->newBranchName . " " . $application->newBranchCode,
+            'status' => 0,
+        ];
+        Mail::to($customer->email)->send(new BranchChangeMail($data));
+
         return redirect((route('customer-branch-change')));
     }
 
