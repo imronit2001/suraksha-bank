@@ -44,23 +44,25 @@
 .fixed-deposited .form-group input{
     padding: 0px 5px;
     margin: auto;
-    width: 350px;
+    /* width: 350px; */
     justify-content: center;
     
 }
 .fixed-deposited .form-group h1{
     font-size: 15px;
 }
-.fixed-deposited #form3 .row{
+.fixed-deposited .step-three .row{
     margin: 1px 10px;
     padding: 1px;
     justify-content: space-between;
 
 }
-.fixed-deposited #form3 .row h1{
+.fixed-deposited .step-three  .card-body .row h1{
     font-size: 18px;
     align-items: center;
+    justify-content: center;
 }
-.fixed-deposited #form3 .row p{
+.fixed-deposited .step-three  .row p{
     align-items: center;
+    justify-content: center;
 }

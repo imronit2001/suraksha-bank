@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+h1{
+    text-decoration: none;
+    text-align: center;
+    font-size: 45px;
+    padding: 15px 0px;
+    padding-bottom: 0px;
+}
+h1 a{
+    color: #34495e;
+    font-family: sans-serif;
+    text-shadow: -2px 5px rgba(25, 92, 207, 0.321);
+}
+h3,h4{
+    color: #34495e;
+    font-size: 18px;
+    text-align: center;
+    padding: 25px 0px;
+}
+
+p{
+    color: #34495e;
+    font-size: 15px;
+    text-align: center; 
+}
+form{
+    width: 60%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding:25px;
+}
+form label{
+    color: #34495e; 
+    font-size: 15px;
+    padding: 15px 0px;
+}
+form label span{
+    color: red;
+}
+form input[type="text"]{
+    width: 40%;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #34495e;
+}
+select{
+    border: 1ps solid #34495e;
+    width: 25%;
+}
+.btn-box{
+    width: 100%;
+}
+button[type="submit"]{
+    padding: 5px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #34495e;
+    margin: 50px auto;
+    margin-left: 45%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+button[type="submit"]:hover{
+    background: transparent;
+    color: #34495e;
+    border: 1px solid #34495e;
+}

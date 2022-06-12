@@ -1,7 +1,63 @@
 @extends('admin.home')
 @section('title', 'Add Manager')
 @section('page-name')
-    <div class="container register">
+    <main>
+        <div class="staff-heading">
+            <h1 class="bankname text-center font-weight-bold">Suraksha Bank</h1>
+            <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1>
+        </div>
+
+        <div class="container bg-transparent p-5">
+            <h1 class="w-75 m-auto text-center blockquote">Add Manager Form</h1>
+            <form action="" method="POST" class="w-75 m-auto">
+                @csrf
+                <div class="form-floating m-3 ">
+                    <input type="text" class="form-control bg-transparent" name="fullName" id="fullName" required
+                        placeholder="name@example.com">
+                    <label for="fullName">Full Name</label>
+                </div>
+                <div class="form-floating m-3 ">
+                    <input type="email" class="form-control bg-transparent" name="email" id="email" required
+                        placeholder="Password">
+                    <label for="email">Email Id</label>
+                </div>
+                <div class="form-floating m-3 ">
+                    <input type="tel" class="form-control bg-transparent" name="mobile" id="mobile" required
+                        placeholder="name@example.com">
+                    <label for="mobile">Mobile Number</label>
+                </div>
+                <div class="d-flex">
+                    <div class="form-floating m-3 w-50 ">
+                        <input type="date" class="form-control bg-transparent" name="dob" id="dob" required
+                            placeholder="name@example.com">
+                        <label for="dob">Date of Birth</label>
+                    </div>
+                    <div class="form-floating m-3 w-50">
+                        <select class="form-select bg-transparent" id="branch" name="branch" required
+                            aria-label="Floating label select example">
+                            <option selected disabled>Select Branch</option>
+                            @foreach ($branch as $br)
+                                <option value="{{ $br->id }}">{{ $br->branch_id_prefix . ' ' . $br->branch_code }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <label for="branch">Select Branch</label>
+                    </div>
+                </div>
+                <div class="form-floating m-3 ">
+                    <textarea class="form-control bg-transparent" required placeholder="Leave a comment here" name="address" id="address"
+                        style="height: 100px"></textarea>
+                    <label for="address">Address</label>
+                </div>
+                <div class="form-floating m-3 d-flex justify-contents-center">
+                    <input type="submit" name="addManager" value="Add Manager" class="btn btn-primary w-25 m-auto">
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+    {{-- <div class="container register">
         <div class="row">
             <div class="col-md-3 register-left">
                 <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
@@ -154,5 +210,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

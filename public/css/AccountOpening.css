@@ -6,22 +6,6 @@
     list-style: none;
     font-family: sans-serif;
 }
-body{
-    background: white;
-    color: #34495e;
-    /* border: 1px solid blue; */
-}
-.customerDetailsFormContainer{
-    width: 90vw;
-    height: 100vw;
-    border-radius: 5px;
-    position: relative;
-    margin: 3% auto;
-    /* border: 1px solid red; */
-    padding: 0px;
-    overflow: hidden;
-}
-
 h1{
     text-decoration: none;
     text-align: center;
@@ -34,178 +18,59 @@ h1 a{
     font-family: sans-serif;
     text-shadow: -2px 5px rgba(25, 92, 207, 0.321);
 }
-h3{
-    width: 85%;
-    margin: 25px auto;
-    text-align: center;
+h3,h4{
+    color: #34495e;
     font-size: 18px;
-    text-transform: uppercase;
-    margin-top: 0px;
+    text-align: center;
+    padding: 25px 0px;
 }
+
 p{
-    font-size: 20px;
-    width: 85%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: -30px;
+    color: #34495e;
+    font-size: 15px;
+    text-align: center; 
 }
-.customerDetailsFormContainer form{
-    position: absolute;
-    width: 99%;
-    /* height: 85%; */
-    /* top: 50px; */
-    left: 0px;
-    margin: 0 auto;
-    text-align: center;
-    transition: .8s;
-    /* padding: 0px 20px; */
-    font-size: 16px;
-    /* border: 1px solid red; */
+form{
+    width: 60%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding:25px;
 }
-form span{
+form label{ 
+    font-size: 15px;
+    color: #34495e;
+    padding: 15px 0px;
+}
+form label span{
     color: red;
 }
-form h4{
-    font-size: 25px;
-    padding: 30px 0px 20px 0px;
-}
-form .inputFields{
-    width: 100%;
-    text-align: left;
-    margin-top: -20px;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-form .name{
-    display: flex;
-    justify-content: space-between;
-}
-form input{
-    padding: 0px 5px;
-    margin: 5px 10px;
-    border: 0;
-    border-bottom: 1px solid grey;
-    outline: none;
-    background: transparent;
-}
 form input[type="text"]{
-    width: 180px;
-    padding: 0px 5px;
-    margin: 0px 10px;
-    border-bottom: 3px dotted grey;
+    width: 40%;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #34495e;
 }
-form input[type="file"]{
-    width: 180px;
-    padding: 0px 5px;
-    margin: 0px 10px;
-    border-bottom: none;
-}
-form p{
-    width:95%;
-    margin-top: 0;
-    text-align: left;
-    font-size: 11px;
-}
-#form4 p, #form5 p{
-    font-size: 14px;
-    text-align: center;
-}
-#form4 .add{
-    width: 70%;
-}
-form small{
-    font-size: 18px;
+select{
+    border: 1ps solid #34495e;
+    width: 25%;
 }
 .btn-box{
     width: 100%;
-    margin: 30px auto;
-    text-align: center;
 }
-form button{
-    padding: 5px 35px;
-    font-weight: 600;
-    color: white;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
-    background: #34495e;
+button[type="submit"]{
+    padding: 5px 15px;
     font-size: 16px;
-}
-#form2{
-    left: -100%;
-}
-#form3{
-    left: -100%;
-}
-#form4{
-    left: -100%;
-}
-#form5{
-    left: -100%;
-}
-#form6{
-    left: -100%;
-}
-#form7{
-    left: -100%;
-}
-/* #form8{
-    left: -100%;
-} */
-.step-row{
-    width: 100%;
-    height: 40px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 -1px 5px -1px #34495e;
-    position: relative;
     color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 20px;
+    background-color: #34495e;
+    margin: 50px auto;
+    margin-left: 45%;
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
-.step-col{
-    width: 90%;
-    height: 50%;
-    text-align: center;
-    position: relative;
-    /* border: 1px solid red; */
-}
-#progress{
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    background: #34495e;
-    transition: .8s;
-}
-#progress::after{
-    content: '';
-    height: 0;
-    width: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    position: absolute;
-    right: -20px;
-    top: 0;
-    border-left: 20px solid #34495e;
-}
-
-@media (max-width: 909px) {
-    .customerDetailsFormContainer{
-        width: 95vw;
-        height: 80vh;
-        border-radius: 5px;
-        position: relative;
-        margin: 3% auto;
-        overflow: hidden;
-    }
-    #progress{
-        /* position: absolute; */
-        width: 11px;
-        /* height: 100%; */
-        /* background: #34495e; */
-        /* transition: .8s; */
-    }
+button[type="submit"]:hover{
+    background: transparent;
+    color: #34495e;
+    border: 1px solid #34495e;
 }

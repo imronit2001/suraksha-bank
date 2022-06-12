@@ -42,13 +42,6 @@
 
 <!-- JAVASCRIPT STARTS HERE  -->
 
-<!-- POPUP JavaScript  -->
-<script type="text/javascript">
-    function togglePopup(){
-        document.getElementById("popup-1").classList.toggle("active");
-    }
-</script>
-
 <!-- BUTTON ACTIVE JAVASCRIPT  -->
 <script type="text/javascript">
     $(document).on('click', 'li a', function(){

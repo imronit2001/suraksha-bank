@@ -13,6 +13,22 @@
             <p>No matter why you need a personal loan, suraksha Bank can customise the offering for you. If you already have an suraksha Bank account, you can benefit from special rates, charges and offers. Suraksha Bank also offers a host of benefits for first-time loan customers Enjoy the flexibility to pick a tenure that suits you and pay back the loan in pocket-friendly EMIs (Use our Personal Loan EMI Calculator to check your monthly outgo).</p>
 
             <p>Our personal loans are offered at competitive interest rates, ensuring that you save money and enjoy pocket-friendly EMIs.</p>
+            
+            <div class="HomeLoan">
+
+            </div>
+            <div class="carLoarn">
+
+            </div>
+            <div class="educationLoan">
+
+            </div>
+            <div class="personalLoan">
+
+            </div>
+            <div class="fixedDeposits">
+                
+            </div>
         </div>
         <div class="ZeroBalance">
             <h2>Zero balance :-</h2>

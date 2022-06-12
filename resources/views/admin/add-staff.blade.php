@@ -7,13 +7,66 @@
             <h1 class="branchname text-center font-weight-light">Branch Name : Kolkata</h1>
         </div>
 
-        <div class="container register">
+        <div class="container bg-transparent p-5">
+            <h1 class="w-75 m-auto text-center blockquote">Add Staff Form</h1>
+            <form action="" method="post" class="w-75 m-auto">
+                @csrf
+                <div class="form-floating m-3 ">
+                    <input type="text" class="form-control bg-transparent" name="fullName" id="fullName" required
+                        placeholder="name@example.com">
+                    <label for="fullName">Full Name</label>
+                </div>
+                <div class="form-floating m-3 ">
+                    <input type="email" class="form-control bg-transparent" name="email" id="email" required
+                        placeholder="Password">
+                    <label for="email">Email Id</label>
+                </div>
+                <div class="form-floating m-3 ">
+                    <input type="tel" class="form-control bg-transparent" name="mobile" id="mobile" required
+                        placeholder="name@example.com">
+                    <label for="mobile">Mobile Number</label>
+                </div>
+                <div class="d-flex">
+                    <div class="form-floating m-3 w-50 ">
+                        <input type="date" class="form-control bg-transparent" name="dob" id="dob" required
+                            placeholder="name@example.com">
+                        <label for="dob">Date of Birth</label>
+                    </div>
+                    <div class="form-floating m-3 w-50">
+                        <select class="form-select bg-transparent" id="branch" name="branch" required
+                            aria-label="Floating label select example">
+                            <option selected disabled>Select Branch</option>
+                            @foreach ($branch as $br)
+                                <option value="{{ $br->id }}">{{ $br->branch_id_prefix . ' ' . $br->branch_code }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <label for="branch">Select Branch</label>
+                    </div>
+                </div>
+                <div class="form-floating m-3 ">
+                    <textarea class="form-control bg-transparent" required placeholder="Leave a comment here" name="address" id="address"
+                        style="height: 100px"></textarea>
+                    <label for="address">Address</label>
+                </div>
+                <div class="form-floating m-3 d-flex justify-contents-center">
+                    <input type="submit" name="addStaff" value="Add Staff" class="btn btn-primary w-25 m-auto">
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+        {{-- <div class="container register">
             <div class="row">
                 <div class="col-md-12 register-right">
                     <div class="tab-content" id="">
                         <div class="" id="" role="">
                             <h3 class="register-heading">Add Employee Form</h3>
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{url('/addStaff')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row register-form">
                                     <div class="col-md-6">
@@ -56,7 +109,7 @@
                                             <input type="email" class="form-control" placeholder="Email Id *" required name="email" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" 
+                                            <input type="text" minlength="10" maxlength="10"
                                                 class="form-control" placeholder="Contact No *" required name="contact" />
                                         </div>
                                         <div class="form-group">
@@ -141,15 +194,15 @@
                                             <input type="text" class="form-control" placeholder="State *" required name="state" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="06" maxlength="06" 
+                                            <input type="text" minlength="06" maxlength="06"
                                                 class="form-control" placeholder="Pin Code *" required name="pincode" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="12" maxlength="12" 
+                                            <input type="text" minlength="12" maxlength="12"
                                                 class="form-control" placeholder="Aadhar Number *" required name="aadharNo" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="12" maxlength="12" 
+                                            <input type="text" minlength="12" maxlength="12"
                                                 class="form-control" placeholder="Pan Number *" required name="panNo" />
                                         </div>
                                         <div class="File"> <label>
@@ -196,6 +249,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </main>
 @endsection

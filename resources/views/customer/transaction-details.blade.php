@@ -31,7 +31,7 @@
                 <ul class="nav nav-tabs w-75">
                     <li class="nav-item"> <a class="nav-link active" href="#history">History</a> </li>
                     <!-- <li class="nav-item"> <a class="nav-link" href="#">Reports</a> </li> -->
-                </ul> <button class="btn btn-primary">New Transaction</button>
+                </ul> <a href="" data-bs-toggle="modal" data-bs-target="#FundTransferModal" class="btn btn-primary">New Transaction</a>
             </div>
             <div id="example" class="table table-striped  mt-3" style="width:100%">
                 <table class="table table-white table-borderless">

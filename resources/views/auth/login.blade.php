@@ -8,7 +8,20 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+
+                    <div class="loginButtons" style="display: flex; justify-content: space-between;">
+                    <div class="adminButton  logButton">
+                            <a style="border: 1px solid grey;padding: 5px 15px; text-decoration: none; fontsize: 18px;" href="{{url('/admin/login')}}">Admin Login</a>
+                        </div>
+                        <div class="StaffButton logButton">
+                            <a style="border: 1px solid grey;padding: 5px 15px; text-decoration: none; fontsize: 18px;" href="{{url('/staff/login')}}">Staff Login</a>
+                        </div>
+                        <div class="CustomerButton logButton">
+                            <a style="border: 1px solid grey;padding: 5px 15px; text-decoration: none; fontsize: 18px;" href="{{url('/customer/login')}}">Customer Login</a>
+                        </div>
+                    </div>
+
+                    <!-- <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -64,7 +77,7 @@
                                 @endif
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>

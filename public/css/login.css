@@ -1,0 +1,86 @@
+.login-container, .registerContainer{
+    width: 25%;
+    padding: 15px 35px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 50px auto;
+    border: 1px solid #34495e;
+    box-shadow: 5px 1px 25px 5px grey;
+
+}
+.login-container h2{
+    width: 100%;
+    color: #34495e;
+    font-size: 45px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.login-container .row100{
+    padding: 25px 15px;
+    margin: 50px auto;
+}
+.login-container .col{
+    display: flex;
+    margin: 40px 0px;
+}
+.login-container .col img{
+    width: 35px ;
+    height: 35px;
+}
+.login-container .col input{
+    height: 32px;
+    font-size: 18px;
+    width: 75%;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-bottom: 2px solid grey;
+    color: #34495e;
+}
+.login-container button{
+    border: 2.8px solid silver;
+    border-radius: 5px;
+    background: #34495e;
+    color: #fff;
+    box-shadow: none;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: -30px auto;
+    cursor: pointer;
+    outline: none;
+    float: right;
+}
+.login-container button:hover{
+    color: #000;
+
+    
+} 
+
+.forget a{ 
+    color: grey;
+    font-weight: 600;
+} 
+.forget a:hover{
+    color: #34495e;
+} 
+
+/* PASSWORD SHOW/HIDE SECTION  */
+
+#password-toggle{
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    margin-top: -155px;
+    cursor: pointer;
+    float: right;
+    background: url('../images/icons/show.png');
+    background-size: cover;
+    z-index: 11111;
+
+}
+#password-toggle.hide{
+    background: url('../images/icons/hide.png');
+    background-size: cover;
+}

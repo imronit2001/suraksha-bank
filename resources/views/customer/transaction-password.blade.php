@@ -1,6 +1,9 @@
 @extends('customer.homesidenav')
 @section('title','Transaction Password')
 @section('page-name')
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
 <div class="container justify-content-center tran-pass ">
         <div class="d-flex justify-content-center align-item-center mt-10 p-5 ">
             <form>
