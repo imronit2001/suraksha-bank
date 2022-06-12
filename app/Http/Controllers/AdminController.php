@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AccountRegistration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\Models\Admin;
 use App\Models\Branch;
@@ -17,6 +19,7 @@ use App\Models\Helpline;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -84,7 +87,7 @@ class AdminController extends Controller
         $changeBranchList = $changeBranch->count();
 
 
-        $data = ['customer'=>$customer,'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
+        $data = ['customer' => $customer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
 
 
         return view('admin.dashboard', $data);
@@ -122,9 +125,18 @@ class AdminController extends Controller
             $staffId = explode("staff", $laststaff->userid);
             $staff->userid = "staff" . sprintf("%04d", $staffId[1] + 1);
         }
-        $staff->password = Hash::make(12345);
+        $password = Str::random(10);
+        $staff->password = Hash::make($password);
         $staff->pin = "1234";
         $staff->save();
+        $data = [
+            'name' => $staff->fullName,
+            'email' => $staff->email,
+            'userid' => $staff->userid,
+            'password' => $password,
+
+        ];
+        Mail::to($staff->email)->send(new AccountRegistration($data));
         return redirect((route('admin-add-staff')));
     }
     public function addManagerIndex()
@@ -151,11 +163,19 @@ class AdminController extends Controller
             $adminId = explode("admin", $lastadmin->userid);
             $admin->userid = "admin" . sprintf("%04d", $adminId[1] + 1);
         }
-        // $admin->password = "12345";
-        $admin->password = Hash::make(12345);
+        $password = Str::random(10);
+        $admin->password = Hash::make($password);
 
         $admin->pin = "1234";
         $admin->save();
+        $data = [
+            'name' => $admin->fullName,
+            'email' => $admin->email,
+            'userid' => $admin->userid,
+            'password' => $password,
+
+        ];
+        Mail::to($admin->email)->send(new AccountRegistration($data));
         return redirect((route('admin-add-manager')));
     }
     public function manageStaff()
