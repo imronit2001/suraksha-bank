@@ -31,7 +31,7 @@ class CustomerController extends Controller
         ]);
 
         $creds = $request->only('email', 'password');
-        if (Auth::guard('web')->attempt($creds)) {
+        if(Auth::guard('customer')->attempt($creds)) {
             return redirect()->route('customer-dashboard');
         } else {
             return redirect()->route('customer-login')->with('fail', 'Incorrect credentials');
@@ -182,7 +182,7 @@ class CustomerController extends Controller
             $customer->account_no = $lastCustomer->account_no+1;
         }
         $password = Str::random(10);
-        $customer->login_pass = Hash::make($password);
+        $customer->password = Hash::make($password);
         $customer->transaction_pass = Str::random(14);
         $customer->save();
         $data = [

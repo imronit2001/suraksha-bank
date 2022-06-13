@@ -142,7 +142,7 @@ Route::prefix('customer')->name('customer-')->group(function () {
         It will be added once Customer Account Approval Done
     ===========================================================*/
 
-    Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
+    Route::middleware(['auth:customer', 'PreventBackHistory'])->group(function () {
     Route::get('/', [CustomerController::class, 'dashboard'])->name('dashboard');
     Route::get('/transaction-password', [CustomerController::class, 'TransactionPassword'])->name('transaction-password');
     Route::get('/account-details', [CustomerController::class, 'AccountDetails'])->name('account-details');

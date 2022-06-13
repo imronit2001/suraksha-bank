@@ -33,7 +33,7 @@ class RedirectIfAuthenticated
                 if($guard === 'customer'){
                     return redirect()->route('customer-dashboard');
                 }
-                return redirect()->route('user.home');
+                // return redirect()->route('user.home');
                 // return redirect(RouteServiceProvider::HOME);
             }
         }
