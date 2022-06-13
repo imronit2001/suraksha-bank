@@ -43,7 +43,6 @@ class AccountOpeningFormController extends Controller
             $AccountOpeningForm->Country=$request->Country;
             $AccountOpeningForm->Place=$request->Place;
             $AccountOpeningForm->signDate=$request->signDate;
-            
             if ($request->hasFile('ApplicantPhoto')) {
                 $file = $request->file('ApplicantPhoto');
                 $name = $file->hashName();
@@ -59,7 +58,6 @@ class AccountOpeningFormController extends Controller
                 $file->move('images/customer/ApplicantAadhar/',$filename);
                 $AccountOpeningForm->ApplicantAadhar=$filename;
             }
-    
             if ($request->hasFile('ApplicantSignature')) {
                 $file = $request->file('ApplicantSignature');
                 $name = $file->hashName();
