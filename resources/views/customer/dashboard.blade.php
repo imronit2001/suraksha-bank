@@ -13,7 +13,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Account Holder Name</span>
                         <span class="info-box-number">
-                            Gulafshan
+                            {{$customer->accountName}}
                         </span>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Account Number</span>
                         <span class="info-box-number">
-                            34567800112
+                            {{$customer->accountNo}}
                         </span>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Branch</span>
                         <span class="info-box-number">
-                            Kankinara
+                        {{$customer->branch}}
                         </span>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Account Balance</span>
                         <span class="info-box-number">
-                            34567
+                            {{$customer->balance}}
                         </span>
                     </div>
                 </div>
@@ -96,21 +96,10 @@
                                 <tr>
                                     <td>
                                         <img src="" alt=" 2" class="img-circle img-size-32 mr-2">
-                                        Urvi
+                                        {{}}
                                     </td>
                                     <td>29 June 2020</td>
                                     <td><span class="badge bg-success">Withdraw</span></td>
-                                    <td>
-                                        30,000
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="" alt=" 2" class="img-circle img-size-32 mr-2">
-                                        UPI
-                                    </td>
-                                    <td>29 May 2020</td>
-                                    <td><span class="badge bg-warning">Withdraw</span></td>
                                     <td>
                                         30,000
                                     </td>
@@ -228,7 +217,7 @@
                                 </div>
                             </div>
                             <div class="info my-1 card m-auto bg-info ">
-                               
+
                                 <div class="small-box  text-center">
                                     <div class="inner p-1">
                                         <span class="info-box-icon bg-warning"><i class='bx bxs-book-reader'></i></span>
@@ -237,7 +226,7 @@
                                     <a href="#" class="small-box-footer text-white">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
-                           
+
                             <div class="info card my-1 bg-info ">
                                 <div class="small-box  text-center">
                                     <div class="inner p-1">
@@ -247,7 +236,7 @@
                                     <a href="#" class="small-box-footer text-white">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
-            
+
                             <div class="info  my-1 bg-info ">
                                 <div class="small-box  text-center">
                                     <div class="inner p-1">

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\change_branch;
 use App\Models\customer;
 use App\Models\CustomerData;
+use App\Models\FundTransfer;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -42,7 +43,13 @@ class CustomerController extends Controller
 
     public function dashboard()
     {
-        return view('customer.dashboard');
+        $cId='1234567890';
+        $customer = CustomerData::where('customerId', $cId)->latest()->first();
+        $fund= FundTransfer::where('customerId',$cId);
+        $transaction=
+        // dd($fund);
+        // print_r($customer);
+        return view('customer.dashboard',['customer'=>$customer,'fund'=>$fund,'trans'=>$transaction]);
     }
 
     public function TransactionPassword()
@@ -60,7 +67,7 @@ class CustomerController extends Controller
         $customer = CustomerData::where('customerId', $cId)->latest()->first();
         return view('customer.account-details',['customer'=>$customer]);
         // print_r($customer);
-        echo $customer->customerName;
+        // echo $customer->customerName;
         // dd($customer);
     }
     public function TransactionDetails(){

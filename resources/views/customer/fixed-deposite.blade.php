@@ -15,8 +15,8 @@
       </thead>
       <tbody>
         <tr>
-          <td>123456xxx</td>
-          <td>Saving Account/Current Account</td>
+          <td>{{cus--</td>
+          <td>Saving Account</td>
           <td>Hooghly</td>
         </tr>
       </tbody>

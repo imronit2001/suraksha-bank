@@ -6,8 +6,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Mail\DebitCreditMail;
 use Illuminate\Http\Request;
-
-
 use App\Models\AccountOpening;
 use App\Models\Admin;
 use App\Models\Branch;
