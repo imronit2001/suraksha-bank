@@ -142,6 +142,8 @@ Route::prefix('customer')->name('customer-')->group(function () {
     Route::get('/branch-change-reset/{id}', [ChangeBranchController::class, 'reset'])->name('branch-change-reset');
     Route::get('/KYCForm', [KYCFormController::class, 'index']);
     Route::post('/KYCForm', [KYCFormController::class, 'create']);
+    Route::get('/CreditCard', [CustomerController::class, 'CreditCard']);
+    Route::post('/CreditCard', [CustomerController::class, 'CreateCreditCard']);
     Route::post('/logout', [CustomerController::class, 'logout'])->name('logout');
     // });
 });
