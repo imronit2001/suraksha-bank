@@ -134,6 +134,7 @@ class CustomerController extends Controller
         $customer->State = $user->State;
         $customer->Pin = $user->Pin;
         $customer->Country = $user->Country;
+        $customer->BranchName = $user->BranchName;
         $customer->Place = $user->Place;
         $customer->signDate = $user->signDate;
         $customer->ApplicantPhoto = $user->ApplicantPhoto;

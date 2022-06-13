@@ -47,6 +47,7 @@ return new class extends Migration
             $table->string('State');
             $table->string('Pin');
             $table->string('Country');
+            $table->string('BranchName');
             $table->string('ApplicantPhoto')->default('Not Available');
             $table->string('ApplicantAadhar')->default('Not Available');
             $table->string('ApplicantSignature')->default('Not Available');

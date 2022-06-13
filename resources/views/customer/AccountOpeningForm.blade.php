@@ -197,6 +197,10 @@
             
             <h4>5. Declaration Cum undertaking Cum Self-Certification</h4>
             <p><small>I have read the copy of <b><a href="#">Terms & Conditions</a></b> of the Account opening given to me. The <b>Terms & Conditions</b> have been explained ti me/us and having understood. I accept the same. <br>I hereby declare that I have submitted the Aadhar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA 2002. <br>I hereby consent that the bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric authentication to the bank.</small></p>
+            
+            <br><br><label for="#">Mention Branch Name: <span>*</span></label>
+            <input type="file" name="BranchName" id="" value=""> 
+            
             <br><br><label for="#">Applicant's photo <span>*</span></label>
             <input type="file" name="ApplicantPhoto" id="" value=""> 
             
