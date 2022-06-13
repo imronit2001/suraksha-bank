@@ -17,7 +17,7 @@
     <h3>Know Your Customer (KYC) Application Form - For Individual</h3>
     
     <div class="customerDetailsFormContainer">
-        <form action="" method="POST" id="form1">
+        <form action="" method="POST" >
             @csrf
             <p> 
                 <input type="radio" name="formType" id="">NEW
@@ -31,7 +31,6 @@
                 <input type="radio" name="prefix" id="" value="Mrs.">Mrs.
                 <input type="radio" name="prefix" id="" value="Miss">Miss <br>
                 
-                <br><label for="#">Name of the Applicant <span>*</span> : </label>
                 <div class="name">
                     <br><label for="FirstName">First Name<span>*</span> : </label>
                     <input type="text" name="FullName" id="" value="" autocomplete="off">
@@ -50,7 +49,7 @@
                 <input type="date" name="dob" id="" required>
 
                 <br><br><label for="#">Marital Status<span>*</span> : </label>
-                <select name="MaritualStatus" id="">
+                <select name="MaritalStatus" id="">
                     <option value="" selected>Choose....</option>
                     <option value="Married">Married</option>
                     <option value="Unmarried">Unmarried</option>
@@ -60,7 +59,7 @@
                 
                 
                 <br><br><label for="#">Nationality<span>*</span> : </label>
-                <select name="nationality" id="">
+                <select name="Nationality" id="">
                     <option value="" selected>Choose....</option>
                     <option value="America">America</option>
                     <option value="Bhutan">Bhutan</option>

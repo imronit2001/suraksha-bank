@@ -33,13 +33,13 @@
             <input type="date" name="DOB" id="DOB" required><br>
             
             <br><label for="#">Gender<span>*</span> : </label>
-            <input type="radio" name="Gender" id="gender" value="Male" required>Male
-            <input type="radio" name="Gender" id="gender" value="Female">Female 
-            <input type="radio" name="Gender" id="gender" value="Third Gender">Third Gender
+            <input type="radio" name="gender" id="gender" value="Male" required>Male
+            <input type="radio" name="gender" id="gender" value="Female">Female 
+            <input type="radio" name="gender" id="gender" value="Third Gender">Third Gender
 
 
             <br><br><label for="#">Marital Status<span>*</span> : </label>
-            <select name="MaritualStatus" id="">
+            <select name="MaritalStatus" id="">
                 <option value="" selected>Choose....</option>
                 <option value="Married">Married</option>
                 <option value="Unmarried">Unmarried</option>
@@ -62,7 +62,7 @@
 
 
             <br><br><label for="#">Nationality<span>*</span> : </label>
-            <select name="nationality" id="">
+            <select name="Nationality" id="">
                 <option value="" selected>Choose....</option>
                 <option value="America">America</option>
                 <option value="Bhutan">Bhutan</option>
@@ -106,7 +106,7 @@
             </select>
 
             <br><br><label for="#">Category<span>*</span> : </label>
-            <select name="" id="">
+            <select name="category" id="">
                 <option value="" selected>Choose ....</option>
                 <option value="General">General</option>
                 <option value="OBC">OBC</option>
@@ -116,7 +116,7 @@
             </select>
 
             <br><br><label for="#">Customer Type/Status<span>*</span> : </label>
-            <select name="" id="">
+            <select name="CustomerType" id="">
                 <option value="" selected>Choose....</option>
                 <option value="Sr.Citizen">Sr. Citizen</option>
                 <option value="Minor">Minor</option>
@@ -130,7 +130,7 @@
             <input type="radio" name="Disability" id="" value="No">No
 
             <br><br><label for="#">Educational Qualification<span>*</span> : </label>
-            <select name="" id="">
+            <select name="Qualification" id="">
                 <option value="" selected>Choose....</option>
                 <option value="BelowSSC">Below SSC</option>
                 <option value="SSC">SSC</option>
@@ -168,7 +168,7 @@
             <br><br><label for="">Document/Identification Number <span>*</span></label>
             <input type="text" name="AddressProofNumber" id="" value=""required> 
             <br><br><label for="">Issued By <span>*</span></label>
-            <input type="text" name="AddressProofNumber" id="" value=""required> <br>
+            <input type="text" name="issuedBy" id="" value=""required> <br>
             
             
             <h4>4. Address Details <span>*</span></h4>

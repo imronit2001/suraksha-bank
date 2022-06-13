@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\customer;
+use App\Models\CreditCard;
+
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -74,6 +76,28 @@ class CustomerController extends Controller
     public function changePassword()
     {
         return view("Client.changePassword");
+    }
+
+    public function CreateCreditCard(Request $request){
+        $CreditCard = new CreditCard;
+        $CreditCard->prefix=$request->prefix;
+        $CreditCard->FullName=$request->FullName;
+        $CreditCard->FatherName=$request->FatherName;
+        $CreditCard->gender=$request->gender;
+        $CreditCard->DOB=$request->dob;
+        $CreditCard->MaritalStatus=$request->MaritalStatus;
+        $CreditCard->Nationality=$request->Nationality;
+        $CreditCard->ResidentialStatus=$request->ResidentialStatus;
+        $CreditCard->PanNumber=$request->PanNumber;
+        $CreditCard->AadharNumber=$request->AadharNumber;
+        $CreditCard->save();
+        return redirect('/customer')->with('Success, Data Added'); 
+    }
+
+    function CreditRequest(){
+        $data = CreditCard::all();
+        // echo "Code Here";
+        return view('staff/creditRequest',['data'=>$data]);
     }
 
     // public function changePassworddone(changePassword $req)

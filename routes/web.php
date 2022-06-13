@@ -30,7 +30,6 @@ Route::prefix('/')->group(function () {
     Route::get('termsCondition', [termsController::class, 'index']);
 });
 
-
 Auth::routes();
 
 /* ==================================
@@ -108,6 +107,10 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('debit-money');
         Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
+        Route::get('/AccountOpeningList',[AccountOpeningFormController::class,'AccountOpeningList']);
+        Route::get('/KYCList',[KYCFormController::class,'KYClist']);
+        Route::get('/CreditRequestList',[CustomerController::class,'CreditRequest']);
+
     });
 });
 

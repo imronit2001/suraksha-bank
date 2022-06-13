@@ -68,6 +68,12 @@ class KYCFormController extends Controller
             // dd($request);
         $KYCForm->save();
 
-        return redirect('/Customer/')->with('Success', 'Data Added');
+        return redirect('/customer/')->with('Success', 'Data Added');
+    }
+
+    function KYCList(){
+        $data = KnowYourCustomer::all();
+        // echo "Code Here";
+        return view('staff/KYCApplication',['data'=>$data]);
     }
 }

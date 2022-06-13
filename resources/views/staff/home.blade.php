@@ -45,26 +45,26 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('staff/AccountOpeningList')}}">
                     <i class='bx bx-user-plus'></i>
                     <span class="links_name">New a/c Application</span>
                 </a>
                 <span class="tooltip">New a/c Application</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('staff/CreditRequestList')}}">
                     <i class='bx bx-credit-card'></i>
                     <span class="links_name">Credit Card Request</span>
                 </a>
                 <span class="tooltip">Credit Card Request</span>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">
                     <i class='bx bxl-mastercard'></i>
                     <span class="links_name">Debit Card Request</span>
                 </a>
                 <span class="tooltip">Debit Card Request</span>
-            </li>
+            </li> -->
             <li>
                 <a href="{{route('staff-credit-money')}}">
                     <i class='bx bx-plus'></i>
@@ -87,7 +87,7 @@
                 <span class="tooltip">Manage Customers</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('staff/KYCList')}}">
                     <i class='bx bxs-edit'></i>
                     <span class="links_name">KYC Application</span>
                 </a>

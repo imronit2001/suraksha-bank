@@ -43,3 +43,12 @@ class customer extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+class customer extends Model{
+    use hasFactory;
+
+    protected $table = 'customer';
+
+    protected $fillable = [
+        'customer_name'
+    ];
+}

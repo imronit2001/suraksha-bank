@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('know_your_customer_table', function (Blueprint $table) {
-            $table->string('formType');
+        Schema::create('credit_card_table', function (Blueprint $table) {
+            $table->id();
             $table->string('prefix');
             $table->string('FullName');
             $table->string('FatherName');
@@ -25,20 +25,6 @@ return new class extends Migration
             $table->string('ResidentialStatus');
             $table->string('PanNumber');
             $table->string('AadharNumber');
-            $table->string('Address');
-            $table->string('City');
-            $table->string('Pin');
-            $table->string('State');
-            $table->string('Country');
-            $table->bigInteger('Mobile');
-            $table->bigInteger('Telephone');
-            $table->string('AddressProofNumber');
-            $table->date('Date');
-            $table->string('ApplicantPhoto');
-            $table->string('ApplicantSignature');
-            $table->string('ApplicantAadhar');
-            $table->string('ApplicantPan');
-
             $table->timestamps();
         });
     }
@@ -50,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kyc_form_table');
+        Schema::dropIfExists('credit_card_table');
     }
 };

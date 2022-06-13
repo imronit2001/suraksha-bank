@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AccountOpening;
+use App\Models\AccountOpenings;
 use Illuminate\Http\Request;
 
-class AccountOpeningController extends Controller
+class AccountOpeningFormController extends Controller
 {
 
     public function create(Request $request){
-        $AccountOpeningForm = new AccountOpening;
+        $AccountOpeningForm = new AccountOpenings;
             $AccountOpeningForm->prefix=$request->prefix;
             $AccountOpeningForm->FullName=$request->FullName;
             $AccountOpeningForm->DOB=$request->DOB;
@@ -68,9 +68,16 @@ class AccountOpeningController extends Controller
                 $AccountOpeningForm->ApplicantSignature=$filename;
             }
 
-            dd($request);
-            // $AccountOpeningForm->save();
+            // dd($request);
+            $AccountOpeningForm->save();
         return redirect('/')->with('Success','Data Added');
 
+    }
+
+
+    function AccountOpeningList(){
+        $data = AccountOpenings::all();
+        // echo "Code Here";
+        return view('staff/accountApplication',['data'=>$data]);
     }
 }
