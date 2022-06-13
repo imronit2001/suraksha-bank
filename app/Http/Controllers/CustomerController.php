@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AccountCreationMail;
 use Illuminate\Http\Request;
 use App\Models\change_branch;
 use App\Models\customer;
@@ -15,27 +16,30 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CustomerController extends Controller
 {
-    function check(Request $request){
-      //Validate inputs
+    function check(Request $request)
+    {
+        //Validate inputs
         $request->validate([
-            'email'=>'required|email|exists:users,email',
-            'password'=>'required|min:5|max:30'
-        ],[
-            'email.exists'=>'This email is not exists on users table'
+            'email' => 'required|email|exists:customers,email',
+            'password' => 'required|min:5|max:30'
+        ], [
+            'email.exists' => 'This email is not exists on users table'
         ]);
 
-        $creds = $request->only('email','password');
-        if( Auth::guard('web')->attempt($creds) ){
-          return redirect()->route('user.home');
-        }else{
-          return redirect()->route('user.login')->with('fail','Incorrect credentials');
+        $creds = $request->only('email', 'password');
+        if (Auth::guard('web')->attempt($creds)) {
+            return redirect()->route('customer-dashboard');
+        } else {
+            return redirect()->route('customer-login')->with('fail', 'Incorrect credentials');
         }
     }
 
-    function logout(){
+    function logout()
+    {
         Auth::guard('web')->logout();
         return redirect('/');
     }
@@ -46,14 +50,14 @@ class CustomerController extends Controller
 
     public function dashboard()
     {
-        $cId='1234567890';
-        $aNo='12345678901234';
+        $cId = '1234567890';
+        $aNo = '12345678901234';
         $customer = CustomerData::where('customerId', $cId)->latest()->first();
-        $fund= FundTransfer::where('customerId',$cId);
-        $transaction= Db::table('transaction_details')->where('account_number',$aNo);
+        $fund = FundTransfer::where('customerId', $cId);
+        $transaction = Db::table('transaction_details')->where('account_number', $aNo);
         // dd($fund);
         // print_r($customer);
-        return view('customer.dashboard',['customer'=>$customer,'fund'=>$fund,'trans'=>$transaction]);
+        return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $transaction]);
     }
 
     public function TransactionPassword()
@@ -61,32 +65,39 @@ class CustomerController extends Controller
         return view('customer.transaction-password');
     }
 
-    public function CreditCard(){
+    public function CreditCard()
+    {
         return view('customer.creditCard');
     }
 
-    public function AccountDetails(){
+    public function AccountDetails()
+    {
         // return view('customer.account-details');
-        $cId='1234567890';
+        $cId = '1234567890';
         $customer = CustomerData::where('customerId', $cId)->latest()->first();
-        return view('customer.account-details',['customer'=>$customer]);
+        return view('customer.account-details', ['customer' => $customer]);
         // print_r($customer);
         // echo $customer->customerName;
         // dd($customer);
     }
-    public function TransactionDetails(){
+    public function TransactionDetails()
+    {
         return view('customer.transaction-details');
     }
-    public function BranchChange(){
+    public function BranchChange()
+    {
         return view('customer.branch-change');
     }
-    public function FixedDeposite(){
+    public function FixedDeposite()
+    {
         return view('customer.fixed-deposite');
     }
-    public function FundTransfer(){
+    public function FundTransfer()
+    {
         return view('customer.fund-transfer');
     }
-    public function ChequeBook(){
+    public function ChequeBook()
+    {
         return view('customer.cheque-book');
     }
     public function changePassword()
@@ -94,29 +105,32 @@ class CustomerController extends Controller
         return view("Client.changePassword");
     }
 
-    public function CreateCreditCard(Request $request){
+    public function CreateCreditCard(Request $request)
+    {
         $CreditCard = new CreditCard;
-        $CreditCard->prefix=$request->prefix;
-        $CreditCard->FullName=$request->FullName;
-        $CreditCard->FatherName=$request->FatherName;
-        $CreditCard->gender=$request->gender;
-        $CreditCard->DOB=$request->dob;
-        $CreditCard->MaritalStatus=$request->MaritalStatus;
-        $CreditCard->Nationality=$request->Nationality;
-        $CreditCard->ResidentialStatus=$request->ResidentialStatus;
-        $CreditCard->PanNumber=$request->PanNumber;
-        $CreditCard->AadharNumber=$request->AadharNumber;
+        $CreditCard->prefix = $request->prefix;
+        $CreditCard->FullName = $request->FullName;
+        $CreditCard->FatherName = $request->FatherName;
+        $CreditCard->gender = $request->gender;
+        $CreditCard->DOB = $request->dob;
+        $CreditCard->MaritalStatus = $request->MaritalStatus;
+        $CreditCard->Nationality = $request->Nationality;
+        $CreditCard->ResidentialStatus = $request->ResidentialStatus;
+        $CreditCard->PanNumber = $request->PanNumber;
+        $CreditCard->AadharNumber = $request->AadharNumber;
         $CreditCard->save();
         return redirect('/customer')->with('Success, Data Added');
     }
 
-    function CreditRequest(){
+    function CreditRequest()
+    {
         $data = CreditCard::all();
         // echo "Code Here";
-        return view('staff/creditRequest',['data'=>$data]);
+        return view('staff/creditRequest', ['data' => $data]);
     }
 
-    public function ShiftData($id){
+    public function ShiftData($id)
+    {
         $user = AccountOpenings::find($id);
         $customer = new customer();
         $customer->prefix = $user->prefix;
@@ -159,27 +173,37 @@ class CustomerController extends Controller
 
 
         $lastCustomer = customer::latest()->first();
+
         if ($lastCustomer == "") {
-            $customer->customerid = "customer" . "0001";
+            $customer->customerId = random_int(1111111111, 9999999999);
+            $customer->account_no = random_int(11111111111111, 99999999999999);
         } else {
-            $CustomerId = explode("customer", $lastCustomer->userid);
-            $customer->customerid = "customer" . sprintf("%04d", $CustomerId[1] + 1);
+            $customer->customerId = $lastCustomer->customerId+1;
+            $customer->account_no = $lastCustomer->account_no+1;
         }
         $password = Str::random(10);
-        $customer->password = Hash::make($password);
-        $customer->pin = "1234";
+        $customer->login_pass = Hash::make($password);
+        $customer->transaction_pass = Str::random(14);
         $customer->save();
         $data = [
             'FullName' => $customer->FullName,
+            'FatherName'=> $customer->FatherName,
+            'Mobile'=> $customer->Mobile,
             'Email' => $customer->Email,
-            'customer_id' => $customer->userid,
+            'dob' => $customer->DOB,
+            'customerId' => $customer->customerId,
+            'accountNo' => $customer->account_no,
+            'BranchName' => $customer->BranchName,
             'login_pass' => $password,
+            'transaction_pass' => $customer->transaction_pass,
 
         ];
 
-        $customer->save();
+        Mail::to($customer->Email)->send(new AccountCreationMail($data));
 
-        return view('/staff/');
+
+        // return view('/staff/');
+        return redirect()->route('staff-AccountOpeningList');
     }
 
     // public function changePassworddone(changePassword $req)
