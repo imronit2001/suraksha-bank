@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('account_opening', function (Blueprint $table) {
+        Schema::create('customer', function (Blueprint $table) {
             $table->id();
+            $table->string('customerId');
+            $table->string('account_no');
+            $table->string('login_pass');
+            $table->string('transaction_pass');
             $table->string('prefix');
             $table->string('FullName');
             $table->date('DOB');
@@ -22,8 +26,8 @@ return new class extends Migration
             $table->string('MaritalStatus');
             $table->string('FatherName');
             $table->string('MotherName');
-            $table->string('GaurdianName');
-            $table->string('RelationWithGuardian');
+            $table->string('GaurdianName')->nullable();
+            $table->string('RelationWithGuardian')->nullable();
             $table->string('Nationality');
             $table->string('ResidentialStatus');
             $table->string('OccupationType');
@@ -32,10 +36,10 @@ return new class extends Migration
             $table->string('CustomerType');
             $table->string('Disability');
             $table->string('Qualification');
-            $table->string('PanNumber');
+            $table->string('PanNumber')->nullable();
             $table->bigInteger('Mobile');
             $table->string('Email');
-            $table->bigInteger('Telephone');
+            $table->bigInteger('Telephone')->nullable();
             $table->string('AddressProof');
             $table->string('AddressProofNumber');
             $table->string('issuedBy');
@@ -46,12 +50,13 @@ return new class extends Migration
             $table->string('State');
             $table->string('Pin');
             $table->string('Country');
-            $table->string('ApplicantPhoto');
-            $table->string('ApplicantAadhar');
-            $table->string('ApplicantSignature');
+            $table->string('BranchName');
+            $table->string('ApplicantPhoto')->default('Not Available');
+            $table->string('ApplicantAadhar')->default('Not Available');
+            $table->string('ApplicantSignature')->default('Not Available');
             $table->string('Place');
             $table->string('signDate');
-
+            $table->string('Status')->default('Active');
             $table->timestamps();
         });
     }
@@ -63,6 +68,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('account_opening');
+        Schema::dropIfExists('customer');
     }
 };

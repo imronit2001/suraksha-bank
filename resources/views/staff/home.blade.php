@@ -38,75 +38,75 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{{route('staff-dashboard')}}">
+                <a href="{{ route('staff-dashboard') }}">
                     <i class='bx bxs-home'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('staff/AccountOpeningList')}}">
                     <i class='bx bx-user-plus'></i>
                     <span class="links_name">New a/c Application</span>
                 </a>
                 <span class="tooltip">New a/c Application</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('staff/CreditRequestList')}}">
                     <i class='bx bx-credit-card'></i>
                     <span class="links_name">Credit Card Request</span>
                 </a>
                 <span class="tooltip">Credit Card Request</span>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">
                     <i class='bx bxl-mastercard'></i>
                     <span class="links_name">Debit Card Request</span>
                 </a>
                 <span class="tooltip">Debit Card Request</span>
-            </li>
+            </li> -->
             <li>
-                <a href="{{route('staff-credit-money')}}">
+                <a href="{{ route('staff-credit-money') }}">
                     <i class='bx bx-plus'></i>
                     <span class="links_name">Credit Money</span>
                 </a>
                 <span class="tooltip">Credit Money</span>
             </li>
             <li>
-                <a href="{{route('staff-debit-money')}}">
+                <a href="{{ route('staff-debit-money') }}">
                     <i class='bx bx-minus'></i>
                     <span class="links_name">Debit Money</span>
                 </a>
                 <span class="tooltip">Debit Money</span>
             </li>
             <li>
-                <a href="../admin/manage-customers.html">
+                <a href="{{ route('staff-manage-customer') }}">
                     <i class='bx bxs-user-detail'></i>
                     <span class="links_name">Manage Customers</span>
                 </a>
                 <span class="tooltip">Manage Customers</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{url('staff/KYCList')}}">
                     <i class='bx bxs-edit'></i>
                     <span class="links_name">KYC Application</span>
                 </a>
                 <span class="tooltip">KYC Application</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="#">
                     <i class='bx bxs-book-alt'></i>
                     <span class="links_name">Passbook Request</span>
                 </a>
                 <span class="tooltip">Passbook Request</span>
-            </li>
+            </li> --}}
             <li>
                 <a href="#">
                     <i class='bx bx-book'></i>
                     <span class="links_name">ChequeBook Request</span>
                 </a>
                 <span class="tooltip">ChequeBook Request</span>
-            {{-- </li>
+                {{-- </li>
             <li>
                 <a href="#">
                     <i class='bx bx-building-house'></i>
@@ -142,20 +142,20 @@
                 </a>
                 <span class="tooltip">Credit Card a/c</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="#">
                     <i class='bx bxs-wallet'></i>
                     <span class="links_name">Fixed Deposits</span>
                 </a>
                 <span class="tooltip">Fixed Deposits</span>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a href="#">
                     <i class='bx bxs-contact'></i>
                     <span class="links_name">Contact Customers</span>
                 </a>
                 <span class="tooltip">Contact Customers</span>
-            </li>
+            </li> --}}
             <li>
                 <a href="#">
                     <i class='bx bx-block'></i>
@@ -163,13 +163,13 @@
                 </a>
                 <span class="tooltip">Blocked Accounts</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="#">
                     <i class='bx bxs-copy-alt'></i>
                     <span class="links_name">Terms & Conditions</span>
                 </a>
                 <span class="tooltip">Terms & Conditions</span>
-            </li>
+            </li> --}}
             <li>
                 <a href="#">
                     <i class='bx bx-help-circle'></i>
@@ -189,19 +189,21 @@
             </div>
             <li class="profile">
                 <div class="profile-details">
-                  <img src="{{asset('images/ronit.JPG')}}" alt="profileImg">
-                  <div class="name_job">
-                    <div class="name">Ronit Singh</div>
-                    <div class="job">Web designer</div>
-                  </div>
+                    <img src={{asset('images/staff.png')}} alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">@php
+                            echo Auth::user()->fullName;
+                        @endphp</div>
+                        <div class="job">Staff</div>
+                    </div>
                 </div>
                 <!-- <i class='bx bx-log-out' id="log_out"></i> -->
                 <!-- Authentication -->
-                <form class="" action="{{url('../logout')}}" method="post">
+                <form class="" action="{{ url('../logout') }}" method="post">
                     {{ csrf_field() }}
                     <button type="submit" name="logout">Logout</button>
                 </form>
-              </li>
+            </li>
         </ul>
     </div>
 

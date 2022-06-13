@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="content">
+        {{-- <div class="content">
             <div class="content-box">
                 <div class="content-left">
                     <h1>0000</h1>
@@ -28,7 +28,7 @@
             <div class="content-bottom">
                 <h1>Inactive Customers</h1>
             </div>
-        </div>
+        </div> --}}
 
         <div class="content">
             <div class="content-box">
@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <div class="content">
+        {{-- <div class="content">
             <div class="content-box">
                 <div class="content-left">
                     <h1>0000</h1>
@@ -70,7 +70,7 @@
             <div class="content-bottom">
                 <h1>Debit Card Requests</h1>
             </div>
-        </div>
+        </div> --}}
 
 
         <div class="content">
@@ -86,7 +86,7 @@
                 <h1>Credit Card Application</h1>
             </div>
         </div>
-        <div class="content">
+        {{-- <div class="content">
             <div class="content-box">
                 <div class="content-left">
                     <h1>0000</h1>
@@ -98,7 +98,7 @@
             <div class="content-bottom">
                 <h1>New Passbook Request</h1>
             </div>
-        </div>
+        </div> --}}
 
         <div class="content">
             <div class="content-box">

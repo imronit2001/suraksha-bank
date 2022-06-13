@@ -33,7 +33,6 @@ Route::prefix('/')->group(function () {
     Route::get('termsCondition', [termsController::class, 'index']);
 });
 
-
 Auth::routes();
 
 /* ==================================
@@ -105,13 +104,19 @@ Route::prefix('staff')->name('staff-')->group(function () {
     });
     Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function () {
         Route::get('/', [StaffController::class, 'dashboard'])->name('dashboard');
+        Route::get('/customers', [StaffController::class, 'dashboard'])->name('manage-customer');
         Route::get('/credit-money', [StaffController::class, 'creditMoneyIndex'])->name('credit-money');
         Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('credit-money');
         Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('debit-money');
         Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('debit-money');
-        Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
+        // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
         Route::get('/cheque-book-request',[StaffController::class,'ShowChequeBookList'])->name('staff-cheque-book-request');
+        Route::get('/AccountOpeningList',[AccountOpeningFormController::class,'AccountOpeningList']);
+        Route::get('/KYCList',[KYCFormController::class,'KYClist']);
+        Route::get('/CreditRequestList',[CustomerController::class,'CreditRequest']);
+        Route::get('/ShiftData',[CustomerController::class, 'ShiftData']);
+
     });
 });
 
@@ -123,7 +128,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
 Route::prefix('customer')->name('customer-')->group(function () {
     Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
         Route::view('/login', 'customer.login')->name('login');
-        Route::view('/apply', 'AccountOpeningForm')->name('apply');
+        // Route::view('/apply', 'AccountOpeningForm')->name('apply');
         Route::post('/check', [CustomerController::class, 'check'])->name('check');
     });
 

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AccountOpening;
+use App\Models\AccountOpenings;
 use Illuminate\Http\Request;
 
-class AccountOpeningController extends Controller
+class AccountOpeningFormController extends Controller
 {
 
     public function create(Request $request){
-        $AccountOpeningForm = new AccountOpening;
+        $AccountOpeningForm = new AccountOpenings;
             $AccountOpeningForm->prefix=$request->prefix;
             $AccountOpeningForm->FullName=$request->FullName;
             $AccountOpeningForm->DOB=$request->DOB;
@@ -41,9 +41,10 @@ class AccountOpeningController extends Controller
             $AccountOpeningForm->State=$request->State;
             $AccountOpeningForm->Pin=$request->Pin;
             $AccountOpeningForm->Country=$request->Country;
+            $AccountOpeningForm->BranchName=$request->BranchName;
+
             $AccountOpeningForm->Place=$request->Place;
             $AccountOpeningForm->signDate=$request->signDate;
-            
             if ($request->hasFile('ApplicantPhoto')) {
                 $file = $request->file('ApplicantPhoto');
                 $name = $file->hashName();
@@ -59,7 +60,6 @@ class AccountOpeningController extends Controller
                 $file->move('images/customer/ApplicantAadhar/',$filename);
                 $AccountOpeningForm->ApplicantAadhar=$filename;
             }
-    
             if ($request->hasFile('ApplicantSignature')) {
                 $file = $request->file('ApplicantSignature');
                 $name = $file->hashName();
@@ -68,9 +68,17 @@ class AccountOpeningController extends Controller
                 $AccountOpeningForm->ApplicantSignature=$filename;
             }
 
-            dd($request);
-            // $AccountOpeningForm->save();
+            // dd($request);
+            $AccountOpeningForm->save();
+
         return redirect('/')->with('Success','Data Added');
 
+    }
+
+
+    function AccountOpeningList(){
+        $data = AccountOpenings::all();
+        // echo "Code Here";
+        return view('staff/accountApplication',['data'=>$data]);
     }
 }
