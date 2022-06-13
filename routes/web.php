@@ -111,6 +111,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::get('/AccountOpeningList',[AccountOpeningFormController::class,'AccountOpeningList']);
         Route::get('/KYCList',[KYCFormController::class,'KYClist']);
         Route::get('/CreditRequestList',[CustomerController::class,'CreditRequest']);
+        Route::get('/ShiftData',[CustomerController::class, 'ShiftData']);
 
     });
 });

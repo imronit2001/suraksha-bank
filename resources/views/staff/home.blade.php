@@ -58,21 +58,13 @@
                 </a>
                 <span class="tooltip">Credit Card Request</span>
             </li>
-<<<<<<< HEAD
             <!-- <li>
-=======
-            {{-- <li>
->>>>>>> ea36f1cab249c9c42174126df91bb785ac102e80
                 <a href="#">
                     <i class='bx bxl-mastercard'></i>
                     <span class="links_name">Debit Card Request</span>
                 </a>
                 <span class="tooltip">Debit Card Request</span>
-<<<<<<< HEAD
             </li> -->
-=======
-            </li> --}}
->>>>>>> ea36f1cab249c9c42174126df91bb785ac102e80
             <li>
                 <a href="{{ route('staff-credit-money') }}">
                     <i class='bx bx-plus'></i>

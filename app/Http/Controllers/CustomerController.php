@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\customer;
+use App\Models\AccountOpenings;
 use App\Models\CreditCard;
 
 use Illuminate\Support\Str;
@@ -98,6 +99,50 @@ class CustomerController extends Controller
         $data = CreditCard::all();
         // echo "Code Here";
         return view('staff/creditRequest',['data'=>$data]);
+    }
+
+    public function ShiftData($id){
+        $user = AccountOpenings::find($id);
+        $customer = new customer();
+        $customer->prefix = $user->prefix;
+        $customer->FullName = $user->FullName;
+        $customer->DOB = $user->DOB;
+        $customer->gender = $user->gender;
+        $customer->MaritalStatus = $user->MaritalStatus;
+        $customer->FatherName = $user->FatherName;
+        $customer->MotherName = $user->MotherName;
+        $customer->GaurdianName = $user->GaurdianName;
+        $customer->Nationality = $user->Nationality;
+        $customer->ResidentialStatus = $user->ResidentialStatus;
+        $customer->OccupationType = $user->OccupationType;
+        $customer->religion = $user->religion;
+        $customer->category = $user->category;
+        $customer->CustomerType = $user->CustomerType;
+        $customer->Disability = $user->Disability;
+        $customer->Qualification = $user->Qualification;
+        $customer->PanNumber = $user->PanNumber;
+        $customer->Mobile = $user->Mobile;
+        $customer->Email = $user->Email;
+        $customer->Telephone = $user->Telephone;
+        $customer->AddressProof = $user->AddressProof;
+        $customer->AddressProofNumber = $user->AddressProofNumber;
+        $customer->issuedBy = $user->issuedBy;
+        $customer->AddressType = $user->AddressType;
+        $customer->Address = $user->Address;
+        $customer->City = $user->City;
+        $customer->District = $user->District;
+        $customer->State = $user->State;
+        $customer->Pin = $user->Pin;
+        $customer->Country = $user->Country;
+        $customer->Place = $user->Place;
+        $customer->signDate = $user->signDate;
+        $customer->ApplicantPhoto = $user->ApplicantPhoto;
+        $customer->ApplicantSignature = $user->ApplicantSignature;
+        $customer->ApplicantAadhar = $user->ApplicantAadhar;
+
+        $customer->save();
+        
+        return view('/staff/');
     }
 
     // public function changePassworddone(changePassword $req)
