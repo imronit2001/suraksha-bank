@@ -167,7 +167,7 @@
                 <span class="tooltip">Helpline</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('customer-cheque-book')}}">
                     <i class='bx bxs-lock'></i>
                     <span class="links_name">Change Password</span>
                 </a>

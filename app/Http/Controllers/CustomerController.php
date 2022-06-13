@@ -44,9 +44,10 @@ class CustomerController extends Controller
     public function dashboard()
     {
         $cId='1234567890';
+        $aNo='12345678901234';
         $customer = CustomerData::where('customerId', $cId)->latest()->first();
         $fund= FundTransfer::where('customerId',$cId);
-        $transaction=
+        $transaction= Db::table('transaction_details')->where('account_number',$aNo);
         // dd($fund);
         // print_r($customer);
         return view('customer.dashboard',['customer'=>$customer,'fund'=>$fund,'trans'=>$transaction]);

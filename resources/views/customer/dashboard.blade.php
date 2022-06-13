@@ -71,10 +71,13 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($trans as $trans )
+
+                                @endforeach
                                 <tr>
                                     <td>
                                         <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        Jogesh
+                                        {{$trans->beneficiary_nsame}}
                                     </td>
                                     <td>21May2019</td>
                                     <td><span class="badge bg-primary">Deposit</span></td>
@@ -82,29 +85,7 @@
                                         28,9870
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <img src="" alt=" 2" class="img-circle img-size-32 mr-2">
-                                        UPI
-                                    </td>
-                                    <td>29 May 2020</td>
-                                    <td><span class="badge bg-danger">Withdraw</span></td>
-                                    <td>
-                                        30,000
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="" alt=" 2" class="img-circle img-size-32 mr-2">
-                                        {{}}
-                                    </td>
-                                    <td>29 June 2020</td>
-                                    <td><span class="badge bg-success">Withdraw</span></td>
-                                    <td>
-                                        30,000
-                                    </td>
-                                </tr>
-
+                                @endeach
                             </tbody>
                         </table>
                     </div>
@@ -126,46 +107,21 @@
                         <table class="table table-striped table-valign-middle">
                             <thead>
                                 <tr>
-                                    <th>Within Bank Beneficiaries</th>
-                                    <th>Other Bank Beneficiary </th>
+                                    <th>Beneficiary Name</th>
+                                    <th>Beneficiary Account No </th>
+                                    <th>Transaction Id</th>
+                                    <th>Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
                                         <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        Jogesh
+                                        {{$fund->beneficiary_name}}
                                     </td>
-                                    <td>HDFC</td>
+                                    <td>{{$fund->beneficiary_accountno}}</td>
                                     <td>IFSCHDFC00007856</td>
-                                    <td><span class="badge p-2 bg-primary">Transfer</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        Jogesh
-                                    </td>
-                                    <td>HDFC</td>
-                                    <td>IFSCHDFC00007856</td>
-                                    <td><span class="badge p-2 bg-primary">Transfer</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        Jogesh
-                                    </td>
-                                    <td>HDFC</td>
-                                    <td>IFSCHDFC00007856</td>
-                                    <td><span class="badge p-2 bg-primary">Transfer</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        Jogesh
-                                    </td>
-                                    <td>HDFC</td>
-                                    <td>IFSCHDFC00007856</td>
-                                    <td><span class="badge p-2 bg-primary">Transfer</span></td>
+                                    <td><span class="badge p-2 bg-primary">{{$fund->amount}}</span></td>
                                 </tr>
                             </tbody>
                         </table>
