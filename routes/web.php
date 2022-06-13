@@ -102,11 +102,12 @@ Route::prefix('staff')->name('staff-')->group(function () {
     });
     Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function () {
         Route::get('/', [StaffController::class, 'dashboard'])->name('dashboard');
+        Route::get('/customers', [StaffController::class, 'dashboard'])->name('manage-customer');
         Route::get('/credit-money', [StaffController::class, 'creditMoneyIndex'])->name('credit-money');
         Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('credit-money');
         Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('debit-money');
         Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('debit-money');
-        Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
+        // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
     });
 });

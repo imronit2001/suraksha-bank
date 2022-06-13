@@ -37,13 +37,13 @@
             </a>
             <span class="tooltip">Dashboard</span>
           </li>
-          <li>
+          {{-- <li>
             <a href="{{route('admin-bank-balance')}}">
               <i class='bx bx-wallet'></i>
               <span class="links_name">Bank Balance</span>
             </a>
             <span class="tooltip">Bank Balance</span>
-          </li>
+          </li> --}}
 
           <li>
             <a href="{{route('admin-add-staff')}}">
@@ -73,13 +73,13 @@
             </a>
             <span class="tooltip">Managers</span>
           </li>
-          <li>
+          {{-- <li>
             <a href="{{route('admin-manage-customer')}}">
               <i class='bx bxs-user-detail'></i>
               <span class="links_name">Manage Customers</span>
             </a>
             <span class="tooltip">Manage Customers</span>
-         </li>
+         </li> --}}
         {{--  <li>
             <a href="#">
               <i class='bx bx-building-house'></i>
@@ -115,20 +115,20 @@
             </a>
             <span class="tooltip">Branch change</span>
           </li>
-          <li>
+          {{-- <li>
             <a href="#">
               <i class='bx bx-credit-card'></i>
               <span class="links_name">Credit Card a/c</span>
             </a>
             <span class="tooltip">Credit Card a/c</span>
-          </li>
-          <li>
-            <a href="fixed-deposit.html">
+          </li> --}}
+          {{-- <li>
+            <a href="{{route('admin-fixed-deposit')}}">
               <i class='bx bxs-wallet-alt'></i>
               <span class="links_name">Fixed Deposits</span>
             </a>
             <span class="tooltip">Fixed Deposits</span>
-          </li>
+          </li> --}}
           <li>
             <a href="{{route('admin-termsCondition')}}" target="_blank">
               <i class='bx bxs-copy-alt'></i>
@@ -155,10 +155,14 @@
           </div>
           <li class="profile">
             <div class="profile-details">
-              <img src="{{asset('images/ronit.JPG')}}" alt="profileImg">
+              <img src={{asset('images/staff.png')}} alt="profileImg">
               <div class="name_job">
-                <div class="name">Ronit Singh</div>
-                <div class="job">Web designer</div>
+                <div class="name">
+                    @php
+                            echo Auth::user()->fullName;
+                        @endphp
+                </div>
+                <div class="job">Bank Manager</div>
               </div>
             </div>
             <!-- <i class='bx bx-log-out' id="log_out"></i> -->

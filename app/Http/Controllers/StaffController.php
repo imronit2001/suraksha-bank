@@ -113,7 +113,7 @@ class StaffController extends Controller
                 $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.credit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
-                $staffPIN = "1111";
+                $staffPIN = Auth::user()->pin;
                 if ($request->pin == $staffPIN) {
                     DB::table('customer_data')->where('accountNo', $request->aNo)->increment('balance', $request->amount);
                     $customer = CustomerData::where('accountNo', $request->aNo)->first();
@@ -145,6 +145,8 @@ class StaffController extends Controller
                     Mail::to($customer->email)->send(new DebitCreditMail($data));
 
                     return response()->view('staff.transaction-reciept', $data);
+                }else{
+                    return response()->view('staff.wrongpin');
                 }
             }
         }
@@ -156,11 +158,6 @@ class StaffController extends Controller
             if ($request->val == 1) {
                 $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.credit-money-ajax', ['customers' => $customers]);
-            } elseif ($request->val == 2) {
-                $staffPIN = "1111";
-                if ($request->pin == $staffPIN) {
-                    return response()->view('staff.dashboard');
-                }
             }
         }
         return redirect()->route('staff-credit-money');
@@ -173,7 +170,7 @@ class StaffController extends Controller
                 $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.debit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
-                $staffPIN = "1111";
+                $staffPIN = Auth::user()->pin;
                 if ($request->pin == $staffPIN) {
                     DB::table('customer_data')->where('accountNo', $request->aNo)->decrement('balance', $request->amount);
                     $customer = CustomerData::where('accountNo', $request->aNo)->first();
@@ -194,6 +191,8 @@ class StaffController extends Controller
 
 
                     return response()->view('staff.transaction-reciept', $data);
+                }else{
+                    return response()->view('staff.wrong pin');
                 }
             }
         }
@@ -206,7 +205,7 @@ class StaffController extends Controller
                 $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.debit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
-                $staffPIN = "1111";
+                $staffPIN = Auth::user()->pin;
                 if ($request->pin == $staffPIN) {
                     return response()->view('staff.dashboard');
                 }

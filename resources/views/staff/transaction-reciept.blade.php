@@ -87,7 +87,11 @@
                 <div class="w-50 text-dark blockquote" style="font-size: 16px;">{{ $time }}</div>
             </div>
             <div class="w-100 mt-4 d-flex justify-content-center align-items-center flex-column">
-                <div class="w-50 m-0 p-0 text-center text-dark blockquote" style="font-size: 18px;">Staff Name</div>
+                <div class="w-50 m-0 p-0 text-center text-dark blockquote" style="font-size: 18px;">
+                    @php
+                        echo Auth::user()->fullName;
+                    @endphp
+                </div>
                 <div class="w-50 m-0 p-0 text-center border-top border-dark border-2 text-dark blockquote"
                     style="font-size: 16px;">Bank Official Signature</div>
             </div>
