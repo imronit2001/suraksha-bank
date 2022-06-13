@@ -119,7 +119,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
 Route::prefix('customer')->name('customer-')->group(function () {
     Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
         Route::view('/login', 'customer.login')->name('login');
-        Route::view('/apply', 'AccountOpeningForm')->name('apply');
+        // Route::view('/apply', 'AccountOpeningForm')->name('apply');
         Route::post('/check', [CustomerController::class, 'check'])->name('check');
     });
 
