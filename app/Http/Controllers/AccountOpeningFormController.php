@@ -68,6 +68,7 @@ class AccountOpeningFormController extends Controller
 
             // dd($request);
             $AccountOpeningForm->save();
+
         return redirect('/')->with('Success','Data Added');
 
     }

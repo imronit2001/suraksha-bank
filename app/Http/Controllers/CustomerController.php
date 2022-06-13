@@ -140,6 +140,27 @@ class CustomerController extends Controller
         $customer->ApplicantSignature = $user->ApplicantSignature;
         $customer->ApplicantAadhar = $user->ApplicantAadhar;
 
+
+
+        $lastCustomer = customer::latest()->first();
+        if ($lastCustomer == "") {
+            $customer->customerid = "customer" . "0001";
+        } else {
+            $CustomerId = explode("customer", $lastCustomer->userid);
+            $customer->customerid = "customer" . sprintf("%04d", $CustomerId[1] + 1);
+        }
+        $password = Str::random(10);
+        $customer->password = Hash::make($password);
+        $customer->pin = "1234";
+        $customer->save();
+        $data = [
+            'FullName' => $customer->FullName,
+            'Email' => $customer->Email,
+            'customer_id' => $customer->userid,
+            'login_pass' => $password,
+
+        ];
+
         $customer->save();
         
         return view('/staff/');
