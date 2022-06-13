@@ -8,6 +8,8 @@ use App\Models\Branch;
 use App\Models\change_branch;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class ChangeBranchController extends Controller
@@ -20,7 +22,7 @@ class ChangeBranchController extends Controller
     public function index()
     {
         $branch = Branch::all();
-        $cId = "2517383537107734";
+        $cId = Auth::user()->customerId;
         $status_id = 0 ;
         $status = change_branch::where('cId', $cId)->latest()->first();
         if($status != ""){
@@ -40,10 +42,10 @@ class ChangeBranchController extends Controller
     public function create(Request $request)
     {
         $branch = new change_branch();
-        $aNo = "123456789012";
-        $cId = "1234567890";
+        $aNo = Auth::user()->account_no;
+        $cId = Auth::user()->customerId;
         $aType = "Saving Account";
-        $branchName = "Chuchura";
+        $branchName = Auth::user()->BranchName;
         $branchCode = "SKB1";
         $branch->aType  = $aType;
         $branch->aNo = $aNo;

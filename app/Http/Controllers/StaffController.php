@@ -13,9 +13,10 @@ use App\Models\Staff;
 use App\Models\AddManagerForm;
 use App\Models\AddStaffForm;
 use App\Models\change_branch;
-use App\Models\CustomerData;
+use App\Models\customer;
 use App\Models\FixedDeposit;
 use App\Models\Helpline;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -40,7 +41,7 @@ class StaffController extends Controller
 
             // $new_account = AccountOpening::all();
             // $new_ac = $new_account->count();
-            $customers = CustomerData::all();
+            $customers = customer::all();
             $customer = $customers->count();
             $staffs = Staff::all();
             $staff = $staffs->count();
@@ -83,7 +84,7 @@ class StaffController extends Controller
 
         // $new_account = AccountOpening::all();
         // $new_ac = $new_account->count();
-        $customers = CustomerData::all();
+        $customers = customer::all();
         $customer = $customers->count();
         $staffs = Staff::all();
         $staff = $staffs->count();
@@ -105,16 +106,16 @@ class StaffController extends Controller
     }
     public function creditMoneyIndex(Request $request)
     {
-        $customers = DB::table('customer_data')->get();
+        $customers = DB::table('customers')->get();
         if ($request->ajax()) {
             if ($request->val == 1) {
-                $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
+                $customers = DB::table('customers')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.credit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
                 $staffPIN = Auth::user()->pin;
                 if ($request->pin == $staffPIN) {
-                    DB::table('customer_data')->where('accountNo', $request->aNo)->increment('balance', $request->amount);
-                    $customer = CustomerData::where('accountNo', $request->aNo)->first();
+                    DB::table('customers')->where('accountNo', $request->aNo)->increment('balance', $request->amount);
+                    $customer = customer::where('accountNo', $request->aNo)->first();
                     $name = $customer->customerName;
                     $cId = $customer->customerId;
                     $aNo = $customer->accountNo;
@@ -125,6 +126,17 @@ class StaffController extends Controller
                     date_default_timezone_set('Asia/Kolkata');
                     $date = date("jS F Y");
                     $time = date("h:i:s A");
+
+                    $transaction = new Transaction();
+                    $transaction->accountNo = $aNo;
+                    $transaction->date = date("d-m-Y");
+                    $transaction->time = date("h:i:s A");
+                    $transaction->referenceId = $transactionId;
+                    $transaction->credit = $amount ;
+                    $transaction->debit = "";
+                    $transaction->balance = $balance;
+                    $transaction->save();
+
                     // $id = $customer->userid; //user id
                     // $id_lenth = strlen($id);
                     // $stamp = mt_rand(2, 100);
@@ -154,7 +166,7 @@ class StaffController extends Controller
     {
         if ($request->ajax()) {
             if ($request->val == 1) {
-                $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
+                $customers = DB::table('customers')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.credit-money-ajax', ['customers' => $customers]);
             }
         }
@@ -162,16 +174,16 @@ class StaffController extends Controller
     }
     public function debitMoneyIndex(Request $request)
     {
-        $customers = DB::table('customer_data')->get();
+        $customers = DB::table('customers')->get();
         if ($request->ajax()) {
             if ($request->val == 1) {
-                $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
+                $customers = DB::table('customers')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.debit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
                 $staffPIN = Auth::user()->pin;
                 if ($request->pin == $staffPIN) {
-                    DB::table('customer_data')->where('accountNo', $request->aNo)->decrement('balance', $request->amount);
-                    $customer = CustomerData::where('accountNo', $request->aNo)->first();
+                    DB::table('customers')->where('accountNo', $request->aNo)->decrement('balance', $request->amount);
+                    $customer = customer::where('accountNo', $request->aNo)->first();
                     $name = $customer->customerName;
                     $cId = $customer->customerId;
                     $aNo = $customer->accountNo;
@@ -182,6 +194,17 @@ class StaffController extends Controller
                     date_default_timezone_set('Asia/Kolkata');
                     $date = date("jS F Y");
                     $time = date("h:i:s A");
+
+                    $transaction = new Transaction();
+                    $transaction->accountNo = $aNo;
+                    $transaction->date = date("d-m-Y");
+                    $transaction->time = date("h:i:s A");
+                    $transaction->referenceId = $transactionId;
+                    $transaction->credit = "" ;
+                    $transaction->debit = $amount;
+                    $transaction->balance = $balance;
+                    $transaction->save();
+
 
                     $data = ['name' => $name, 'customerId' => $cId, 'accountNo' => $aNo, 'transactionId' => $transactionId, 'amount' => $amount, 'balance' => $balance, 'mode' => $mode, 'date' => $date, 'time' => $time];
 
@@ -200,7 +223,7 @@ class StaffController extends Controller
     {
         if ($request->ajax()) {
             if ($request->val == 1) {
-                $customers = DB::table('customer_data')->where('accountNo', $request->aNo)->get();
+                $customers = DB::table('customers')->where('accountNo', $request->aNo)->get();
                 return response()->view('staff.debit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
                 $staffPIN = Auth::user()->pin;
