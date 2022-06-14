@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerData;
 use Illuminate\Http\Request;
 
 use App\Models\customer;
@@ -55,7 +56,8 @@ class CustomerController extends Controller
         return view('customer.branch-change');
     }
     public function FixedDeposite(){
-        return view('customer.fixed-deposite');
+        $data = CustomerData::all();
+        return view('customer.fixed-deposite',['customer'=>$data]);
     }
     public function FundTransfer(){
         return view('customer.fund-transfer');
