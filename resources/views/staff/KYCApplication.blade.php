@@ -1,34 +1,40 @@
 @extends('staff.home')
 @section('title', 'KYC Application List')
 @section('page-name')
-    <div>
-        <ul>
-            @foreach($data as $i)
-            <li>{{$i->formType}}</li>
-            <li>{{$i->prefix}}</li>
-            <li>{{$i->FullName}}</li>
-            <li>{{$i->FatherName}}</li>
-            <li>{{$i->gender}}</li>
-            <li>{{$i->DOB}}</li>
-            <li>{{$i->MaritalStatus}}</li>
-            <li>{{$i->Nationality}}</li>
-            <li>{{$i->ResidentialStatus}}</li>
-            <li>{{$i->PanNumber}}</li>
-            <li>{{$i->AadharNumber}}</li>
-            <li>{{$i->Address}}</li>
-            <li>{{$i->City}}</li>
-            <li>{{$i->Pin}}</li>
-            <li>{{$i->State}}</li>
-            <li>{{$i->Country}}</li>
-            <li>{{$i->Mobile}}</li>
-            <li>{{$i->Telephone}}</li>
-            <li>{{$i->AddressProofNumber}}</li>
-            <li>{{$i->Date}}</li>
-            <li>{{$i->ApplicantPhoto}}</li>
-            <li>{{$i->ApplicantSignature}}</li>
-            <li>{{$i->ApplicantAadhar}}</li>
-            <li>{{$i->ApplicantPan}}</li>
+<div style="width:75%; float:right;margin-left:10%;">
+    <table class="table table-hover">
+
+        <thead>
+            <tr>
+                <th scope="col" class="smallwidth">Form Type</th>
+                <th scope="col" class="smallwidth">Prefix</th>
+                <th scope="col" class="smallwidth">Customer Name</th>
+                <th scope="col" class="smallwidth">Phone</th>
+                <th scope="col">More Details</th>
+                <!-- <th scope="col">Action</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($data as $i)
+            <tr>
+                <td>
+                    <p>{{$i->formType}}</p>
+                </td>
+                <td>
+                    <p>{{$i->prefix}}</p>
+                </td>
+                <td>
+                    <p>{{$i->FullName}}</p>
+                </td>
+                <td>
+                    <p>{{$i->Mobile}}</p>
+                </td>
+                <td>
+                    <a href="{{url('/staff/KYCRequests')}}">Click Here</a>
+                </td>
+            </tr>
             @endforeach
-        </ul>
-    </div>
+        </tbody>
+    </table>
+</div>
 @endsection

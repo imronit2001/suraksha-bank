@@ -112,13 +112,16 @@ Route::prefix('staff')->name('staff-')->group(function () {
         // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
         Route::get('/cheque-book-request',[StaffController::class,'ShowChequeBookList'])->name('cheque-book-request');
-        Route::get('/AccountOpeningList',[AccountOpeningFormController::class,'AccountOpeningList'])->name('AccountOpeningList');
+        Route::get('/AccountOpeningRequests',[AccountOpeningFormController::class,'AccountOpeningList'])->name('AccountOpeningList');
+        Route::get('/AccountOpeningList/{id}',[AccountOpeningFormController::class,'AccountRequests'])->name('AccountRequests');
 
         // Route for approving account opening
         Route::get('/AccountOpeningApprove/{id}',[CustomerController::class,'ShiftData']);
 
         Route::get('/KYCList',[KYCFormController::class,'KYClist']);
-        Route::get('/CreditRequestList',[CustomerController::class,'CreditRequest']);
+        Route::get('/KYCRequests/{id}',[KYCFormController::class,'KYCRequests']);
+        Route::get('/CreditList',[CustomerController::class,'CreditRequest']);
+        Route::get('/CreditRequests/{id}',[CustomerController::class,'CreditRequests']);
         Route::get('/ShiftData',[CustomerController::class, 'ShiftData']);
 
     });

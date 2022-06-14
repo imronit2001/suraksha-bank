@@ -200,10 +200,18 @@
 
             <br><br><label for="#">Branch Name: <span>*</span></label>
             <select name="BranchName" id="">
-                <option value="Naihati">Naihati</option>
-                <option value="Kankinara">Kankinara</option>
-                <option value="Chuchurah">Chuchurah</option>
-                <option value="Hooghly">Hooghly</option>
+                <option value="">Choose</option>
+                @foreach ($branch as $br)
+                    <option value="{{ $br->branch_name }}">{{ $br->branch_name }}</option>
+                @endforeach
+            </select>
+
+            <br><br><label for="#">Branch Code: <span>*</span></label>
+            <select name="BranchCode" id="">
+                <option value="">Choose</option>
+                @foreach ($branch as $br)
+                     <option value="{{ $br->id }}">{{ $br->branch_id_prefix . ' ' . $br->branch_code }}</option>
+                @endforeach
             </select>
             <br><br><label for="#">Applicant's photo <span>*</span></label>
             <input type="file" name="ApplicantPhoto" id="" value="">
