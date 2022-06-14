@@ -12,6 +12,9 @@ use App\Http\Controllers\Helplinecontroller;
 use App\Http\Controllers\AdminHelplinecontroller;
 use App\Http\Controllers\ChangeBranchController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\FixedDepositeController;
+use App\Http\Controllers\ChequeBookController;
+use App\Http\Controllers\FundTransferController;
 use Illuminate\Support\Facades\Auth;
 
 /*================================
@@ -108,11 +111,13 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('debit-money');
         // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
-        Route::get('/accountRequests',[AccountOpeningFormController::class,'AccountRequests']);
-        Route::get('/AccountOpeningList',[AccountOpeningFormController::class,'AccountOpeningList']);
-        Route::get('/KYCRequests',[KYCFormController::class,'KYCRequests']);
-        Route::get('/KYCRequestList',[KYCFormController::class,'KYClist']);
-        Route::get('/CreditRequests',[CustomerController::class,'CreditRequests']);
+        Route::get('/cheque-book-request',[StaffController::class,'ShowChequeBookList'])->name('cheque-book-request');
+        Route::get('/AccountOpeningList',[AccountOpeningFormController::class,'AccountOpeningList'])->name('AccountOpeningList');
+
+        // Route for approving account opening
+        Route::get('/AccountOpeningApprove/{id}',[CustomerController::class,'ShiftData']);
+
+        Route::get('/KYCList',[KYCFormController::class,'KYClist']);
         Route::get('/CreditRequestList',[CustomerController::class,'CreditRequest']);
         Route::get('/ShiftData',[CustomerController::class, 'ShiftData']);
 
@@ -129,6 +134,7 @@ Route::prefix('customer')->name('customer-')->group(function () {
         Route::view('/login', 'customer.login')->name('login');
         // Route::view('/apply', 'AccountOpeningForm')->name('apply');
         Route::post('/check', [CustomerController::class, 'check'])->name('check');
+        Route::post('/logout', [CustomerController::class, 'logout'])->name('logout');
     });
 
     /* ========================================================
@@ -136,7 +142,7 @@ Route::prefix('customer')->name('customer-')->group(function () {
         It will be added once Customer Account Approval Done
     ===========================================================*/
 
-    // Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
+    Route::middleware(['auth:customer', 'PreventBackHistory'])->group(function () {
     Route::get('/', [CustomerController::class, 'dashboard'])->name('dashboard');
     Route::get('/transaction-password', [CustomerController::class, 'TransactionPassword'])->name('transaction-password');
     Route::get('/account-details', [CustomerController::class, 'AccountDetails'])->name('account-details');
@@ -152,6 +158,5 @@ Route::prefix('customer')->name('customer-')->group(function () {
     Route::post('/KYCForm', [KYCFormController::class, 'create']);
     Route::get('/CreditCard', [CustomerController::class, 'CreditCard']);
     Route::post('/CreditCard', [CustomerController::class, 'CreateCreditCard']);
-    Route::post('/logout', [CustomerController::class, 'logout'])->name('logout');
-    // });
+    });
 });

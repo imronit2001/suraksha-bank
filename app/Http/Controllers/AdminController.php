@@ -255,9 +255,9 @@ class AdminController extends Controller
         $application->save();
         $customer = CustomerData::where("accountNo", $application->aNo)->first();
         $data = [
-            'name' => $customer->customerName,
-            'accountNo' => $customer->accountNo,
-            'prevBranch' => $application->branchName . " " . $application->branchCode,
+            'name' => $customer->FullName,
+            'accountNo' => $customer->account_no,
+            'prevBranch' => $application->BranchName . " " . $application->branchCode,
             'curBranch' => $application->newBranchName . " " . $application->newBranchCode,
             'status' => 2,
         ];

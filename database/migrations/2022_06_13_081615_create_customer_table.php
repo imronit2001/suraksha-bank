@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('customerId');
             $table->string('account_no');
-            $table->string('login_pass');
+            $table->string('password');
             $table->string('transaction_pass');
             $table->string('prefix');
             $table->string('FullName');

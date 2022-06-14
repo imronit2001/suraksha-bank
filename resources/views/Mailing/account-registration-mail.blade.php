@@ -10,11 +10,6 @@ password : {{ $data["password"] }}
 
 Please Change Your Login Password after login first time
 
-{{-- @component('mail::button', ['url' => ''])
-Button Text
-@endcomponent --}}
-
 Thanks,<br>
-{{-- {{ config('app.name') }} --}}
 Suraksha Bank
 @endcomponent

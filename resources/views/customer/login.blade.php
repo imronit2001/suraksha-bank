@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-4 offset-md-4" style="margin-top: 45px;">
                   <h4>Customer Login</h4><hr>
-                  <form action="" method="post" >
+                  <form action="{{ route('customer-check') }}" method="post" >
                     @if (Session::get('fail'))
                         <div class="alert alert-danger">
                             {{ Session::get('fail') }}
@@ -35,7 +35,7 @@
                       </div>
                       <br>
                       <a href="{{ url('/apply') }}">Create new Account</a>
-                      
+
                   </form>
             </div>
         </div>
