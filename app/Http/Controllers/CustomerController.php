@@ -52,12 +52,12 @@ class CustomerController extends Controller
     {
         $cId = Auth::user()->customerId;
         $aNo = '12345678901234';
-        $customer = CustomerData::where('customerId', $cId)->latest()->first();
-        $fund = FundTransfer::where('customerId', $cId);
-        $transaction = Db::table('transaction_details')->where('account_number', $aNo);
+        $customer = Customer::where('customerId', $cId)->latest()->first();
+        $fund = FundTransfer::all();
+        // $transaction = Db::table('transaction')->
         // dd($fund);
-        // print_r($customer);
-        return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $transaction]);
+        dd($fund);
+        // return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $transaction]);
     }
 
     public function TransactionPassword()
