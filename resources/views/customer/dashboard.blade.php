@@ -77,7 +77,7 @@
                                 <tr>
                                     <td>
                                         <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        {{$trans->beneficiary_nsame}}
+                                        {{$trans->beneficiary_name}}
                                     </td>
                                     <td>21May2019</td>
                                     <td><span class="badge bg-primary">Deposit</span></td>
