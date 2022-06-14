@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Helpline;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\HelplineMail;
 
 class AdminHelplinecontroller extends Controller
 {
@@ -32,7 +34,18 @@ class AdminHelplinecontroller extends Controller
 
     public function helplineReply(Request $request)
     {
-        dd($request->all());
+        $name = $request->name;
+        $reply = $request->reply ;
+        $email = $request->email ;
+        $id = $request->id ;
+
+        $data = ['name'=>$name, 'reply'=>$reply];
+
+        Mail::to($email)->send(new HelplineMail($data));
+        // dd($request->all());
+        Helpline::destroy($id);
+        return redirect((route('admin-helpline')));
+
     }
 
     public function issueStaff(Request $request)
@@ -55,7 +68,17 @@ class AdminHelplinecontroller extends Controller
 
     public function helplineReplyStaff(Request $request)
     {
-        dd($request->all());
+        $name = $request->name;
+        $reply = $request->reply ;
+        $email = $request->email ;
+        $id = $request->id ;
+
+        $data = ['name'=>$name, 'reply'=>$reply];
+
+        Mail::to($email)->send(new HelplineMail($data));
+        // dd($request->all());
+        Helpline::destroy($id);
+        return redirect((route('staff-helpline')));
     }
     /**
      * Show the form for creating a new resource.

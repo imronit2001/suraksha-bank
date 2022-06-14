@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Branch;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class indexController extends Controller
 {
@@ -10,7 +14,9 @@ class indexController extends Controller
         return view('index');
     }
     public function accountOpening(){
-        return view('customer.AccountOpeningForm');
+        $branch = Branch::all();
+        // dd($branch);
+        return view('customer.AccountOpeningForm',['branch'=>$branch]);
     } 
     public function offer(){
         return view('Offers');

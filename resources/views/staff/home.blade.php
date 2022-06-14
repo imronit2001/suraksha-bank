@@ -45,14 +45,14 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{url('staff/AccountOpeningList')}}">
+                <a href="{{url('staff/AccountOpeningRequests')}}">
                     <i class='bx bx-user-plus'></i>
                     <span class="links_name">New a/c Application</span>
                 </a>
                 <span class="tooltip">New a/c Application</span>
             </li>
             <li>
-                <a href="{{url('staff/CreditRequestList')}}">
+                <a href="{{url('staff/CreditList')}}">
                     <i class='bx bx-credit-card'></i>
                     <span class="links_name">Credit Card Request</span>
                 </a>
