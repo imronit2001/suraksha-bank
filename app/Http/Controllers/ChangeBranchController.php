@@ -6,6 +6,7 @@ use App\Mail\BranchChangeMail;
 use App\Models\CustomerData;
 use App\Models\Branch;
 use App\Models\change_branch;
+use App\Models\customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +47,7 @@ class ChangeBranchController extends Controller
         $cId = Auth::user()->customerId;
         $aType = "Saving Account";
         $branchName = Auth::user()->BranchName;
-        $branchCode = "SKB1";
+        $branchCode = Auth::user()->BranchCode;
         $branch->aType  = $aType;
         $branch->aNo = $aNo;
         $branch->cId = $cId;
@@ -57,16 +58,15 @@ class ChangeBranchController extends Controller
         $branch->reason = $request->reason;
         $branch->save();
 
-        $application = change_branch::where('aNo',$aNo)->latest()->get();
-        $customer = CustomerData::where("accountNo", $aNo)->latest()->get();
+        $application = change_branch::where('aNo',$aNo)->latest()->first();
         $data = [
-            'name' => $customer->customerName,
-            'accountNo' => $customer->accountNo,
+            'name' => Auth::user()->FullName,
+            'accountNo' => Auth::user()->account_no,
             'prevBranch' => $application->branchName . " " . $application->branchCode,
             'curBranch' => $application->newBranchName . " " . $application->newBranchCode,
             'status' => 0,
         ];
-        Mail::to($customer->email)->send(new BranchChangeMail($data));
+        Mail::to(Auth::user()->Email)->send(new BranchChangeMail($data));
 
         return redirect((route('customer-branch-change')));
     }
@@ -76,7 +76,6 @@ class ChangeBranchController extends Controller
         $change_branch = change_branch::find($id);
         $change_branch->status = -1 ;
         $change_branch->save();
-        // echo $change_branch;
         return redirect((route('customer-branch-change')));
     }
 
