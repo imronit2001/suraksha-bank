@@ -1,4 +1,4 @@
-@extends('admin.home')
+@extends('staff.home')
 @section('title','Helpline')
 @section('page-name')
 
@@ -17,7 +17,7 @@
     </tbody>
     </table>
 </div>
-<form action="{{route('admin-helplineReply')}}" method="POST">
+<form action="{{route('staff-helplineReply')}}" method="POST">
     @csrf
     <div class="justify-content-center align-item-center">
         <div class="my-5 py-5 text-dark">

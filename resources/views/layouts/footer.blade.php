@@ -30,7 +30,7 @@
                     <p>&copy; Suraksha Bank </p><p> All rights reserved | Techno India Hooghly Campus</p>
                 </div>
                 <div class="design&Develope">
-                    <p>Designed & Developed by Atul Kumar Giri, Gaurav Kumar Jha, Gulafshan Parwin, Mohit Gupta, Ronit Singh under <strong>Major Project of BCA (2019-2022) </strong> </p>
+                    <p>Designed & Developed by Atul Kumar Giri, Gaurav Jha, Gulafshan Parwin, Mohit Gupta, Ronit Singh under <strong>Major Project of BCA (2019-2022) </strong> </p>
                 </div>
             </div>
         </footer>

@@ -88,6 +88,7 @@ Route::prefix('admin')->name('admin-')->group(function () {
         //helpine
         Route::get('/helpline', [AdminHelplinecontroller::class, 'issue'])->name('helpline');
         Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issues'])->name('helpline-view');
+        Route::post('/helplineReply', [AdminHelplinecontroller::class, 'helplineReply'])->name('helplineReply');
     });
 });
 
@@ -123,6 +124,11 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::get('/CreditList',[CustomerController::class,'CreditRequest']);
         Route::get('/CreditRequests/{id}',[CustomerController::class,'CreditRequests']);
         Route::get('/ShiftData',[CustomerController::class, 'ShiftData']);
+
+        Route::get('/helpline', [AdminHelplinecontroller::class, 'issueStaff'])->name('helpline');
+        Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issuesStaff'])->name('helpline-view');
+        Route::post('/helplineReply', [AdminHelplinecontroller::class, 'helplineReplyStaff'])->name('helplineReply');
+
 
     });
 });
