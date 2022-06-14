@@ -27,8 +27,9 @@ class BranchController extends Controller
         if ($lastbranch == "") {
             $branch->branch_code = "0001";
         } else {
-            $branch->branch_code = sprintf("%04d", $lastbranch->branch_code + 1);
+            $branch->branch_code = sprintf("%04d", ($lastbranch->branch_code + 1));
         }
+        // echo $lastbranch->branch_code;
         $branch->save();
         return view('/admin/add-branch');
     }
