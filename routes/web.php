@@ -88,6 +88,8 @@ Route::prefix('admin')->name('admin-')->group(function () {
         //helpine
         Route::get('/helpline', [AdminHelplinecontroller::class, 'issue'])->name('helpline');
         Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issues'])->name('helpline-view');
+        // Route::post('/helpline-view{id}', [AdminHelplinecontroller::class, 'helplineReply'])->name('helpline-view');
+        Route::post('/helplineReply', [AdminHelplinecontroller::class, 'helplineReply'])->name('helplineReply');
     });
 });
 

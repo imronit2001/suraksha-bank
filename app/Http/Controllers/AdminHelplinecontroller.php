@@ -30,6 +30,10 @@ class AdminHelplinecontroller extends Controller
         return view('admin.customer-issue',['Helpline'=>$Helpline]);
     }
 
+    public function helplineReply(Request $request)
+    {
+        dd($request->all());
+    }
     /**
      * Show the form for creating a new resource.
      *
