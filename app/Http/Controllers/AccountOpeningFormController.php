@@ -42,7 +42,6 @@ class AccountOpeningFormController extends Controller
             $AccountOpeningForm->Pin=$request->Pin;
             $AccountOpeningForm->Country=$request->Country;
             $AccountOpeningForm->BranchName=$request->BranchName;
-
             $AccountOpeningForm->Place=$request->Place;
             $AccountOpeningForm->signDate=$request->signDate;
             if ($request->hasFile('ApplicantPhoto')) {
