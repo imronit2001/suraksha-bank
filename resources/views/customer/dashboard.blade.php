@@ -33,7 +33,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Branch</span>
                         <span class="info-box-number">
-                        {{$customer->branch}}
+                        {{$customer->branchName}}
                         </span>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                                 <tr>
                                     <td>
                                         <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        {{$trans->beneficiary_name}}
+                                        {{-- {{$trans->beneficiary_name}} --}}
                                     </td>
                                     <td>21May2019</td>
                                     <td><span class="badge bg-primary">Deposit</span></td>
