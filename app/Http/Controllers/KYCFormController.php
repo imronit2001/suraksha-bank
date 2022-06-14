@@ -76,4 +76,7 @@ class KYCFormController extends Controller
         // echo "Code Here";
         return view('staff/KYCApplication',['data'=>$data]);
     }
+    function KYCRequests(){
+        return view('staff/KYCRequests');
+    }
 }

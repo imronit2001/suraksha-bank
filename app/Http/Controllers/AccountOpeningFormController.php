@@ -81,4 +81,9 @@ class AccountOpeningFormController extends Controller
         // echo "Code Here";
         return view('staff/accountApplication',['data'=>$data]);
     }
+
+    public function AccountRequests(){
+        $data = AccountOpenings::all();
+        return view('staff/AccountRequests',['data'=>$data]);
+    }
 }

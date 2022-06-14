@@ -100,6 +100,9 @@ class CustomerController extends Controller
         // echo "Code Here";
         return view('staff/creditRequest',['data'=>$data]);
     }
+    function CreditRequests(){
+        return view('/staff/CreditRequests');
+    }
 
     public function ShiftData($id){
         $user = AccountOpenings::find($id);

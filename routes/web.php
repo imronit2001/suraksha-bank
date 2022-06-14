@@ -108,8 +108,11 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('debit-money');
         // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
+        Route::get('/accountRequests',[AccountOpeningFormController::class,'AccountRequests']);
         Route::get('/AccountOpeningList',[AccountOpeningFormController::class,'AccountOpeningList']);
-        Route::get('/KYCList',[KYCFormController::class,'KYClist']);
+        Route::get('/KYCRequests',[KYCFormController::class,'KYCRequests']);
+        Route::get('/KYCRequestList',[KYCFormController::class,'KYClist']);
+        Route::get('/CreditRequests',[CustomerController::class,'CreditRequests']);
         Route::get('/CreditRequestList',[CustomerController::class,'CreditRequest']);
         Route::get('/ShiftData',[CustomerController::class, 'ShiftData']);
 

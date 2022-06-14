@@ -9,8 +9,8 @@
                         <th scope="col" class="smallwidth">Customer Name</th>
                         <th scope="col" class="smallwidth">Email</th>
                         <th scope="col" class="smallwidth">Phone</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">More Details</th>
+                        <!-- <th scope="col">Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +29,9 @@
                                 <p>{{ $i->Mobile }}</p>
                             </td>
                             <td>
+                                <a href="{{url('/staff/accountRequests')}}">Click Here</a>
+                            </td>
+                            <!-- <td>
                                 <p>
                                     @if ($i->status == 'Active')
                                         <button class="btn btn-success disabled">Activated</button>
@@ -36,8 +39,8 @@
                                         <button class="btn btn-danger disabled">Deactivated</button>
                                     @endif
                                 </p>
-                            </td> 
-                            <td>
+                            </td>  -->
+                            <!-- <td>
                                 @if ($i->status == 'Active')
                                     <p><a href={{ url('/admin/remove-staff/' . $i->id . '/Deactivate') }}><button
                                                 class="btn btn-danger">Deactivate</button></a></p>
@@ -46,7 +49,7 @@
                                                 class="btn btn-success">Activate</button>
                                 @endif
                                 </a></p>
-                            </td>
+                            </td> -->
                         </tr>
                     @endforeach
         <!-- <ul>
