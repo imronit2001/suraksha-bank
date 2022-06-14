@@ -1,7 +1,27 @@
 @extends('staff.home')
-@section('title','Helpline')
+@section('title', 'Helpline')
 @section('page-name')
 
+<div class="table-responsive ml-2 pl-2">
+    <table class="container table">
+    <thead>
+        <tr class="coloum">
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile No.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{$Helpline->id}}</td>
+            <td>{{$Helpline->name}}</td>
+            <td>{{$Helpline->email}}</td>
+            <td>{{$Helpline->mobile}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 <div class="table-responsive ml-2 pl-2">
     <table class="container table">
