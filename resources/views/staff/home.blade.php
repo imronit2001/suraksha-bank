@@ -171,7 +171,7 @@
                 <span class="tooltip">Terms & Conditions</span>
             </li> --}}
             <li>
-                <a href="#">
+                <a href="{{route('staff-helpline')}}">
                     <i class='bx bx-help-circle'></i>
                     <span class="links_name">Helpline</span>
                 </a>
