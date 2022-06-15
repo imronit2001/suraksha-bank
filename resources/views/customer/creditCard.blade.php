@@ -40,7 +40,7 @@
                 <input type="radio" name="gender" id="" value="ThirdGender">Third Gender
 
                 &nbsp; &nbsp;<br><br><label for="">Date of Birth<span>*</span> : </label>
-                <input type="date" name="DOB" id="" required>
+                <input type="date" name="dob" id="" required>
 
                 <br><br><label for="#">Marital Status<span>*</span> : </label>
                 <select name="MaritalStatus" id="">
