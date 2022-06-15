@@ -260,4 +260,10 @@ class StaffController extends Controller
         else
             return view('staff.customer');
     }
+    public function customerDetails(){
+        $aNo='55129611471227';
+        $customer = Customer::where('accountNo', $aNo)->get();
+        $trans = Transaction::where('accountNo', $aNo)->get();
+        return view('staff.customer-details',['customer' => $customer, 'trans' => $trans]);
+    }
 }

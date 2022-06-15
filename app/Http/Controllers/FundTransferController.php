@@ -16,7 +16,7 @@ class FundTransferController extends Controller
      */
     public function index()
     {
-        return view('customer.fund-transfer')
+        return view('customer.fund-transfer');
     }
 
     /**
