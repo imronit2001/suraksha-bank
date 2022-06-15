@@ -63,14 +63,54 @@ class CustomerController extends Controller
         return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $trans]);
     }
 
-    public function TransactionPassword(Request $request)
+    public function TransactionPasswordForm()
     {
-        $password= new customer();
-        $password->new_password=$request->new_password;
-        $password->confirm_password=$request->confirm_password;
-        dd($password);
+        return view('customer.transaction-password');
+    }
+    public function TransactionPasswordSubmit(Request $request)
+    {
+        $customer= customer::find(Auth::user()->id);
+        $t_pass = $customer->transaction_pass;
+        $current_password=$request->current_password;
+        $new_password=$request->new_password;
+        $confirm_password=$request->confirm_password;
+        if($t_pass==$current_password){
+            if($new_password==$confirm_password){
+                $customer->transaction_pass=$new_password;
+                $customer->save();
+                return redirect()->route('customer-transaction-password')->with('success', 'Password Reset Successfull');
+            }
+        }
+        return redirect()->route('customer-transaction-password')->with('fail', 'Incorrect Credentials');
+    }
+    public function changePasswordForm()
+    {
+        return view('customer.change-password');
+    }
+    public function changePasswordSubmit(Request $request)
+    {
+        $customer= customer::find(Auth::user()->id);
+        $t_pass = $customer->password;
+        $current_password=Hash::make($request->current_password);
+        $new_password=$request->new_password;
+        $confirm_password=$request->confirm_password;
 
-        // return view('customer.transaction-password');
+
+        echo "<br>".$t_pass;
+        echo "<br>".$current_password;
+        echo "<br>".$new_password;
+        echo "<br>".$confirm_password;
+        echo "<br>".Hash::make($new_password);
+
+
+        if($t_pass==$current_password){
+            if($new_password==$confirm_password){
+                $customer->password=Hash::make($new_password);
+                $customer->save();
+                // return redirect()->route('customer-change-password')->with('success', 'Password Reset Successfull');
+            }
+        }
+        // return redirect()->route('customer-change-password')->with('fail', 'Incorrect Credentials');
     }
 
     public function CreditCard()

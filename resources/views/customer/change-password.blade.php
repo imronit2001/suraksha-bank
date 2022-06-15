@@ -1,11 +1,11 @@
 @extends('customer.homesidenav')
-@section('title', 'Transaction Password')
+@section('title', 'Change Password')
 @section('page-name')
     <div class="container justify-content-center tran-pass ">
         <div class="d-flex justify-content-center align-item-center mt-10 p-5 ">
             <form method="post">
                 @csrf
-                <h2>Transection Password</h2>
+                <h2>Change Password</h2>
                 <div class="form-group mt-4">
                     <label for="formGroupExampleInput">Current Password</label>
                     <input type="password" class="form-control" required name="current_password" id=""
@@ -32,7 +32,7 @@
                 @endif
 
                 <div class="form-group text-center mt-5">
-                    <button type="submit" class="btn btn-block">Set Password</button>
+                    <button type="submit" class="btn btn-block">Change Password</button>
                 </div>
             </form>
         </div>

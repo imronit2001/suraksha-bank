@@ -166,13 +166,13 @@
                 </a>
                 <span class="tooltip">Helpline</span>
             </li> --}}
-            <li>
-                <a href="{{route('customer-cheque-book')}}">
+            {{-- <li>
+                <a href="{{route('customer-change-password')}}">
                     <i class='bx bxs-lock'></i>
                     <span class="links_name">Change Password</span>
                 </a>
                 <span class="tooltip">Change Password</span>
-            </li>
+            </li> --}}
             <li class="profile">
                   <!-- <a href="#">
                     <i class="fas fa-sign-out-alt"></i>

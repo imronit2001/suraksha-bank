@@ -15,7 +15,7 @@
                   <h4>Customer Login</h4><hr>
                   <form action="{{ route('customer-check') }}" method="post" >
                     @if (Session::get('fail'))
-                        <div class="alert alert-danger">
+                        <div class="alert alert-succe">
                             {{ Session::get('fail') }}
                         </div>
                     @endif

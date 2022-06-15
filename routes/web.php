@@ -160,7 +160,10 @@ Route::prefix('customer')->name('customer-')->group(function () {
 
     Route::middleware(['auth:customer', 'PreventBackHistory'])->group(function () {
     Route::get('/', [CustomerController::class, 'dashboard'])->name('dashboard');
-    Route::post('/transaction-password', [CustomerController::class, 'TransactionPassword'])->name('transaction-password');
+    Route::get('/transaction-password', [CustomerController::class, 'TransactionPasswordForm'])->name('transaction-password');
+    Route::post('/change-password', [CustomerController::class, 'changePasswordSubmit'])->name('change-password');
+    Route::get('/change-password', [CustomerController::class, 'changePasswordForm'])->name('change-password');
+    Route::post('/transaction-password', [CustomerController::class, 'TransactionPasswordSubmit'])->name('transaction-password');
     Route::get('/account-details', [CustomerController::class, 'AccountDetails'])->name('account-details');
     Route::get('/transaction-details', [CustomerController::class, 'TransactionDetails'])->name('transaction-details');
     Route::get('/fund-transfer', [CustomerController::class, 'FundTransfer'])->name('fund-transfer');
