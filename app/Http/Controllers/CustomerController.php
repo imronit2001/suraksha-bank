@@ -11,6 +11,7 @@ use App\Models\CustomerData;
 use App\Models\FundTransfer;
 use App\Models\AccountOpenings;
 use App\Models\CreditCard;
+use App\Models\Transaction;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
@@ -51,13 +52,14 @@ class CustomerController extends Controller
     public function dashboard()
     {
         $cId = Auth::user()->customerId;
-        $aNo = '12345678901234';
+        $account_no = Auth::user()->account_no;
         $customer = Customer::where('customerId', $cId)->latest()->first();
-        $fund = FundTransfer::all();
-        // $transaction = Db::table('transaction')->
+        $fund = FundTransfer::where('customerId', $cId)->get();
+        $trans = Transaction::where('accountNo', $account_no)->get();
+
         // dd($fund);
-        dd($fund);
-        // return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $transaction]);
+        // dd($trans);
+        return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $trans]);
     }
 
     public function TransactionPassword()
@@ -81,8 +83,9 @@ class CustomerController extends Controller
         // dd($customer);
     }
     public function TransactionDetails()
-    {
-        return view('customer.transaction-details');
+    {   $account_no = Auth::user()->account_no;
+        $trans = Transaction::where('accountNo', $account_no)->get();
+        return view('customer.transaction-details',['trans'=>$trans]);
     }
     public function BranchChange()
     {

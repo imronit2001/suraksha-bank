@@ -26,7 +26,7 @@
 
                 
                 <td>
-                    <a href="{{url('/staff/CreditRequests/',$i->id)}}">Click Here</a>
+                    <a href="{{url('/staff/CreditRequests',$i->id)}}">Click Here</a>
                 </td>                           
             </tr>
             @endforeach

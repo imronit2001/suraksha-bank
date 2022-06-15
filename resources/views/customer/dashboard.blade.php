@@ -71,18 +71,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ( $trans as $tran)
                                 <tr>
-                                    {{-- <td>
-                                        <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        {{$trans->referenceId}}
-                                    </td>
-                                    <td>{{trans->date}}</td>
-                                    <td><span class="badge bg-primary">{{trans->time}}</span></td>
                                     <td>
-                                       {{trans->balance}}
-                                    </td> --}}
-                                </tr>
-
+                                        {{-- <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2"> --}}
+                                        {{$tran->referenceId}}
+                                    </td>
+                                    <td>{{$tran->date}}</td>
+                                    <td><span class="badge bg-primary">{{$tran->time}}</span></td>
+                                    <td>
+                                       {{$tran->balance}}
+                                    </td>
+                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -111,15 +112,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($fund as $fun )
+
+
                                 <tr>
+
                                     <td>
-                                        <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        {{$fund->beneficiary_name}}
+                                        {{-- <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2"> --}}
+                                        {{$fun->beneficiary_name}}
                                     </td>
-                                    <td>{{$fund->beneficiary_accountno}}</td>
-                                    <td>IFSCHDFC00007856</td>
-                                    <td><span class="badge p-2 bg-primary">{{$fund->amount}}</span></td>
+                                    <td>{{$fun->benficiary_accountno}}</td>
+                                    <td>{{$fun->referenceId}}</td>
+                                    <td><span class="badge p-2 bg-primary">{{$fun->amount}}</span></td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

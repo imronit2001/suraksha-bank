@@ -137,19 +137,19 @@
                 <span class="tooltip">Personal Loans</span>
             </li>
             <li> --}}
-                <a href="#">
+                {{-- <a href="#">
                     <i class='bx bx-credit-card'></i>
                     <span class="links_name">Credit Card a/c</span>
                 </a>
                 <span class="tooltip">Credit Card a/c</span>
-            </li>
-            {{-- <li>
-                <a href="#">
+            </li> --}}
+            <li>
+                <a href="{{route('staff-fixed-deposite-list')}}">
                     <i class='bx bxs-wallet'></i>
                     <span class="links_name">Fixed Deposits</span>
                 </a>
                 <span class="tooltip">Fixed Deposits</span>
-            </li> --}}
+            </li>
             {{-- <li>
                 <a href="#">
                     <i class='bx bxs-contact'></i>

@@ -1,5 +1,5 @@
 @extends('staff.home')
-@section('title', 'Account Opening Application')
+@section('title', 'Customer Details Page ')
 @section('page-name')
 <div style="width:75%; float:right;margin-left:10%;">
     <h2 style="text-align:center; margin: 50px auto;">Account Opening Application List</h2>
@@ -8,7 +8,7 @@
         <tr>
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Prefix</td>
             <td>{{$data->prefix}}</td>
-            
+
         </tr>
         <tr>
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Full Name</td>
@@ -151,7 +151,7 @@
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Applicant Aadhar Card</td>
             <td>{{$data->ApplicantAadhar}}</td>
         </tr>
-        
+
     </table>
     <div style="margin-left:50%; margin-bottom: 50px;">
         @if ($data->status == 'Active')

@@ -24,22 +24,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>00000009876xx</td>
+                                <td>{{Auth::user()->account_no}}</td>
                                 <td>Saving</td>
-                                <td>Kankinara</td>
+                                <td>{{Auth::user()->BranchName}}</td>
                             </tr>
                         </tbody>
                     </table>
+                    <form action="" method="post">
+                        @csrf
                     <div class="row">
                         <div class="col-4">
                             <label>Number of chequeBooks</label>
-                            <select name="" id="" class="form-control">
+                            <select name="no_of_chequeBoook" id="" class="form-control">
                                 <option value="1">1</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Number of chequeLeaves</label>
-                            <select name="" id="" class="form-control">
+                            <select name="no_of_chequeLeaves" id="" class="form-control">
                                 <option value="1">20</option>
                                 <option value="1">50</option>
                                 <option value="1">100</option>
@@ -47,14 +49,16 @@
                             </select>
                         </div>
                     </div>
-                    <div class=""><h2>Delivery Address</h2></div>
+                    <div class=""><label for="">Delivery Address</label>
+                        <input type="text" name="address"></div>
                     <div class="form-group">
                         <input type="checkbox"><label for=""> I agree to pay cheque book charges as applicable and the same will be deducted from my account</label>
                     </div>
                     <div class="btn-box  mx-6 d-flex justify-space-between">
-                        <button type="button" class="form-control  mx-2" id=""><span>Change Address</span></button>
-                        <button type="button" class="form-control mx-2" id="">Confirm</button>
+                        {{-- <button type="button" class="form-control  mx-2" id=""><span>Change Address</span></button> --}}
+                        <button type="submit" class="form-control mx-2" id="">Confirm</button>
                     </div>
+                </form>
                 </div>
             </div>
         </div>

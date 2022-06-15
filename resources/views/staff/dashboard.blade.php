@@ -47,7 +47,7 @@
         <div class="content">
             <div class="content-box">
                 <div class="content-left">
-                    <h1>0000</h1>
+                    <h1>{{ $new_ac }}</h1>
                 </div>
                 <div class="content-right">
                     <img src={{asset('images/new-account.png')}} alt="new-accountpng">
@@ -76,7 +76,7 @@
         <div class="content">
             <div class="content-box">
                 <div class="content-left">
-                    <h1>0000</h1>
+                    <h1>{{ $creditApplication }}</h1>
                 </div>
                 <div class="content-right">
                     <img src={{asset('images/creditcard.png')}} alt="creditcard.png">
@@ -103,7 +103,7 @@
         <div class="content">
             <div class="content-box">
                 <div class="content-left">
-                    <h1>0000</h1>
+                    <h1>{{ $chequeRequest }}</h1>
                 </div>
                 <div class="content-right">
                     <img src={{asset('images/chequebook.png')}} alt="chequebook.png">
@@ -117,7 +117,7 @@
         <div class="content">
             <div class="content-box">
                 <div class="content-left">
-                    <h1>0000</h1>
+                    <h1>{{ $deactivatedcustomer }}</h1>
                 </div>
                 <div class="content-right">
                     <img src={{asset('images/blocked-user.png')}} alt="blocked-user.png">
@@ -131,17 +131,17 @@
         <div class="content">
             <div class="content-box">
                 <div class="content-left">
-                    <h1>1000</h1>
+                    <h1>{{ $kycApplication }}</h1>
                 </div>
                 <div class="content-right">
                     <img src={{asset('images/saving-account.png')}} alt="saving-account.png">
                 </div>
             </div>
             <div class="content-bottom">
-                <h1>Total Saving a/c</h1>
+                <h1>KYC Applications</h1>
             </div>
         </div>
-        <div class="content">
+        {{-- <div class="content">
             <div class="content-box">
                 <div class="content-left">
                     <h1>1000</h1>
@@ -153,7 +153,7 @@
             <div class="content-bottom">
                 <h1>Total Current a/c</h1>
             </div>
-        </div>
+        </div> --}}
         <div class="content">
             <div class="content-box">
                 <div class="content-left">

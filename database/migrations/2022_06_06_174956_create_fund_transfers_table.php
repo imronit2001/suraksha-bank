@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('fund_transfers', function (Blueprint $table) {
             $table->id();
+            $table->string('customerId');
+            $table->string('beneficiary_name');
+            $table->string('benficiary_accountno');
+            $table->string('referenceId');
+            $table->string('ifsc_code');
+            $table->string('branch');
+            $table->string('amount');
             $table->timestamps();
         });
     }

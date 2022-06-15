@@ -7,15 +7,19 @@ use App\Http\Controllers\Controller;
 use App\Mail\DebitCreditMail;
 use Illuminate\Http\Request;
 use App\Models\AccountOpening;
+use App\Models\AccountOpenings;
 use App\Models\Admin;
 use App\Models\Branch;
 use App\Models\Staff;
 use App\Models\AddManagerForm;
 use App\Models\AddStaffForm;
 use App\Models\change_branch;
+use App\Models\cheque_book;
+use App\Models\CreditCard;
 use App\Models\customer;
 use App\Models\FixedDeposit;
 use App\Models\Helpline;
+use App\Models\KnowYourCustomer;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -39,10 +43,18 @@ class StaffController extends Controller
 
         if (Auth::guard('staff')->attempt($creds)) {
 
-            // $new_account = AccountOpening::all();
-            // $new_ac = $new_account->count();
-            $customers = customer::all();
+            $new_account = AccountOpenings::all();
+            $new_ac = $new_account->count();
+            $customers = customer::where('Status', 'Active');
             $customer = $customers->count();
+            $deactivatedcustomers = customer::where('Status', 'Deactivate');
+            $deactivatedcustomer = $deactivatedcustomers->count();
+            $creditApplications = CreditCard::all();
+            $creditApplication = $creditApplications->count();
+            $chequeRequests = cheque_book::where('status', '0');
+            $chequeRequest = $chequeRequests->count();
+            $kycApplications = KnowYourCustomer::all();
+            $kycApplication = $kycApplications->count();
             $staffs = Staff::all();
             $staff = $staffs->count();
             $managers = Admin::all();
@@ -57,7 +69,7 @@ class StaffController extends Controller
             $changeBranchList = $changeBranch->count();
 
 
-            $data = ['customer' => $customer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
+            $data = ['customer' => $customer, 'deactivatedcustomer' => $deactivatedcustomer, 'creditApplication' => $creditApplication, 'chequeRequest' => $chequeRequest, 'kycApplication' => $kycApplication, 'staff' => $staff, 'manager' => $manager, 'new_ac' => $new_ac, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
 
 
             return redirect()->route('staff-dashboard', $data);
@@ -82,10 +94,18 @@ class StaffController extends Controller
     public function dashboard()
     {
 
-        // $new_account = AccountOpening::all();
-        // $new_ac = $new_account->count();
-        $customers = customer::all();
+        $new_account = AccountOpenings::all();
+        $new_ac = $new_account->count();
+        $customers = customer::where('Status', 'Active');
         $customer = $customers->count();
+        $deactivatedcustomers = customer::where('Status', 'Deactivate');
+        $deactivatedcustomer = $deactivatedcustomers->count();
+        $creditApplications = CreditCard::all();
+        $creditApplication = $creditApplications->count();
+        $chequeRequests = cheque_book::where('status', '0');
+        $chequeRequest = $chequeRequests->count();
+        $kycApplications = KnowYourCustomer::all();
+        $kycApplication = $kycApplications->count();
         $staffs = Staff::all();
         $staff = $staffs->count();
         $managers = Admin::all();
@@ -100,7 +120,7 @@ class StaffController extends Controller
         $changeBranchList = $changeBranch->count();
 
 
-        $data = ['customer' => $customer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
+        $data = ['customer' => $customer, 'deactivatedcustomer' => $deactivatedcustomer, 'creditApplication' => $creditApplication, 'chequeRequest' => $chequeRequest, 'kycApplication' => $kycApplication, 'staff' => $staff, 'manager' => $manager, 'new_ac' => $new_ac, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
 
         return view('staff.dashboard', $data);
     }
@@ -109,16 +129,16 @@ class StaffController extends Controller
         $customers = DB::table('customers')->get();
         if ($request->ajax()) {
             if ($request->val == 1) {
-                $customers = DB::table('customers')->where('accountNo', $request->aNo)->get();
+                $customers = DB::table('customers')->where('account_no', $request->aNo)->get();
                 return response()->view('staff.credit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
                 $staffPIN = Auth::user()->pin;
                 if ($request->pin == $staffPIN) {
-                    DB::table('customers')->where('accountNo', $request->aNo)->increment('balance', $request->amount);
-                    $customer = customer::where('accountNo', $request->aNo)->first();
-                    $name = $customer->customerName;
+                    DB::table('customers')->where('account_no', $request->aNo)->increment('balance', $request->amount);
+                    $customer = DB::table('customers')->where('account_no', $request->aNo)->first();
+                    $name = $customer->FullName;
                     $cId = $customer->customerId;
-                    $aNo = $customer->accountNo;
+                    $aNo = $customer->account_no;
                     $amount = $request->amount;
                     $balance = $customer->balance;
                     $transactionId = "ToCash:" . uniqid() . rand(10000, 99999);
@@ -128,34 +148,21 @@ class StaffController extends Controller
                     $time = date("h:i:s A");
 
                     $transaction = new Transaction();
-                    $transaction->accountNo = $aNo;
-                    $transaction->date = date("d-m-Y");
-                    $transaction->time = date("h:i:s A");
+                    $transaction->accountNo = $request->aNo;
+                    $transaction->date = $date;
+                    $transaction->time = $time;
                     $transaction->referenceId = $transactionId;
-                    $transaction->credit = $amount ;
+                    $transaction->credit = $amount;
                     $transaction->debit = "";
                     $transaction->balance = $balance;
                     $transaction->save();
 
-                    // $id = $customer->userid; //user id
-                    // $id_lenth = strlen($id);
-                    // $stamp = mt_rand(2, 100);
-                    // $random_id_length = 14 - $id_lenth;
-                    // $paymentreferenceno = hexdec(uniqid(rand(), 1));
-                    // $paymentreferenceno = strip_tags(stripslashes($paymentreferenceno));
-                    // $paymentreferenceno = str_replace(".", "", $paymentreferenceno);
-                    // $paymentreferenceno = str_replace("E", "$stamp", $paymentreferenceno);
-                    // $paymentreferenceno = str_replace("+", "9", $paymentreferenceno);
-                    // $paymentreferenceno = strrev(str_replace("/", "", $paymentreferenceno));
-                    // $transactionId = substr($paymentreferenceno, 0, $random_id_length);
-                    // $paymentreference_no = $paymentreferenceno.$id; //payment reference no
-
                     $data = ['name' => $name, 'customerId' => $cId, 'accountNo' => $aNo, 'transactionId' => $transactionId, 'amount' => $amount, 'balance' => $balance, 'mode' => $mode, 'date' => $date, 'time' => $time];
 
-                    Mail::to($customer->email)->send(new DebitCreditMail($data));
+                    Mail::to($customer->Email)->send(new DebitCreditMail($data));
 
                     return response()->view('staff.transaction-reciept', $data);
-                }else{
+                } else {
                     return response()->view('staff.wrongpin');
                 }
             }
@@ -166,7 +173,7 @@ class StaffController extends Controller
     {
         if ($request->ajax()) {
             if ($request->val == 1) {
-                $customers = DB::table('customers')->where('accountNo', $request->aNo)->get();
+                $customers = DB::table('customers')->where('account_no', $request->aNo)->get();
                 return response()->view('staff.credit-money-ajax', ['customers' => $customers]);
             }
         }
@@ -177,16 +184,16 @@ class StaffController extends Controller
         $customers = DB::table('customers')->get();
         if ($request->ajax()) {
             if ($request->val == 1) {
-                $customers = DB::table('customers')->where('accountNo', $request->aNo)->get();
+                $customers = DB::table('customers')->where('account_no', $request->aNo)->get();
                 return response()->view('staff.debit-money-ajax', ['customers' => $customers]);
             } elseif ($request->val == 2) {
                 $staffPIN = Auth::user()->pin;
                 if ($request->pin == $staffPIN) {
-                    DB::table('customers')->where('accountNo', $request->aNo)->decrement('balance', $request->amount);
-                    $customer = customer::where('accountNo', $request->aNo)->first();
-                    $name = $customer->customerName;
+                    DB::table('customers')->where('account_no', $request->aNo)->decrement('balance', $request->amount);
+                    $customer = DB::table('customers')->where('account_no', $request->aNo)->first();
+                    $name = $customer->FullName;
                     $cId = $customer->customerId;
-                    $aNo = $customer->accountNo;
+                    $aNo = $customer->account_no;
                     $amount = $request->amount;
                     $balance = $customer->balance;
                     $transactionId = "ToCash:" . uniqid() . rand(10000, 99999);
@@ -197,10 +204,10 @@ class StaffController extends Controller
 
                     $transaction = new Transaction();
                     $transaction->accountNo = $aNo;
-                    $transaction->date = date("d-m-Y");
-                    $transaction->time = date("h:i:s A");
+                    $transaction->date = $date;
+                    $transaction->time = $time;
                     $transaction->referenceId = $transactionId;
-                    $transaction->credit = "" ;
+                    $transaction->credit = "";
                     $transaction->debit = $amount;
                     $transaction->balance = $balance;
                     $transaction->save();
@@ -208,11 +215,11 @@ class StaffController extends Controller
 
                     $data = ['name' => $name, 'customerId' => $cId, 'accountNo' => $aNo, 'transactionId' => $transactionId, 'amount' => $amount, 'balance' => $balance, 'mode' => $mode, 'date' => $date, 'time' => $time];
 
-                    Mail::to($customer->email)->send(new DebitCreditMail($data));
+                    Mail::to($customer->Email)->send(new DebitCreditMail($data));
 
 
                     return response()->view('staff.transaction-reciept', $data);
-                }else{
+                } else {
                     return response()->view('staff.wrong pin');
                 }
             }
@@ -243,5 +250,20 @@ class StaffController extends Controller
     {
         // $data=modal::all();
         return view('staff.ChequeBookRequest');
+    }
+    public function customers(Request $request)
+    {
+        if ($request->ajax()) {
+                // $customers = DB::table('customers')->where('account_no', $request->aNo)->get();
+                return response()->view('staff.dashboard');
+            }
+        else
+            return view('staff.customer');
+    }
+    public function customerDetails(){
+        $aNo='55129611471227';
+        $customer = Customer::where('accountNo', $aNo)->get();
+        $trans = Transaction::where('accountNo', $aNo)->get();
+        return view('staff.customer-details',['customer' => $customer, 'trans' => $trans]);
     }
 }

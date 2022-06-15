@@ -89,7 +89,7 @@ Route::prefix('admin')->name('admin-')->group(function () {
         Route::get('/helpline', [AdminHelplinecontroller::class, 'issue'])->name('helpline');
         Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issues'])->name('helpline-view');
         Route::post('/helplineReply', [AdminHelplinecontroller::class, 'helplineReply'])->name('helplineReply');
-        Route::get('/cheque-book-list',[ChequeBookController::class,'store'])->name('cheque-book-list');
+        // Route::get('/cheque-book-list',[ChequeBookController::class,'store'])->name('cheque-book-list');
     });
 });
 
@@ -106,7 +106,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
     });
     Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function () {
         Route::get('/', [StaffController::class, 'dashboard'])->name('dashboard');
-        Route::get('/customers', [StaffController::class, 'dashboard'])->name('manage-customer');
+        Route::get('/customers', [StaffController::class, 'customers'])->name('manage-customer');
         Route::get('/credit-money', [StaffController::class, 'creditMoneyIndex'])->name('credit-money');
         Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('credit-money');
         Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('debit-money');
@@ -114,6 +114,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
         // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
         Route::get('/cheque-book-request',[ChequeBookController::class,'store'])->name('cheque-book-request');
+        Route::get('/fixed-deposite-list',[FixedDepositeController::class,'store'])->name('fixed-deposite-list');
         Route::get('/AccountOpeningRequests',[AccountOpeningFormController::class,'AccountOpeningList'])->name('AccountOpeningList');
         Route::get('/AccountOpeningList/{id}',[AccountOpeningFormController::class,'AccountRequests'])->name('AccountRequests');
 
@@ -130,7 +131,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issuesStaff'])->name('helpline-view');
         Route::post('/helplineReply', [AdminHelplinecontroller::class, 'helplineReplyStaff'])->name('helplineReply');
 
-
+        Route::get('/staff/customer-details',[StaffController::class,'customerDetails'])->name('customer-details');
     });
 });
 
@@ -159,8 +160,10 @@ Route::prefix('customer')->name('customer-')->group(function () {
     Route::get('/transaction-details', [CustomerController::class, 'TransactionDetails'])->name('transaction-details');
     Route::get('/fund-transfer', [CustomerController::class, 'FundTransfer'])->name('fund-transfer');
     Route::get('/branch-change', [CustomerController::class, 'BranchChange'])->name('branch-change');
-    Route::get('/fixed-deposite', [CustomerController::class, 'FixedDeposite'])->name('fixed-deposite');
-    Route::get('/cheque-book', [CustomerController::class, 'ChequeBook'])->name('cheque-book');
+    Route::get('/fixed-deposite', [FixedDepositeController::class, 'FixedDeposite'])->name('fixed-deposite');
+    Route::post('/fixed-deposite', [FixedDepositeController::class, 'create'])->name('fixed-deposite');
+    Route::get('/cheque-book', [ChequeBookController::class, 'index'])->name('cheque-book');
+    Route::post('/cheque-book', [ChequeBookController::class, 'create'])->name('cheque-book');
     Route::get('/branch-change', [ChangeBranchController::class, 'index'])->name('branch-change');
     Route::post('/branch-change', [ChangeBranchController::class, 'create'])->name('branch-change');
     Route::get('/branch-change-reset/{id}', [ChangeBranchController::class, 'reset'])->name('branch-change-reset');

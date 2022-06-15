@@ -1,11 +1,11 @@
 @if (count($customers) > 0)
     <div class="verification" id="verification">
         <div class="img">
-            <img src={{ asset('images/ronit.JPG') }} alt="">
-            <img class="sign" src={{ asset('images/signature.webp') }} alt="">
+            <img src={{ $customers[0]->ApplicantPhoto }} alt="">
+            <img class="sign" src={{ $customers[0]->ApplicantSignature }} alt="">
         </div>
         <div class="text">
-            <h1 class="name">Name : {{ $customers[0]->customerName }}</h1>
+            <h1 class="name">Name : {{ $customers[0]->FullName }}</h1>
             <h1 class="balance">Available Balance : {{ $customers[0]->balance }}</h1>
         </div>
     </div>

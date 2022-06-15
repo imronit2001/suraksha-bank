@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('accountNo');
-            $table->date('date');
+            $table->string('date');
             $table->string('time');
             $table->string('referenceId');
             $table->string('credit')->nullable();
