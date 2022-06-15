@@ -55,7 +55,7 @@
                             <td>{{$tran->credit}}</td>
                             <td>{{$tran->debit}}</td>
                             <td>{{$tran->balance}}</td>
-                            <td class="d-flex justify-content-end align-items-center"> <span class="fa fa-long-arrow-up mr-1"></span> $52.9 </td>
+                            {{-- <td class="d-flex justify-content-end align-items-center"> <span class="fa fa-long-arrow-up mr-1"></span> $52.9 </td> --}}
                         </tr>
                         @endforeach
                     </tbody>

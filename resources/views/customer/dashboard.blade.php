@@ -74,13 +74,13 @@
                                 @foreach ( $trans as $tran)
                                 <tr>
                                     <td>
-                                        <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
+                                        {{-- <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2"> --}}
                                         {{$tran->referenceId}}
                                     </td>
-                                    <td>{{tran->date}}</td>
-                                    <td><span class="badge bg-primary">{{tran->time}}</span></td>
+                                    <td>{{$tran->date}}</td>
+                                    <td><span class="badge bg-primary">{{$tran->time}}</span></td>
                                     <td>
-                                       {{tran->balance}}
+                                       {{$tran->balance}}
                                     </td>
                                  </tr>
                                 @endforeach
@@ -118,7 +118,7 @@
                                 <tr>
 
                                     <td>
-                                        <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
+                                        {{-- <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2"> --}}
                                         {{$fun->beneficiary_name}}
                                     </td>
                                     <td>{{$fun->benficiary_accountno}}</td>
