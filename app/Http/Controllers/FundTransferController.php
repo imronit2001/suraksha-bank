@@ -42,7 +42,7 @@ class FundTransferController extends Controller
         } else {
             if ($benficiary_accountno = $confirm_accountno) {
                 $My_balance = Auth::user()->balance;
-                // $beneficiary_balance=Customer::where()
+               ; $beneficiary_balance=Customer::where($request->benficiary_accountno);
             }
             $fund = new FundTransfer();
             $fund->beneficiary_name = $request->beneficiary_name;

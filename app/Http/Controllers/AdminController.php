@@ -278,4 +278,14 @@ class AdminController extends Controller
     {
         return view('admin.termsCondition');
     }
+    public function TransactionPassword(Request $request)
+    {
+
+        $password = new customer();
+        // $aNo = Auth::user()->account_no;
+        $cId = Auth::user()->customerId;
+        $password->new_password=$request->newpassword;
+        $password->confirm_password=$request->confirm_password;
+        dd($password);
+    }
 }

@@ -62,9 +62,14 @@ class CustomerController extends Controller
         return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $trans]);
     }
 
-    public function TransactionPassword()
+    public function TransactionPassword(Request $request)
     {
-        return view('customer.transaction-password');
+        $password= new customer();
+        $password->new_password=$request->new_password;
+        $password->confirm_password=$request->confirm_password;
+        dd($password);
+
+        // return view('customer.transaction-password');
     }
 
     public function CreditCard()
@@ -216,18 +221,18 @@ class CustomerController extends Controller
 
     // public function changePassworddone(changePassword $req)
     // {
-    //     $password = User::find(session('user_id'))->login;
+        // $password = User::find(session('user_id'))->login;
 
-    //     if (Hash::check($req->current_password, $password['password'])) {
-    //         $user = User::find(session("user_id"));
-    //         $user->password = bcrypt($req->confirm_password);
-    //         $user->save();
+        // if (Hash::check($req->current_password, $password['password'])) {
+        //     $user = User::find(session("user_id"));
+        //     $user->password = bcrypt($req->confirm_password);
+        //     $user->save();
 
-    //         $req->session()->flash("change_password", "password changed successfully");
-    //         return redirect()->route('logout');
-    //     } else {
-    //         $req->session()->flash("change_password", "password didn't match with current password");
-    //         return redirect('/index/changePassword');
-    //     }
+        //     $req->session()->flash("change_password", "password changed successfully");
+        //     return redirect()->route('logout');
+        // } else {
+        //     $req->session()->flash("change_password", "password didn't match with current password");
+        //     return redirect('/index/changePassword');
+        // }
     // }
 }
