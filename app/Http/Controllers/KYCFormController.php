@@ -18,7 +18,7 @@ class KYCFormController extends Controller
             $KYCForm->FullName=$request->FullName;
             $KYCForm->FatherName=$request->FatherName;
             $KYCForm->gender=$request->gender;
-            $KYCForm->DOB=$request->dob;
+            $KYCForm->DOB=$request->DOB;
             $KYCForm->MaritalStatus=$request->MaritalStatus;
             $KYCForm->Nationality=$request->Nationality;
             $KYCForm->ResidentialStatus=$request->ResidentialStatus;

@@ -115,7 +115,7 @@ class CustomerController extends Controller
         $CreditCard->FullName = $request->FullName;
         $CreditCard->FatherName = $request->FatherName;
         $CreditCard->gender = $request->gender;
-        $CreditCard->DOB = $request->dob;
+        $CreditCard->DOB = $request->DOB;
         $CreditCard->MaritalStatus = $request->MaritalStatus;
         $CreditCard->Nationality = $request->Nationality;
         $CreditCard->ResidentialStatus = $request->ResidentialStatus;
