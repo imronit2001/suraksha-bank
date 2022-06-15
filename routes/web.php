@@ -167,6 +167,7 @@ Route::prefix('customer')->name('customer-')->group(function () {
     Route::get('/account-details', [CustomerController::class, 'AccountDetails'])->name('account-details');
     Route::get('/transaction-details', [CustomerController::class, 'TransactionDetails'])->name('transaction-details');
     Route::get('/fund-transfer', [CustomerController::class, 'FundTransfer'])->name('fund-transfer');
+    Route::post('/fund-transfer', [FundTransferController::class, 'create'])->name('fund-transfer');
     Route::get('/branch-change', [CustomerController::class, 'BranchChange'])->name('branch-change');
     Route::get('/fixed-deposite', [FixedDepositeController::class, 'FixedDeposite'])->name('fixed-deposite');
     Route::post('/fixed-deposite', [FixedDepositeController::class, 'create'])->name('fixed-deposite');

@@ -5,7 +5,7 @@
                     <div class="footerHeadings">
                         <h1>Contact Us</h1>
                         <p class="gen">General Enquiries</p>
-                        <p>Mail Us : <a href="mailto:atulgiri21dec@gmail.com">atulgiri21dec@gmail.com</a></p>
+                        <p>Mail Us : <a href="mailto:surakshabank.tihc@gmail.com">surakshabank.tihc@gmail.com</a></p>
                         <p class="location">Locate Us : <br>
                             <a><i class="fa-solid fa-magnifying-glass"></i>Search Branch or ATM </a>
                             <a><i class="fa-solid fa-magnifying-glass"></i>Search Aadhar Seva kendra</a><br>
