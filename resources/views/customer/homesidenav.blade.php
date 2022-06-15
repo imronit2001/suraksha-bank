@@ -46,13 +46,13 @@
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{url('/customer/AccountOpeningForm')}}">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                     <span class="links_name">Account Opening Form</span>
                 </a>
                 <span class="tooltip">Account Opening Form</span>
-            </li>
+            </li> --}}
             <li>
                 <a href="{{route('customer-account-details')}}">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
@@ -74,13 +74,13 @@
                 </a>
                 <span class="tooltip">KYC Form</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{url('/customer/CreditCard')}}">
                     <i class='fas fa-credit-card'></i>
                     <span class="links_name">Credit Card</span>
                 </a>
                 <span class="tooltip">Credit Card</span>
-            </li>
+            </li> --}}
             {{-- <li>
                 <a href="#">
                     <i class="bx bx-credit-card"></i>
@@ -152,13 +152,13 @@
                 </a>
                 <span class="tooltip">Cheque Book</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{route('admin-termsCondition')}}">
                     <i class='bx bxs-copy-alt'></i>
                     <span class="links_name">Terms & Conditions</span>
                 </a>
                 <span class="tooltip">Terms & Conditions</span>
-            </li>
+            </li> --}}
             {{-- <li>
                 <a href="{{route('admin-customer-helpline')}}">
                     <i class='bx bx-help-circle'></i>
