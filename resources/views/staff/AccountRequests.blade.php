@@ -155,15 +155,15 @@
     </table>
     <div class="d-flex justify-content-center align-items-center">
         <div style="width: 25%">
-            <img src={{$data->ApplicantPhoto}} class="w-100" alt="photo">
+            <img src={{asset($data->ApplicantPhoto)}} class="w-100" alt="photo">
             <p class="text-center">Applicant Photo</p>
         </div>
         <div style="width: 25%">
-            <img src={{$data->ApplicantSignature}} class="w-100" alt="photo">
+            <img src={{asset($data->ApplicantSignature)}} class="w-100" alt="photo">
             <p class="text-center">Applicant signature</p>
         </div>
         <div style="width: 25%">
-            <img src={{$data->ApplicantAadhar}} class="w-100" alt="photo">
+            <img src={{asset($data->ApplicantAadhar)}} class="w-100" alt="photo">
             <p class="text-center">Applicant Aadhar Card</p>
         </div>
     </div>
