@@ -254,7 +254,7 @@ class StaffController extends Controller
     public function customers(Request $request)
     {
         if ($request->ajax()) {
-                // $customers = DB::table('customers')->where('account_no', $request->aNo)->get();
+                $customers = DB::table('customers')->where('account_no', $request->aNo)->get();
                 return response()->view('staff.dashboard');
             }
         else
