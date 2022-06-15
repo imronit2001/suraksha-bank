@@ -131,7 +131,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issuesStaff'])->name('helpline-view');
         Route::post('/helplineReply', [AdminHelplinecontroller::class, 'helplineReplyStaff'])->name('helplineReply');
 
-
+        Route::get('/staff/customer-details',[StaffController::class,'customerDetails'])->name('customer-details');
     });
 });
 
