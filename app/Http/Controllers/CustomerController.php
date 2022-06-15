@@ -50,14 +50,14 @@ class CustomerController extends Controller
 
     public function dashboard()
     {
-        $cId = '1234567890';
+        $cId = Auth::user()->customerId;
         $aNo = '12345678901234';
-        $customer = CustomerData::where('customerId', $cId)->latest()->first();
-        $fund = FundTransfer::where('customerId', $cId);
-        $transaction = Db::table('transaction_details')->where('account_number', $aNo);
+        $customer = Customer::where('customerId', $cId)->latest()->first();
+        $fund = FundTransfer::all();
+        // $transaction = Db::table('transaction')->
         // dd($fund);
-        // print_r($customer);
-        return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $transaction]);
+        dd($fund);
+        // return view('customer.dashboard', ['customer' => $customer, 'fund' => $fund, 'trans' => $transaction]);
     }
 
     public function TransactionPassword()
@@ -73,8 +73,8 @@ class CustomerController extends Controller
     public function AccountDetails()
     {
         // return view('customer.account-details');
-        $cId = '1234567890';
-        $customer = CustomerData::where('customerId', $cId)->latest()->first();
+        $cId = Auth::user()->customerId;
+        $customer = Customer::where('customerId', $cId)->latest()->first();
         return view('customer.account-details', ['customer' => $customer]);
         // print_r($customer);
         // echo $customer->customerName;

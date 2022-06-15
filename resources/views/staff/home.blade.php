@@ -101,7 +101,7 @@
                 <span class="tooltip">Passbook Request</span>
             </li> --}}
             <li>
-                <a href="#">
+                <a href="{{ route('staff-cheque-book-request') }}">
                     <i class='bx bx-book'></i>
                     <span class="links_name">ChequeBook Request</span>
                 </a>

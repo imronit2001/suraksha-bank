@@ -13,7 +13,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Account Holder Name</span>
                         <span class="info-box-number">
-                            {{$customer->accountName}}
+                            {{$customer->FullName}}
                         </span>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Account Number</span>
                         <span class="info-box-number">
-                            {{$customer->accountNo}}
+                            {{$customer->account_no}}
                         </span>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="info-box-content d-flex flex-column">
                         <span class="info-box-text mb-2">Branch</span>
                         <span class="info-box-number">
-                        {{$customer->branch}}
+                        {{$customer->BranchName}}
                         </span>
                     </div>
                 </div>
@@ -64,28 +64,25 @@
                         <table class="table table-striped table-valign-middle">
                             <thead>
                                 <tr>
-                                    <th>Narrations</th>
+                                    <th>Reference Id</th>
                                     <th>Date</th>
-                                    <th>Type</th>
+                                    <th>time</th>
                                     <th>Closing Balance</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($trans as $trans )
-
-                                @endforeach
                                 <tr>
-                                    <td>
+                                    {{-- <td>
                                         <img src="" alt=" 1" class="img-circle  float-left img-size-32 mr-2">
-                                        {{$trans->beneficiary_name}}
+                                        {{$trans->referenceId}}
                                     </td>
-                                    <td>21May2019</td>
-                                    <td><span class="badge bg-primary">Deposit</span></td>
+                                    <td>{{trans->date}}</td>
+                                    <td><span class="badge bg-primary">{{trans->time}}</span></td>
                                     <td>
-                                        28,9870
-                                    </td>
+                                       {{trans->balance}}
+                                    </td> --}}
                                 </tr>
-                                @endeach
+
                             </tbody>
                         </table>
                     </div>

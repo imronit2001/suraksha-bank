@@ -159,13 +159,13 @@
                 </a>
                 <span class="tooltip">Terms & Conditions</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{route('admin-customer-helpline')}}">
                     <i class='bx bx-help-circle'></i>
                     <span class="links_name">Helpline</span>
                 </a>
                 <span class="tooltip">Helpline</span>
-            </li>
+            </li> --}}
             <li>
                 <a href="{{route('customer-cheque-book')}}">
                     <i class='bx bxs-lock'></i>

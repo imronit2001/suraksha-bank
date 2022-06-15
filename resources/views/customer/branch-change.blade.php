@@ -14,8 +14,12 @@
                             <label for="formGroupExampleInput2">New Branch Code:</label>
                             <select class="form-control" required name="newBranchCode">
                                 <option selected disabled>Branch Code</option>
+                                @php
+                                    $BranchCode = Auth::user()->BranchCode;
+                                    $BranchName = Auth::user()->BranchName;
+                                @endphp
                                 @foreach ($branch as $br)
-                                    @if ($br->branch_id_prefix . $br->branch_code != 'SKB1')
+                                    @if ($br->branch_id_prefix . $br->branch_code != $BranchCode)
                                         <option value="{{ $br->branch_id_prefix . ' ' . $br->branch_code }}">
                                             {{ $br->branch_id_prefix . ' ' . $br->branch_code }}
                                         </option>
@@ -28,7 +32,7 @@
                             <select class="form-control" required name="newBranchName">
                                 <option selected disabled>Branch Name</option>
                                 @foreach ($branch as $br)
-                                    @if ($br->branch_id_prefix . $br->branch_code != 'SKB1')
+                                    @if ($br->branch_id_prefix . $br->branch_code != $BranchCode)
                                         <option value="{{ $br->branch_name }}">{{ $br->branch_name }}
                                         </option>
                                     @endif

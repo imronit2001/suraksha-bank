@@ -12,16 +12,16 @@
             <div class="customer-info flex-wrap ">
                 <img src="../images/employee.png" class="float-left img-fluid m-3" width="120px" alt="">
                 <div class="float-left card-body ">
-                    <h3 class="card-title">Hi,{{$customer->customerName}} </h3>
-                    <p class="card-para">Your account summary</p>
-                    <button class="btn btn-block btn-info">Update Details</button>
+                    <h3 class="card-title">Hi,{{$customer->FullName}} </h3>
+                    {{-- <p class="card-para">Your account summary</p> --}}
+                    <button class="btn btn-block btn-info">Your account summary</button>
                 </div>
             </div>
             <div class="card-block customer-type border-white p-4 flex-wrap ">
-                <p>Account Number : {{$customer->accountNo}}</p>
-                <p>Customer Id : {{$customer->customerName}}</p>
-                <p>Account Type : {{$customer->customerName}}</p>
-                <p>Aadhar No : {{$customer->aadharNo}}</p>
+                <p>Account Number : {{$customer->account_no}}</p>
+                <p>Customer Id : {{$customer->customerId}}</p>
+                <p>Account Type : Saving</p>
+                <p>Aadhar No : {{$customer->AddressProofNumber}}</p>
                 <p>Account Balance : {{$customer->balance}} INR</p>
             </div>
         </div>
@@ -31,10 +31,11 @@
                 <h2>Address</h2>
             </div>
             <div class="address-details m-2 p-3 text-alignment-center">
-                <p class="tab">Address : <span>&nbsp;</span>{{$customer->address}}</p>
-                <p class="tab">City : <span>&nbsp;</span> {{$customer->city}}</p>
-                <p class="tab">State : <span>&nbsp;</span>{{$customer->state}}</p>
-                <p class="tab">Postal code : <span>&nbsp;</span>{{$customer->pin}}</p>
+                <p class="tab">Address : <span>&nbsp;</span>{{$customer->Address}}</p>
+                <p class="tab">City : <span>&nbsp;</span> {{$customer->City}}</p>
+                <p class="tab">State : <span>&nbsp;</span>{{$customer->State}}</p>
+                <p class="tab">Postal code : <span>&nbsp;</span>{{$customer->Pin}}</p>
+                <p class="tab">Country: <span>&nbsp;</span>{{$customer->Country}}</p>
             </div>
             <div class="contact-details m-2">
                 <div class="address-info d-flex p-2 border-primary">
@@ -42,8 +43,8 @@
                     <h2>Contact</h2>
                 </div>
                 <div class="address-details  p-3 text-alignment-center mb-4">
-                    <p>mobile No : {{$customer->customerName}}</p>
-                    <p>Gmail : {{$customer->customerName}}</p>
+                    <p>mobile No : {{$customer->Mobile}}</p>
+                    <p>Email : {{$customer->Email}}</p>
                 </div>
             </div>
         </div>

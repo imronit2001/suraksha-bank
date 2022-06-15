@@ -89,6 +89,7 @@ Route::prefix('admin')->name('admin-')->group(function () {
         Route::get('/helpline', [AdminHelplinecontroller::class, 'issue'])->name('helpline');
         Route::get('/helpline-view/{id}', [AdminHelplinecontroller::class, 'issues'])->name('helpline-view');
         Route::post('/helplineReply', [AdminHelplinecontroller::class, 'helplineReply'])->name('helplineReply');
+        Route::get('/cheque-book-list',[ChequeBookController::class,'store'])->name('cheque-book-list');
     });
 });
 
@@ -112,7 +113,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
         Route::post('/debit-money', [StaffController::class, 'debitMoneyCreate'])->name('debit-money');
         // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
-        Route::get('/cheque-book-request',[StaffController::class,'ShowChequeBookList'])->name('cheque-book-request');
+        Route::get('/cheque-book-request',[ChequeBookController::class,'store'])->name('cheque-book-request');
         Route::get('/AccountOpeningRequests',[AccountOpeningFormController::class,'AccountOpeningList'])->name('AccountOpeningList');
         Route::get('/AccountOpeningList/{id}',[AccountOpeningFormController::class,'AccountRequests'])->name('AccountRequests');
 

@@ -14,6 +14,7 @@ use App\Models\Staff;
 use App\Models\AddManagerForm;
 use App\Models\AddStaffForm;
 use App\Models\change_branch;
+use App\Models\customer;
 use App\Models\CustomerData;
 use App\Models\FixedDeposit;
 use App\Models\Helpline;
@@ -38,8 +39,11 @@ class AdminController extends Controller
         $creds = $request->only('email', 'password');
 
         if (Auth::guard('admin')->attempt($creds)) {
-            $customers = CustomerData::all();
+
+            $customers = customer::where("Status","Active")->get();
             $customer = $customers->count();
+            $inactiveCustomers = customer::where("Status","Deactive")->get();
+            $inactiveCustomer = $inactiveCustomers->count();
             $staffs = Staff::all();
             $staff = $staffs->count();
             $managers = Admin::all();
@@ -54,7 +58,7 @@ class AdminController extends Controller
             $changeBranchList = $changeBranch->count();
 
 
-            $data = ['customer' => $customer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
+            $data = ['customer' => $customer,'inactivecustomer' => $inactiveCustomer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
 
             return redirect()->route('admin-dashboard', $data);
         } else {
@@ -72,8 +76,10 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $customers = CustomerData::all();
+        $customers = customer::where("Status","Active")->get();
         $customer = $customers->count();
+        $inactiveCustomers = customer::where("Status","Deactive")->get();
+        $inactiveCustomer = $inactiveCustomers->count();
         $staffs = Staff::all();
         $staff = $staffs->count();
         $managers = Admin::all();
@@ -88,10 +94,9 @@ class AdminController extends Controller
         $changeBranchList = $changeBranch->count();
 
 
-        $data = ['customer' => $customer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
+        $data = ['customer' => $customer,'inactivecustomer' => $inactiveCustomer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
 
-
-        return view('admin.dashboard', $data);
+            return redirect()->route('admin-dashboard', $data);
     }
     public function bankBalance()
     {
@@ -194,11 +199,11 @@ class AdminController extends Controller
         $staff = Staff::find($id);
         $staff->status = $status;
         $staff->save();
-        return redirect((route('admin-manage-staff')));
+        return redirect((route('admin-managers')));
     }
     public function managers()
     {
-        $manager = Admin::all();
+        $manager = Admin::all()->except(Auth::id());
         return view('admin.manager', ['manager' => $manager]);
     }
     public function manageCustomer()
@@ -215,7 +220,7 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->status = $status;
         $admin->save();
-        return redirect((route('admin-manage-admin')));
+        return redirect()->route('admin-managers');
     }
     public function customerTransactionDetail()
     {
@@ -236,15 +241,15 @@ class AdminController extends Controller
         $application = change_branch::find($id);
         $application->status = "1";
         $application->save();
-        $customer = CustomerData::where("accountNo", $application->aNo)->first();
+        $customer = customer::where("account_no", $application->aNo)->first();
         $data = [
-            'name' => $customer->customerName,
-            'accountNo' => $customer->accountNo,
+            'name' => $customer->FullName,
+            'accountNo' => $customer->account_no,
             'prevBranch' => $application->branchName . " " . $application->branchCode,
             'curBranch' => $application->newBranchName . " " . $application->newBranchCode,
             'status' => 1,
         ];
-        Mail::to($customer->email)->send(new BranchChangeMail($data));
+        Mail::to($customer->Email)->send(new BranchChangeMail($data));
         $applications = change_branch::where("status", 0)->get();
         return redirect((route('admin-branch-change', ['applications' => $applications])));
     }
@@ -253,11 +258,11 @@ class AdminController extends Controller
         $application = change_branch::find($id);
         $application->status = "2";
         $application->save();
-        $customer = CustomerData::where("accountNo", $application->aNo)->first();
+        $customer = customer::where("account_no", $application->aNo)->first();
         $data = [
             'name' => $customer->FullName,
             'accountNo' => $customer->account_no,
-            'prevBranch' => $application->BranchName . " " . $application->branchCode,
+            'prevBranch' => $application->branchName . " " . $application->branchCode,
             'curBranch' => $application->newBranchName . " " . $application->newBranchCode,
             'status' => 2,
         ];
