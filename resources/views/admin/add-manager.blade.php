@@ -9,7 +9,7 @@
 
         <div class="container bg-transparent p-5">
             <h1 class="w-75 m-auto text-center blockquote">Add Manager Form</h1>
-            <form action="" method="POST" class="w-75 m-auto">
+            <form action="" method="POST" class="w-75 m-auto" enctype="multipart/form-data">
                 @csrf
                 <div class="form-floating m-3 ">
                     <input type="text" class="form-control bg-transparent" name="fullName" id="fullName" required
