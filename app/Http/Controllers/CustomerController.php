@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Mail\AccountCreationMail;
+use App\Mail\AccountCreationFailedMail;
 use Illuminate\Http\Request;
 use App\Models\change_branch;
 use App\Models\customer;
@@ -214,11 +215,32 @@ class CustomerController extends Controller
 
         Mail::to($customer->Email)->send(new AccountCreationMail($data));
 
+        AccountOpenings::destroy($id);
+
 
         // return view('/staff/');
         return redirect()->route('staff-AccountOpeningList');
     }
 
+    public function DeclineData($id)
+    {
+        $user = AccountOpenings::find($id);
+        $customer = new customer();
+        $customer->Email = $user->Email;
+        $customer->FullName = $user->FullName;
+
+        $data = ['name'=>$customer->FullName];
+
+        Mail::to($customer->Email)->send(new AccountCreationFailedMail($data));
+
+        AccountOpenings::destroy($id);
+
+
+        // return view('/staff/');
+        return redirect()->route('staff-AccountOpeningList');
+
+
+    }
     // public function changePassworddone(changePassword $req)
     // {
         // $password = User::find(session('user_id'))->login;

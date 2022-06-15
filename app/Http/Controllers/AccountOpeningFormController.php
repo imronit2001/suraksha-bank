@@ -48,7 +48,7 @@ class AccountOpeningFormController extends Controller
             if ($request->hasFile('ApplicantPhoto')) {
                 $file = $request->file('ApplicantPhoto');
                 $name = $file->hashName();
-                $filename = "ApplicantPhoto-".time()."-".$name;
+                $filename = "images/customer/ApplicantPhoto/ApplicantPhoto-".time()."-".$name;
                 $file->move('images/customer/ApplicantPhoto/',$filename);
                 $AccountOpeningForm->ApplicantPhoto=$filename;
             }
@@ -56,14 +56,14 @@ class AccountOpeningFormController extends Controller
             if ($request->hasFile('ApplicantAadhar')) {
                 $file = $request->file('ApplicantAadhar');
                 $name = $file->hashName();
-                $filename = "ApplicantAadhar-".time()."-".$name;
+                $filename = "images/customer/ApplicantAadhar/ApplicantAadhar-".time()."-".$name;
                 $file->move('images/customer/ApplicantAadhar/',$filename);
                 $AccountOpeningForm->ApplicantAadhar=$filename;
             }
             if ($request->hasFile('ApplicantSignature')) {
                 $file = $request->file('ApplicantSignature');
                 $name = $file->hashName();
-                $filename = "ApplicantSignature-".time()."-".$name;
+                $filename = "images/customer/ApplicantSignature/ApplicantSignature-".time()."-".$name;
                 $file->move('images/customer/ApplicantSignature/', $filename);
                 $AccountOpeningForm->ApplicantSignature=$filename;
             }
@@ -78,7 +78,6 @@ class AccountOpeningFormController extends Controller
 
     function AccountOpeningList(){
         $data = AccountOpenings::all();
-        // echo "Code Here";
         return view('staff/accountApplication',['data'=>$data]);
     }
 

@@ -16,7 +16,7 @@
     </h1>
     <h3>Account Opening Form for Individual (Part-1) Customer Information Sheet (CIF Creation/ Amendment)</h3>
     <p>In case of joint accounts, Part-1(CIF) to be taken for each Customer</p>
-    <form action="" method="post" enctype="multipart/form-data">>
+    <form action="" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="AccountForm">
