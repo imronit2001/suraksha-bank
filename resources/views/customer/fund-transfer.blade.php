@@ -52,7 +52,7 @@
                         placeholder="UPI PIN">
                     <label for="floatingInput">UPI PIN</label>
                 </div>
-                <button class="btn btn-success m-auto">Submit</button>
+                <button class="btn btn-success m-auto" type="submit">Submit</button>
             </form>
         </div>
     </section>

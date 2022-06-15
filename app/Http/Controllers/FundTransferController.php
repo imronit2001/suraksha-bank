@@ -48,9 +48,9 @@ class FundTransferController extends Controller
             if ($request->benficiary_accountno = $request->confirm_accountno) {
                 $update_myBal =  $My_balance - $request->amount;
                 $update_beneficiaryBal = $beneficiary_balance + $request->amount;
-                // Selection::whereId($id)->update($request->all());
                customer::where('account_no', $beneficiary->account_no)->update(['balance' =>$update_beneficiaryBal ]);
                customer::where('account_no', Auth::user()->account_no)->update(['balance' =>$update_myBal ]);
+
                $fund = new FundTransfer();
                $fund->customerId=Auth::user()->customerId;
                $fund->beneficiary_name = $request->beneficiary_name;
@@ -62,6 +62,8 @@ class FundTransferController extends Controller
                $fund->upi_pin = $request->upi_pin;
 
                $fund->save();
+
+
                date_default_timezone_set('Asia/Kolkata');
                $date = date("jS F Y");
                $time = date("h:i:s A");
@@ -76,6 +78,7 @@ class FundTransferController extends Controller
                $transaction1->balance = $update_myBal;
                $transaction1->save();
 
+               $transaction2 = new Transaction();
                $transaction2->accountNo = $request->benficiary_accountno;
                $transaction2->date = $date;
                $transaction2->time = $time;
@@ -84,12 +87,18 @@ class FundTransferController extends Controller
                $transaction2->debit = "";
                $transaction2->balance = $update_beneficiaryBal;
                $transaction2->save();
+
+               echo "<br>".$transaction1;
+               echo "<br>".$transaction2;
+
+               dd($transaction1);
+
             }else{
-                return back()->with('alert', 'Account Number is not matched!');
+                // return back()->with('alert', 'Account Number is not matched!');
             }
 
 
-            return redirect((route('customer-fund-transfer')))->with('success', 'Your Application submittedSuccessfully ');
+            // return redirect((route('customer-fund-transfer')))->with('success', 'Your Application submittedSuccessfully ');
         }
     }
     /**
