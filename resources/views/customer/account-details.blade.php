@@ -10,7 +10,7 @@
     <div class="customer-main mx-2">
         <div class="card flex-row flex-wrap d-flex m-3">
             <div class="customer-info flex-wrap ">
-                <img src="../images/employee.png" class="float-left img-fluid m-3" width="120px" alt="">
+                <img src={{asset($customer->ApplicantPhoto)}} class="float-left img-fluid m-3" width="120px" alt="">
                 <div class="float-left card-body ">
                     <h3 class="card-title">Hi,{{$customer->FullName}} </h3>
                     {{-- <p class="card-para">Your account summary</p> --}}
