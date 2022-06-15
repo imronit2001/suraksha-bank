@@ -9,12 +9,12 @@
     </div>
     <div class="customer-main mx-2">
         <div class="card flex-row flex-wrap d-flex m-3">
-            <div class="customer-info flex-wrap ">
-                <img src={{asset($customer->ApplicantPhoto)}} class="float-left img-fluid m-3" width="120px" alt="">
+            <div class="customer-info flex-wrap d-flex flex-column ml-3 pt-3">
+                <img src={{asset($customer->ApplicantPhoto)}} class=" img-fluid m-auto mt-5" width="150px" alt="">
                 <div class="float-left card-body ">
                     <h3 class="card-title">Hi,{{$customer->FullName}} </h3>
                     {{-- <p class="card-para">Your account summary</p> --}}
-                    <button class="btn btn-block btn-info">Your account summary</button>
+                    {{-- <button class="btn btn-block btn-info">Your account summary</button> --}}
                 </div>
             </div>
             <div class="card-block customer-type border-white p-4 flex-wrap ">
