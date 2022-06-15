@@ -60,7 +60,7 @@ class AdminController extends Controller
 
             $data = ['customer' => $customer,'inactivecustomer' => $inactiveCustomer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
 
-            return redirect()->route('admin-dashboard', $data);
+            return redirect()->route('admin-dashboard',$data);
         } else {
             return redirect()->route('admin-login')->with('fail', 'Incorrect credentials');
         }
@@ -96,7 +96,7 @@ class AdminController extends Controller
 
         $data = ['customer' => $customer,'inactivecustomer' => $inactiveCustomer, 'staff' => $staff, 'manager' => $manager, 'changeBranchList' => $changeBranchList, 'branch' => $branch, 'fd' => $fd, 'helpline' => $helpline];
 
-            return redirect()->route('admin-dashboard', $data);
+            return view('admin.dashboard', $data);
     }
     public function bankBalance()
     {
