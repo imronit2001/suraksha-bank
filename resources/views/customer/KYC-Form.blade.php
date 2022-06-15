@@ -20,8 +20,8 @@
         <form action="" method="POST" >
             @csrf
             <p> 
-                <input type="radio" name="formType" id="">NEW
-                <input type="radio" name="formType" id="">CHANGE REQUEST <small>(Please tick Choose the appropriate) </small>
+                <input type="radio" name="formType" value="New" id="">NEW
+                <input type="radio" name="formType" value="Change Request" id="">CHANGE REQUEST <small>(Please tick Choose the appropriate) </small>
             </p>
             <h4>1. Identity Details</h4>
             <div class="inputFields">

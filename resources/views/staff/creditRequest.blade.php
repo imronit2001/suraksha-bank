@@ -3,6 +3,8 @@
 @section('page-name')
 
 <div style="width:75%; float:right;margin-left:10%;">
+    <h2 style="text-align:center; margin: 50px auto;">Credit Card Application Form</h2>
+
     <table class="table table-hover">
 
         <thead>
@@ -24,7 +26,7 @@
 
                 
                 <td>
-                    <a href="{{url('/staff/CreditRequests')}}">Click Here</a>
+                    <a href="{{url('/staff/CreditRequests/',$i->id)}}">Click Here</a>
                 </td>                           
             </tr>
             @endforeach
