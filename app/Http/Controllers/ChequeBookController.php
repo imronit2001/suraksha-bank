@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\customer;
 use App\Models\cheque_book;
 use Illuminate\Http\Request;
@@ -16,22 +17,16 @@ class ChequeBookController extends Controller
      */
     public function index()
     {
-        $cId = Auth::user()->customerId;
-        // $customer = Customer::where('customerId', $cId)->latest()->first();
-        // $cheque_book = CustomerData::all();
-        $status_id = 0 ;
-        $status = cheque_book::where('customerId',  $cId)->latest()->first();
+        $cId = Auth::user()->customerId;;
+        $id = 0;
+        $cheque = cheque_book::where('customerId',  $cId)->latest()->first();
         // $customer = customer::where('customerId', $ $cId)->latest()->first();
-        if($status != ""){
-            $status_id = $status->id;
-            $status = $status->status;
-        }else
-        $status = -1 ;
-
-        // $users = DB::table('users')->select('id','name','email')->get();
-
-
-        return view('customer.cheque-book',['status'=>$status, 'status_id'=>$status_id]);
+        if ($cheque != "") {
+            $id = $cheque->id;
+            $status = $cheque->status;
+        } else
+            $cheque = -1;
+        return view('customer.cheque-book', ['status' => $status, 'id' => $id]);
     }
 
     /**
@@ -43,15 +38,15 @@ class ChequeBookController extends Controller
     {
         $cheque_book = new cheque_book();
         // $customerId = Auth::user()->customerId;
-        $cheque_book -> customerId=Auth::user()->customerId;
-        $cheque_book->accountNo=Auth::user()->account_no;
-        $cheque_book->accountType='Saving';
-        $cheque_book->branchName=Auth::user()->BranchName;;
-        $cheque_book->no_of_chequeBoook=$request->no_of_chequeBoook;
-        $cheque_book->no_of_chequeLeaves=$request->no_of_chequeLeaves;
-        $cheque_book->address=$request->address;
+        $cheque_book->customerId = Auth::user()->customerId;
+        $cheque_book->accountNo = Auth::user()->account_no;
+        $cheque_book->accountType = 'Saving';
+        $cheque_book->branchName = Auth::user()->BranchName;;
+        $cheque_book->no_of_chequeBoook = $request->no_of_chequeBoook;
+        $cheque_book->no_of_chequeLeaves = $request->no_of_chequeLeaves;
+        $cheque_book->address = $request->address;
         $cheque_book->save();
-        return redirect((route('customer-cheque-book')))->with('success','Your Application submittedSuccessfully ');
+        return redirect((route('customer-cheque-book')))->with('success', 'Your Application submittedSuccessfully ');
     }
 
     /**
@@ -62,52 +57,38 @@ class ChequeBookController extends Controller
      */
     public function store(Request $request)
     {
-        $cheque = cheque_book::all();
-        return view('staff.ChequeBookRequest',['cheque'=>$cheque]);
+        $cheque = cheque_book::where('status', 0)->get();
+        return view('staff.ChequeBookRequest', ['cheque' => $cheque]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\cheque_book  $cheque_book
-     * @return \Illuminate\Http\Response
-     */
-    public function show(cheque_book $cheque_book)
+    public function reset($id)
     {
-        //
+        $fd = cheque_book::find($id);
+        $fd->status = -1;
+        $fd->save();
+        return redirect((route('customer-cheque-book')));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\cheque_book  $cheque_book
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(cheque_book $cheque_book)
+    public function approve($id)
     {
-        //
-    }
+        $fd = cheque_book::find($id);
+        $fd->status = 1;
+        $fd->save();
+        $customer = customer::where("account_no", $fd->account_no)->first();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\cheque_book  $cheque_book
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, cheque_book $cheque_book)
-    {
-        //
+        // Mail::to($customer->Email)->send(new BranchChangeMail($data));
+        $cheque = cheque_book::where('status', 0);
+        return redirect((route('staff-cheque-book-request', ['fixed' => $cheque])));
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\cheque_book  $cheque_book
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(cheque_book $cheque_book)
+    public function decline($id)
     {
-        //
+        $fd = cheque_book::find($id);
+        $fd->status = 2;
+        $fd->save();
+        $customer = customer::where("account_no", $fd->account_no)->first();
+
+        // Mail::to($customer->Email)->send(new BranchChangeMail($data));
+        $cheque = cheque_book::where('status', 0);
+        return redirect((route('staff-cheque-book-request', ['fixed' => $cheque])));
     }
 }

@@ -114,6 +114,8 @@ Route::prefix('staff')->name('staff-')->group(function () {
         // Route::get('/transaction', [StaffController::class, 'transaction'])->name('transaction');
         Route::post('/logout', [StaffController::class, 'logout'])->name('logout');
         Route::get('/cheque-book-request',[ChequeBookController::class,'store'])->name('cheque-book-request');
+        Route::get('/cheque-book-approve/{id}',[ChequeBookController::class,'approve'])->name('cheque-book-approve');
+        Route::get('/cheque-book-decline/{id}',[ChequeBookController::class,'decline'])->name('cheque-book-decline');
         Route::get('/fixed-deposite-list',[FixedDepositeController::class,'store'])->name('fixed-deposite-list');
         Route::get('/fixed-deposite-approve/{id}',[FixedDepositeController::class,'approve'])->name('fixed-deposite-approve');
         Route::get('/fixed-deposite-decline/{id}',[FixedDepositeController::class,'decline'])->name('fixed-deposite-decline');
@@ -167,6 +169,7 @@ Route::prefix('customer')->name('customer-')->group(function () {
     Route::get('/fixed-deposite-reset/{id}', [FixedDepositeController::class, 'FixedDepositeReset'])->name('fixed-deposite-reset');
     Route::get('/cheque-book', [ChequeBookController::class, 'index'])->name('cheque-book');
     Route::post('/cheque-book', [ChequeBookController::class, 'create'])->name('cheque-book');
+    Route::get('/cheque-book-reset/{id}', [ChequeBookController::class, 'reset'])->name('cheque-book-reset');
     Route::get('/branch-change', [ChangeBranchController::class, 'index'])->name('branch-change');
     Route::post('/branch-change', [ChangeBranchController::class, 'create'])->name('branch-change');
     Route::get('/branch-change-reset/{id}', [ChangeBranchController::class, 'reset'])->name('branch-change-reset');
