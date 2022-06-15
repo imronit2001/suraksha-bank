@@ -168,7 +168,7 @@
 
         </table>
 
-        <h2>Transaction Details</h2>
+        <h2 class="text-center">Transaction Details</h2>
 
         <table class="table">
             <thead>
@@ -181,6 +181,19 @@
                     <td>Balance</td>
                 </tr>
             </thead>
+            <tbody>
+                @foreach ($trans as $tran)
+
+                @endforeach
+                <tr>
+                    <td>{{ $tran->date }}</td>
+                    <td>{{ $tran->time }}</td>
+                    <td>{{ $tran->referenceId }}</td>
+                    <td>{{ $tran->credit }}</td>
+                    <td>{{ $tran->debit }}</td>
+                    <td>{{ $tran->balance }}</td>
+                </tr>
+            </tbody>
         </table>
 
 
