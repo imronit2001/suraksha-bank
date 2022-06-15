@@ -4,10 +4,10 @@
 <div style="width:75%; float:right;margin-left:10%;">
     <h2 style="text-align:center; margin: 50px auto;">Account Opening Application List</h2>
 
-    <table >
+    <table style="width:80%; margin-left:15%; text-align:left; border:1px solid grey; margin-bottom: 50px;" >
         <tr>
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Prefix</td>
-            <!-- <td>{{$data->prefix}}</td> -->
+            <td>{{$data->prefix}}</td>
             
         </tr>
         <tr>
@@ -153,65 +153,18 @@
         </tr>
         
     </table>
-
-    <!-- <div class="FieldValues"> 
-    @foreach ($data as $i)  -->
-
-        <!-- <td><p>{{$i->prefix}}</p></td>
-        <td><p>{{$i->FullName}}</p></td>
-        <td><p>{{$i->DOB}}</p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p>{{$i->Country}}</p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        
-        <div class="buttons">
+    <div style="margin-left:50%; margin-bottom: 50px;">
+        @if ($data->status == 'Active')
             <p>
-                @if ($i->status == 'Active')
-                    <button class="btn btn-success disabled">Activated</button>
-                @else
-                    <button class="btn btn-danger disabled">Deactivated</button>
-                @endif
+                <a href={{ url('/admin/remove-staff/' . $data->id . '/Deactivate') }}><button class="btn btn-danger">Deactivate</button></a>
             </p>
-            @if ($i->status == 'Active')
-                <p>
-                    <a href={{ url('/admin/remove-staff/' . $i->id . '/Deactivate') }}><button class="btn btn-danger">Deactivate</button></a>
-                </p>
-            @else
-                <p>
-                    <a href={{ url('/admin/remove-staff/' . $i->id . '/Active') }}><button class="btn btn-success">Activate</button></a>
-                </p>
-            @endif
-        </div>
-        @endforeach -->
-    <!-- </div>   -->
+        @else
+            <p>
+                <a href={{ url('/admin/remove-staff/' . $data->id . '/Active') }}><button class="btn btn-success">Activate</button></a>
+            </p>
+        @endif
+    </div>
+
+
 </div>
 @endsection

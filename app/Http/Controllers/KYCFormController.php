@@ -78,6 +78,6 @@ class KYCFormController extends Controller
     }
     function KYCRequests($id){
         $data = KnowYourCustomer::find($id);
-        return view('staff/KYCRequests');
+        return view('staff/KYCRequests',['data'=>$data]);
     }
 }
