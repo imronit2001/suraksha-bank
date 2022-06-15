@@ -17,7 +17,7 @@
     <h3>Know Your Customer (KYC) Application Form - For Individual</h3>
 
     <div class="customerDetailsFormContainer">
-        <form action="" method="POST" enctype="multipart/form-data">>
+        <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             <p>
                 <input type="radio" name="formType" value="New" id="">NEW
