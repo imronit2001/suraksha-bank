@@ -14,17 +14,6 @@
                 <button type="submit" class="btn btn-primary ml-2" id="searchAccount" onclick="clickhere()">Search</button>
             </div>
             <div id="customer-data">
-                <div class="verification" id="verification">
-                    <div class="img">
-                        <img src={{ asset('images/ronit.JPG') }} alt="">
-                        <img class="sign" src={{ asset('images/signature.webp') }} alt="">
-                    </div>
-                    <div class="text">
-                        <h1 class="name">Name : </h1>
-                        <h1 class="balance">Available Balance :</h1>
-                    </div>
-                </div>
-
 
             </div>
         </div>
@@ -37,7 +26,7 @@
 
         function clickhere() {
             var aNo = $('#aNo').val();
-            alert(aNo);
+            // alert(aNo);
             var val = 1;
             $.ajax({
                 url: "{{ route('staff-manage-customer') }}",
@@ -48,7 +37,7 @@
                 },
                 success: function(data) {
                     if (val == 1)
-                        $("#verification").html(data);
+                        $("#customer-data").html(data);
                         // alert("Suecs");
                 }
             });

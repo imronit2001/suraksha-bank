@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Date of Birth</td>
-                <td>{{$data->DOB}}</td>
+                <td>{{$data->dob}}</td>
             </tr>
             <tr>
                 <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Marital Status</td>

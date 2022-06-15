@@ -41,8 +41,8 @@ class CustomerController extends Controller
 
     function logout()
     {
-        Auth::guard('web')->logout();
-        return redirect('/');
+        Auth::guard('customer')->logout();
+        return redirect('/customer/login');
     }
 
 

@@ -80,8 +80,8 @@ class StaffController extends Controller
 
     function logout()
     {
-        Auth::guard('author')->logout();
-        return redirect('/');
+        Auth::guard('staff')->logout();
+        return redirect('/staff/login');
     }
 
 
@@ -254,16 +254,17 @@ class StaffController extends Controller
     public function customers(Request $request)
     {
         if ($request->ajax()) {
-                $customers = DB::table('customers')->where('account_no', $request->aNo)->get();
-                return response()->view('staff.dashboard');
-            }
-        else
+            $customer = Customer::where('account_no', $request->aNo)->first();
+            $trans = Transaction::where('accountNo', $request->aNo)->get();
+            return response()->view('staff.customer-details', ['data' => $customer, 'trans' => $trans]);
+        } else
             return view('staff.customer');
     }
-    public function customerDetails(){
-        $aNo='55129611471227';
-        $customer = Customer::where('accountNo', $aNo)->get();
+    public function customerDetails()
+    {
+        $aNo = '55129611471227';
+        $customer = Customer::where('account_no', $aNo)->first();
         $trans = Transaction::where('accountNo', $aNo)->get();
-        return view('staff.customer-details',['customer' => $customer, 'trans' => $trans]);
+        return view('staff.customer-details', ['data' => $customer, 'trans' => $trans]);
     }
 }
