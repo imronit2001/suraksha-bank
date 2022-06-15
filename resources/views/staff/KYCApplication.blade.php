@@ -32,7 +32,7 @@
                     <p>{{$i->Mobile}}</p>
                 </td>
                 <td>
-                    <a href="{{url('/staff/KYCRequests/', $i->id)}}">Click Here</a>
+                    <a href="{{url('/staff/KYCRequests', $i->id)}}">Click Here</a>
                 </td>
             </tr>
             @endforeach
