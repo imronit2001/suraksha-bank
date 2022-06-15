@@ -8,7 +8,7 @@
         <tr>
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Prefix</td>
             <td>{{$data->prefix}}</td>
-            
+
         </tr>
         <tr>
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Full Name</td>
@@ -139,7 +139,7 @@
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Application Date</td>
             <td>{{$data->signDate}}</td>
         </tr>
-        <tr>
+        {{-- <tr>
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Applicant Photo</td>
             <td>{{$data->ApplicantPhoto}}</td>
         </tr>
@@ -150,9 +150,23 @@
         <tr>
             <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Applicant Aadhar Card</td>
             <td>{{$data->ApplicantAadhar}}</td>
-        </tr>
-        
+        </tr> --}}
+
     </table>
+    <div class="d-flex justify-content-center align-items-center">
+        <div style="width: 25%">
+            <img src={{$data->ApplicantPhoto}} class="w-100" alt="photo">
+            <p class="text-center">Applicant Photo</p>
+        </div>
+        <div style="width: 25%">
+            <img src={{$data->ApplicantSignature}} class="w-100" alt="photo">
+            <p class="text-center">Applicant signature</p>
+        </div>
+        <div style="width: 25%">
+            <img src={{$data->ApplicantAadhar}} class="w-100" alt="photo">
+            <p class="text-center">Applicant Aadhar Card</p>
+        </div>
+    </div>
     <div style="margin-left:50%; margin-bottom: 50px;">
         @if ($data->status == 'Active')
             <p>

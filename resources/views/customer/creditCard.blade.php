@@ -10,7 +10,7 @@
 <body>
     <h1>
         <ul>
-            <li><a href="{{url('/customer/')}}">Suraksha Bank</a></li>            
+            <li><a href="{{url('/customer/')}}">Suraksha Bank</a></li>
         </ul>
     </h1>
     <h3>Credit Card Application Form - For Individual</h3>
@@ -19,28 +19,28 @@
         @csrf
         <h4> Details</h4>
         <div class="inputFields">
-                
+
             <label for="prefix">Prefix<span>*</span> : </label>
             <input type="radio" name="prefix" id="" value="Mr." required>Mr.
             <input type="radio" name="prefix" id="" value="Mrs.">Mrs.
             <input type="radio" name="prefix" id="" value="Miss">Miss <br>
-            
+
             <div class="name">
                 <br><label for="FirstName">Full Name<span>*</span> : </label>
                 <input type="text" name="FullName" id="" value="" autocomplete="off">
-                </div>  
-                
+                </div>
+
                 <br><label for="fatherSpouse">Name of Father<span>*</span> : </label>
                 <input type="text" name="FatherName" id="" required>
-            
-                
+
+
                 <br><br><label for="Gender">Gender<span>*</span> : </label>
                 <input type="radio" name="gender" id="" value="Male" required>Male
-                <input type="radio" name="gender" id="" value="Female">Female 
+                <input type="radio" name="gender" id="" value="Female">Female
                 <input type="radio" name="gender" id="" value="ThirdGender">Third Gender
-                
-                &nbsp; &nbsp;<br><br><label for="">Date of Birth<span>*</span> : </label> 
-                <input type="date" name="dob" id="" required>
+
+                &nbsp; &nbsp;<br><br><label for="">Date of Birth<span>*</span> : </label>
+                <input type="date" name="DOB" id="" required>
 
                 <br><br><label for="#">Marital Status<span>*</span> : </label>
                 <select name="MaritalStatus" id="">
@@ -50,8 +50,8 @@
                     <option value="Single">Single</option>
                     <option value="Divorced">Divorced</option>
                 </select>
-                
-                
+
+
                 <br><br><label for="#">Nationality<span>*</span> : </label>
                 <select name="Nationality" id="">
                     <option value="" selected>Choose....</option>
@@ -61,8 +61,8 @@
                     <option value="India">India</option>
                     <option value="Russia">Russia</option>
                 </select>
-                
-                
+
+
                 <br><br><label for="#">Residential Status : </label>
                 <select name="ResidentialStatus" id="">
                     <option value="" selected>Choose....</option>
@@ -76,11 +76,11 @@
                 <input type="text" name="PanNumber" id="" required>
 
                 <br><br><label for="UID">Unique Identification Number (UID)/ Aadhar : </label>
-                <input type="text" name="AadharNumber" id=""> 
+                <input type="text" name="AadharNumber" id="">
 
-                 
+
             </div>
-            
+
             <div class="btn-box">
                 <button type="submit">Submit</button>
 

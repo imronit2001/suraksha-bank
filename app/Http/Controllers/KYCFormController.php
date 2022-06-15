@@ -9,7 +9,7 @@ class KYCFormController extends Controller
 {
     public function index(){
         return view('customer.KYC-Form');
-    } 
+    }
 
     public function create(Request $request){
         $KYCForm = new KnowYourCustomer;
@@ -18,7 +18,7 @@ class KYCFormController extends Controller
             $KYCForm->FullName=$request->FullName;
             $KYCForm->FatherName=$request->FatherName;
             $KYCForm->gender=$request->gender;
-            $KYCForm->DOB=$request->dob;
+            $KYCForm->DOB=$request->DOB;
             $KYCForm->MaritalStatus=$request->MaritalStatus;
             $KYCForm->Nationality=$request->Nationality;
             $KYCForm->ResidentialStatus=$request->ResidentialStatus;
@@ -33,7 +33,7 @@ class KYCFormController extends Controller
             $KYCForm->Telephone=$request->Telephone;
             $KYCForm->AddressProofNumber=$request->AddressProofNumber;
             $KYCForm->Date=$request->Date;
-            
+
             if ($request->hasFile('ApplicantPhoto')) {
                 $file = $request->file('ApplicantPhoto');
                 $name = $file->hashName();
@@ -41,7 +41,7 @@ class KYCFormController extends Controller
                 $file->move('images/customer/ApplicantPhoto/',$filename);
                 $KYCForm->ApplicantPhoto=$filename;
             }
-    
+
             if ($request->hasFile('ApplicantSignature')) {
                 $file = $request->file('ApplicantSignature');
                 $name = $file->hashName();
@@ -49,7 +49,7 @@ class KYCFormController extends Controller
                 $file->move('images/customer/ApplicantSignature/', $filename);
                 $KYCForm->signature=$filename;
             }
-             
+
             if ($request->hasFile('ApplicantAadhar')) {
                 $file = $request->file('ApplicantAadhar');
                 $name = $file->hashName();
