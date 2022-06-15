@@ -11,33 +11,32 @@
     <div class="staff-table container-fluid mt-3">
         <table class="table table-hover">
             <thead>
-                <tr class="text-dark bg-info">
-                    <th scope="col" class="smallwidth">Customer Id</th>
-                    <th scope="col" class="smallwidth">Customer Name</th>
-                    <th scope="col" class="smallwidth">Application</th>
-                    <th scope="col" class="smallwidth">Application Date</th>
+                <tr class="coloum text-align-center">
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Account No</th>
+                    <th scope="col">Account Type</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">No of Cheque Books</th>
+                    <th scope="col">No of Cheque leaves</th>
+                    <th scope="col">Address</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($data as $cb)
-                    <tr class="align-center">
-                        <td>
-                            <p>{{ $cb->c_id }}</p>
-                        </td>
-                        <td>
-                            <p>{{ $cb->cname }}</p>
-                        </td>
-                        <td>
-                            <p>{{ $cb->application }}</p>
-                        </td>
-                        <td>
-                            <p>{{ $cb->date }}</p>
-                        </td>
+                @foreach ($cheque as $chq)
+                <tr>
+                    <td>{{$chq->customerId}}</td>
+                    <td>{{$chq->accountNo}}</td>
+                    <td>{{$chq->accountType}}</td>
+                    <td>{{$chq->branchName}}</td>
+                    <td>{{$chq->no_of_chequeBook}}</td>
+                    <td>{{$chq->no_of_chequeLeaves}}</td>
+                    <td>{{$chq->address}}</td>
+                    <td>{{$chq->status}}</td>
                         <td>
                             <p>
-                                @if ($cb->status == 'Active')
+                                @if ($chq->status == 'Active')
                                     <button class="btn btn-success disabled">Pending</button>
                                 @else
                                     <button class="btn btn-danger disabled">Declined</button>
@@ -45,17 +44,17 @@
                             </p>
                         </td>
                         <td>
-                            @if ($cb->status == 'Active')
-                                <p><a href={{ url('/staf/cheque-book/' . $cb->id . '/Declined') }}><button
+                            @if ($chq->status == 'Active')
+                                <p><a href={{ url('/staf/cheque-book/' . $chq->id . '/Declined') }}><button
                                             class="btn btn-danger">Declined</button></a></p>
                             @else
-                                <p><a href={{ url('/staf/cheque-book/' . $cb->id . '/Accepted') }}><button
+                                <p><a href={{ url('/staf/cheque-book/' . $chq->id . '/Accepted') }}><button
                                             class="btn btn-success">Accepted</button>
                             @endif
                             </a></p>
                         </td>
                     </tr>
-                {{-- @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>

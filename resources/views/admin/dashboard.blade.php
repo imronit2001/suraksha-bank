@@ -5,7 +5,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>0000</h1>
+            <h1>{{ $customer }}</h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/customer.png')}} alt="customer.png">
@@ -31,7 +31,7 @@
       <div class="content">
         <div class="content-box">
           <div class="content-left">
-            <h1>0000</h1>
+            <h1>{{ $inactivecustomer }}</h1>
           </div>
           <div class="content-right">
             <img src={{asset('images/inactive-customer.png')}} alt="inactve-customer.png">

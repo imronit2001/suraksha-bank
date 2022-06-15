@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('customerId');
             $table->string('account_no');
+            $table->string('balance')->default('0');
             $table->string('password');
             $table->string('transaction_pass');
             $table->string('prefix');
@@ -51,6 +52,7 @@ return new class extends Migration
             $table->string('Pin');
             $table->string('Country');
             $table->string('BranchName');
+            $table->string('BranchCode');
             $table->string('ApplicantPhoto')->default('Not Available');
             $table->string('ApplicantAadhar')->default('Not Available');
             $table->string('ApplicantSignature')->default('Not Available');

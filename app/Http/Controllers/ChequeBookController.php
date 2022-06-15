@@ -28,7 +28,7 @@ class ChequeBookController extends Controller
         echo $status;
         // $users = DB::table('users')->select('id','name','email')->get();
 
-        
+
         return view('customer.cheque-book',['customer'=>$customer, 'status'=>$status, 'status_id'=>$status_id]);
     }
 
@@ -40,6 +40,8 @@ class ChequeBookController extends Controller
     public function create(Request $request)
     {
         $cheque_book = new cheque_book();
+        $customerId = Auth::user()->customerId;
+        $cheque_book -> customerId=$request->customerId;
         $cheque_book->accountNo=$request->accountNo;
         $cheque_book->accountType=$request->accountType;
         $cheque_book->branchName=$request->branchName;
@@ -58,7 +60,8 @@ class ChequeBookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cheque = cheque_book::all();
+        return view('staff.ChequeBookRequest',['cheque'=>$cheque]);
     }
 
     /**

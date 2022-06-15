@@ -2,98 +2,216 @@
 @section('title', 'Account Opening Application')
 @section('page-name')
 <div style="width:75%; float:right;margin-left:10%;">
-    @foreach ($data as $i) 
+    <h2 style="text-align:center; margin: 50px auto;">Account Opening Application List</h2>
 
-                <label scope="col">Prefix</label>
-                <label scope="col">Full Name</label>
-                <label scope="col">Date Of Birth</label>
-                <label scope="col">Gender</label>
-                <label scope="col">Marital Status</label>
-                <label scope="col">Father Name</label>
-                <label scope="col">Mother Name</label>
-                <label scope="col">Gaurdian Name</label>
-                <label scope="col">Relation With Guardian</label>
-                <label scope="col">Nationality </label>
-                <label scope="col">Residential Status</label>
-                <label scope="col">Occupation Type</label>
-                <label scope="col">Religion</label>
-                <label scope="col">Category</label>
-                <label scope="col">Customer Type</label>
-                <label scope="col">Disability</label>
-                <label scope="col">Qualification</label>
-                <label scope="col">Pan Number</label>
-                <label scope="col">Mobile</label>
-                <label scope="col">Email</label>
-                <label scope="col">Telephone</label>
-                <label scope="col">Address Proof</label>
-                <label scope="col">Address Proof Number</label>
-                <label scope="col">Issued By</label>
-                <label scope="col">Address Type</label>
-                <label scope="col">Address</label>
-                <label scope="col">District</label>
-                <label scope="col">City</label>
-                <label scope="col">State</label>
-                <label scope="col">Pin</label>
-                <label scope="col">Country</label>
-                <label scope="col">Place</label>
-                <label scope="col">Date of Submission</label>
-                <label scope="col">Applicant Photo</label>
-                <label scope="col">Applicant Signature</label>
-                <label scope="col">Applicant Aadhar</label>
-                <label scope="col">Status</label>
-                <label scope="col">Action</label>                           
-                <td><p>{{$i->prefix}}</p></td>
-                <td><p>{{$i->FullName}}</p></td>
-                <td><p>{{$i->DOB}}</p></td>
-                <td><p>{{$i->gender}}</p></td>
-                <td><p>{{$i->MaritalStatus}}</p></td>
-                <td><p>{{$i->FatherName}}</p></td>
-                <td><p>{{$i->MotherName}}</p></td>
-                <td><p>{{$i->GaurdianName}}</p></td>
-                <td><p>{{$i->RelationWithGuardian}}</p></td>
-                <td><p>{{$i->Nationality}}</p></td>
-                <td><p>{{$i->ResidentialStatus}}</p></td>
-                <td><p>{{$i->OccupationType}}</p></td>
-                <td><p>{{$i->religion}}</p></td>
-                <td><p>{{$i->category}}</p></td>
-                <td><p>{{$i->CustomerType}}</p></td>
-                <td><p>{{$i->Disability}}</p></td>
-                <td><p>{{$i->Qualification}}</p></td>
-                <td><p>{{$i->PanNumber}}</p></td>
-                <td><p>{{$i->Mobile}}</p></td>
-                <td><p>{{$i->Email}}</p></td>
-                <td><p>{{$i->Telephone}}</p></td>
-                <td><p>{{$i->AddressProof}}</p></td>
-                <td><p>{{$i->AddressProofNumber}}</p></td>
-                <td><p>{{$i->issuedBy}}</p></td>
-                <td><p>{{$i->AddressType}}</p></td>
-                <td><p>{{$i->Address}}</p></td>
-                <td><p>{{$i->City}}</p></td>
-                <td><p>{{$i->District}}</p></td>
-                <td><p>{{$i->State}}</p></td>
-                <td><p>{{$i->Pin}}</p></td>
-                <td><p>{{$i->Country}}</p></td>
-                <td><p>{{$i->Place}}</p></td>
-                <td><p>{{$i->signDate}}</p></td>
-                <td><p>{{$i->ApplicantPhoto}}</p></td>
-                <td><p>{{$i->ApplicantSignature}}</p></td>
-                <td><p>{{$i->ApplicantAadhar}}</p></td>
-                
-                    <p>
-                        @if ($i->status == 'Active')
-                        <button class="btn btn-success disabled">Activated</button>
-                        @else
-                        <button class="btn btn-danger disabled">Deactivated</button>
-                        @endif
-                    </p>
-                    @if ($i->status == 'Active')
-                    <p><a href={{ url('/admin/remove-staff/' . $i->id . '/Deactivate') }}><button
-                    class="btn btn-danger">Deactivate</button></a></p>
-                    @else
-                    <p><a href={{ url('/admin/remove-staff/' . $i->id . '/Active') }}><button
-                    class="btn btn-success">Activate</button>
-                    @endif
-                    </a></p>
+    <table >
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Prefix</td>
+            <!-- <td>{{$data->prefix}}</td> -->
+            
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Full Name</td>
+            <td>{{$data->FullName}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Date of Birth</td>
+            <td>{{$data->DOB}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Gender</td>
+            <td>{{$data->gender}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Marital Status</td>
+            <td>{{$data->MaritalStatus}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Father Name</td>
+            <td>{{$data->FatherName}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Mother Name</td>
+            <td>{{$data->MotherName}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Guardian Name</td>
+            <td>{{$data->GaurdianName}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Relation With Guardian</td>
+            <td>{{$data->RelationWithGuardian}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Nationality</td>
+            <td>{{$data->Nationality}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Residential Status</td>
+            <td>{{$data->ResidentialStatus}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Occupation</td>
+            <td>{{$data->OccupationType}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Religion</td>
+            <td>{{$data->religion}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Category</td>
+            <td>{{$data->category}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Customer Type</td>
+            <td>{{$data->CustomerType}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Disability</td>
+            <td>{{$data->Disability}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Qualification</td>
+            <td>{{$data->Qualification}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Pan Card Number</td>
+            <td>{{$data->PanNumber}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Mobile </td>
+            <td>{{$data->Mobile}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Email </td>
+            <td>{{$data->Email}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Telephone</td>
+            <td>{{$data->Telephone}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Address Proof</td>
+            <td>{{$data->AddressProof}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Address Proof Number</td>
+            <td>{{$data->AddressProofNumber}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Issued By</td>
+            <td>{{$data->issuedBy}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Address Type</td>
+            <td>{{$data->AddressType}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Address</td>
+            <td>{{$data->Address}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">City</td>
+            <td>{{$data->City}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">District</td>
+            <td>{{$data->District}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">State</td>
+            <td>{{$data->State}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Pin</td>
+            <td>{{$data->Pin}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Country</td>
+            <td><p>{{$data->Country}}</p></td>
 
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Place</td>
+            <td>{{$data->Place}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Application Date</td>
+            <td>{{$data->signDate}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Applicant Photo</td>
+            <td>{{$data->ApplicantPhoto}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Applicant Signature</td>
+            <td>{{$data->ApplicantSignature}}</td>
+        </tr>
+        <tr>
+            <td style="font-size: 15px; font-weight: bold; padding: 10px 25px;">Applicant Aadhar Card</td>
+            <td>{{$data->ApplicantAadhar}}</td>
+        </tr>
+        
+    </table>
+
+    <!-- <div class="FieldValues"> 
+    @foreach ($data as $i)  -->
+
+        <!-- <td><p>{{$i->prefix}}</p></td>
+        <td><p>{{$i->FullName}}</p></td>
+        <td><p>{{$i->DOB}}</p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p>{{$i->Country}}</p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        
+        <div class="buttons">
+            <p>
+                @if ($i->status == 'Active')
+                    <button class="btn btn-success disabled">Activated</button>
+                @else
+                    <button class="btn btn-danger disabled">Deactivated</button>
+                @endif
+            </p>
+            @if ($i->status == 'Active')
+                <p>
+                    <a href={{ url('/admin/remove-staff/' . $i->id . '/Deactivate') }}><button class="btn btn-danger">Deactivate</button></a>
+                </p>
+            @else
+                <p>
+                    <a href={{ url('/admin/remove-staff/' . $i->id . '/Active') }}><button class="btn btn-success">Activate</button></a>
+                </p>
+            @endif
+        </div>
+        @endforeach -->
+    <!-- </div>   -->
 </div>
-@endforeach
+@endsection

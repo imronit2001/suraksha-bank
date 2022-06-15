@@ -153,19 +153,19 @@
                 <span class="tooltip">Cheque Book</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('admin-termsCondition')}}">
                     <i class='bx bxs-copy-alt'></i>
                     <span class="links_name">Terms & Conditions</span>
                 </a>
                 <span class="tooltip">Terms & Conditions</span>
             </li>
-            <li>
-                <a href="#">
+            {{-- <li>
+                <a href="{{route('admin-customer-helpline')}}">
                     <i class='bx bx-help-circle'></i>
                     <span class="links_name">Helpline</span>
                 </a>
                 <span class="tooltip">Helpline</span>
-            </li>
+            </li> --}}
             <li>
                 <a href="{{route('customer-cheque-book')}}">
                     <i class='bx bxs-lock'></i>

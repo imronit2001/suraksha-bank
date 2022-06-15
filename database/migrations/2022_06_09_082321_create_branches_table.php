@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
-            $table->string('branch_id_prefix')->default('SKB');
-            $table->integer('branch_code')->unique();
+            $table->string('branch_id_prefix')->default('SKBK');
+            $table->string('branch_code')->unique();
             $table->string('branch_name');
             $table->string('city');
             $table->string('state');

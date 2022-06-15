@@ -44,6 +44,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-10 col-lg-810 col-xl-6">
                     <div class="form-group text-truncate">
+                        <input type="hidden" name="id" value="{{$Helpline->id}}">
                         <input type="hidden" name="name" value="{{$Helpline->name}}">
                         <input type="hidden" name="email" value="{{$Helpline->email}}">
                         <input type="hidden" name="mobile" value="{{$Helpline->mobile}}">

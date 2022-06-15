@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\AccountOpenings;
+use App\Models\branch;
 use Illuminate\Http\Request;
 
 class AccountOpeningFormController extends Controller
 {
-
     public function create(Request $request){
         $AccountOpeningForm = new AccountOpenings;
             $AccountOpeningForm->prefix=$request->prefix;
@@ -42,6 +42,7 @@ class AccountOpeningFormController extends Controller
             $AccountOpeningForm->Pin=$request->Pin;
             $AccountOpeningForm->Country=$request->Country;
             $AccountOpeningForm->BranchName=$request->BranchName;
+            $AccountOpeningForm->BranchCode=$request->BranchCode;
             $AccountOpeningForm->Place=$request->Place;
             $AccountOpeningForm->signDate=$request->signDate;
             if ($request->hasFile('ApplicantPhoto')) {
@@ -67,7 +68,7 @@ class AccountOpeningFormController extends Controller
                 $AccountOpeningForm->ApplicantSignature=$filename;
             }
 
-            // dd($request);
+            // dd($branch);
             $AccountOpeningForm->save();
 
         return redirect('/')->with('Success','Data Added');
@@ -81,8 +82,8 @@ class AccountOpeningFormController extends Controller
         return view('staff/accountApplication',['data'=>$data]);
     }
 
-    public function AccountRequests(){
-        $data = AccountOpenings::all();
+    public function AccountRequests($id){
+        $data = AccountOpenings::find($id);
         return view('staff/AccountRequests',['data'=>$data]);
     }
 }
