@@ -128,8 +128,9 @@ class CustomerController extends Controller
         // echo "Code Here";
         return view('staff/creditRequest', ['data' => $data]);
     }
-    function CreditRequests(){
-        return view('/staff/CreditRequests');
+    function CreditRequests($id){
+        $data = CreditCard::find($id);
+        return view('/staff/CreditRequests',['data' => $data]);
     }
 
     public function ShiftData($id)

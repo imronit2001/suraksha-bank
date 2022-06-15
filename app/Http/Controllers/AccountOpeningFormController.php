@@ -82,8 +82,8 @@ class AccountOpeningFormController extends Controller
         return view('staff/accountApplication',['data'=>$data]);
     }
 
-    public function AccountRequests(){
-        $data = AccountOpenings::all();
+    public function AccountRequests($id){
+        $data = AccountOpenings::find($id);
         return view('staff/AccountRequests',['data'=>$data]);
     }
 }
