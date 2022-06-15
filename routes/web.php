@@ -124,6 +124,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
 
         // Route for approving account opening
         Route::get('/AccountOpeningApprove/{id}',[CustomerController::class,'ShiftData']);
+        Route::get('/AccountOpeningDecline/{id}',[CustomerController::class,'DeclineData']);
 
         Route::get('/KYCList',[KYCFormController::class,'KYClist']);
         Route::get('/KYCRequests/{id}',[KYCFormController::class,'KYCRequests']);

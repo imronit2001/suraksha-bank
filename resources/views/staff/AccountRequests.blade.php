@@ -168,15 +168,14 @@
         </div>
     </div>
     <div style="margin-left:50%; margin-bottom: 50px;">
-        @if ($data->status == 'Active')
+
             <p>
-                <a href={{ url('/admin/remove-staff/' . $data->id . '/Deactivate') }}><button class="btn btn-danger">Deactivate</button></a>
+                <a href={{ url('/staff/AccountOpeningApprove/' . $data->id) }}><button class="btn btn-success w-25">Activate</button></a>
             </p>
-        @else
             <p>
-                <a href={{ url('/admin/remove-staff/' . $data->id . '/Active') }}><button class="btn btn-success">Activate</button></a>
+                <a href={{ url('/staff/AccountOpeningDecline/' . $data->id) }}><button class="btn btn-danger w-25">Delete</button></a>
             </p>
-        @endif
+
     </div>
 
 
