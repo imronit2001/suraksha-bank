@@ -173,14 +173,14 @@
                 </a>
                 <span class="tooltip">Change Password</span>
             </li> --}}
-            </li>
-            <li>
+            {{-- </li> --}}
+            {{-- <li>
                 <a href="{{route('customer-transaction-password')}}">
                     <i class='bx bxs-copy-alt'></i>
                     <span class="links_name">Transaction Password</span>
                 </a>
                 <span class="tooltip">Transaction Password</span>
-            </li>
+            </li> --}}
             <li>
                 <a href="{{route('customer-fund-transfer')}}">
                     <i class='bx bxs-copy-alt'></i>

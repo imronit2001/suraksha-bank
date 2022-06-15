@@ -26,6 +26,10 @@ class FundTransferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function FundTransfer()
+    {
+        return view('customer.fund-transfer');
+    }
     public function create(Request $request)
     {
 
@@ -40,65 +44,64 @@ class FundTransferController extends Controller
         ]);
         $My_balance = Auth::user()->balance;
 
-        $beneficiary=customer::where('account_no',$request->benficiary_accountno)->first();
-        $beneficiary_balance=$beneficiary->balance;
+        $beneficiary = customer::where('account_no', $request->benficiary_accountno)->first();
+        $beneficiary_balance = $beneficiary->balance;
         if (Auth::user()->balance < $request->amount) {
             return back()->with('alert', 'Insufficient Balance');
         } else {
             if ($request->benficiary_accountno = $request->confirm_accountno) {
-                $update_myBal =  $My_balance - $request->amount;
+                $update_myBal =  ($My_balance) - ($request->amount);
                 $update_beneficiaryBal = $beneficiary_balance + $request->amount;
-               customer::where('account_no', $beneficiary->account_no)->update(['balance' =>$update_beneficiaryBal ]);
-               customer::where('account_no', Auth::user()->account_no)->update(['balance' =>$update_myBal ]);
+                customer::where('account_no', $beneficiary->account_no)->update(['balance' => $update_beneficiaryBal]);
+                customer::where('account_no', Auth::user()->account_no)->update(['balance' => $update_myBal]);
 
-               $fund = new FundTransfer();
-               $fund->customerId=Auth::user()->customerId;
-               $fund->beneficiary_name = $request->beneficiary_name;
-               $fund->benficiary_accountno = $request->benficiary_accountno;
-               $fund->referenceId= "UPI:" . uniqid() . rand(10000, 99999);
-               $fund->ifsc_code = $request->ifsc_code;
-               $fund->branch = $request->branch;
-               $fund->amount = $request->amount;
-               $fund->upi_pin = $request->upi_pin;
+                $fund = new FundTransfer();
+                $fund->customerId = Auth::user()->customerId;
+                $fund->beneficiary_name = $request->beneficiary_name;
+                $fund->benficiary_accountno = $request->benficiary_accountno;
+                $fund->referenceId = "UPI:" . uniqid() . rand(10000, 99999);
+                $fund->ifsc_code = $request->ifsc_code;
+                $fund->branch = $request->branch;
+                $fund->amount = $request->amount;
+                $fund->upi_pin = $request->upi_pin;
 
-               $fund->save();
+                $fund->save();
 
 
-               date_default_timezone_set('Asia/Kolkata');
-               $date = date("jS F Y");
-               $time = date("h:i:s A");
+                date_default_timezone_set('Asia/Kolkata');
+                $date = date("jS F Y");
+                $time = date("h:i:s A");
 
-               $transaction1 = new Transaction();
-               $transaction1->accountNo = Auth::user()->account_no;
-               $transaction1->date = $date;
-               $transaction1->time = $time;
-               $transaction1->referenceId = $fund->referenceId;
-               $transaction1->credit = "";
-               $transaction1->debit = $request->amount;
-               $transaction1->balance = $update_myBal;
-               $transaction1->save();
+                $transaction1 = new Transaction();
+                $transaction1->accountNo = Auth::user()->account_no;
+                $transaction1->date = $date;
+                $transaction1->time = $time;
+                $transaction1->referenceId = $fund->referenceId;
+                // $transaction1->credit = "";
+                $transaction1->debit = $request->amount;
+                $transaction1->balance = $update_myBal;
+                $transaction1->save();
 
-               $transaction2 = new Transaction();
-               $transaction2->accountNo = $request->benficiary_accountno;
-               $transaction2->date = $date;
-               $transaction2->time = $time;
-               $transaction2->referenceId = $fund->referenceId;
-               $transaction2->credit = $request->amount;
-               $transaction2->debit = "";
-               $transaction2->balance = $update_beneficiaryBal;
-               $transaction2->save();
+                $transaction2 = new Transaction();
+                $transaction2->accountNo = $request->benficiary_accountno;
+                $transaction2->date = $date;
+                $transaction2->time = $time;
+                $transaction2->referenceId = $fund->referenceId;
+                $transaction2->credit = $request->amount;
+                // $transaction2->debit = "";
+                $transaction2->balance = $update_beneficiaryBal;
+                $transaction2->save();
 
-               echo "<br>".$transaction1;
-               echo "<br>".$transaction2;
+                // echo "<br>" . $transaction1;
+                // echo "<br>" . $transaction2;
 
-               dd($transaction1);
-
-            }else{
-                // return back()->with('alert', 'Account Number is not matched!');
+                // dd($transaction1);
+            } else {
+                return back()->with('alert', 'Account Number is not matched!');
             }
 
 
-            // return redirect((route('customer-fund-transfer')))->with('success', 'Your Application submittedSuccessfully ');
+            return redirect((route('customer-fund-transfer')))->with('success', 'Your Application submittedSuccessfully ');
         }
     }
     /**
