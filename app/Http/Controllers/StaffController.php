@@ -256,6 +256,9 @@ class StaffController extends Controller
         if ($request->ajax()) {
             $customer = Customer::where('account_no', $request->aNo)->first();
             $trans = Transaction::where('accountNo', $request->aNo)->get();
+            if($customer==""){
+                return response("No Account Found");
+            }
             return response()->view('staff.customer-details', ['data' => $customer, 'trans' => $trans]);
         } else
             return view('staff.customer');
@@ -265,6 +268,7 @@ class StaffController extends Controller
         $aNo = '55129611471227';
         $customer = Customer::where('account_no', $aNo)->first();
         $trans = Transaction::where('accountNo', $aNo)->get();
+
         return view('staff.customer-details', ['data' => $customer, 'trans' => $trans]);
     }
 }
