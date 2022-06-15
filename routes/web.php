@@ -106,7 +106,7 @@ Route::prefix('staff')->name('staff-')->group(function () {
     });
     Route::middleware(['auth:staff', 'PreventBackHistory'])->group(function () {
         Route::get('/', [StaffController::class, 'dashboard'])->name('dashboard');
-        Route::get('/customers', [StaffController::class, 'dashboard'])->name('manage-customer');
+        Route::get('/customers', [StaffController::class, 'customers'])->name('manage-customer');
         Route::get('/credit-money', [StaffController::class, 'creditMoneyIndex'])->name('credit-money');
         Route::post('/credit-money', [StaffController::class, 'creditMoneyCreate'])->name('credit-money');
         Route::get('/debit-money', [StaffController::class, 'debitMoneyIndex'])->name('debit-money');
