@@ -173,6 +173,20 @@
                 </a>
                 <span class="tooltip">Change Password</span>
             </li>
+            <li>
+                <a href="{{route('customer-transaction-password')}}">
+                    <i class='bx bxs-copy-alt'></i>
+                    <span class="links_name">Transaction Password</span>
+                </a>
+                <span class="tooltip">Transaction Password</span>
+            </li>
+            <li>
+                <a href="{{route('customer-fund-transfer')}}">
+                    <i class='bx bxs-copy-alt'></i>
+                    <span class="links_name">Fund Transfer</span>
+                </a>
+                <span class="tooltip">Fund Transfer</span>
+            </li>
             <li class="profile">
                   <!-- <a href="#">
                     <i class="fas fa-sign-out-alt"></i>
