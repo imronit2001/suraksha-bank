@@ -40,7 +40,7 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="#">
+                <a href="{{route('customer-dashboard')}}">
                     <i class='bx bxs-home'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -81,13 +81,13 @@
                 </a>
                 <span class="tooltip">Credit Card</span>
             </li>
-            <li>
+            {{-- <li>
                 <a href="#">
                     <i class="bx bx-credit-card"></i>
                     <span class="links_name">Debit Card</span>
                 </a>
                 <span class="tooltip">Debit Card</span>
-            </li>
+            </li> --}}
             {{-- <li>
               <div class="dropdown">
                   <i class='fas fa-hand-holding-usd'></i>

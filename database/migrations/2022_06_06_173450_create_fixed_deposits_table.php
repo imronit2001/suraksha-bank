@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('nominee_aadharNo')->nullable();
             $table->string('pan')->nullable();
             $table->string('terms')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\FixedDeposit;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class FixedDepositeController extends Controller
 {
@@ -11,9 +14,9 @@ class FixedDepositeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function FixedDeposite()
     {
-        //
+        return view('customer.fixed-deposite');
     }
 
     /**
@@ -21,9 +24,28 @@ class FixedDepositeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $fixed = new FixedDeposit();
+        // $customerId = Auth::user()->customerId;
+        // $fixed -> customerId=Auth::user()->customerId;
+        $fixed ->c_name=$request->c_name;
+        $fixed ->account_no=$request->account_no;
+        $fixed ->c_id= Auth::user()->customerId;
+        $fixed ->branch_name=Auth::user()->branch_name;
+        $fixed ->branch_city=$request->branch_city;
+        $fixed ->amount=$request->amount;
+        $fixed ->interest_type=$request->interest_type;
+        $fixed ->year=$request->year;
+        $fixed ->email=Auth::user()->Email;
+        $fixed ->phone=$request->phone;
+        $fixed ->nominee=$request->nominee;
+        $fixed ->nominee_relation=$request->nominee_relation;
+        $fixed->nominee_aadharNo=$request->nominee_aadharNo;
+        $fixed->pan=$request->pan;
+        $fixed->terms=$request->terms;
+        $fixed->save();
+        return redirect('/customer')->with('Success, Form Submitted Successfully');
     }
 
     /**
@@ -34,7 +56,8 @@ class FixedDepositeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cheque = FixedDeposit::all();
+        return view('staff.fixed-deposite-list',['fixed'=>$cheque]);
     }
 
     /**

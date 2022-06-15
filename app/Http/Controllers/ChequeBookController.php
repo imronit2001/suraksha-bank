@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\CustomerData;
+use App\Models\customer;
 use App\Models\cheque_book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class ChequeBookController extends Controller
 {
@@ -14,22 +16,22 @@ class ChequeBookController extends Controller
      */
     public function index()
     {
-        $cheque_book = CustomerData::all();
-        // $cId = "2517383537107734";
-        $accountNo="12345678901234";
+        $cId = Auth::user()->customerId;
+        // $customer = Customer::where('customerId', $cId)->latest()->first();
+        // $cheque_book = CustomerData::all();
         $status_id = 0 ;
-        $status = cheque_book::where('accountNo', $accountNo)->latest()->first();
-        $customer = CustomerData::where('accountNo', $accountNo)->latest()->first();
+        $status = cheque_book::where('customerId',  $cId)->latest()->first();
+        // $customer = customer::where('customerId', $ $cId)->latest()->first();
         if($status != ""){
             $status_id = $status->id;
             $status = $status->status;
         }else
         $status = -1 ;
-        echo $status;
+
         // $users = DB::table('users')->select('id','name','email')->get();
 
 
-        return view('customer.cheque-book',['customer'=>$customer, 'status'=>$status, 'status_id'=>$status_id]);
+        return view('customer.cheque-book',['status'=>$status, 'status_id'=>$status_id]);
     }
 
     /**
@@ -40,16 +42,16 @@ class ChequeBookController extends Controller
     public function create(Request $request)
     {
         $cheque_book = new cheque_book();
-        $customerId = Auth::user()->customerId;
-        $cheque_book -> customerId=$request->customerId;
-        $cheque_book->accountNo=$request->accountNo;
-        $cheque_book->accountType=$request->accountType;
-        $cheque_book->branchName=$request->branchName;
+        // $customerId = Auth::user()->customerId;
+        $cheque_book -> customerId=Auth::user()->customerId;
+        $cheque_book->accountNo=Auth::user()->account_no;
+        $cheque_book->accountType='Saving';
+        $cheque_book->branchName=Auth::user()->BranchName;;
         $cheque_book->no_of_chequeBoook=$request->no_of_chequeBoook;
-        $cheque_book->no_of_checkleaves=$request->no_of_checkleaves;
+        $cheque_book->no_of_chequeLeaves=$request->no_of_chequeLeaves;
         $cheque_book->address=$request->address;
         $cheque_book->save();
-        return redirect((route('customer-cheque-book')));
+        return redirect((route('customer-cheque-book')))->with('success','Your Application submittedSuccessfully ');
     }
 
     /**
