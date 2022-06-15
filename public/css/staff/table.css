@@ -1,0 +1,13 @@
+
+.coloum{
+    background-color: whitesmoke;
+    align-items: center;
+}
+
+
+.container{
+    width: 80%;
+    align-items: center;
+    text-align: center;
+}
+tr:nth-child(even) {background-color: #677d89;}

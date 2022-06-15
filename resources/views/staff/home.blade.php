@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     {{-- Css --}}
     <link rel="stylesheet" href={{ asset('css/staff/style.css') }}>
+    <link rel="stylesheet" href={{ asset('css/staff/table.css') }}>
     <link rel="stylesheet" href={{ asset('css/admin/sidenavbar.css') }}>
     {{-- Jquery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
